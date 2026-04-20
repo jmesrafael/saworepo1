@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-04-20T06:41:26.709Z",
+  "updatedAt": "2026-04-20T06:43:01.575Z",
   "products": [
     {
       "id": "50834970-4527-4954-9cd7-8ac89d7bd70f",
@@ -398,7 +398,7 @@
     },
     {
       "id": "853702cf-2a61-4294-9f40-6f41cbfe7583",
-      "name": "asdasa",
+      "name": "asdasaa",
       "slug": "asdas",
       "description": "",
       "short_description": "",
@@ -422,7 +422,7 @@
       "created_by_username": "Rafael",
       "updated_by_username": "Rafael",
       "created_at": "2026-04-20T00:28:58.72364+00:00",
-      "updated_at": "2026-04-20T06:41:26.709Z",
+      "updated_at": "2026-04-20T06:43:01.575Z",
       "is_deleted": false
     },
     {
