@@ -211,19 +211,31 @@ async function ensureProductsExist() {
 app.post('/api/products/sync-supabase', async (req, res) => {
   try {
     console.log('[API] Starting Supabase sync...');
-    const { execSync } = require('child_process');
-    const result = execSync('node syncSupabaseProducts.js', {
-      cwd: __dirname,
-      encoding: 'utf8'
-    });
-    console.log('[API] Sync completed');
+    const { syncProducts } = require('./syncSupabaseProducts');
+    const result = await syncProducts();
+
+    if (result.error) {
+      console.error('[API] Sync failed:', result.error);
+      return res.status(400).json({
+        error: 'Supabase sync failed',
+        message: result.error
+      });
+    }
+
+    console.log('[API] Sync completed successfully');
     res.json({
       success: true,
       message: 'Supabase sync completed',
-      output: result
+      scanned: result.scanned,
+      added: result.added,
+      updated: result.updated,
+      kept: result.kept,
+      added_products: result.added_products,
+      updated_products: result.updated_products,
+      kept_products: result.kept_products
     });
   } catch (err) {
-    console.error('[API] Sync failed:', err.message);
+    console.error('[API] Sync error:', err.message);
     res.status(500).json({
       error: 'Supabase sync failed',
       message: err.message

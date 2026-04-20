@@ -19,6 +19,17 @@ if (!SUPABASE_URL || !SUPABASE_SERVICE_KEY) {
 const supabase = createClient(SUPABASE_URL, SUPABASE_SERVICE_KEY);
 
 async function syncProducts() {
+  const syncResult = {
+    scanned: 0,
+    added: 0,
+    updated: 0,
+    kept: 0,
+    added_products: [],
+    updated_products: [],
+    kept_products: [],
+    error: null
+  };
+
   try {
     console.log('📊 [SYNC] Starting product sync from Supabase...\n');
 
@@ -43,14 +54,22 @@ async function syncProducts() {
 
     if (error) {
       console.error('❌ Failed to fetch from Supabase:', error.message);
-      process.exit(1);
+      syncResult.error = error.message;
+      return syncResult;
     }
 
+    syncResult.scanned = supabaseProducts.length;
     console.log(`✅ Loaded ${supabaseProducts.length} products from Supabase\n`);
 
     // Step 3: Merge products intelligently
     console.log('🔀 Merging products...\n');
-    const mergedProducts = mergeProducts(currentProducts, supabaseProducts);
+    const { mergedProducts, stats } = mergeProducts(currentProducts, supabaseProducts);
+    syncResult.added = stats.added;
+    syncResult.updated = stats.updated;
+    syncResult.kept = stats.kept;
+    syncResult.added_products = stats.addedList;
+    syncResult.updated_products = stats.updatedList;
+    syncResult.kept_products = stats.keptList;
 
     // Step 4: Save merged products
     console.log(`💾 Saving ${mergedProducts.length} products to products.json...\n`);
@@ -65,7 +84,8 @@ async function syncProducts() {
     console.log('✅ Sync completed successfully!\n');
 
     // Step 5: Print summary
-    printSummary(currentProducts, supabaseProducts, mergedProducts);
+    printSummary(currentProducts, supabaseProducts, mergedProducts, stats);
+    return syncResult;
 
   } catch (err) {
     console.error('❌ Unexpected error:', err.message);
@@ -75,10 +95,10 @@ async function syncProducts() {
 
 function mergeProducts(currentProducts, supabaseProducts) {
   const merged = [...currentProducts];
-  const mergedIds = new Set(merged.map(p => p.id));
-
-  let added = 0;
-  let updated = 0;
+  let addedCount = 0;
+  let updatedCount = 0;
+  const addedList = [];
+  const updatedList = [];
 
   for (const supProduct of supabaseProducts) {
     const existingIndex = merged.findIndex(p => p.id === supProduct.id);
@@ -88,25 +108,38 @@ function mergeProducts(currentProducts, supabaseProducts) {
       const newProduct = normalizeSupabaseProduct(supProduct);
       merged.push(newProduct);
       console.log(`✨ [ADD] ${newProduct.slug || newProduct.name}`);
-      added++;
+      addedCount++;
+      addedList.push({ id: newProduct.id, name: newProduct.name, slug: newProduct.slug });
     } else {
       // Product exists → MERGE (Supabase data updates existing, but keeps CMS fields)
       const existing = merged[existingIndex];
       const updated_product = mergeProductData(existing, supProduct);
       merged[existingIndex] = updated_product;
       console.log(`🔄 [UPDATE] ${updated_product.slug || updated_product.name}`);
-      updated++;
+      updatedCount++;
+      updatedList.push({ id: updated_product.id, name: updated_product.name, slug: updated_product.slug });
     }
   }
 
   // Keep any products from currentProducts that aren't in Supabase
   // (These are products created via CMS/GitHub that shouldn't be deleted)
   const keptProducts = currentProducts.filter(p => !supabaseProducts.find(sp => sp.id === p.id));
+  const keptList = keptProducts.map(p => ({ id: p.id, name: p.name, slug: p.slug }));
   if (keptProducts.length > 0) {
     console.log(`\n📌 Keeping ${keptProducts.length} products created via CMS (not in Supabase)`);
   }
 
-  return merged;
+  return {
+    mergedProducts: merged,
+    stats: {
+      added: addedCount,
+      updated: updatedCount,
+      kept: keptProducts.length,
+      addedList,
+      updatedList,
+      keptList
+    }
+  };
 }
 
 function normalizeSupabaseProduct(supProduct) {
@@ -159,16 +192,33 @@ function mergeProductData(existing, supProduct) {
   };
 }
 
-function printSummary(before, supabase, after) {
+function printSummary(before, supabase, after, stats) {
   console.log('═══════════════════════════════════════');
   console.log('          SYNC SUMMARY');
   console.log('═══════════════════════════════════════');
   console.log(`Before: ${before.length} products`);
   console.log(`From Supabase: ${supabase.length} products`);
   console.log(`After: ${after.length} products`);
-  console.log(`Added: ${after.length - before.length}`);
+  console.log(`---`);
+  console.log(`✨ Added: ${stats.added}`);
+  console.log(`🔄 Updated: ${stats.updated}`);
+  console.log(`📌 Protected: ${stats.kept}`);
   console.log('═══════════════════════════════════════\n');
 }
 
-// Run the sync
-syncProducts();
+// Export for use as module
+module.exports = { syncProducts };
+
+// Run the sync if called directly
+if (require.main === module) {
+  syncProducts().then(result => {
+    if (result.error) {
+      console.error('Sync failed:', result.error);
+      process.exit(1);
+    }
+    process.exit(0);
+  }).catch(err => {
+    console.error('Unexpected error:', err);
+    process.exit(1);
+  });
+}
