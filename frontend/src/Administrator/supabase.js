@@ -1,10 +1,31 @@
 ﻿// src/Administrator/supabase.js
 import { createClient } from "@supabase/supabase-js";
 
-export const supabase = createClient(
-  process.env.REACT_APP_SUPABASE_URL,
-  process.env.REACT_APP_SUPABASE_ANON_KEY
-);
+// Lazy-load Supabase only when needed (prevents initialization errors on Vercel)
+let supabaseInstance = null;
+
+export function getSupabase() {
+  if (!supabaseInstance) {
+    const url = process.env.REACT_APP_SUPABASE_URL;
+    const key = process.env.REACT_APP_SUPABASE_ANON_KEY;
+
+    if (!url || !key) {
+      console.warn('⚠️ Supabase credentials not set (using GitHub storage only)');
+      return null;
+    }
+
+    supabaseInstance = createClient(url, key);
+  }
+  return supabaseInstance;
+}
+
+// Backward compatibility
+export const supabase = new Proxy({}, {
+  get: (target, prop) => {
+    const instance = getSupabase();
+    return instance ? instance[prop] : null;
+  }
+});
 
 export async function apiLogin(username, password) {
   const { data, error } = await supabase
