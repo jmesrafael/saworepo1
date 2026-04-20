@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-04-20T09:52:14.377Z",
+  "updatedAt": "2026-04-20T09:57:16.117Z",
   "products": [
     {
       "id": "50834970-4527-4954-9cd7-8ac89d7bd70f",
@@ -6180,8 +6180,147 @@
       "updated_at": "2026-04-20T09:50:58.434+00:00",
       "is_deleted": false,
       "source": "supabase"
+    },
+    {
+      "id": "e5ed7b73-5325-4303-8612-cd060cfbfb5d",
+      "name": "Aries Round NB",
+      "slug": "aries-round-nb",
+      "description": "<table>\n  <thead>\n<tr>\n  <th>Heater\n<br>Model</th>\n  <th>kW</th>\n  <th>Sauna Room<br>min. (m3) max.</th>\n  <th>Size of Heater (mm)<br>Length Width Height</th>\n  <th>Stones<br>(kg)</th>\n  <th>Control</th>\n  <th colspan=\"2\">Minimum Safety Distances<br>A | B</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n  <td>ARI3-45NB-P-C</td>\n  <td>4.5</td>\n  <td>3 – 6</td>\n  <td>300 x 300 x 930</td>\n  <td>60</td>\n  <td>Built-in (8+4h)</td>\n  <td>100</td>\n  <td>1900</td>\n</tr>\n<tr>\n  <td>ARI3-60NB-P-C</td>\n  <td>6.0</td>\n  <td>5 – 9</td>\n  <td>300 x 300 x 930</td>\n  <td>60</td>\n  <td>Built-in (8+4h)</td>\n  <td>100</td>\n  <td>1900</td>\n</tr>\n<tr>\n  <td>ARI3-75NB-P-C</td>\n  <td>7.5</td>\n  <td>7 – 12</td>\n  <td>300 x 300 x 930</td>\n  <td>60</td>\n  <td>Built-in (8+4h)</td>\n  <td>100</td>\n  <td>1900</td>\n</tr>\n<tr>\n  <td>ARI3-90NB-P-C</td>\n  <td>9.0</td>\n  <td>8 – 14</td>\n  <td>300 x 300 x 930</td>\n  <td>60</td>\n  <td>Built-in (8+4h)</td>\n  <td>100</td>\n  <td>1900</td>\n</tr>\n<tr>\n  <td>ARI6-90NB-P-C</td>\n  <td>9.0</td>\n  <td>8 – 14</td>\n  <td>440 x 440 x 930</td>\n  <td>110</td>\n  <td>Built-in (8+4h)</td>\n  <td>100</td>\n  <td>1900</td>\n</tr></tbody></table>",
+      "short_description": "<span style=\"text-align: justify;\">The </span><strong style=\"text-align: justify;\">Aries Round</strong><span style=\"text-align: justify;\"> shares the minimalist elegance of all Tower heaters. Tall and space-saving, it distributes heat evenly and is ideal for installation in the center of the sauna or embedded into a bench. Its built-in stone spacer ensures faster, efficient heating of the sauna stones and a longer life span for the heating elements.</span>",
+      "brand": "SAWO",
+      "type": "Aries Round",
+      "spec_table": null,
+      "resources": null,
+      "status": "published",
+      "visible": true,
+      "featured": false,
+      "sort_order": 0,
+      "categories": [
+        "Tower"
+      ],
+      "tags": [
+        "4.5 – 9.0kW",
+        "Bench",
+        "NB",
+        "Round",
+        "Tower",
+        "4.5 kW",
+        "6.0 kW",
+        "7.5 kW",
+        "9.0 kW",
+        "ARI3-45NB-P-C",
+        "ARI3-60NB-P-C",
+        "ARI3-75NB-P-C",
+        "ARI3-90NB-P-C",
+        "ARI6-90NB-P-C"
+      ],
+      "features": [
+        "Power range: 4.5 – 9.0kW",
+        "Available control: Built-in (NB)",
+        "Built-in stone spacer",
+        "Adjustable legs",
+        "Stainless steel casing",
+        "Optional heater guard",
+        "Optional integration collar"
+      ],
+      "auto_tag_columns": null,
+      "thumbnail": "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776678876338_iphfb52l59l.webp",
+      "images": [
+        "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776678879729_a7ordpv6gfn.webp"
+      ],
+      "spec_images": [
+        "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776678957062_ad6wblhwj1e.webp"
+      ],
+      "files": [
+        {
+          "url": "https://www.sawo.com/wp-content/uploads/2025/06/Aries-Round-NS-NB_FiEn-3P-1P-1.pdf",
+          "name": "Aries Round NS NB FiEn 3P 1P 1"
+        }
+      ],
+      "created_by": null,
+      "created_by_username": "Edgar",
+      "updated_by_username": "Edgar",
+      "created_at": "2026-04-20T09:54:17.242456+00:00",
+      "updated_at": "2026-04-20T09:56:04.796+00:00",
+      "is_deleted": false,
+      "source": "supabase"
+    },
+    {
+      "id": "653321e2-0c80-44d2-af2b-53fe4d15bd6d",
+      "name": "Aries Round Black NS",
+      "slug": "aries-round-black-ns",
+      "description": "<table>\n  <thead>\n<tr>\n  <th>Heater\n<br>Model</th>\n  <th>kW</th>\n  <th>Sauna Room<br>min. (m3) max.</th>\n  <th>Size of Heater (mm)<br>Length Width Height</th>\n  <th>Stones<br>(kg)</th>\n  <th>Control</th>\n  <th colspan=\"2\">Minimum Safety Distances<br>A | B</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n  <td>ARI3-45NS-BL-P-C</td>\n  <td>4.5</td>\n  <td>3 – 6</td>\n  <td>300 x 300 x 930</td>\n  <td>60</td>\n  <td>Separate</td>\n  <td>100</td>\n  <td>1900</td>\n</tr>\n<tr>\n  <td>ARI3-60NS-BL-P-C</td>\n  <td>6.0</td>\n  <td>5 – 9</td>\n  <td>300 x 300 x 930</td>\n  <td>60</td>\n  <td>Separate</td>\n  <td>100</td>\n  <td>1900</td>\n</tr>\n<tr>\n  <td>ARI3-75NS-BL-P-C</td>\n  <td>7.5</td>\n  <td>7 – 12</td>\n  <td>300 x 300 x 930</td>\n  <td>60</td>\n  <td>Separate</td>\n  <td>100</td>\n  <td>1900</td>\n</tr>\n<tr>\n  <td>ARI3-90NS-BL-P-C</td>\n  <td>9.0</td>\n  <td>8 – 14</td>\n  <td>300 x 300 x 930</td>\n  <td>60</td>\n  <td>Separate</td>\n  <td>100</td>\n  <td>1900</td>\n</tr>\n<tr>\n  <td>ARI6-90NS-BL-P-C</td>\n  <td>9.0</td>\n  <td>8 – 14</td>\n  <td>460 x 460 x 960</td>\n  <td>110</td>\n  <td>Separate</td>\n  <td>100</td>\n  <td>1900</td>\n</tr>\n<tr>\n  <td>ARI6-105NS-BL-P</td>\n  <td>10.5</td>\n  <td>9 – 15</td>\n  <td>440 x 440 x 930</td>\n  <td>110</td>\n  <td>Separate</td>\n  <td>100</td>\n  <td>1900</td>\n</tr>\n<tr>\n  <td>ARI6-120NS-BL-P</td>\n  <td>12.0</td>\n  <td>10 – 18</td>\n  <td>440 x 440 x 930</td>\n  <td>110</td>\n  <td>Separate</td>\n  <td>100</td>\n  <td>2100</td>\n</tr>\n<tr>\n  <td>ARI6-150NS-BL-P</td>\n  <td>15.0</td>\n  <td>13 – 23</td>\n  <td>440 x 440 x 930</td>\n  <td>110</td>\n  <td>Separate</td>\n  <td>100</td>\n  <td>2100</td>\n</tr>\n<tr>\n  <td>ARI6-180NS-BL-P</td>\n  <td>18.0</td>\n  <td>15 – 26</td>\n  <td>440 x 440 x 930</td>\n  <td>110</td>\n  <td>Separate</td>\n  <td>125</td>\n  <td>2100</td>\n</tr></tbody></table>",
+      "short_description": "<span style=\"text-align: justify;\">The </span><strong style=\"text-align: justify;\">Aries Round</strong><span style=\"text-align: justify;\"> shares the minimalist elegance of all Tower heaters. Tall and space-saving, it distributes heat evenly and is ideal for installation in the center of the sauna or embedded into a bench. Its built-in stone spacer ensures faster, efficient heating of the sauna stones and a longer life span for the heating elements.</span>",
+      "brand": "SAWO",
+      "type": "Aries Round",
+      "spec_table": null,
+      "resources": null,
+      "status": "published",
+      "visible": true,
+      "featured": false,
+      "sort_order": 0,
+      "categories": [
+        "Tower"
+      ],
+      "tags": [
+        "18.0kW",
+        "Bench",
+        "Black",
+        "Innova",
+        "NS",
+        "Round",
+        "Saunova",
+        "Tower",
+        "4.5 kW",
+        "6.0 kW",
+        "7.5 kW",
+        "9.0 kW",
+        "10.5 kW",
+        "12.0 kW",
+        "15.0 kW",
+        "18.0 kW",
+        "ARI3-45NS-BL-P-C",
+        "ARI3-60NS-BL-P-C",
+        "ARI3-75NS-BL-P-C",
+        "ARI3-90NS-BL-P-C",
+        "ARI6-90NS-BL-P-C",
+        "ARI6-105NS-BL-P",
+        "ARI6-120NS-BL-P",
+        "ARI6-150NS-BL-P",
+        "ARI6-180NS-BL-P"
+      ],
+      "features": [
+        "Power range: 4.5 – 18.0kW",
+        "Available control: Saunova/Innova (NS)",
+        "Built-in stone spacer",
+        "Adjustable legs",
+        "Black metal casing",
+        "Optional heater guard",
+        "Optional integration collar"
+      ],
+      "auto_tag_columns": null,
+      "thumbnail": "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776678683325_hnqsj15pc35.webp",
+      "images": [
+        "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776678686455_zj9ps8gs07.webp"
+      ],
+      "spec_images": [
+        "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776678814377_t4fr2golotn.webp"
+      ],
+      "files": [
+        {
+          "url": "https://www.sawo.com/wp-content/uploads/2025/06/Aries-Round-NS-NB_FiEn-3P-1P-3.pdf",
+          "name": "Aries Round NS NB FiEn 3P 1P 3"
+        }
+      ],
+      "created_by": null,
+      "created_by_username": "Edgar",
+      "updated_by_username": "Edgar",
+      "created_at": "2026-04-20T09:53:22.866523+00:00",
+      "updated_at": "2026-04-20T09:53:53.365+00:00",
+      "is_deleted": false,
+      "source": "supabase"
     }
   ],
   "syncSource": "supabase-merge",
-  "syncedAt": "2026-04-20T09:52:14.378Z"
+  "syncedAt": "2026-04-20T09:57:16.117Z"
 }
