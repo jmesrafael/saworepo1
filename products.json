@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-04-20T08:28:48.536Z",
+  "updatedAt": "2026-04-20T08:39:50.978Z",
   "products": [
     {
       "id": "50834970-4527-4954-9cd7-8ac89d7bd70f",
@@ -3904,6 +3904,35 @@
       "updated_by_username": null,
       "created_at": "2026-04-20T08:28:47.215Z",
       "updated_at": "2026-04-20T08:28:47.215Z",
+      "is_deleted": false
+    },
+    {
+      "id": "2aa391cc-b7cd-4857-977b-e94dfeab5101",
+      "name": "HellloEgg",
+      "slug": "hellloegg",
+      "description": "",
+      "short_description": "",
+      "brand": "SAWO",
+      "type": "",
+      "spec_table": null,
+      "resources": null,
+      "status": "published",
+      "visible": true,
+      "featured": false,
+      "sort_order": 0,
+      "categories": [],
+      "tags": [],
+      "features": [],
+      "auto_tag_columns": [],
+      "thumbnail": "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/-1776674373125.webp",
+      "images": [],
+      "spec_images": [],
+      "files": [],
+      "created_by": null,
+      "created_by_username": null,
+      "updated_by_username": null,
+      "created_at": "2026-04-20T08:39:49.409Z",
+      "updated_at": "2026-04-20T08:39:49.409Z",
       "is_deleted": false
     }
   ]
