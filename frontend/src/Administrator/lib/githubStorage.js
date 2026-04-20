@@ -104,6 +104,63 @@ async function commitFile(repo, path, base64Content, message) {
   }
 }
 
+// internal: delete any file from any repo
+
+async function deleteFile(repo, path, message) {
+  try {
+    if (!OWNER) throw new Error('REACT_APP_GITHUB_OWNER not set in environment')
+    if (!GITHUB_PAT) throw new Error('REACT_APP_GITHUB_PAT not set in environment')
+
+    let sha;
+    try {
+      sha = await getFileSha(repo, path)
+    } catch (err) {
+      console.warn(`[GitHub] File ${path} not found, skipping delete:`, err.message)
+      return null
+    }
+
+    if (!sha) {
+      console.warn(`[GitHub] Could not get SHA for ${path}, skipping delete`)
+      return null
+    }
+
+    try {
+      const result = await octokit.repos.deleteFile({
+        owner: OWNER, repo, path, message, sha
+      })
+      console.log(`✅ [GitHub] Successfully deleted ${path} from ${repo}:`, result.data.commit.sha)
+      return result
+    } catch (err) {
+      console.error(`[GitHub] Failed to delete ${path} from ${repo}:`, err.message)
+      if (err.status === 401 || err.status === 403) {
+        throw new Error(`Authentication failed. Check your GitHub credentials.`)
+      }
+      throw new Error(`GitHub delete failed: ${err.message}`)
+    }
+  } catch (err) {
+    console.error('[GitHub] Unexpected error in deleteFile:', err)
+    throw err
+  }
+}
+
+// delete a product image from saworepo2/images/
+
+export async function deleteImage(filename) {
+  try {
+    if (!filename || typeof filename !== 'string') {
+      throw new Error(`Invalid filename: expected string, got ${typeof filename}`)
+    }
+
+    const path = `images/${filename}`
+    console.log(`🗑️ [GitHub] Deleting image ${filename} from ${IMAGES_REPO}...`)
+    await deleteFile(IMAGES_REPO, path, `chore: remove image ${filename}`)
+    console.log(`✅ [GitHub] Image deleted: ${filename}`)
+  } catch (err) {
+    console.error(`[GitHub] Failed to delete image ${filename}:`, err)
+    throw new Error(`Failed to delete image ${filename}: ${err.message}`)
+  }
+}
+
 // upload a product image to saworepo2/images/
 
 export async function uploadImage(filename, base64Content) {
@@ -124,6 +181,24 @@ export async function uploadImage(filename, base64Content) {
   } catch (err) {
     console.error(`[GitHub] Failed to upload image ${filename}:`, err)
     throw new Error(`Failed to upload image ${filename}: ${err.message}`)
+  }
+}
+
+// delete a product PDF from saworepo2/pdfs/
+
+export async function deletePdf(filename) {
+  try {
+    if (!filename || typeof filename !== 'string') {
+      throw new Error(`Invalid filename: expected string, got ${typeof filename}`)
+    }
+
+    const path = `pdfs/${filename}`
+    console.log(`🗑️ [GitHub] Deleting PDF ${filename} from ${IMAGES_REPO}...`)
+    await deleteFile(IMAGES_REPO, path, `chore: remove pdf ${filename}`)
+    console.log(`✅ [GitHub] PDF deleted: ${filename}`)
+  } catch (err) {
+    console.error(`[GitHub] Failed to delete PDF ${filename}:`, err)
+    throw new Error(`Failed to delete PDF ${filename}: ${err.message}`)
   }
 }
 

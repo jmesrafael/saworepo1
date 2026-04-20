@@ -3,6 +3,8 @@
 import {
   uploadImage,
   uploadPdf,
+  deleteImage,
+  deletePdf,
   fetchCurrentProducts,
   rewriteProductsJson,
 } from './githubStorage'
@@ -360,13 +362,67 @@ export async function editProduct(productId, formData, newThumbnailFile, newImag
   }
 }
 
-// Delete product from GitHub and local storage
+// Delete product from GitHub and local storage (including associated images/PDFs)
 export async function deleteProduct(productId) {
   let remaining;
+  let productToDelete;
 
   if (!DEV_MODE) {
     try {
       const currentProducts = await fetchCurrentProducts()
+      productToDelete = currentProducts.find(p => p.id === productId)
+
+      // Delete associated images and PDFs from saworepo2
+      if (productToDelete) {
+        const filesToDelete = []
+
+        // Extract filenames from image URLs (format: https://cdn.jsdelivr.net/gh/owner/repo@main/images/filename)
+        if (productToDelete.thumbnail) {
+          const thumbMatch = productToDelete.thumbnail.match(/images\/(.+?)(?:\?|$)/)
+          if (thumbMatch) filesToDelete.push({ type: 'image', name: thumbMatch[1] })
+        }
+
+        if (Array.isArray(productToDelete.images)) {
+          productToDelete.images.forEach(url => {
+            if (typeof url === 'string') {
+              const imgMatch = url.match(/images\/(.+?)(?:\?|$)/)
+              if (imgMatch) filesToDelete.push({ type: 'image', name: imgMatch[1] })
+            }
+          })
+        }
+
+        if (Array.isArray(productToDelete.spec_images)) {
+          productToDelete.spec_images.forEach(url => {
+            if (typeof url === 'string') {
+              const specMatch = url.match(/images\/(.+?)(?:\?|$)/)
+              if (specMatch) filesToDelete.push({ type: 'image', name: specMatch[1] })
+            }
+          })
+        }
+
+        if (Array.isArray(productToDelete.files)) {
+          productToDelete.files.forEach(file => {
+            if (file && file.url && typeof file.url === 'string') {
+              const pdfMatch = file.url.match(/pdfs\/(.+?)(?:\?|$)/)
+              if (pdfMatch) filesToDelete.push({ type: 'pdf', name: pdfMatch[1] })
+            }
+          })
+        }
+
+        // Delete all extracted files
+        for (const file of filesToDelete) {
+          try {
+            if (file.type === 'image') {
+              await deleteImage(file.name)
+            } else if (file.type === 'pdf') {
+              await deletePdf(file.name)
+            }
+          } catch (err) {
+            console.warn(`Warning: Failed to delete ${file.type} ${file.name}:`, err.message)
+          }
+        }
+      }
+
       remaining = currentProducts.filter(p => p.id !== productId)
       await rewriteProductsJson(remaining)
       console.log(`✅ Product deleted and committed to GitHub: ${productId}`)
@@ -396,7 +452,4 @@ export async function deleteProduct(productId) {
   } catch (err) {
     console.error('Error saving products locally after delete:', err)
   }
-
-  // Note: image/PDF files in saworepo2 are intentionally left in place.
-  // saworepo2 is append-only – old files don't break anything and serve as history.
 }
