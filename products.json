@@ -1,5 +1,6 @@
 {
-  "updatedAt": "2026-04-20T02:47:17.213Z",
+  "updatedAt": "2026-04-20T03:04:13.932Z",
+  "source": "migrated-from-supabase",
   "products": [
     {
       "id": "50834970-4527-4954-9cd7-8ac89d7bd70f",
@@ -33,23 +34,8 @@
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776156727881_b483atddk2v.webp"
       ],
       "spec_images": [],
-      "files": [
-        {
-          "name": "Innova Classic Built In En",
-          "url": "https://secret-newsite.sawo.com/wp-content/uploads/Manuals/Innova%20Series/Innova-Classic-Built-In_En.pdf"
-        }
-      ],
-      "createdAt": "2026-04-14T08:53:40.879526+00:00",
-      "type": "Innova",
-      "spec_table": null,
-      "resources": null,
-      "featured": false,
-      "is_deleted": false,
-      "auto_tag_columns": [],
-      "created_by": null,
-      "created_by_username": "Rafael",
-      "updated_by_username": "Rafael",
-      "updated_at": "2026-04-14T08:54:06.877+00:00"
+      "files": [],
+      "createdAt": "2026-04-14T08:53:40.879526+00:00"
     },
     {
       "id": "d46fa703-6662-4caa-b0d2-d9f648d0f779",
@@ -85,23 +71,8 @@
       "spec_images": [
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776063550364_hiiue7pvz8d.webp"
       ],
-      "files": [
-        {
-          "name": "Nordex Mini Ni2 FiEn 3P 1P Edited 1",
-          "url": "https://www.sawo.com/wp-content/uploads/2025/07/Nordex-Mini-Ni2_FiEn-3P-1P-Edited-1.pdf"
-        }
-      ],
-      "createdAt": "2026-04-13T07:00:03.970573+00:00",
-      "type": "Nordex",
-      "spec_table": null,
-      "resources": null,
-      "featured": false,
-      "is_deleted": false,
-      "auto_tag_columns": [],
-      "created_by": null,
-      "created_by_username": null,
-      "updated_by_username": "Rafael",
-      "updated_at": "2026-04-14T05:53:10.129+00:00"
+      "files": [],
+      "createdAt": "2026-04-13T07:00:03.970573+00:00"
     },
     {
       "id": "9d43ef15-615c-4354-aa32-8463fa50d186",
@@ -135,23 +106,8 @@
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776152656217_51mz6uxho6v.webp"
       ],
       "spec_images": [],
-      "files": [
-        {
-          "name": "Innova Classic 2.0 En",
-          "url": "https://secret-newsite.sawo.com/wp-content/uploads/Manuals/Innova%20Series/Innova-Classic-2.0_En.pdf"
-        }
-      ],
-      "createdAt": "2026-04-14T07:44:17.754359+00:00",
-      "type": "Innova",
-      "spec_table": null,
-      "resources": null,
-      "featured": false,
-      "is_deleted": false,
-      "auto_tag_columns": [],
-      "created_by": null,
-      "created_by_username": "Rafael",
-      "updated_by_username": "Rafael",
-      "updated_at": "2026-04-14T08:17:04.656+00:00"
+      "files": [],
+      "createdAt": "2026-04-14T07:44:17.754359+00:00"
     },
     {
       "id": "eb13317a-5636-4997-811f-cd2a5a7fadc4",
@@ -179,17 +135,7 @@
       ],
       "spec_images": [],
       "files": [],
-      "createdAt": "2026-04-14T09:12:51.939989+00:00",
-      "type": "Interface Holder",
-      "spec_table": null,
-      "resources": null,
-      "featured": false,
-      "is_deleted": false,
-      "auto_tag_columns": [],
-      "created_by": null,
-      "created_by_username": "Rafael",
-      "updated_by_username": "Rafael",
-      "updated_at": "2026-04-14T09:13:48.993+00:00"
+      "createdAt": "2026-04-14T09:12:51.939989+00:00"
     },
     {
       "id": "4a4c1eb7-1713-47e1-b5f7-9060355180d0",
@@ -228,23 +174,8 @@
       "spec_images": [
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776222812347_my2yyqjp3a.webp"
       ],
-      "files": [
-        {
-          "name": "Scandia NS NB FiEn 3P 1P",
-          "url": "https://secret-newsite.sawo.com/wp-content/uploads/Manuals/Wall%20Mounted%20Series/Scandia-NS-NB_FiEn-3P-1P.pdf"
-        }
-      ],
-      "createdAt": "2026-04-15T03:14:27.101885+00:00",
-      "type": "Scandia",
-      "spec_table": null,
-      "resources": null,
-      "featured": false,
-      "is_deleted": false,
-      "auto_tag_columns": [],
-      "created_by": null,
-      "created_by_username": "Rafael",
-      "updated_by_username": "Rafael",
-      "updated_at": "2026-04-15T03:14:53.037+00:00"
+      "files": [],
+      "createdAt": "2026-04-15T03:14:27.101885+00:00"
     },
     {
       "id": "f42926da-8a5f-4e67-a095-7d165da3c1b4",
@@ -274,17 +205,7 @@
       ],
       "spec_images": [],
       "files": [],
-      "createdAt": "2026-04-14T06:33:30.88707+00:00",
-      "type": "Coming Soon",
-      "spec_table": null,
-      "resources": null,
-      "featured": false,
-      "is_deleted": false,
-      "auto_tag_columns": [],
-      "created_by": null,
-      "created_by_username": "Rafael",
-      "updated_by_username": "Rafael",
-      "updated_at": "2026-04-14T06:39:14.887+00:00"
+      "createdAt": "2026-04-14T06:33:30.88707+00:00"
     },
     {
       "id": "19063a1d-6d6a-463d-a24c-ac50b43d18e6",
@@ -319,23 +240,8 @@
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776153421743_efzjghk9xdl.webp"
       ],
       "spec_images": [],
-      "files": [
-        {
-          "name": "Innova Classic 2.0 Built In En",
-          "url": "https://secret-newsite.sawo.com/wp-content/uploads/Manuals/Innova%20Series/Innova-Classic-2.0-Built-In_En.pdf"
-        }
-      ],
-      "createdAt": "2026-04-14T07:59:07.367236+00:00",
-      "type": "Innova",
-      "spec_table": null,
-      "resources": null,
-      "featured": false,
-      "is_deleted": false,
-      "auto_tag_columns": [],
-      "created_by": null,
-      "created_by_username": "Rafael",
-      "updated_by_username": "Rafael",
-      "updated_at": "2026-04-14T08:16:52.961+00:00"
+      "files": [],
+      "createdAt": "2026-04-14T07:59:07.367236+00:00"
     },
     {
       "id": "d93eb2cf-d29a-47be-8212-c0d3b05fce0b",
@@ -378,23 +284,8 @@
       "spec_images": [
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776211563146_oul2f4igk3a.webp"
       ],
-      "files": [
-        {
-          "name": "Nordex Mini NS NB FiEn 3P 1P",
-          "url": "https://secret-newsite.sawo.com/wp-content/uploads/Manuals/Wall%20Mounted%20Series/Nordex-Mini-NS-NB_FiEn-3P-1P.pdf"
-        }
-      ],
-      "createdAt": "2026-04-15T00:06:38.23576+00:00",
-      "type": "Nordex Mini",
-      "spec_table": null,
-      "resources": null,
-      "featured": false,
-      "is_deleted": false,
-      "auto_tag_columns": [],
-      "created_by": null,
-      "created_by_username": "Rafael",
-      "updated_by_username": "Rafael",
-      "updated_at": "2026-04-15T00:14:33.396+00:00"
+      "files": [],
+      "createdAt": "2026-04-15T00:06:38.23576+00:00"
     },
     {
       "id": "853702cf-2a61-4294-9f40-6f41cbfe7583",
@@ -413,17 +304,7 @@
       "images": [],
       "spec_images": [],
       "files": [],
-      "createdAt": "2026-04-20T00:28:58.72364+00:00",
-      "type": null,
-      "spec_table": null,
-      "resources": null,
-      "featured": false,
-      "is_deleted": false,
-      "auto_tag_columns": [],
-      "created_by": null,
-      "created_by_username": "Rafael",
-      "updated_by_username": "Rafael",
-      "updated_at": "2026-04-20T00:29:28.836+00:00"
+      "createdAt": "2026-04-20T00:28:58.72364+00:00"
     },
     {
       "id": "8a27b22f-0506-478c-a207-2484c68cfdfb",
@@ -451,17 +332,7 @@
       "images": [],
       "spec_images": [],
       "files": [],
-      "createdAt": "2026-04-14T09:00:49.431493+00:00",
-      "type": "Spare Parts",
-      "spec_table": null,
-      "resources": null,
-      "featured": false,
-      "is_deleted": false,
-      "auto_tag_columns": [],
-      "created_by": null,
-      "created_by_username": "Rafael",
-      "updated_by_username": "Rafael",
-      "updated_at": "2026-04-14T09:04:40.747+00:00"
+      "createdAt": "2026-04-14T09:00:49.431493+00:00"
     },
     {
       "id": "96070ec2-7666-4b98-8ab2-068f595a91d3",
@@ -486,17 +357,7 @@
       "images": [],
       "spec_images": [],
       "files": [],
-      "createdAt": "2026-04-14T09:15:35.457648+00:00",
-      "type": "Sensor",
-      "spec_table": null,
-      "resources": null,
-      "featured": false,
-      "is_deleted": false,
-      "auto_tag_columns": [],
-      "created_by": null,
-      "created_by_username": "Rafael",
-      "updated_by_username": "Rafael",
-      "updated_at": "2026-04-14T09:16:01.713+00:00"
+      "createdAt": "2026-04-14T09:15:35.457648+00:00"
     },
     {
       "id": "7ed5a5f1-e3e5-4601-8b86-bc606f91e392",
@@ -531,23 +392,8 @@
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776149043780_pdzdsbtkhdr.webp"
       ],
       "spec_images": [],
-      "files": [
-        {
-          "name": "Saunova 2.0 En",
-          "url": "https://www.sawo.com/wp-content/uploads/2026/03/Saunova_2.0_En.pdf"
-        }
-      ],
-      "createdAt": "2026-04-14T06:40:35.151765+00:00",
-      "type": "Saunova",
-      "spec_table": null,
-      "resources": null,
-      "featured": false,
-      "is_deleted": false,
-      "auto_tag_columns": [],
-      "created_by": null,
-      "created_by_username": "Rafael",
-      "updated_by_username": "Rafael",
-      "updated_at": "2026-04-14T06:44:28.666+00:00"
+      "files": [],
+      "createdAt": "2026-04-14T06:40:35.151765+00:00"
     },
     {
       "id": "3ec10896-68a3-4450-8b24-a35b50a1c6c7",
@@ -572,17 +418,7 @@
       "images": [],
       "spec_images": [],
       "files": [],
-      "createdAt": "2026-04-14T09:19:45.271633+00:00",
-      "type": "Sensor",
-      "spec_table": null,
-      "resources": null,
-      "featured": false,
-      "is_deleted": false,
-      "auto_tag_columns": [],
-      "created_by": null,
-      "created_by_username": "Rafael",
-      "updated_by_username": "Rafael",
-      "updated_at": "2026-04-14T09:20:11.508+00:00"
+      "createdAt": "2026-04-14T09:19:45.271633+00:00"
     },
     {
       "id": "7fc76dd6-2520-4759-a7d1-59b6d22e20b9",
@@ -620,23 +456,8 @@
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776154448856_lph6b9vs14.webp"
       ],
       "spec_images": [],
-      "files": [
-        {
-          "name": "Innova 2.0 Power Controller En",
-          "url": "https://secret-newsite.sawo.com/wp-content/uploads/Manuals/Innova%20Series/Innova-2.0-Power-Controller_En.pdf"
-        }
-      ],
-      "createdAt": "2026-04-14T08:15:02.237872+00:00",
-      "type": "Innova",
-      "spec_table": null,
-      "resources": null,
-      "featured": false,
-      "is_deleted": false,
-      "auto_tag_columns": [],
-      "created_by": null,
-      "created_by_username": "Rafael",
-      "updated_by_username": "Rafael",
-      "updated_at": "2026-04-14T08:17:18.971+00:00"
+      "files": [],
+      "createdAt": "2026-04-14T08:15:02.237872+00:00"
     },
     {
       "id": "0fbd2098-f824-4f48-9fec-a36a75b0c471",
@@ -680,23 +501,8 @@
       "spec_images": [
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776212411886_csa3nssqbnp.webp"
       ],
-      "files": [
-        {
-          "name": "Nordex Mini NS NB FiEn 3P 1P",
-          "url": "https://secret-newsite.sawo.com/wp-content/uploads/Manuals/Wall%20Mounted%20Series/Nordex-Mini-NS-NB_FiEn-3P-1P.pdf"
-        }
-      ],
-      "createdAt": "2026-04-15T00:20:39.071543+00:00",
-      "type": "Nordex Mini",
-      "spec_table": null,
-      "resources": null,
-      "featured": false,
-      "is_deleted": false,
-      "auto_tag_columns": [],
-      "created_by": null,
-      "created_by_username": "Rafael",
-      "updated_by_username": "Rafael",
-      "updated_at": "2026-04-15T00:21:05.602+00:00"
+      "files": [],
+      "createdAt": "2026-04-15T00:20:39.071543+00:00"
     },
     {
       "id": "16492285-3ef7-436b-9606-9a01304cf309",
@@ -724,23 +530,8 @@
       "thumbnail": "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776154812061_qv3q2hfrx6d.webp",
       "images": [],
       "spec_images": [],
-      "files": [
-        {
-          "name": "Innova 2.0 Contactor Unit En",
-          "url": "https://www.sawo.com/wp-content/uploads/2025/04/Innova-2.0-Contactor-Unit_En.pdf"
-        }
-      ],
-      "createdAt": "2026-04-14T08:21:13.874414+00:00",
-      "type": "Innova",
-      "spec_table": null,
-      "resources": null,
-      "featured": false,
-      "is_deleted": false,
-      "auto_tag_columns": [],
-      "created_by": null,
-      "created_by_username": "Rafael",
-      "updated_by_username": "Rafael",
-      "updated_at": "2026-04-14T08:22:04.147+00:00"
+      "files": [],
+      "createdAt": "2026-04-14T08:21:13.874414+00:00"
     },
     {
       "id": "6dbf9605-4d25-4c60-a02e-57d5a878001b",
@@ -770,17 +561,7 @@
       "images": [],
       "spec_images": [],
       "files": [],
-      "createdAt": "2026-04-14T09:01:33.530502+00:00",
-      "type": "Spare Parts",
-      "spec_table": null,
-      "resources": null,
-      "featured": false,
-      "is_deleted": false,
-      "auto_tag_columns": [],
-      "created_by": null,
-      "created_by_username": "Rafael",
-      "updated_by_username": "Rafael",
-      "updated_at": "2026-04-14T09:04:33.501+00:00"
+      "createdAt": "2026-04-14T09:01:33.530502+00:00"
     },
     {
       "id": "2f5d7d0c-a9cf-44f0-bc72-36968d5602ad",
@@ -811,23 +592,8 @@
       "thumbnail": "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776149117216_no2wfvd6gkl.webp",
       "images": [],
       "spec_images": [],
-      "files": [
-        {
-          "name": "Saunova 2.0 Built In En",
-          "url": "https://secret-newsite.sawo.com/wp-content/uploads/Manuals/Saunova%20Series/Saunova-2.0-Built-In_En.pdf"
-        }
-      ],
-      "createdAt": "2026-04-14T06:48:47.767729+00:00",
-      "type": "Saunova",
-      "spec_table": null,
-      "resources": null,
-      "featured": false,
-      "is_deleted": false,
-      "auto_tag_columns": [],
-      "created_by": null,
-      "created_by_username": "Rafael",
-      "updated_by_username": "Rafael",
-      "updated_at": "2026-04-14T07:12:02.782+00:00"
+      "files": [],
+      "createdAt": "2026-04-14T06:48:47.767729+00:00"
     },
     {
       "id": "ace7c2a9-0c4c-45f3-8dd3-ca9d494dce17",
@@ -866,23 +632,8 @@
       "spec_images": [
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776056995320_ay1z23sgfk.webp"
       ],
-      "files": [
-        {
-          "name": "Cumulus Ni2 FiEn 3P 1P Edited",
-          "url": "https://www.sawo.com/wp-content/uploads/2025/07/Cumulus-Ni2_FiEn-3P-1P-Edited.pdf"
-        }
-      ],
-      "createdAt": "2026-04-13T05:09:58.794355+00:00",
-      "type": "Cumulus",
-      "spec_table": null,
-      "resources": null,
-      "featured": false,
-      "is_deleted": false,
-      "auto_tag_columns": [],
-      "created_by": null,
-      "created_by_username": null,
-      "updated_by_username": null,
-      "updated_at": "2026-04-13T05:09:58.794355+00:00"
+      "files": [],
+      "createdAt": "2026-04-13T05:09:58.794355+00:00"
     },
     {
       "id": "2fbd56fa-6c44-47af-b463-d738580ff741",
@@ -916,23 +667,8 @@
       "thumbnail": "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776150763377_vlhhh47w3f.webp",
       "images": [],
       "spec_images": [],
-      "files": [
-        {
-          "name": "Saunova 2.0 Power Controller En",
-          "url": "https://www.sawo.com/wp-content/uploads/2026/03/Saunova-2.0-Power-Controller_En.pdf"
-        }
-      ],
-      "createdAt": "2026-04-14T07:14:04.388205+00:00",
-      "type": "Saunova",
-      "spec_table": null,
-      "resources": null,
-      "featured": false,
-      "is_deleted": false,
-      "auto_tag_columns": [],
-      "created_by": null,
-      "created_by_username": "Rafael",
-      "updated_by_username": "Rafael",
-      "updated_at": "2026-04-14T07:37:18.737+00:00"
+      "files": [],
+      "createdAt": "2026-04-14T07:14:04.388205+00:00"
     },
     {
       "id": "84781ed8-1c12-4fa7-bf75-4162b4580f34",
@@ -973,23 +709,8 @@
       "spec_images": [
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776043896736_p44uqtbqcjc.webp"
       ],
-      "files": [
-        {
-          "name": "Nordex Ni2 FiEn 3P 1P Edited",
-          "url": "https://www.sawo.com/wp-content/uploads/2025/07/Nordex-Ni2_FiEn-3P-1P-Edited.pdf"
-        }
-      ],
-      "createdAt": "2026-04-13T01:32:41.894499+00:00",
-      "type": "Nordex",
-      "spec_table": null,
-      "resources": null,
-      "featured": false,
-      "is_deleted": false,
-      "auto_tag_columns": [],
-      "created_by": null,
-      "created_by_username": null,
-      "updated_by_username": null,
-      "updated_at": "2026-04-13T01:32:41.894499+00:00"
+      "files": [],
+      "createdAt": "2026-04-13T01:32:41.894499+00:00"
     },
     {
       "id": "7db07a84-cc67-482e-8933-1903e8111e6e",
@@ -1016,17 +737,7 @@
       "images": [],
       "spec_images": [],
       "files": [],
-      "createdAt": "2026-04-14T09:06:45.258192+00:00",
-      "type": "Spare Parts",
-      "spec_table": null,
-      "resources": null,
-      "featured": false,
-      "is_deleted": false,
-      "auto_tag_columns": [],
-      "created_by": null,
-      "created_by_username": "Rafael",
-      "updated_by_username": "Rafael",
-      "updated_at": "2026-04-14T09:07:11.49+00:00"
+      "createdAt": "2026-04-14T09:06:45.258192+00:00"
     },
     {
       "id": "e8372b04-0cd3-4490-a09d-4ca7457132e0",
@@ -1066,23 +777,8 @@
       "spec_images": [
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776051149591_vsioprzmbko.webp"
       ],
-      "files": [
-        {
-          "name": "Nordex NS NB FiEn 3P 1P",
-          "url": "https://www.sawo.com/wp-content/uploads/2025/10/Nordex-NS-NB_FiEn-3P-1P.pdf"
-        }
-      ],
-      "createdAt": "2026-04-13T03:35:26.398403+00:00",
-      "type": "Nordex",
-      "spec_table": null,
-      "resources": null,
-      "featured": false,
-      "is_deleted": false,
-      "auto_tag_columns": [],
-      "created_by": null,
-      "created_by_username": null,
-      "updated_by_username": null,
-      "updated_at": "2026-04-13T03:35:26.398403+00:00"
+      "files": [],
+      "createdAt": "2026-04-13T03:35:26.398403+00:00"
     },
     {
       "id": "261b4c86-973f-434a-ba15-740ad0b16a20",
@@ -1119,23 +815,8 @@
       "spec_images": [
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776056890983_35ecazjudd3.webp"
       ],
-      "files": [
-        {
-          "name": "Nordex NS NB FiEn 3P 1P",
-          "url": "https://secret-newsite.sawo.com/wp-content/uploads/Manuals/Wall%20Mounted%20Series/Nordex-NS-NB_FiEn-3P-1P.pdf"
-        }
-      ],
-      "createdAt": "2026-04-13T05:09:58.809231+00:00",
-      "type": "Nordex",
-      "spec_table": null,
-      "resources": null,
-      "featured": false,
-      "is_deleted": false,
-      "auto_tag_columns": [],
-      "created_by": null,
-      "created_by_username": null,
-      "updated_by_username": null,
-      "updated_at": "2026-04-13T05:09:58.809231+00:00"
+      "files": [],
+      "createdAt": "2026-04-13T05:09:58.809231+00:00"
     },
     {
       "id": "9b16757e-fc42-4213-b33f-07a48edc4e2e",
@@ -1170,23 +851,8 @@
       "thumbnail": "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776155026420_9gvv5m477v.webp",
       "images": [],
       "spec_images": [],
-      "files": [
-        {
-          "name": "Innova Stainless Steel Touch En",
-          "url": "https://secret-newsite.sawo.com/wp-content/uploads/Manuals/Innova%20Series/Innova-Stainless-Steel-Touch_En.pdf"
-        }
-      ],
-      "createdAt": "2026-04-14T08:25:25.764342+00:00",
-      "type": "Innova",
-      "spec_table": null,
-      "resources": null,
-      "featured": false,
-      "is_deleted": false,
-      "auto_tag_columns": [],
-      "created_by": null,
-      "created_by_username": "Rafael",
-      "updated_by_username": "Rafael",
-      "updated_at": "2026-04-14T08:26:31.536+00:00"
+      "files": [],
+      "createdAt": "2026-04-14T08:25:25.764342+00:00"
     },
     {
       "id": "96c70250-e9a0-4dd4-8e0d-c4a5552f292f",
@@ -1217,17 +883,7 @@
       ],
       "spec_images": [],
       "files": [],
-      "createdAt": "2026-04-14T09:10:13.675826+00:00",
-      "type": "Interface Holder",
-      "spec_table": null,
-      "resources": null,
-      "featured": false,
-      "is_deleted": false,
-      "auto_tag_columns": [],
-      "created_by": null,
-      "created_by_username": "Rafael",
-      "updated_by_username": "Rafael",
-      "updated_at": "2026-04-14T09:10:39.916+00:00"
+      "createdAt": "2026-04-14T09:10:13.675826+00:00"
     },
     {
       "id": "9a0558ad-bde6-4530-bd3a-674e205f67bf",
@@ -1259,27 +915,8 @@
       "spec_images": [
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776039068858_9m1m7u66fnc.webp"
       ],
-      "files": [
-        {
-          "name": "Nordex Ni2 FiEn 3P 1P LINK",
-          "url": "https://www.sawo.com/wp-content/uploads/2025/07/Nordex-Ni2_FiEn-3P-1P-Edited.pdf"
-        },
-        {
-          "name": "Nordex Ni2 FiEn 3P 1P PDF FILE",
-          "url": "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-pdf/1776039143115_ryrbg787vwi.pdf"
-        }
-      ],
-      "createdAt": "2026-04-13T00:16:30.062995+00:00",
-      "type": "Nordex",
-      "spec_table": null,
-      "resources": null,
-      "featured": false,
-      "is_deleted": false,
-      "auto_tag_columns": [],
-      "created_by": null,
-      "created_by_username": null,
-      "updated_by_username": null,
-      "updated_at": "2026-04-13T00:16:30.062995+00:00"
+      "files": [],
+      "createdAt": "2026-04-13T00:16:30.062995+00:00"
     },
     {
       "id": "3c509fa8-2425-4a77-97f3-60628fd09779",
@@ -1317,23 +954,8 @@
       "spec_images": [
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776050883803_wu5co9nthv.webp"
       ],
-      "files": [
-        {
-          "name": "Nordex NS NB FiEn 3P 1P",
-          "url": "https://secret-newsite.sawo.com/wp-content/uploads/Manuals/Wall%20Mounted%20Series/Nordex-NS-NB_FiEn-3P-1P.pdf"
-        }
-      ],
-      "createdAt": "2026-04-13T03:30:43.321282+00:00",
-      "type": "Nordex",
-      "spec_table": null,
-      "resources": null,
-      "featured": false,
-      "is_deleted": false,
-      "auto_tag_columns": [],
-      "created_by": null,
-      "created_by_username": null,
-      "updated_by_username": null,
-      "updated_at": "2026-04-13T03:30:43.321282+00:00"
+      "files": [],
+      "createdAt": "2026-04-13T03:30:43.321282+00:00"
     },
     {
       "id": "bc55562a-f390-4481-a5b9-da85b7553878",
@@ -1359,17 +981,7 @@
       ],
       "spec_images": [],
       "files": [],
-      "createdAt": "2026-04-14T09:22:47.957094+00:00",
-      "type": "Sensor",
-      "spec_table": null,
-      "resources": null,
-      "featured": false,
-      "is_deleted": false,
-      "auto_tag_columns": [],
-      "created_by": null,
-      "created_by_username": "Rafael",
-      "updated_by_username": "Rafael",
-      "updated_at": "2026-04-14T09:24:00.276+00:00"
+      "createdAt": "2026-04-14T09:22:47.957094+00:00"
     },
     {
       "id": "49825108-e558-40a2-87d4-7e5d837cb07c",
@@ -1408,23 +1020,8 @@
       "spec_images": [
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776057071189_6d3tx6rfgo3.webp"
       ],
-      "files": [
-        {
-          "name": "Cumulus NS NB FiEn 3P 1P",
-          "url": "https://www.sawo.com/wp-content/uploads/2025/10/Cumulus-NS-NB_FiEn-3P-1P.pdf"
-        }
-      ],
-      "createdAt": "2026-04-13T05:13:59.604888+00:00",
-      "type": "Cumulus",
-      "spec_table": null,
-      "resources": null,
-      "featured": false,
-      "is_deleted": false,
-      "auto_tag_columns": [],
-      "created_by": null,
-      "created_by_username": null,
-      "updated_by_username": null,
-      "updated_at": "2026-04-13T05:13:59.604888+00:00"
+      "files": [],
+      "createdAt": "2026-04-13T05:13:59.604888+00:00"
     },
     {
       "id": "ae72cb7e-7891-48ca-a72b-17195a40a16b",
@@ -1462,23 +1059,8 @@
       "spec_images": [
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776057138847_7neu0y0p2wo.webp"
       ],
-      "files": [
-        {
-          "name": "Nordex NS NB FiEn 3P 1P",
-          "url": "https://secret-newsite.sawo.com/wp-content/uploads/Manuals/Wall%20Mounted%20Series/Nordex-NS-NB_FiEn-3P-1P.pdf"
-        }
-      ],
-      "createdAt": "2026-04-13T05:13:11.550698+00:00",
-      "type": "Nordex",
-      "spec_table": null,
-      "resources": null,
-      "featured": false,
-      "is_deleted": false,
-      "auto_tag_columns": [],
-      "created_by": null,
-      "created_by_username": null,
-      "updated_by_username": null,
-      "updated_at": "2026-04-13T05:13:11.550698+00:00"
+      "files": [],
+      "createdAt": "2026-04-13T05:13:11.550698+00:00"
     },
     {
       "id": "55b7ac59-128f-4f7f-ab2b-45d7e1a3b48a",
@@ -1512,23 +1094,8 @@
       "spec_images": [
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776057445567_dkpx92aah1o.webp"
       ],
-      "files": [
-        {
-          "name": "Nordex Mini Ni2 FiEn 3P 1P Edited",
-          "url": "https://www.sawo.com/wp-content/uploads/2025/07/Nordex-Mini-Ni2_FiEn-3P-1P-Edited.pdf"
-        }
-      ],
-      "createdAt": "2026-04-13T05:18:25.720767+00:00",
-      "type": "Nordex Mini",
-      "spec_table": null,
-      "resources": null,
-      "featured": false,
-      "is_deleted": false,
-      "auto_tag_columns": [],
-      "created_by": null,
-      "created_by_username": null,
-      "updated_by_username": null,
-      "updated_at": "2026-04-13T05:18:25.720767+00:00"
+      "files": [],
+      "createdAt": "2026-04-13T05:18:25.720767+00:00"
     },
     {
       "id": "cbba2e49-2e8e-43b8-877e-c23eaf7a14e5",
@@ -1567,23 +1134,8 @@
       "spec_images": [
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776057861805_3m5l9vcsae1.webp"
       ],
-      "files": [
-        {
-          "name": "Cumulus NS NB FiEn 3P 1P",
-          "url": "https://www.sawo.com/wp-content/uploads/2025/10/Cumulus-NS-NB_FiEn-3P-1P.pdf"
-        }
-      ],
-      "createdAt": "2026-04-13T05:24:45.406858+00:00",
-      "type": "Cumulus",
-      "spec_table": null,
-      "resources": null,
-      "featured": false,
-      "is_deleted": false,
-      "auto_tag_columns": [],
-      "created_by": null,
-      "created_by_username": null,
-      "updated_by_username": null,
-      "updated_at": "2026-04-13T05:24:45.406858+00:00"
+      "files": [],
+      "createdAt": "2026-04-13T05:24:45.406858+00:00"
     },
     {
       "id": "a2c06d94-9bc9-4c7a-aabe-45cd6cec7326",
@@ -1624,23 +1176,8 @@
       "spec_images": [
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776058313972_l7fhlo2ixt.webp"
       ],
-      "files": [
-        {
-          "name": "Nimbus Combi NS NB FiEn 3P 1P",
-          "url": "https://www.sawo.com/wp-content/uploads/2025/10/Nimbus-Combi-NS-NB_FiEn-3P-1P.pdf"
-        }
-      ],
-      "createdAt": "2026-04-13T05:36:07.062991+00:00",
-      "type": "Nimbus",
-      "spec_table": null,
-      "resources": null,
-      "featured": false,
-      "is_deleted": false,
-      "auto_tag_columns": [],
-      "created_by": null,
-      "created_by_username": null,
-      "updated_by_username": null,
-      "updated_at": "2026-04-13T05:36:07.062991+00:00"
+      "files": [],
+      "createdAt": "2026-04-13T05:36:07.062991+00:00"
     },
     {
       "id": "02d375d6-19ae-4f40-ac11-5187ae4a7549",
@@ -1683,23 +1220,8 @@
       "spec_images": [
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776058221936_nlei9yqoaf9.webp"
       ],
-      "files": [
-        {
-          "name": "Nimbus NS NB FiEn 3P 1P",
-          "url": "https://www.sawo.com/wp-content/uploads/2025/10/Nimbus-NS-NB_FiEn-3P-1P.pdf"
-        }
-      ],
-      "createdAt": "2026-04-13T05:30:37.967161+00:00",
-      "type": "Nimbus",
-      "spec_table": null,
-      "resources": null,
-      "featured": false,
-      "is_deleted": false,
-      "auto_tag_columns": [],
-      "created_by": null,
-      "created_by_username": null,
-      "updated_by_username": null,
-      "updated_at": "2026-04-13T05:30:37.967161+00:00"
+      "files": [],
+      "createdAt": "2026-04-13T05:30:37.967161+00:00"
     },
     {
       "id": "6f0d1b02-40b8-43ad-a06f-5dbbae1d1b17",
@@ -1733,17 +1255,7 @@
       "images": [],
       "spec_images": [],
       "files": [],
-      "createdAt": "2026-04-13T06:52:50.938878+00:00",
-      "type": "Saunova",
-      "spec_table": null,
-      "resources": null,
-      "featured": false,
-      "is_deleted": false,
-      "auto_tag_columns": [],
-      "created_by": null,
-      "created_by_username": null,
-      "updated_by_username": null,
-      "updated_at": "2026-04-13T06:53:16.293+00:00"
+      "createdAt": "2026-04-13T06:52:50.938878+00:00"
     },
     {
       "id": "cd47764f-9156-400f-af7d-b3e1f3f48d1c",
@@ -1771,23 +1283,8 @@
       "thumbnail": "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776152379967_wwye4l3puqq.webp",
       "images": [],
       "spec_images": [],
-      "files": [
-        {
-          "name": "Saunova Simple SAU UI S En",
-          "url": "https://www.sawo.com/wp-content/uploads/2025/04/Saunova-Simple-SAU-UI-S_En.pdf"
-        }
-      ],
-      "createdAt": "2026-04-14T07:41:23.013448+00:00",
-      "type": "Saunova",
-      "spec_table": null,
-      "resources": null,
-      "featured": false,
-      "is_deleted": false,
-      "auto_tag_columns": [],
-      "created_by": null,
-      "created_by_username": "Rafael",
-      "updated_by_username": "Rafael",
-      "updated_at": "2026-04-14T07:42:36.111+00:00"
+      "files": [],
+      "createdAt": "2026-04-14T07:41:23.013448+00:00"
     },
     {
       "id": "092c7d32-3510-4cab-8f16-10db6e6b5599",
@@ -1815,17 +1312,7 @@
       ],
       "spec_images": [],
       "files": [],
-      "createdAt": "2026-04-14T09:11:48.895694+00:00",
-      "type": "Interface Holder",
-      "spec_table": null,
-      "resources": null,
-      "featured": false,
-      "is_deleted": false,
-      "auto_tag_columns": [],
-      "created_by": null,
-      "created_by_username": "Rafael",
-      "updated_by_username": "Rafael",
-      "updated_at": "2026-04-14T09:12:15.117+00:00"
+      "createdAt": "2026-04-14T09:11:48.895694+00:00"
     },
     {
       "id": "9d7a2dce-595f-4391-82fc-cd7cbcc72a1c",
@@ -1853,23 +1340,8 @@
       "thumbnail": "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776150951388_to8rtmd0rq.webp",
       "images": [],
       "spec_images": [],
-      "files": [
-        {
-          "name": "Saunova 2.0 Contactor Unit En",
-          "url": "https://secret-newsite.sawo.com/wp-content/uploads/Manuals/Saunova%20Series/Saunova-2.0-Contactor-Unit_En.pdf"
-        }
-      ],
-      "createdAt": "2026-04-14T07:18:35.886966+00:00",
-      "type": "Saunova",
-      "spec_table": null,
-      "resources": null,
-      "featured": false,
-      "is_deleted": false,
-      "auto_tag_columns": [],
-      "created_by": null,
-      "created_by_username": "Rafael",
-      "updated_by_username": "Rafael",
-      "updated_at": "2026-04-14T07:42:52.455+00:00"
+      "files": [],
+      "createdAt": "2026-04-14T07:18:35.886966+00:00"
     },
     {
       "id": "bab85c05-e589-45bf-b634-8a4f62d8db6b",
@@ -1902,23 +1374,8 @@
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776156492651_4o6pgerkgdf.webp"
       ],
       "spec_images": [],
-      "files": [
-        {
-          "name": "Innova Classic En",
-          "url": "https://secret-newsite.sawo.com/wp-content/uploads/Manuals/Innova%20Series/Innova-Classic_En.pdf"
-        }
-      ],
-      "createdAt": "2026-04-14T08:46:56.956776+00:00",
-      "type": "Innova",
-      "spec_table": null,
-      "resources": null,
-      "featured": false,
-      "is_deleted": false,
-      "auto_tag_columns": [],
-      "created_by": null,
-      "created_by_username": "Rafael",
-      "updated_by_username": "Rafael",
-      "updated_at": "2026-04-14T08:55:22.396+00:00"
+      "files": [],
+      "createdAt": "2026-04-14T08:46:56.956776+00:00"
     },
     {
       "id": "39b92ea9-2b0e-43a2-9a3c-25c3e1b95b63",
@@ -1957,23 +1414,8 @@
       "thumbnail": "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776212647514_z0y7utwb11.webp",
       "images": [],
       "spec_images": [],
-      "files": [
-        {
-          "name": "Nordex Mini NS NB FiEn 3P 1P",
-          "url": "https://secret-newsite.sawo.com/wp-content/uploads/Manuals/Wall%20Mounted%20Series/Nordex-Mini-NS-NB_FiEn-3P-1P.pdf"
-        }
-      ],
-      "createdAt": "2026-04-15T00:24:58.189641+00:00",
-      "type": "Nordex Mini",
-      "spec_table": null,
-      "resources": null,
-      "featured": false,
-      "is_deleted": false,
-      "auto_tag_columns": [],
-      "created_by": null,
-      "created_by_username": "Rafael",
-      "updated_by_username": "Rafael",
-      "updated_at": "2026-04-15T00:26:02.534+00:00"
+      "files": [],
+      "createdAt": "2026-04-15T00:24:58.189641+00:00"
     },
     {
       "id": "8dbd6c07-1dd1-47e1-b9a8-ef22cd47641b",
@@ -2016,23 +1458,8 @@
       "spec_images": [
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776212810544_iwmkje4ap1i.webp"
       ],
-      "files": [
-        {
-          "name": "Nordex Mini NS NB FiEn 3P 1P",
-          "url": "https://secret-newsite.sawo.com/wp-content/uploads/Manuals/Wall%20Mounted%20Series/Nordex-Mini-NS-NB_FiEn-3P-1P.pdf"
-        }
-      ],
-      "createdAt": "2026-04-15T00:28:34.750203+00:00",
-      "type": "Nordex Mini",
-      "spec_table": null,
-      "resources": null,
-      "featured": false,
-      "is_deleted": false,
-      "auto_tag_columns": [],
-      "created_by": null,
-      "created_by_username": "Rafael",
-      "updated_by_username": "Rafael",
-      "updated_at": "2026-04-15T01:31:35.245+00:00"
+      "files": [],
+      "createdAt": "2026-04-15T00:28:34.750203+00:00"
     },
     {
       "id": "635100f3-f058-4fbb-befc-743534b956d9",
@@ -2068,23 +1495,8 @@
       "thumbnail": "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776217312038_hczb9ywkyqw.webp",
       "images": [],
       "spec_images": [],
-      "files": [
-        {
-          "name": "Nordex Combi NS NB FiEn 3P 1P",
-          "url": "https://www.sawo.com/wp-content/uploads/2025/10/Nordex-Combi-NS-NB_FiEn-3P-1P.pdf"
-        }
-      ],
-      "createdAt": "2026-04-15T00:37:09.888598+00:00",
-      "type": "Nordex Combi",
-      "spec_table": null,
-      "resources": null,
-      "featured": false,
-      "is_deleted": false,
-      "auto_tag_columns": [],
-      "created_by": null,
-      "created_by_username": "Rafael",
-      "updated_by_username": "Rafael",
-      "updated_at": "2026-04-15T01:51:51.603+00:00"
+      "files": [],
+      "createdAt": "2026-04-15T00:37:09.888598+00:00"
     },
     {
       "id": "8d388b31-c36e-4456-8420-2cb4ee0edd89",
@@ -2127,23 +1539,8 @@
       "spec_images": [
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776217548832_jwaifh0frdi.webp"
       ],
-      "files": [
-        {
-          "name": "Nordex Mini Combi NS NB FiEn 3P 1P",
-          "url": "https://www.sawo.com/wp-content/uploads/2025/10/Nordex-Mini-Combi-NS-NB_FiEn-3P-1P.pdf"
-        }
-      ],
-      "createdAt": "2026-04-15T01:45:59.173358+00:00",
-      "type": "Nordex",
-      "spec_table": null,
-      "resources": null,
-      "featured": false,
-      "is_deleted": false,
-      "auto_tag_columns": [],
-      "created_by": null,
-      "created_by_username": "Rafael",
-      "updated_by_username": "Rafael",
-      "updated_at": "2026-04-15T08:24:49.669+00:00"
+      "files": [],
+      "createdAt": "2026-04-15T01:45:59.173358+00:00"
     },
     {
       "id": "960809d7-d1b5-473f-b4a0-af7b982f10d1",
@@ -2176,23 +1573,8 @@
       "thumbnail": "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776220493325_qi4ndvwbuz.webp",
       "images": [],
       "spec_images": [],
-      "files": [
-        {
-          "name": "#70aaa2ffbbba5f183",
-          "url": "https://www.sawo.com/nordex-combi-black-ns/#70aaa2ffbbba5f183"
-        }
-      ],
-      "createdAt": "2026-04-15T00:43:13.781986+00:00",
-      "type": "Nordex Combi",
-      "spec_table": null,
-      "resources": null,
-      "featured": false,
-      "is_deleted": false,
-      "auto_tag_columns": [],
-      "created_by": null,
-      "created_by_username": "Rafael",
-      "updated_by_username": "Rafael",
-      "updated_at": "2026-04-15T02:35:00.847+00:00"
+      "files": [],
+      "createdAt": "2026-04-15T00:43:13.781986+00:00"
     },
     {
       "id": "b5149a8b-acf3-4ef3-8d04-61be17c724d3",
@@ -2234,23 +1616,8 @@
       "spec_images": [
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776217548832_jwaifh0frdi.webp"
       ],
-      "files": [
-        {
-          "name": "Nordex Mini Combi NS NB FiEn 3P 1P",
-          "url": "https://www.sawo.com/wp-content/uploads/2025/10/Nordex-Mini-Combi-NS-NB_FiEn-3P-1P.pdf"
-        }
-      ],
-      "createdAt": "2026-04-15T02:42:28.403925+00:00",
-      "type": "Nordex",
-      "spec_table": null,
-      "resources": null,
-      "featured": false,
-      "is_deleted": false,
-      "auto_tag_columns": [],
-      "created_by": null,
-      "created_by_username": "Rafael",
-      "updated_by_username": "Rafael",
-      "updated_at": "2026-04-15T02:42:55.1+00:00"
+      "files": [],
+      "createdAt": "2026-04-15T02:42:28.403925+00:00"
     },
     {
       "id": "7ebdcf49-d5da-412f-bd72-255628e97314",
@@ -2289,23 +1656,8 @@
       "spec_images": [
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776221086174_w7kk0iqacs.webp"
       ],
-      "files": [
-        {
-          "name": "Mini NS NB FiEn 3P 1P",
-          "url": "https://www.sawo.com/wp-content/uploads/Manuals/Wall%20Mounted%20Series/Mini-NS-NB_FiEn-3P-1P.pdf"
-        }
-      ],
-      "createdAt": "2026-04-15T02:47:02.121698+00:00",
-      "type": "Mini",
-      "spec_table": null,
-      "resources": null,
-      "featured": false,
-      "is_deleted": false,
-      "auto_tag_columns": [],
-      "created_by": null,
-      "created_by_username": "Rafael",
-      "updated_by_username": "Rafael",
-      "updated_at": "2026-04-15T02:47:28.845+00:00"
+      "files": [],
+      "createdAt": "2026-04-15T02:47:02.121698+00:00"
     },
     {
       "id": "a8b064aa-cfff-40cc-816a-160372fbd0a3",
@@ -2343,23 +1695,8 @@
       "spec_images": [
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776221605694_of7fduuuxvk.webp"
       ],
-      "files": [
-        {
-          "name": "Mini X NS NB FiEn 3P 1P",
-          "url": "https://www.sawo.com/wp-content/uploads/2025/10/Mini-X-NS-NB_FiEn-3P-1P.pdf"
-        }
-      ],
-      "createdAt": "2026-04-15T02:53:10.240198+00:00",
-      "type": "Mini",
-      "spec_table": null,
-      "resources": null,
-      "featured": false,
-      "is_deleted": false,
-      "auto_tag_columns": [],
-      "created_by": null,
-      "created_by_username": "Rafael",
-      "updated_by_username": "Rafael",
-      "updated_at": "2026-04-15T02:53:36.943+00:00"
+      "files": [],
+      "createdAt": "2026-04-15T02:53:10.240198+00:00"
     },
     {
       "id": "a7606e01-3b76-4c9a-ae0b-cda7eedf7a55",
@@ -2398,23 +1735,8 @@
       "spec_images": [
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776221890083_f6meo02fu76.webp"
       ],
-      "files": [
-        {
-          "name": "Mini X NS NB FiEn 3P 1P",
-          "url": "https://www.sawo.com/wp-content/uploads/2025/10/Mini-X-NS-NB_FiEn-3P-1P.pdf"
-        }
-      ],
-      "createdAt": "2026-04-15T02:59:25.370464+00:00",
-      "type": null,
-      "spec_table": null,
-      "resources": null,
-      "featured": false,
-      "is_deleted": false,
-      "auto_tag_columns": [],
-      "created_by": null,
-      "created_by_username": "Rafael",
-      "updated_by_username": "Rafael",
-      "updated_at": "2026-04-15T02:59:52.159+00:00"
+      "files": [],
+      "createdAt": "2026-04-15T02:59:25.370464+00:00"
     },
     {
       "id": "e710befd-a4e8-4027-9b11-ca8c672a8659",
@@ -2454,23 +1776,8 @@
       "spec_images": [
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776222210078_kw4htnf99hc.webp"
       ],
-      "files": [
-        {
-          "name": "Mini X NS NB FiEn 3P 1P",
-          "url": "https://www.sawo.com/wp-content/uploads/2025/10/Mini-X-NS-NB_FiEn-3P-1P.pdf"
-        }
-      ],
-      "createdAt": "2026-04-15T03:03:36.023551+00:00",
-      "type": "Mini",
-      "spec_table": null,
-      "resources": null,
-      "featured": false,
-      "is_deleted": false,
-      "auto_tag_columns": [],
-      "created_by": null,
-      "created_by_username": "Rafael",
-      "updated_by_username": "Rafael",
-      "updated_at": "2026-04-15T03:04:02.729+00:00"
+      "files": [],
+      "createdAt": "2026-04-15T03:03:36.023551+00:00"
     },
     {
       "id": "15dff165-8128-49f2-b760-9553be5cff00",
@@ -2508,23 +1815,8 @@
       "spec_images": [
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776221403960_qvmm2csqxpd.webp"
       ],
-      "files": [
-        {
-          "name": "Mini NS NB FiEn 3P 1P",
-          "url": "https://secret-newsite.sawo.com/wp-content/uploads/Manuals/Wall%20Mounted%20Series/Mini-NS-NB_FiEn-3P-1P.pdf"
-        }
-      ],
-      "createdAt": "2026-04-15T02:49:48.53558+00:00",
-      "type": "Mini",
-      "spec_table": null,
-      "resources": null,
-      "featured": false,
-      "is_deleted": false,
-      "auto_tag_columns": [],
-      "created_by": null,
-      "created_by_username": "Rafael",
-      "updated_by_username": "Rafael",
-      "updated_at": "2026-04-15T03:04:29.765+00:00"
+      "files": [],
+      "createdAt": "2026-04-15T02:49:48.53558+00:00"
     },
     {
       "id": "36e15cc0-7a21-4161-922c-d8aa08e820bc",
@@ -2561,23 +1853,8 @@
       "spec_images": [
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776221706288_yhon7qtysys.webp"
       ],
-      "files": [
-        {
-          "name": "Mini X NS NB FiEn 3P 1P",
-          "url": "https://www.sawo.com/wp-content/uploads/2025/10/Mini-X-NS-NB_FiEn-3P-1P.pdf"
-        }
-      ],
-      "createdAt": "2026-04-15T02:56:34.546634+00:00",
-      "type": "Mini",
-      "spec_table": null,
-      "resources": null,
-      "featured": false,
-      "is_deleted": false,
-      "auto_tag_columns": [],
-      "created_by": null,
-      "created_by_username": "Rafael",
-      "updated_by_username": "Rafael",
-      "updated_at": "2026-04-15T03:04:18.318+00:00"
+      "files": [],
+      "createdAt": "2026-04-15T02:56:34.546634+00:00"
     },
     {
       "id": "9974c209-5962-4256-9d17-aaceaeda1046",
@@ -2616,23 +1893,8 @@
       "spec_images": [
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776222339705_i8vq6opncck.webp"
       ],
-      "files": [
-        {
-          "name": "Mini Combi NS NB FiEn 3P 1P",
-          "url": "https://www.sawo.com/wp-content/uploads/2025/10/Mini-Combi-NS-NB_FiEn-3P-1P.pdf"
-        }
-      ],
-      "createdAt": "2026-04-15T03:07:33.069921+00:00",
-      "type": "Mini",
-      "spec_table": null,
-      "resources": null,
-      "featured": false,
-      "is_deleted": false,
-      "auto_tag_columns": [],
-      "created_by": null,
-      "created_by_username": "Rafael",
-      "updated_by_username": "Rafael",
-      "updated_at": "2026-04-15T03:07:59.635+00:00"
+      "files": [],
+      "createdAt": "2026-04-15T03:07:33.069921+00:00"
     },
     {
       "id": "9dac0470-40f9-4ce4-945c-eee43f19f4aa",
@@ -2669,23 +1931,8 @@
       "spec_images": [
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776222630013_ezimbetyia.webp"
       ],
-      "files": [
-        {
-          "name": "Mini Combi NS NB FiEn 3P 1P",
-          "url": "https://www.sawo.com/wp-content/uploads/2025/10/Mini-Combi-NS-NB_FiEn-3P-1P.pdf"
-        }
-      ],
-      "createdAt": "2026-04-15T03:10:21.302533+00:00",
-      "type": "Mini",
-      "spec_table": null,
-      "resources": null,
-      "featured": false,
-      "is_deleted": false,
-      "auto_tag_columns": [],
-      "created_by": null,
-      "created_by_username": "Rafael",
-      "updated_by_username": "Rafael",
-      "updated_at": "2026-04-15T03:10:48.082+00:00"
+      "files": [],
+      "createdAt": "2026-04-15T03:10:21.302533+00:00"
     },
     {
       "id": "eee8fddc-0ad2-49b3-8a54-714eec91136a",
@@ -2723,23 +1970,8 @@
       "spec_images": [
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776222984733_ihkj2qqrqp9.webp"
       ],
-      "files": [
-        {
-          "name": "Scandia NS NB FiEn 3P 1P",
-          "url": "https://secret-newsite.sawo.com/wp-content/uploads/Manuals/Wall%20Mounted%20Series/Scandia-NS-NB_FiEn-3P-1P.pdf"
-        }
-      ],
-      "createdAt": "2026-04-15T03:17:49.293989+00:00",
-      "type": "Scandia",
-      "spec_table": null,
-      "resources": null,
-      "featured": false,
-      "is_deleted": false,
-      "auto_tag_columns": [],
-      "created_by": null,
-      "created_by_username": "Rafael",
-      "updated_by_username": "Rafael",
-      "updated_at": "2026-04-15T03:18:15.985+00:00"
+      "files": [],
+      "createdAt": "2026-04-15T03:17:49.293989+00:00"
     },
     {
       "id": "00fb6d76-ed0b-4850-b411-b601ab3388e9",
@@ -2776,23 +2008,8 @@
       "spec_images": [
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776223265057_4ax45vnmwsj.webp"
       ],
-      "files": [
-        {
-          "name": "Scandia NS NB FiEn 3P 1P",
-          "url": "https://secret-newsite.sawo.com/wp-content/uploads/Manuals/Wall%20Mounted%20Series/Scandia-NS-NB_FiEn-3P-1P.pdf"
-        }
-      ],
-      "createdAt": "2026-04-15T03:20:58.641479+00:00",
-      "type": "Scandia",
-      "spec_table": null,
-      "resources": null,
-      "featured": false,
-      "is_deleted": false,
-      "auto_tag_columns": [],
-      "created_by": null,
-      "created_by_username": "Rafael",
-      "updated_by_username": "Rafael",
-      "updated_at": "2026-04-15T03:21:25.379+00:00"
+      "files": [],
+      "createdAt": "2026-04-15T03:20:58.641479+00:00"
     },
     {
       "id": "b2f2f483-9304-43ce-ac3a-cf18a7949903",
@@ -2831,23 +2048,8 @@
       "spec_images": [
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776223441828_iokuwygoktj.webp"
       ],
-      "files": [
-        {
-          "name": "Scandia NS NB FiEn 3P 1P",
-          "url": "https://secret-newsite.sawo.com/wp-content/uploads/Manuals/Wall%20Mounted%20Series/Scandia-NS-NB_FiEn-3P-1P.pdf"
-        }
-      ],
-      "createdAt": "2026-04-15T03:23:52.44823+00:00",
-      "type": "Scandia",
-      "spec_table": null,
-      "resources": null,
-      "featured": false,
-      "is_deleted": false,
-      "auto_tag_columns": [],
-      "created_by": null,
-      "created_by_username": "Rafael",
-      "updated_by_username": "Rafael",
-      "updated_at": "2026-04-15T03:24:19.222+00:00"
+      "files": [],
+      "createdAt": "2026-04-15T03:23:52.44823+00:00"
     },
     {
       "id": "ef8e7e21-b129-4dfb-9edc-81c466bff91e",
@@ -2888,23 +2090,8 @@
       "spec_images": [
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776244686539_gwhpdx3lb.webp"
       ],
-      "files": [
-        {
-          "name": "Scandia Combi NS NB FiEn 3P 1P",
-          "url": "https://www.sawo.com/wp-content/uploads/2025/06/Scandia-Combi-NS-NB_FiEn-3P-1P.pdf"
-        }
-      ],
-      "createdAt": "2026-04-15T09:18:16.47541+00:00",
-      "type": "Scandia",
-      "spec_table": null,
-      "resources": null,
-      "featured": false,
-      "is_deleted": false,
-      "auto_tag_columns": [],
-      "created_by": null,
-      "created_by_username": "Rafael",
-      "updated_by_username": "Rafael",
-      "updated_at": "2026-04-15T09:20:05.529+00:00"
+      "files": [],
+      "createdAt": "2026-04-15T09:18:16.47541+00:00"
     },
     {
       "id": "1daf49dc-68d7-49ec-8041-65bbcc142133",
@@ -2944,23 +2131,8 @@
       "spec_images": [
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776244856550_y551zkru0e.webp"
       ],
-      "files": [
-        {
-          "name": "Scandia Combi NS NB FiEn 3P 1P",
-          "url": "https://secret-newsite.sawo.com/wp-content/uploads/Manuals/Wall%20Mounted%20Series/Scandia-Combi-NS-NB_FiEn-3P-1P.pdf"
-        }
-      ],
-      "createdAt": "2026-04-15T09:21:54.600017+00:00",
-      "type": "Scandia",
-      "spec_table": null,
-      "resources": null,
-      "featured": false,
-      "is_deleted": false,
-      "auto_tag_columns": [],
-      "created_by": null,
-      "created_by_username": "Rafael",
-      "updated_by_username": "Rafael",
-      "updated_at": "2026-04-15T09:22:21.051+00:00"
+      "files": [],
+      "createdAt": "2026-04-15T09:21:54.600017+00:00"
     },
     {
       "id": "cf6cb129-2203-4e33-be48-6d7d1336dd85",
@@ -3006,23 +2178,8 @@
       "spec_images": [
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776245093235_fy9pe9frpy.webp"
       ],
-      "files": [
-        {
-          "name": "Krios Ni2 FiEn 3P 1P Edited",
-          "url": "https://www.sawo.com/wp-content/uploads/2025/07/Krios-Ni2_FiEn-3P-1P-Edited.pdf"
-        }
-      ],
-      "createdAt": "2026-04-15T09:25:21.365178+00:00",
-      "type": "Krios",
-      "spec_table": null,
-      "resources": null,
-      "featured": false,
-      "is_deleted": false,
-      "auto_tag_columns": [],
-      "created_by": null,
-      "created_by_username": "Rafael",
-      "updated_by_username": "Rafael",
-      "updated_at": "2026-04-15T09:25:48.327+00:00"
+      "files": [],
+      "createdAt": "2026-04-15T09:25:21.365178+00:00"
     },
     {
       "id": "a9719e36-47cc-4a94-8436-8c8d9c3c94ff",
@@ -3066,23 +2223,8 @@
       "spec_images": [
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776245291034_4fbrwqhvg82.webp"
       ],
-      "files": [
-        {
-          "name": "Krios NS NB FiEn 3P 1P",
-          "url": "https://secret-newsite.sawo.com/wp-content/uploads/Manuals/Wall%20Mounted%20Series/Krios-NS-NB_FiEn-3P-1P.pdf"
-        }
-      ],
-      "createdAt": "2026-04-15T09:28:31.684152+00:00",
-      "type": "Krios",
-      "spec_table": null,
-      "resources": null,
-      "featured": false,
-      "is_deleted": false,
-      "auto_tag_columns": [],
-      "created_by": null,
-      "created_by_username": "Rafael",
-      "updated_by_username": "Rafael",
-      "updated_at": "2026-04-15T09:30:17.079+00:00"
+      "files": [],
+      "createdAt": "2026-04-15T09:28:31.684152+00:00"
     },
     {
       "id": "52e29aa8-8493-4915-a9f9-88eabc6e43ae",
@@ -3129,23 +2271,8 @@
       "spec_images": [
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776317727452_f4zi5t0nqfc.webp"
       ],
-      "files": [
-        {
-          "name": "Scandifire NS NB FiEn 3P 1P",
-          "url": "https://www.sawo.com/wp-content/uploads/2025/10/Scandifire-NS-NB_FiEn-3P-1P.pdf"
-        }
-      ],
-      "createdAt": "2026-04-16T05:35:16.167026+00:00",
-      "type": "Scandifire",
-      "spec_table": null,
-      "resources": null,
-      "featured": false,
-      "is_deleted": false,
-      "auto_tag_columns": [],
-      "created_by": null,
-      "created_by_username": "Rafael",
-      "updated_by_username": "Rafael",
-      "updated_at": "2026-04-16T05:35:43.64+00:00"
+      "files": [],
+      "createdAt": "2026-04-16T05:35:16.167026+00:00"
     },
     {
       "id": "0f409779-f47d-4136-8328-ec47fda7e077",
@@ -3193,23 +2320,8 @@
       "spec_images": [
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776245605141_eee135n08a.webp"
       ],
-      "files": [
-        {
-          "name": "Krios NS NB FiEn 3P 1P",
-          "url": "https://secret-newsite.sawo.com/wp-content/uploads/Manuals/Wall%20Mounted%20Series/Krios-NS-NB_FiEn-3P-1P.pdf"
-        }
-      ],
-      "createdAt": "2026-04-15T09:33:42.969229+00:00",
-      "type": "Krios",
-      "spec_table": null,
-      "resources": null,
-      "featured": false,
-      "is_deleted": false,
-      "auto_tag_columns": [],
-      "created_by": null,
-      "created_by_username": "Rafael",
-      "updated_by_username": "Rafael",
-      "updated_at": "2026-04-16T05:08:55.586+00:00"
+      "files": [],
+      "createdAt": "2026-04-15T09:33:42.969229+00:00"
     },
     {
       "id": "eb3f427e-371c-4aa3-af40-42ac6ca03d19",
@@ -3257,23 +2369,8 @@
       "spec_images": [
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776317994258_q3em7enwcjb.webp"
       ],
-      "files": [
-        {
-          "name": "Scandifire NS NB FiEn 3P 1P",
-          "url": "https://www.sawo.com/wp-content/uploads/2025/10/Scandifire-NS-NB_FiEn-3P-1P.pdf"
-        }
-      ],
-      "createdAt": "2026-04-16T05:39:47.489198+00:00",
-      "type": "Scandia",
-      "spec_table": null,
-      "resources": null,
-      "featured": false,
-      "is_deleted": false,
-      "auto_tag_columns": [],
-      "created_by": null,
-      "created_by_username": "Rafael",
-      "updated_by_username": "Rafael",
-      "updated_at": "2026-04-16T05:40:14.991+00:00"
+      "files": [],
+      "createdAt": "2026-04-16T05:39:47.489198+00:00"
     },
     {
       "id": "c18f7676-a199-4e7e-b092-02c81217afbd",
@@ -3321,23 +2418,8 @@
       "spec_images": [
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776317872714_72hd96kgsod.webp"
       ],
-      "files": [
-        {
-          "name": "Scandifire NS NB FiEn 3P 1P",
-          "url": "https://www.sawo.com/wp-content/uploads/2025/10/Scandifire-NS-NB_FiEn-3P-1P.pdf"
-        }
-      ],
-      "createdAt": "2026-04-16T05:38:04.032781+00:00",
-      "type": "Scandifire",
-      "spec_table": null,
-      "resources": null,
-      "featured": false,
-      "is_deleted": false,
-      "auto_tag_columns": [],
-      "created_by": null,
-      "created_by_username": "Rafael",
-      "updated_by_username": "Rafael",
-      "updated_at": "2026-04-16T05:40:28.913+00:00"
+      "files": [],
+      "createdAt": "2026-04-16T05:38:04.032781+00:00"
     },
     {
       "id": "c0873514-0f6b-41ef-874c-cc17e0b480d9",
@@ -3383,23 +2465,8 @@
       "spec_images": [
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776318131455_juavp2puce7.webp"
       ],
-      "files": [
-        {
-          "name": "Scandifire NS NB FiEn 3P 1P",
-          "url": "https://www.sawo.com/wp-content/uploads/2025/10/Scandifire-NS-NB_FiEn-3P-1P.pdf"
-        }
-      ],
-      "createdAt": "2026-04-16T05:42:01.990147+00:00",
-      "type": "Scandifire",
-      "spec_table": null,
-      "resources": null,
-      "featured": false,
-      "is_deleted": false,
-      "auto_tag_columns": [],
-      "created_by": null,
-      "created_by_username": "Rafael",
-      "updated_by_username": "Rafael",
-      "updated_at": "2026-04-16T05:42:48.995+00:00"
+      "files": [],
+      "createdAt": "2026-04-16T05:42:01.990147+00:00"
     },
     {
       "id": "0fcd7adc-bc93-44b2-81af-5c17c1ee557e",
@@ -3445,23 +2512,8 @@
       "spec_images": [
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776318905446_2w03b0fa2ll.webp"
       ],
-      "files": [
-        {
-          "name": "TRD FiEn",
-          "url": "https://www.sawo.com/wp-content/uploads/2025/09/TRD-FiEn.pdf"
-        }
-      ],
-      "createdAt": "2026-04-16T05:54:56.880265+00:00",
-      "type": "Taurus",
-      "spec_table": null,
-      "resources": null,
-      "featured": false,
-      "is_deleted": false,
-      "auto_tag_columns": [],
-      "created_by": null,
-      "created_by_username": "Rafael",
-      "updated_by_username": "Rafael",
-      "updated_at": "2026-04-16T05:55:42.367+00:00"
+      "files": [],
+      "createdAt": "2026-04-16T05:54:56.880265+00:00"
     },
     {
       "id": "d907fcce-67c3-4b27-b33f-98debe0102ce",
@@ -3504,23 +2556,8 @@
       "spec_images": [
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776327718053_oksxn679hw.webp"
       ],
-      "files": [
-        {
-          "name": "Savonia NS NB FiEn 3P 1P",
-          "url": "https://www.sawo.com/wp-content/uploads/2025/10/Savonia-NS-NB_FiEn-3P-1P.pdf"
-        }
-      ],
-      "createdAt": "2026-04-16T08:26:51.247571+00:00",
-      "type": "Savonia",
-      "spec_table": null,
-      "resources": null,
-      "featured": false,
-      "is_deleted": false,
-      "auto_tag_columns": [],
-      "created_by": null,
-      "created_by_username": "Rafael",
-      "updated_by_username": "Rafael",
-      "updated_at": "2026-04-16T08:27:18.879+00:00"
+      "files": [],
+      "createdAt": "2026-04-16T08:26:51.247571+00:00"
     },
     {
       "id": "15024010-24cd-4cf2-ab01-7e4281cc5603",
@@ -3565,23 +2602,8 @@
       "spec_images": [
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776327111084_nvde8bnnb7.webp"
       ],
-      "files": [
-        {
-          "name": "Helius NS NB FiEn 3P 1P",
-          "url": "https://www.sawo.com/wp-content/uploads/2025/10/Helius-NS-NB_FiEn-3P-1P.pdf"
-        }
-      ],
-      "createdAt": "2026-04-16T08:06:22.69442+00:00",
-      "type": "Helius",
-      "spec_table": null,
-      "resources": null,
-      "featured": false,
-      "is_deleted": false,
-      "auto_tag_columns": [],
-      "created_by": null,
-      "created_by_username": "Rafael",
-      "updated_by_username": "Rafael",
-      "updated_at": "2026-04-16T08:13:17.01+00:00"
+      "files": [],
+      "createdAt": "2026-04-16T08:06:22.69442+00:00"
     },
     {
       "id": "da0f187e-cc5d-4283-8a34-249974c01c97",
@@ -3631,23 +2653,8 @@
       "spec_images": [
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776327557630_ensxzbc9xk6.webp"
       ],
-      "files": [
-        {
-          "name": "Krios Floor NS NB FiEn 3P 1P",
-          "url": "https://www.sawo.com/wp-content/uploads/2025/10/Krios-Floor-NS-NB_FiEn-3P-1P.pdf"
-        }
-      ],
-      "createdAt": "2026-04-16T08:19:22.7202+00:00",
-      "type": "Krios",
-      "spec_table": null,
-      "resources": null,
-      "featured": false,
-      "is_deleted": false,
-      "auto_tag_columns": [],
-      "created_by": null,
-      "created_by_username": "Rafael",
-      "updated_by_username": "Rafael",
-      "updated_at": "2026-04-16T08:19:50.31+00:00"
+      "files": [],
+      "createdAt": "2026-04-16T08:19:22.7202+00:00"
     },
     {
       "id": "dc28e725-ee4a-4fbe-99ee-170c98ecf47b",
@@ -3695,23 +2702,8 @@
       "spec_images": [
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776328065972_cowagjxq9pg.webp"
       ],
-      "files": [
-        {
-          "name": "Savonia NS NB FiEn 3P 1P",
-          "url": "https://www.sawo.com/wp-content/uploads/2025/10/Savonia-NS-NB_FiEn-3P-1P.pdf"
-        }
-      ],
-      "createdAt": "2026-04-16T08:30:04.853356+00:00",
-      "type": "Savonia",
-      "spec_table": null,
-      "resources": null,
-      "featured": false,
-      "is_deleted": false,
-      "auto_tag_columns": [],
-      "created_by": null,
-      "created_by_username": "Rafael",
-      "updated_by_username": "Rafael",
-      "updated_at": "2026-04-16T08:30:32.477+00:00"
+      "files": [],
+      "createdAt": "2026-04-16T08:30:04.853356+00:00"
     },
     {
       "id": "745f4b48-fcfe-4e0f-9646-aba34b4891af",
@@ -3759,23 +2751,8 @@
       "spec_images": [
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776332715574_uamalwm53fl.webp"
       ],
-      "files": [
-        {
-          "name": "Savonia Combi NS NB FiEn 3P 1P",
-          "url": "https://www.sawo.com/wp-content/uploads/2025/10/Savonia-Combi-NS-NB_FiEn-3P-1P.pdf"
-        }
-      ],
-      "createdAt": "2026-04-16T09:45:53.26351+00:00",
-      "type": "Savonia",
-      "spec_table": null,
-      "resources": null,
-      "featured": false,
-      "is_deleted": false,
-      "auto_tag_columns": [],
-      "created_by": null,
-      "created_by_username": "Rafael",
-      "updated_by_username": "Rafael",
-      "updated_at": "2026-04-16T09:47:15.396+00:00"
+      "files": [],
+      "createdAt": "2026-04-16T09:45:53.26351+00:00"
     }
   ]
 }
