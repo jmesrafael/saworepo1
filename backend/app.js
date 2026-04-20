@@ -79,6 +79,36 @@ app.delete('/api/products/:id', async (req, res) => {
   }
 });
 
+// Seed products.json from GitHub (useful for fresh dev setups)
+app.post('/api/products/seed-from-github', async (req, res) => {
+  try {
+    const GITHUB_OWNER = process.env.REACT_APP_GITHUB_OWNER;
+    const MAIN_REPO = process.env.REACT_APP_MAIN_REPO || 'saworepo1';
+    if (!GITHUB_OWNER) {
+      return res.status(400).json({ error: 'REACT_APP_GITHUB_OWNER not set' });
+    }
+
+    const githubUrl = `https://cdn.jsdelivr.net/gh/${GITHUB_OWNER}/${MAIN_REPO}@main/products.json?t=${Date.now()}`;
+    const response = await fetch(githubUrl);
+    if (!response.ok) {
+      throw new Error(`Failed to fetch from GitHub: HTTP ${response.status}`);
+    }
+
+    const json = await response.json();
+    const payload = {
+      updatedAt: new Date().toISOString(),
+      source: 'seeded-from-github',
+      products: json.products || []
+    };
+
+    await fs.writeFile(PRODUCTS_FILE, JSON.stringify(payload, null, 2), 'utf8');
+    res.json({ success: true, count: payload.products.length, message: 'Products seeded from GitHub' });
+  } catch (err) {
+    console.error('Error seeding from GitHub:', err);
+    res.status(500).json({ error: `Failed to seed: ${err.message}` });
+  }
+});
+
 // Sync local to GitHub (manual trigger)
 app.post('/api/products/sync-github', async (req, res) => {
   try {
@@ -136,7 +166,48 @@ app.post('/api/products/sync-images', async (req, res) => {
   res.json({ success: true, results });
 });
 
+// Auto-seed from GitHub if products.json is missing/empty
+async function ensureProductsExist() {
+  try {
+    const data = await fs.readFile(PRODUCTS_FILE, 'utf8');
+    const json = JSON.parse(data);
+    const count = (json.products || []).length;
+    if (count > 0) {
+      console.log(`✓ Loaded ${count} products from local ${PRODUCTS_FILE}`);
+      return;
+    }
+  } catch (_) {}
+
+  // File missing or empty — seed from GitHub
+  try {
+    console.log('📥 Local products.json empty/missing. Auto-seeding from GitHub...');
+    const GITHUB_OWNER = process.env.REACT_APP_GITHUB_OWNER;
+    const MAIN_REPO = process.env.REACT_APP_MAIN_REPO || 'saworepo1';
+    if (!GITHUB_OWNER) {
+      console.warn('⚠ REACT_APP_GITHUB_OWNER not set — skipping auto-seed');
+      return;
+    }
+
+    const githubUrl = `https://cdn.jsdelivr.net/gh/${GITHUB_OWNER}/${MAIN_REPO}@main/products.json?t=${Date.now()}`;
+    const response = await fetch(githubUrl);
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+
+    const json = await response.json();
+    const payload = {
+      updatedAt: new Date().toISOString(),
+      source: 'seeded-from-github',
+      products: json.products || []
+    };
+
+    await fs.writeFile(PRODUCTS_FILE, JSON.stringify(payload, null, 2), 'utf8');
+    console.log(`✓ Auto-seeded ${payload.products.length} products from GitHub`);
+  } catch (err) {
+    console.error('✗ Auto-seed failed:', err.message);
+  }
+}
+
 // Start server
-app.listen(PORT, () => {
+app.listen(PORT, async () => {
   console.log(`Server running on http://localhost:${PORT}`);
+  await ensureProductsExist();
 });
