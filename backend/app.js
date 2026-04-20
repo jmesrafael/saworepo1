@@ -2,15 +2,21 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const fs = require('fs').promises;
+const fsSync = require('fs');
 const path = require('path');
+const fetch = require('node-fetch');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
 const PRODUCTS_FILE = path.join(__dirname, '..', 'products.json');
+const SAWOREPO2_IMAGES = path.join(__dirname, '..', 'frontend', 'saworepo2', 'images');
 
 // Middleware
 app.use(cors());
 app.use(express.json());
+
+// Static file serving for local image cache
+app.use('/images', express.static(SAWOREPO2_IMAGES, { maxAge: '1d' }));
 
 // Test route
 app.get('/', (req, res) => {
@@ -83,6 +89,51 @@ app.post('/api/products/sync-github', async (req, res) => {
     console.error('Error syncing:', err);
     res.status(500).json({ error: 'Failed to prepare sync' });
   }
+});
+
+// Sync product images from CDN to local cache
+app.post('/api/products/sync-images', async (req, res) => {
+  const { urls } = req.body;
+  if (!Array.isArray(urls)) {
+    return res.status(400).json({ error: 'urls must be an array' });
+  }
+
+  // Ensure images directory exists
+  try {
+    if (!fsSync.existsSync(SAWOREPO2_IMAGES)) {
+      await fs.mkdir(SAWOREPO2_IMAGES, { recursive: true });
+    }
+  } catch (err) {
+    console.error('Error creating images directory:', err);
+  }
+
+  const results = [];
+  for (const url of urls) {
+    if (!url || typeof url !== 'string') continue;
+
+    try {
+      const filename = url.split('/').pop();
+      const dest = path.join(SAWOREPO2_IMAGES, filename);
+
+      // Skip if already cached
+      if (fsSync.existsSync(dest)) {
+        results.push({ url, status: 'cached', filename });
+        continue;
+      }
+
+      // Download and save
+      const response = await fetch(url);
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+
+      const buffer = await response.buffer();
+      await fs.writeFile(dest, buffer);
+      results.push({ url, status: 'downloaded', filename });
+    } catch (err) {
+      results.push({ url, status: 'error', filename: url.split('/').pop(), message: err.message });
+    }
+  }
+
+  res.json({ success: true, results });
 });
 
 // Start server

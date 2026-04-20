@@ -8,16 +8,30 @@ import {
 } from './githubStorage'
 import { v4 as uuidv4 } from 'uuid'
 
-// Optional local save (fire and forget, don't block on failures)
-async function saveLocallyAsync(product) {
+// Save full products array to local backend (fire and forget)
+async function saveLocallyAsync(products) {
   try {
+    if (!Array.isArray(products)) products = [products];
     const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000'
-    const body = Array.isArray(product) ? product : [product]
     fetch(`${API_URL}/api/products/save`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ updatedAt: new Date().toISOString(), products: body })
-    }).catch(() => {}) // Silently ignore failures
+      body: JSON.stringify({ updatedAt: new Date().toISOString(), products })
+    }).catch(() => {})
+  } catch (_) {}
+}
+
+// Download product images to local cache (fire and forget)
+async function syncImagesAsync(imageUrls) {
+  try {
+    const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000'
+    const urls = imageUrls.filter(u => u && typeof u === 'string')
+    if (urls.length === 0) return
+    fetch(`${API_URL}/api/products/sync-images`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ urls })
+    }).catch(() => {})
   } catch (_) {}
 }
 
@@ -86,12 +100,21 @@ export async function createProduct(formData, thumbnailFile, imageFiles, specFil
     is_deleted:          false,
   }
 
-  // Save locally first (fast reflection)
-  saveLocallyAsync(newProduct) // Fire and forget
-
   // Append to products.json in saworepo1
   const currentProducts = await fetchCurrentProducts()
-  await rewriteProductsJson([...currentProducts, newProduct])
+  const allProducts = [...currentProducts, newProduct]
+  await rewriteProductsJson(allProducts)
+
+  // Save locally with full array
+  saveLocallyAsync(allProducts)
+
+  // Download images to local cache
+  const imageUrls = [
+    newProduct.thumbnail,
+    ...(newProduct.images || []),
+    ...(newProduct.spec_images || [])
+  ]
+  syncImagesAsync(imageUrls)
 
   return newProduct
 }
@@ -152,9 +175,19 @@ export async function editProduct(productId, formData, newThumbnailFile, newImag
   // Update GitHub
   await rewriteProductsJson(synced)
 
-  // Save locally (fire and forget)
+  // Save locally with full array
+  saveLocallyAsync(synced)
+
+  // Download images to local cache
   const updated = synced.find(p => p.id === productId)
-  saveLocallyAsync(updated)
+  if (updated) {
+    const imageUrls = [
+      updated.thumbnail,
+      ...(updated.images || []),
+      ...(updated.spec_images || [])
+    ]
+    syncImagesAsync(imageUrls)
+  }
 }
 
 // Delete product from GitHub and local storage
@@ -163,11 +196,8 @@ export async function deleteProduct(productId) {
   const remaining = currentProducts.filter(p => p.id !== productId)
   await rewriteProductsJson(remaining)
 
-  // Delete locally (fire and forget)
-  try {
-    const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000'
-    fetch(`${API_URL}/api/products/${productId}`, { method: 'DELETE' }).catch(() => {})
-  } catch (_) {}
+  // Update local storage with full remaining array
+  saveLocallyAsync(remaining)
 
   // Note: image/PDF files in saworepo2 are intentionally left in place.
   // saworepo2 is append-only – old files don't break anything and serve as history.

@@ -1,33 +1,11 @@
-// Fetch products from Supabase (primary), fallback to local backend
-import { createClient } from '@supabase/supabase-js'
-
-const SUPABASE_URL = process.env.REACT_APP_SUPABASE_URL
-const SUPABASE_KEY = process.env.REACT_APP_SUPABASE_ANON_KEY
+// Fetch products from local backend (primary, zero egress), fallback to GitHub CDN
 const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000'
-
-const supabase = SUPABASE_URL && SUPABASE_KEY
-  ? createClient(SUPABASE_URL, SUPABASE_KEY)
-  : null
+const GITHUB_OWNER = process.env.REACT_APP_GITHUB_OWNER
+const MAIN_REPO = process.env.REACT_APP_MAIN_REPO || 'saworepo1'
+const GITHUB_RAW_URL = `https://cdn.jsdelivr.net/gh/${GITHUB_OWNER}/${MAIN_REPO}@main/products.json`
 
 export async function getProducts() {
-  // Try Supabase first
-  if (supabase) {
-    try {
-      const { data, error } = await supabase
-        .from('products')
-        .select('*')
-        .eq('is_deleted', false)
-
-      if (!error && data && Array.isArray(data) && data.length > 0) {
-        console.log('[getProducts] Loaded from Supabase')
-        return data
-      }
-    } catch (err) {
-      console.warn('[getProducts] Supabase unavailable:', err.message)
-    }
-  }
-
-  // Fall back to local backend
+  // Local backend (primary — zero egress)
   try {
     const res = await fetch(`${API_URL}/api/products`, {
       method: 'GET',
@@ -42,6 +20,24 @@ export async function getProducts() {
     }
   } catch (err) {
     console.warn('[getProducts] Local backend unavailable:', err.message)
+  }
+
+  // GitHub CDN fallback (when backend is offline)
+  try {
+    const res = await fetch(`${GITHUB_RAW_URL}?t=${Date.now()}`, {
+      method: 'GET',
+      headers: { 'Content-Type': 'application/json' }
+    })
+    if (res.ok) {
+      const json = await res.json()
+      const data = json.products || []
+      if (data.length > 0) {
+        console.log('[getProducts] Loaded from GitHub CDN')
+        return data
+      }
+    }
+  } catch (err) {
+    console.warn('[getProducts] GitHub fallback unavailable:', err.message)
   }
 
   console.error('[getProducts] Failed to load from all sources')
