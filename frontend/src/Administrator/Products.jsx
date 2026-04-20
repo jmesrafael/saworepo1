@@ -1389,6 +1389,7 @@ export default function Products({ currentUser }) {
   const [upFile,  setUpFile]  = useState(false);
 
   const [modalMenuOpen, setModalMenuOpen] = useState(false);
+  const [syncing, setSyncing] = useState(false);
   // const [showRevisions, setShowRevisions] = useState(false); // Commented out - revisions tracked in GitHub only
   // const [revisions, setRevisions] = useState([]); // Commented out - revisions tracked in GitHub only
 
@@ -1768,6 +1769,38 @@ export default function Products({ currentUser }) {
     else setSelected(new Set(filtered.map(p => p.id)));
   };
 
+  const handleSyncSupabase = async () => {
+    setSyncing(true);
+    try {
+      const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+      console.log('🔄 [handleSyncSupabase] Starting sync from Supabase...');
+
+      const res = await fetch(`${API_URL}/api/products/sync-supabase`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' }
+      });
+
+      if (res.ok) {
+        const data = await res.json();
+        console.log('✅ [handleSyncSupabase] Sync completed');
+        add('✅ Products synced from Supabase! Refreshing...', 'success');
+
+        // Refresh the product list
+        bustProductCache();
+        await new Promise(resolve => setTimeout(resolve, 1000));
+        await fetchProducts();
+      } else {
+        const error = await res.json();
+        throw new Error(error.message || 'Sync failed');
+      }
+    } catch (err) {
+      console.error('❌ [handleSyncSupabase] Error:', err);
+      add(`Sync failed: ${err.message}`, 'error');
+    } finally {
+      setSyncing(false);
+    }
+  };
+
   const filtered = products.filter(p => {
     if (!search) return true;
     const q = search.toLowerCase();
@@ -1826,6 +1859,31 @@ export default function Products({ currentUser }) {
               0% { background-position: 200% 0; }
               100% { background-position: -200% 0; }
             }
+            @keyframes spin {
+              from { transform: rotate(0deg); }
+              to { transform: rotate(360deg); }
+            }
+            .sync-supabase-btn {
+              padding: 8px 14px;
+              font-size: 0.9rem;
+              border: 1px solid #ddd;
+              border-radius: 4px;
+              background-color: #fff;
+              cursor: pointer;
+              display: flex;
+              align-items: center;
+              gap: 6px;
+              transition: all 0.2s;
+            }
+            .sync-supabase-btn:hover:not(:disabled) {
+              background-color: #f5f5f5;
+              border-color: #999;
+            }
+            .sync-supabase-btn:disabled {
+              opacity: 0.6;
+              cursor: not-allowed;
+              background-color: #f0f0f0;
+            }
           `}</style>
         </div>
       )}
@@ -1874,7 +1932,18 @@ export default function Products({ currentUser }) {
           </button>
         )}
         {perms.can("products.create") && (
-          <Btn icon="fa-plus" label="New Product" onClick={openCreate} style={{ marginLeft: "auto" }} />
+          <>
+            <button
+              onClick={handleSyncSupabase}
+              disabled={syncing}
+              className="sync-supabase-btn"
+              style={{marginLeft: "auto"}}
+            >
+              <i className={`fa-solid fa-${syncing ? 'spinner' : 'database'}`} style={{animation: syncing ? 'spin 1s linear infinite' : 'none'}} />
+              {syncing ? "Syncing..." : "Sync from Supabase"}
+            </button>
+            <Btn icon="fa-plus" label="New Product" onClick={openCreate} style={{ marginLeft: 8 }} />
+          </>
         )}
       </div>
 

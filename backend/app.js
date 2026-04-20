@@ -207,6 +207,30 @@ async function ensureProductsExist() {
   }
 }
 
+// Sync products from Supabase (manual trigger)
+app.post('/api/products/sync-supabase', async (req, res) => {
+  try {
+    console.log('[API] Starting Supabase sync...');
+    const { execSync } = require('child_process');
+    const result = execSync('node syncSupabaseProducts.js', {
+      cwd: __dirname,
+      encoding: 'utf8'
+    });
+    console.log('[API] Sync completed');
+    res.json({
+      success: true,
+      message: 'Supabase sync completed',
+      output: result
+    });
+  } catch (err) {
+    console.error('[API] Sync failed:', err.message);
+    res.status(500).json({
+      error: 'Supabase sync failed',
+      message: err.message
+    });
+  }
+});
+
 // Start server
 app.listen(PORT, async () => {
   console.log(`Server running on http://localhost:${PORT}`);
