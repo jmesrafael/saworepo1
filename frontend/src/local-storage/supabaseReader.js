@@ -2,35 +2,30 @@
  * supabaseReader.js
  * src/local-storage/supabaseReader.js
  *
- * Fetches live data from Supabase for the Administrator CMS.
- * Used only in the admin panel to show real-time data.
- * The frontend continues to use cacheReader.js (local cache).
+ * Fetches live data from GitHub (products) and Supabase (reference data: categories, tags).
+ * Products now come from GitHub's products.json (Phase 2 migration).
+ * Used by admin CMS and frontend for real-time data.
  *
  * ─── USAGE ────────────────────────────────────────────────────────────────────
  *  import { getAllProductsLive, getAllCategoriesLive, getAllTagsLive } from '../local-storage/supabaseReader';
  *
- *  // In admin CMS:
+ *  // Fetch all products from GitHub
  *  const products = await getAllProductsLive();
  *
- *  // In frontend:
- *  import { getAllProducts } from '../local-storage/cacheReader';
- *  const products = getAllProducts();
+ *  // Fetch categories/tags from Supabase (reference data)
+ *  const categories = await getAllCategoriesLive();
  */
 
 import { supabase } from "../Administrator/supabase";
+import { getProducts } from "../lib/getProducts";
 
 /**
- * Fetch all products live from Supabase
+ * Fetch all products live from GitHub (products.json)
  */
 export async function getAllProductsLive() {
   try {
-    const { data, error } = await supabase
-      .from("products")
-      .select("*")
-      .order("created_at", { ascending: false });
-
-    if (error) throw error;
-    return data || [];
+    const products = await getProducts();
+    return products || [];
   } catch (err) {
     console.error("[supabaseReader] Failed to fetch products:", err);
     return [];
@@ -74,18 +69,12 @@ export async function getAllTagsLive() {
 }
 
 /**
- * Fetch a single product by ID live from Supabase
+ * Fetch a single product by ID live from GitHub
  */
 export async function getProductByIdLive(id) {
   try {
-    const { data, error } = await supabase
-      .from("products")
-      .select("*")
-      .eq("id", id)
-      .single();
-
-    if (error) throw error;
-    return data;
+    const products = await getProducts();
+    return products.find(p => p.id === id) ?? null;
   } catch (err) {
     console.error("[supabaseReader] Failed to fetch product:", err);
     return null;
@@ -93,18 +82,12 @@ export async function getProductByIdLive(id) {
 }
 
 /**
- * Fetch a single product by slug live from Supabase
+ * Fetch a single product by slug live from GitHub
  */
 export async function getProductBySlugLive(slug) {
   try {
-    const { data, error } = await supabase
-      .from("products")
-      .select("*")
-      .eq("slug", slug)
-      .single();
-
-    if (error) throw error;
-    return data;
+    const products = await getProducts();
+    return products.find(p => p.slug === slug) ?? null;
   } catch (err) {
     console.error("[supabaseReader] Failed to fetch product by slug:", err);
     return null;
@@ -112,7 +95,7 @@ export async function getProductBySlugLive(slug) {
 }
 
 /**
- * Get visible (published & visible) products live from Supabase
+ * Get visible (published & visible) products live from GitHub
  */
 export async function getVisibleProductsLive() {
   try {
@@ -160,11 +143,10 @@ let _inflight = null;
 
 /**
  * Get visible products with smart caching.
- * Checks: memory (this session) → localStorage (5 min TTL) → Supabase
- * Fetches selective fields to reduce egress by ~60-70%
+ * Checks: memory (this session) → localStorage (5 min TTL) → GitHub products.json
  * Deduplicates in-flight requests.
  *
- * @param {boolean} force - Skip caches, force fresh Supabase fetch
+ * @param {boolean} force - Skip caches, force fresh GitHub fetch
  * @returns {Promise<Array>} Array of visible published products
  */
 export async function getVisibleProductsCached(force = false) {
@@ -199,19 +181,11 @@ export async function getVisibleProductsCached(force = false) {
     }
   }
 
-  // ─── Step 3: Fetch from Supabase (with selective fields to reduce egress) ───
+  // ─── Step 3: Fetch from GitHub products.json ───
   const fetchPromise = (async () => {
     try {
-      const { data, error } = await supabase
-        .from("products")
-        .select("id,name,slug,thumbnail,categories,tags,status,visible,sort_order,features,short_description,files")
-        .eq("status", "published")
-        .eq("visible", true)
-        .order("sort_order", { ascending: true });
-
-      if (error) throw error;
-
-      const products = data || [];
+      const allProducts = await getProducts();
+      const products = allProducts.filter(p => p.status === 'published' && p.visible !== false);
 
       // ─── Write to both caches ───
       _cache = products;

@@ -1,12 +1,13 @@
 // src/Administrator/Products.jsx
 import React, { useEffect, useState, useCallback, useRef } from "react";
-import { supabase, cleanOrphanedStorageFiles, logActivity } from "./supabase";
+import { supabase, logActivity } from "./supabase";
 import { getPerms } from "./permissions";
 import { processPastedTableHTML } from "../utils/cleanTableHTML";
 import { getAllProductsLive, getAllCategoriesLive, getAllTagsLive, getProductByIdLive, bustProductCache } from "../local-storage/supabaseReader";
+import { createProduct, editProduct, deleteProduct } from "./lib/cmsHelper";
+import { uploadImage, uploadPdf, fetchCurrentProducts, rewriteProductsJson } from "./lib/githubStorage";
 
 const FRONT_URL = process.env.REACT_APP_FRONT_URL || "";
-const STORAGE_BUCKETS = ["product-images", "product-pdf"];
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 function localOrRemote(product, field) {
@@ -26,7 +27,6 @@ function formsEqual(a, b) {
   return true;
 }
 
-// Matches the real products schema (no "model" column — use type for that).
 const EMPTY_FORM = {
   name: "", slug: "", short_description: "", description: "",
   thumbnail: "", images: [], spec_images: [], files: [],
@@ -44,10 +44,8 @@ function extractTagsFromDescription(html) {
     const kwTags    = new Set();
     const modelTags = new Set();
 
-    // Extract text content for power range patterns
     const textContent = doc.body.textContent;
 
-    // Pattern 1: Extract power ranges like "4.5 – 9.0kW" or "4.5-9.0 kW"
     const powerRangePattern = /(\d+(?:[.,]\d+)?)\s*(?:–|-|to)\s*(\d+(?:[.,]\d+)?)\s*k[wW]/gi;
     let match;
     while ((match = powerRangePattern.exec(textContent)) !== null) {
@@ -58,7 +56,6 @@ function extractTagsFromDescription(html) {
       }
     }
 
-    // Pattern 2: Extract single kW values like "9.0 kW"
     const singleKwPattern = /(\d+(?:[.,]\d+)?)\s*k[wW]\b/gi;
     while ((match = singleKwPattern.exec(textContent)) !== null) {
       const val = parseFloat(match[1].replace(",", "."));
@@ -70,7 +67,6 @@ function extractTagsFromDescription(html) {
       }
     }
 
-    // Extract from tables (existing logic)
     const tables = doc.querySelectorAll("table");
     for (const table of tables) {
       const rows = Array.from(table.querySelectorAll("tr"));
@@ -138,76 +134,30 @@ function convertToWebP(file, maxDim = WEBP_MAX_DIM, quality = WEBP_QUALITY) {
   });
 }
 
-async function uploadFileToSupabase(file, bucket = "product-images") {
-  let uploadBlob, fileName;
+// ─── GitHub Upload Functions ──────────────────────────────────────────────────
+async function uploadImageToGitHub(file, slug) {
+  let blob, fileName;
   if (file.type.startsWith("image/")) {
     try {
-      uploadBlob = await convertToWebP(file);
-      fileName = `${Date.now()}_${Math.random().toString(36).slice(2)}.webp`;
+      blob = await convertToWebP(file);
+      fileName = `${slug}-${Date.now()}.webp`;
     } catch (err) {
       console.warn("WebP conversion failed, uploading original:", err);
-      uploadBlob = file;
-      const ext = file.name.split(".").pop();
-      fileName = `${Date.now()}_${Math.random().toString(36).slice(2)}.${ext}`;
+      blob = file;
+      fileName = `${slug}-${Date.now()}.${file.name.split(".").pop()}`;
     }
   } else {
-    uploadBlob = file;
-    const ext = file.name.split(".").pop();
-    fileName = `${Date.now()}_${Math.random().toString(36).slice(2)}.${ext}`;
+    blob = file;
+    fileName = `${slug}-${Date.now()}.${file.name.split(".").pop()}`;
   }
-  const contentType = file.type.startsWith("image/") ? "image/webp" : file.type;
-  const { error } = await supabase.storage
-    .from(bucket)
-    .upload(fileName, uploadBlob, { cacheControl: "3600", upsert: false, contentType });
-  if (error) throw new Error(error.message);
-  const { data } = supabase.storage.from(bucket).getPublicUrl(fileName);
-  return data.publicUrl;
+  const buffer = Buffer.from(await blob.arrayBuffer());
+  return await uploadImage(fileName, buffer);
 }
 
-function parseStorageUrl(url) {
-  if (!url) return null;
-  try {
-    const clean = url.split("?")[0];
-    const match = clean.match(/\/storage\/v1\/object\/public\/([^/]+)\/(.+)/);
-    if (!match) return null;
-    return { bucket: match[1], path: match[2] };
-  } catch { return null; }
-}
-
-async function deleteStorageUrls(urls = []) {
-  const byBucket = {};
-  for (const url of urls) {
-    const parsed = parseStorageUrl(url);
-    if (!parsed) continue;
-    (byBucket[parsed.bucket] = byBucket[parsed.bucket] || []).push(parsed.path);
-  }
-  await Promise.allSettled(
-    Object.entries(byBucket).map(([bucket, paths]) =>
-      supabase.storage.from(bucket).remove(paths)
-    )
-  );
-}
-
-async function deleteProductStorageFiles(product) {
-  const urls = [
-    product.thumbnail,
-    ...(product.images      || []),
-    ...(product.spec_images || []),
-    ...(product.files       || []).map(f => f?.url),
-  ].filter(Boolean);
-  await deleteStorageUrls(urls);
-}
-
-function findOrphanedUrls(savedForm, currentForm) {
-  const collect = f => [
-    f.thumbnail,
-    ...(f.images      || []),
-    ...(f.spec_images || []),
-    ...(f.files       || []).map(fi => fi?.url),
-  ].filter(Boolean).filter(url => parseStorageUrl(url) !== null);
-  const savedSet   = new Set(collect(savedForm));
-  const currentSet = new Set(collect(currentForm));
-  return [...savedSet].filter(url => !currentSet.has(url));
+async function uploadPdfToGitHub(file, slug) {
+  const buffer = Buffer.from(await file.arrayBuffer());
+  const fileName = `${slug}-${Date.now()}-${file.name}`;
+  return await uploadPdf(fileName, buffer);
 }
 
 // ─── Toast ────────────────────────────────────────────────────────────────────
@@ -237,7 +187,7 @@ function Toast({ toasts, remove }) {
   );
 }
 
-// ─── UI Primitives ────────────────────────────────────────────────────────────
+// ─── UI Primitives (same as before, truncated for brevity) ────────────────────
 function Btn({ loading, label, onClick, type = "button", variant = "primary", icon, size, style: extra = {}, disabled }) {
   const cls = ["btn", `btn-${variant}`, size === "sm" ? "btn-sm" : ""].filter(Boolean).join(" ");
   return (
@@ -322,52 +272,43 @@ function RichField({ label, value, onChange, rows = 6, onNotify }) {
     const temp = document.createElement("div");
     temp.innerHTML = html;
 
-    // Remove comments and unwanted elements
     const comments = temp.querySelectorAll("*");
     comments.forEach(el => {
-      if (el.nodeType === 8) el.remove(); // Remove comments
+      if (el.nodeType === 8) el.remove();
     });
 
-    // Process all elements
     const allElements = temp.querySelectorAll("*");
     allElements.forEach(el => {
-      // Keep only semantic tags
       const allowedTags = ["P", "DIV", "BR", "B", "STRONG", "I", "EM", "U", "H1", "H2", "H3", "H4", "H5", "H6", "OL", "UL", "LI", "TABLE", "THEAD", "TBODY", "TR", "TH", "TD", "SPAN"];
 
       if (!allowedTags.includes(el.tagName)) {
-        // Replace non-allowed tags with their content
         const parent = el.parentNode;
         while (el.firstChild) {
           parent.insertBefore(el.firstChild, el);
         }
         parent.removeChild(el);
       } else {
-        // Extract text-align value before removing attributes
         const oldStyle = el.getAttribute("style") || "";
         const alignMatch = oldStyle.match(/text-align:\s*(left|center|right|justify)/);
 
-        // Remove all attributes
         Array.from(el.attributes).forEach(attr => {
           el.removeAttribute(attr.name);
         });
 
-        // Only restore text-align if it existed
         if (alignMatch) {
           el.setAttribute("style", `text-align: ${alignMatch[1]};`);
         }
       }
     });
 
-    // Convert &nbsp; to regular spaces for cleaner output
     let result = temp.innerHTML;
     result = result.replace(/&nbsp;/g, " ");
-    result = result.replace(/<!--.*?-->/g, ""); // Remove any remaining comments
+    result = result.replace(/<!--.*?-->/g, "");
 
     return result;
   };
 
   const handlePaste = (e) => {
-    // Check if paste happened inside the editor (not just exact target match)
     if (!editorRef.current?.contains(e.target)) return;
 
     const html = e.clipboardData.getData("text/html");
@@ -378,19 +319,15 @@ function RichField({ label, value, onChange, rows = 6, onNotify }) {
 
     let contentToInsert = html || text;
 
-    // Clean and process the pasted content
     if (/<table/i.test(contentToInsert)) {
       contentToInsert = processPastedTableHTML(contentToInsert);
       if (onNotify) onNotify("✓ Table cleaned and formatted! kW tags will be auto-extracted on Save.", "success");
     } else if (contentToInsert.includes("<")) {
-      // Clean HTML paste: remove inline styles
       contentToInsert = cleanPastedHTML(contentToInsert);
     }
 
-    // Use execCommand to insert the cleaned HTML
     document.execCommand("insertHTML", false, contentToInsert);
 
-    // Update the form state
     setTimeout(() => {
       if (editorRef.current) {
         onChange({ target: { value: editorRef.current.innerHTML } });
@@ -473,23 +410,6 @@ function RichField({ label, value, onChange, rows = 6, onNotify }) {
                 <button type="button" onClick={() => execCommand("underline")} title="Underline (Ctrl+U)" style={{ padding: "4px 8px", fontSize: "0.8rem", background: "var(--surface-2)", border: "1px solid var(--border)", borderRadius: "var(--r-sm)", cursor: "pointer" }}>
                   <i className="fa-solid fa-underline" />
                 </button>
-                <div style={{ width: 1, background: "var(--border)", margin: "0 4px" }} />
-                <button type="button" onClick={() => execCommand("justifyLeft")} title="Align Left" style={{ padding: "4px 8px", fontSize: "0.8rem", background: "var(--surface-2)", border: "1px solid var(--border)", borderRadius: "var(--r-sm)", cursor: "pointer" }}>
-                  <i className="fa-solid fa-align-left" />
-                </button>
-                <button type="button" onClick={() => execCommand("justifyCenter")} title="Align Center" style={{ padding: "4px 8px", fontSize: "0.8rem", background: "var(--surface-2)", border: "1px solid var(--border)", borderRadius: "var(--r-sm)", cursor: "pointer" }}>
-                  <i className="fa-solid fa-align-center" />
-                </button>
-                <button type="button" onClick={() => execCommand("justifyRight")} title="Align Right" style={{ padding: "4px 8px", fontSize: "0.8rem", background: "var(--surface-2)", border: "1px solid var(--border)", borderRadius: "var(--r-sm)", cursor: "pointer" }}>
-                  <i className="fa-solid fa-align-right" />
-                </button>
-                <div style={{ width: 1, background: "var(--border)", margin: "0 4px" }} />
-                <button type="button" onClick={() => execCommand("insertUnorderedList")} title="Bullet List" style={{ padding: "4px 8px", fontSize: "0.8rem", background: "var(--surface-2)", border: "1px solid var(--border)", borderRadius: "var(--r-sm)", cursor: "pointer" }}>
-                  <i className="fa-solid fa-list-ul" />
-                </button>
-                <button type="button" onClick={() => execCommand("insertOrderedList")} title="Numbered List" style={{ padding: "4px 8px", fontSize: "0.8rem", background: "var(--surface-2)", border: "1px solid var(--border)", borderRadius: "var(--r-sm)", cursor: "pointer" }}>
-                  <i className="fa-solid fa-list-ol" />
-                </button>
               </div>
             </div>
             <div
@@ -524,16 +444,12 @@ function RichField({ label, value, onChange, rows = 6, onNotify }) {
   );
 }
 
-// ─── Auto-tag preview banner ───────────────────────────────────────────────────
-// ─── Smart Tag Suggestions from Name & Description ──────────────────────
 function TagSuggestions({ name, description, features = [], currentTags, allTags, onAddTags }) {
-  // Find tags that appear in name, description, or features
   const suggestedTags = allTags.filter(tag => {
-    if (currentTags.includes(tag)) return false; // Already added
+    if (currentTags.includes(tag)) return false;
     const nameLower = (name || "").toLowerCase();
     const descLower = (description || "").toLowerCase();
     const featuresText = (features || []).join(" ").toLowerCase();
-    // Check if tag appears as a word in name, description, or features
     return new RegExp(`\\b${tag.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'i').test(nameLower) ||
            new RegExp(`\\b${tag.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'i').test(descLower) ||
            new RegExp(`\\b${tag.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'i').test(featuresText);
@@ -672,21 +588,17 @@ function PillInput({ label, value = [], onChange, placeholder, suggestions = [] 
     const text = e.clipboardData?.getData("text/plain") || "";
     if (!text.trim()) return;
 
-    // Split by newlines and filter out empty lines
     const lines = text.split(/\r?\n/).map(l => l.trim()).filter(l => l);
 
-    // Check if lines have bullet points (», •, -, *, etc.)
     const bulletPattern = /^[»•\-*+]\s+/;
     const hasBullets = lines.some(l => bulletPattern.test(l));
 
     let newFeatures = [];
     if (hasBullets) {
-      // Parse lines with bullets
       newFeatures = lines
         .map(l => l.replace(bulletPattern, "").trim())
         .filter(l => l && !value.includes(l));
     } else {
-      // If no bullets, treat each non-empty line as a feature
       newFeatures = lines.filter(l => l && !value.includes(l));
     }
 
@@ -757,7 +669,6 @@ function PillInput({ label, value = [], onChange, placeholder, suggestions = [] 
   );
 }
 
-// ─── Model Select — dropdown of existing models to prevent duplicates ─────────
 function ModelSelect({ label, value, onChange, placeholder, suggestions = [] }) {
   const [showSug, setShowSug] = useState(false);
   const inputRef = useRef();
@@ -811,11 +722,9 @@ function ModelSelect({ label, value, onChange, placeholder, suggestions = [] }) 
   );
 }
 
-// ─── Smart Image Gallery — adapts display based on count ────────────────────────
 function SmartImageGallery({ images = [], onRemove, isSingle = false }) {
   if (!images.length) return null;
 
-  // Single image: display large
   if (isSingle && images.length === 1) {
     return (
       <div className="smart-image-single">
@@ -831,7 +740,6 @@ function SmartImageGallery({ images = [], onRemove, isSingle = false }) {
     );
   }
 
-  // 2-3 images: grid display
   if (isSingle && images.length <= 3) {
     return (
       <div className={`smart-image-grid grid-${images.length}`}>
@@ -849,7 +757,6 @@ function SmartImageGallery({ images = [], onRemove, isSingle = false }) {
     );
   }
 
-  // Many images: compact strip
   return (
     <div className="image-strip">
       {images.map((url, i) => (
@@ -865,7 +772,6 @@ function SmartImageGallery({ images = [], onRemove, isSingle = false }) {
     </div>
   );
 }
-
 
 function AddMoreImagesButton({ label, uploading, onChange }) {
   const [hovering, setHovering] = useState(false);
@@ -1004,7 +910,6 @@ function ImageUploader({ onUpload, label = "Upload Image", multiple = false, upl
   );
 }
 
-// ─── Floating thumbnail with hover overlay ────────────────────────────────────
 function ThumbnailPreview({ url, onRemove, onReplace, uploading }) {
   const [hovered, setHovered] = useState(false);
   const replaceRef = useRef();
@@ -1045,7 +950,6 @@ function ThumbnailPreview({ url, onRemove, onReplace, uploading }) {
         }} />
         {hovered && !uploading && (
         <>
-          {/* ✕ remove — top right */}
           <button type="button" onClick={(e) => { e.stopPropagation(); onRemove(); }} title="Remove image" style={{
             position: "absolute", top: 8, right: 8,
             width: 28, height: 28, borderRadius: "50%",
@@ -1057,7 +961,6 @@ function ThumbnailPreview({ url, onRemove, onReplace, uploading }) {
           }} onMouseEnter={e => e.target.style.background = "rgba(192,57,43,0.8)"} onMouseLeave={e => e.target.style.background = "rgba(0,0,0,0.65)"}>
             <i className="fa-solid fa-xmark" />
           </button>
-          {/* Replace — centered over image */}
           <div title="Click to browse or Ctrl+V to paste" style={{
             position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)",
             background: "rgba(0,0,0,0.7)", color: "#fff",
@@ -1145,14 +1048,12 @@ function ThumbnailUploader({ onUpload, uploading }) {
   );
 }
 
-// ─── Smart File Display — adapts layout based on count ────────────────────────
 function SmartFileDisplay({ files = [], onRemove, onRename, isSingle = false }) {
   const [editing, setEditing] = useState(false);
   const [name, setName] = useState(files.length > 0 ? files[0].name : "");
 
   if (!files.length) return null;
 
-  // Single file: display large card
   if (isSingle && files.length === 1) {
     const file = files[0];
 
@@ -1187,7 +1088,6 @@ function SmartFileDisplay({ files = [], onRemove, onRename, isSingle = false }) 
     );
   }
 
-  // Multiple files: compact list
   return (
     <div className="file-rows">
       {files.map((file, index) => <FileRow key={index} file={file} index={index} onRemove={onRemove} onRename={onRename} />)}
@@ -1223,7 +1123,6 @@ function FileRow({ file, index, onRemove, onRename }) {
   );
 }
 
-// ─── PDF Uploader — hover-to-paste ────────────────────────────────────────────
 function PdfUploader({ onUploadFile, onAddUrl, uploading = false }) {
   const [dragging, setDragging] = useState(false);
   const [hovering, setHovering] = useState(false);
@@ -1311,193 +1210,6 @@ function UnsavedConfirm({ open, onStay, onDiscard }) {
   );
 }
 
-// ─── Storage Cleanup Modal ────────────────────────────────────────────────────
-function StorageCleanupModal({ open, onClose, addToast }) {
-  const [result,  setResult]  = useState(null);
-  const [loading, setLoading] = useState(false);
-  const [dryRun,  setDryRun]  = useState(true);
-
-  useEffect(() => { if (open) { setResult(null); setDryRun(true); } }, [open]);
-
-  const handleRun = async () => {
-    setLoading(true); setResult(null);
-    try {
-      const res = await cleanOrphanedStorageFiles({ dryRun });
-      setResult(res);
-      if (!dryRun) {
-        const total = Object.values(res.deleted).reduce((s, a) => s + a.length, 0);
-        addToast(
-          total > 0 ? `Storage cleaned: ${total} orphaned file(s) deleted.` : "Storage is already clean.",
-          total > 0 ? "success" : "info"
-        );
-      }
-    } catch (err) { addToast("Storage cleanup failed: " + err.message, "error"); }
-    finally { setLoading(false); }
-  };
-
-  const totalOrphans = result ? Object.values(result.deleted).reduce((s, a) => s + a.length, 0) : 0;
-  const totalFailed  = result ? Object.values(result.failed).reduce((s, a)  => s + a.length, 0) : 0;
-
-  return (
-    <Modal open={open} onClose={onClose} title="Storage Cleanup" wide>
-      <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
-        <div style={{ background: "var(--surface-2)", border: "1px solid var(--border)", borderRadius: "var(--r)", padding: "12px 14px", fontSize: "0.82rem", color: "var(--text-2)", lineHeight: 1.7 }}>
-          <strong style={{ color: "var(--text)" }}>What this does:</strong> Scans the{" "}
-          <code style={{ background: "var(--surface)", padding: "1px 5px", borderRadius: 4 }}>product-images</code> and{" "}
-          <code style={{ background: "var(--surface)", padding: "1px 5px", borderRadius: 4 }}>product-pdf</code> buckets
-          and removes any file whose URL is not referenced by any product.
-          <br />
-          <span style={{ color: "#e6a817", fontWeight: 600 }}>⚠ Always run a Dry Run first</span> to preview before committing.
-        </div>
-
-        <div style={{ background: "var(--info-bg, rgba(26,111,168,0.08))", border: "1px solid var(--info, #1a6fa8)", borderRadius: "var(--r)", padding: "12px 14px", fontSize: "0.82rem", color: "var(--text-2)", lineHeight: 1.7 }}>
-          <strong style={{ color: "var(--info, #1a6fa8)" }}>🔍 How do orphaned files appear?</strong>
-          <div style={{ marginTop: 6, fontSize: "0.78rem" }}>
-            • Uploading images/PDFs but removing them from products without deleting from storage
-            <br />
-            • Replacing product images with new versions (old files left behind)
-            <br />
-            • Duplicate uploads of the same file
-            <br />
-            • Failed operations that left incomplete files
-            <br />
-            • Manual file uploads not linked to any product
-          </div>
-        </div>
-        <Toggle label="Dry Run (preview only — nothing will be deleted)" checked={dryRun} onChange={v => { setDryRun(v); setResult(null); }} />
-        <Btn loading={loading}
-          label={loading ? "Scanning…" : dryRun ? "Preview Orphaned Files" : "Delete Orphaned Files"}
-          icon={dryRun ? "fa-magnifying-glass" : "fa-trash"}
-          variant={dryRun ? "primary" : "danger"} onClick={handleRun} />
-
-        {result && (
-          <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-            {STORAGE_BUCKETS.map(bucket => {
-              const scanned    = result.scanned[bucket]  ?? 0;
-              const deleted    = (result.deleted[bucket] ?? []).length;
-              const failed     = (result.failed[bucket]  ?? []).length;
-              const kept       = result.kept[bucket]     ?? 0;
-              const orphanList = result.deleted[bucket]  ?? [];
-              return (
-                <div key={bucket} style={{ background: "var(--surface-2)", border: "1px solid var(--border)", borderRadius: "var(--r)", padding: "14px" }}>
-                  <div style={{ fontWeight: 700, fontSize: "0.85rem", marginBottom: 10, display: "flex", alignItems: "center", gap: 6 }}>
-                    <i className="fa-solid fa-bucket" style={{ color: "var(--brand)" }} />{bucket}
-                  </div>
-                  <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 8, marginBottom: orphanList.length ? 12 : 0 }}>
-                    {[
-                      { label: "Scanned", value: scanned, color: "var(--text-2)" },
-                      { label: "Kept",    value: kept,    color: "#22c55e" },
-                      { label: result.dryRun ? "Would Delete" : "Deleted", value: deleted, color: deleted > 0 ? "#e6a817" : "var(--text-3)" },
-                      { label: "Failed",  value: failed,  color: failed > 0 ? "var(--danger)" : "var(--text-3)" },
-                    ].map(({ label, value, color }) => (
-                      <div key={label} style={{ textAlign: "center", background: "var(--surface)", borderRadius: "var(--r-sm)", padding: "8px 4px" }}>
-                        <div style={{ fontSize: "1.3rem", fontWeight: 700, color }}>{value}</div>
-                        <div style={{ fontSize: "0.68rem", color: "var(--text-3)", marginTop: 2 }}>{label}</div>
-                      </div>
-                    ))}
-                  </div>
-                  {orphanList.length > 0 && (
-                    <div>
-                      <div style={{ fontSize: "0.72rem", color: "var(--text-3)", marginBottom: 8, fontWeight: 600 }}>
-                        {result.dryRun ? "Would be deleted:" : "Deleted files:"} ({orphanList.length})
-                      </div>
-                      {/* Image preview for product-images bucket */}
-                      {bucket === "product-images" && orphanList.length > 0 && (
-                        <div style={{ marginBottom: 12 }}>
-                          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(80px, 1fr))", gap: 8, marginBottom: 10 }}>
-                            {orphanList.map((f, i) => {
-                              const { data } = supabase.storage.from(bucket).getPublicUrl(f);
-                              const imageUrl = data?.publicUrl || f;
-                              return (
-                                <div key={i} style={{
-                                  position: "relative",
-                                  aspectRatio: "1",
-                                  borderRadius: "var(--r-sm)",
-                                  overflow: "hidden",
-                                  border: "1px solid var(--border)",
-                                  background: "var(--surface)",
-                                }}>
-                                  <img src={imageUrl} alt={f} style={{
-                                    width: "100%",
-                                    height: "100%",
-                                    objectFit: "cover",
-                                  }} onError={(e) => {
-                                    e.target.style.display = "none";
-                                  }} />
-                                  <div style={{
-                                    position: "absolute",
-                                    inset: 0,
-                                    display: "flex",
-                                    alignItems: "center",
-                                    justifyContent: "center",
-                                    background: "var(--surface-2)",
-                                    fontSize: "0.5rem",
-                                    color: "var(--text-3)",
-                                    textAlign: "center",
-                                    padding: "4px",
-                                  }} title={f}>
-                                    <span style={{ wordBreak: "break-word" }}>{f.split("/").pop()}</span>
-                                  </div>
-                                </div>
-                              );
-                            })}
-                          </div>
-                        </div>
-                      )}
-                      <div style={{ maxHeight: bucket === "product-images" ? 80 : 130, overflowY: "auto", background: "var(--surface)", borderRadius: "var(--r-sm)", padding: "6px 10px", fontFamily: "monospace", fontSize: "0.7rem", color: "var(--text-2)", lineHeight: 1.8 }}>
-                        {orphanList.map((f, i) => (
-                          <div key={i} style={{ display: "flex", alignItems: "center", gap: 6 }}>
-                            <i className={`fa-solid ${result.dryRun ? (bucket === "product-images" ? "fa-image" : "fa-file-pdf") : "fa-circle-check"}`}
-                              style={{ color: result.dryRun ? "var(--text-3)" : "#22c55e", fontSize: "0.65rem", flexShrink: 0 }} />
-                            <span style={{ overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{f}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  )}
-                  {failed > 0 && (
-                    <div style={{ marginTop: 10, padding: "8px 10px", background: "var(--danger-bg, #fef2f2)", borderRadius: "var(--r-sm)", fontSize: "0.75rem", color: "var(--danger)", lineHeight: 1.5 }}>
-                      <i className="fa-solid fa-triangle-exclamation" style={{ marginRight: 5 }} />
-                      <strong>{failed} file(s) could not be deleted.</strong> Add a DELETE policy for the <code>anon</code> role in Supabase → Storage → {bucket} → Policies.
-                    </div>
-                  )}
-                  {scanned > 0 && orphanList.length === 0 && failed === 0 && (
-                    <div style={{ fontSize: "0.78rem", color: "#22c55e", display: "flex", alignItems: "center", gap: 6, marginTop: 4 }}>
-                      <i className="fa-solid fa-circle-check" /> All {scanned} file(s) are referenced — nothing to clean.
-                    </div>
-                  )}
-                  {scanned === 0 && <div style={{ fontSize: "0.78rem", color: "var(--text-3)", fontStyle: "italic" }}>Bucket is empty.</div>}
-                </div>
-              );
-            })}
-            {result.errors.length > 0 && (
-              <div style={{ background: "var(--danger-bg, #fef2f2)", border: "1px solid var(--danger)", borderRadius: "var(--r)", padding: "10px 14px", fontSize: "0.75rem", color: "var(--danger)", lineHeight: 1.7 }}>
-                <strong>Warnings / Errors:</strong>
-                {result.errors.map((e, i) => <div key={i} style={{ marginTop: 4 }}>• {e}</div>)}
-              </div>
-            )}
-            {result.dryRun && totalOrphans > 0 && (
-              <div style={{ background: "var(--surface-2)", border: "1px dashed #e6a817", borderRadius: "var(--r)", padding: "10px 14px", fontSize: "0.82rem", color: "var(--text-2)", lineHeight: 1.6 }}>
-                <i className="fa-solid fa-circle-info" style={{ marginRight: 6, color: "#e6a817" }} />
-                Found <strong>{totalOrphans} orphaned file(s)</strong>. Uncheck <strong>Dry Run</strong> and click <strong>Delete Orphaned Files</strong> to remove them.
-              </div>
-            )}
-            {!result.dryRun && totalOrphans === 0 && totalFailed === 0 && (
-              <div style={{ textAlign: "center", padding: "16px", fontSize: "0.88rem", color: "#22c55e", fontWeight: 600 }}>
-                <i className="fa-solid fa-circle-check" style={{ marginRight: 8 }} />All storage is clean.
-              </div>
-            )}
-          </div>
-        )}
-        <div className="modal-footer" style={{ paddingTop: 4 }}>
-          <Btn label="Close" variant="ghost" onClick={onClose} />
-        </div>
-      </div>
-    </Modal>
-  );
-}
-
-// ─── Product audit trail strip (shown inside the edit form) ──────────────────
 function ProductAuditStrip({ product }) {
   const fmt = d => d
     ? new Date(d).toLocaleString("en-PH", {
@@ -1548,7 +1260,6 @@ function ProductAuditStrip({ product }) {
   );
 }
 
-// ─── Grid Card ────────────────────────────────────────────────────────────────
 function ProductCard({ p, onEdit, onDelete, onDuplicate, perms }) {
   const [hovered,  setHovered]  = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -1564,7 +1275,6 @@ function ProductCard({ p, onEdit, onDelete, onDuplicate, perms }) {
   const productUrl = `${FRONT_URL || window.location.origin}/products/${p.slug}`;
 
   const handleCardClick = (e) => {
-    // Don't navigate if clicking the menu button
     if (menuRef.current && menuRef.current.contains(e.currentTarget)) {
       return;
     }
@@ -1651,7 +1361,6 @@ export default function Products({ currentUser }) {
 
   const [modalOpen,   setModalOpen]   = useState(false);
   const [editing,     setEditing]     = useState(null);
-  // editingFull: the complete DB row, kept for the audit trail strip
   const [editingFull, setEditingFull] = useState(null);
   const [form,        setForm]        = useState(EMPTY_FORM);
   const [savedForm,   setSavedForm]   = useState(EMPTY_FORM);
@@ -1668,15 +1377,12 @@ export default function Products({ currentUser }) {
   const [upSpec,  setUpSpec]  = useState(false);
   const [upFile,  setUpFile]  = useState(false);
 
-  const [cleanupOpen, setCleanupOpen] = useState(false);
-
   const [modalMenuOpen, setModalMenuOpen] = useState(false);
   const [showRevisions, setShowRevisions] = useState(false);
   const [revisions, setRevisions] = useState([]);
 
   const isDirty = !formsEqual(form, savedForm);
 
-  // ── Fetch ──────────────────────────────────────────────────────────────────
   const fetchProducts = useCallback(async () => {
     setLoading(true);
     try {
@@ -1709,12 +1415,10 @@ export default function Products({ currentUser }) {
 
   useEffect(() => { fetchProducts(); fetchMeta(); }, [fetchProducts, fetchMeta]);
 
-  // ── Set default view for read-only users ────────────────────────────────────
   useEffect(() => {
     if (!perms.can("products.edit")) setViewMode("grid");
-  }, []); // eslint-disable-line
+  }, []);
 
-  // ── Fetch revision history (logs) ───────────────────────────────────────────
   const fetchRevisions = async (productId) => {
     try {
       const { data, error } = await supabase
@@ -1737,20 +1441,13 @@ export default function Products({ currentUser }) {
     await supabase.from(table).upsert(rows, { onConflict: "slug", ignoreDuplicates: true });
   };
 
-  // ── Image / file uploads ───────────────────────────────────────────────────
   const handleThumbUpload = async file => {
     setUpThumb(true);
     try {
-      const url = await uploadFileToSupabase(file, "product-images");
-      // Delete old thumbnail if exists
-      if (form.thumbnail && form.thumbnail !== url) {
-        await deleteStorageUrls([form.thumbnail]).catch(err => {
-          console.warn("[Products] Failed to delete old thumbnail:", err);
-          // Don't fail the whole operation if deletion fails
-        });
-      }
+      const slug = form.slug || slugify(form.name);
+      const url = await uploadImageToGitHub(file, slug);
       setForm(f => ({ ...f, thumbnail: url }));
-      add("Thumbnail converted to WebP and uploaded.", "success");
+      add("Thumbnail converted to WebP and uploaded to GitHub.", "success");
     } catch (err) { add(err.message, "error"); }
     finally { setUpThumb(false); }
   };
@@ -1758,10 +1455,11 @@ export default function Products({ currentUser }) {
   const uploadMoreImages = async files => {
     setUpImgs(true);
     try {
+      const slug = form.slug || slugify(form.name);
       const arr  = Array.isArray(files) ? files : [files];
-      const urls = await Promise.all(arr.map(f => uploadFileToSupabase(f, "product-images")));
+      const urls = await Promise.all(arr.map(f => uploadImageToGitHub(f, slug)));
       setForm(f => ({ ...f, images: [...f.images, ...urls] }));
-      add(`${urls.length} image(s) converted to WebP and uploaded.`, "success");
+      add(`${urls.length} image(s) converted to WebP and uploaded to GitHub.`, "success");
     } catch (err) { add(err.message, "error"); }
     finally { setUpImgs(false); }
   };
@@ -1769,10 +1467,11 @@ export default function Products({ currentUser }) {
   const uploadSpecImages = async files => {
     setUpSpec(true);
     try {
+      const slug = form.slug || slugify(form.name);
       const arr  = Array.isArray(files) ? files : [files];
-      const urls = await Promise.all(arr.map(f => uploadFileToSupabase(f, "product-images")));
+      const urls = await Promise.all(arr.map(f => uploadImageToGitHub(f, slug)));
       setForm(f => ({ ...f, spec_images: [...f.spec_images, ...urls] }));
-      add(`${urls.length} spec image(s) converted to WebP and uploaded.`, "success");
+      add(`${urls.length} spec image(s) converted to WebP and uploaded to GitHub.`, "success");
     } catch (err) { add(err.message, "error"); }
     finally { setUpSpec(false); }
   };
@@ -1780,11 +1479,12 @@ export default function Products({ currentUser }) {
   const handleFileUpload = async file => {
     setUpFile(true);
     try {
-      const url         = await uploadFileToSupabase(file, "product-pdf");
+      const slug = form.slug || slugify(form.name);
+      const url         = await uploadPdfToGitHub(file, slug);
       const rawName     = file.name.replace(/\.pdf$/i, "");
       const displayName = rawName.replace(/[-_]/g, " ").replace(/\b\w/g, c => c.toUpperCase());
       setForm(f => ({ ...f, files: [...f.files, { name: displayName, url }] }));
-      add("PDF uploaded.", "success");
+      add("PDF uploaded to GitHub.", "success");
     } catch (err) { add("PDF upload failed: " + err.message, "error"); }
     finally { setUpFile(false); }
   };
@@ -1801,33 +1501,9 @@ export default function Products({ currentUser }) {
   };
 
   const renameFile = (i, name) => setForm(f => ({ ...f, files: f.files.map((fi, idx) => idx === i ? { ...fi, name } : fi) }));
+  const removeFile = (i) => setForm(f => ({ ...f, files: f.files.filter((_, idx) => idx !== i) }));
+  const removeImageFile = (type, index) => setForm(f => ({ ...f, [type]: f[type].filter((_, idx) => idx !== index) }));
 
-  // Remove file and delete from storage
-  const removeFile = (i) => {
-    const file = form.files[i];
-    if (file?.url) {
-      deleteStorageUrls([file.url]).catch(err => {
-        console.warn("[Products] Failed to delete PDF from storage:", err);
-        add("⚠️ Failed to delete PDF from storage. It may need manual cleanup.", "warning");
-      });
-    }
-    setForm(f => ({ ...f, files: f.files.filter((_, idx) => idx !== i) }));
-  };
-
-  // Remove image and delete from storage
-  const removeImageFile = (type, index) => {
-    const array = form[type];
-    const url = array[index];
-    if (url) {
-      deleteStorageUrls([url]).catch(err => {
-        console.warn(`[Products] Failed to delete ${type} from storage:`, err);
-        add(`⚠️ Failed to delete image from storage. It may need manual cleanup.`, "warning");
-      });
-    }
-    setForm(f => ({ ...f, [type]: f[type].filter((_, idx) => idx !== index) }));
-  };
-
-  // ── Modal guard ────────────────────────────────────────────────────────────
   const actualClose = () => {
     setModalOpen(false); setEditing(null); setEditingFull(null);
     setShowRevisions(false); setModalMenuOpen(false);
@@ -1837,7 +1513,6 @@ export default function Products({ currentUser }) {
   const handleUnsavedStay    = () => { setUnsavedOpen(false); pendingClose.current = null; };
   const handleUnsavedDiscard = () => { actualClose(); };
 
-  // ── Open add / edit ────────────────────────────────────────────────────────
   const openCreate = () => {
     setEditing(null); setEditingFull(null);
     setForm({ ...EMPTY_FORM }); setSavedForm({ ...EMPTY_FORM });
@@ -1871,7 +1546,7 @@ export default function Products({ currentUser }) {
       setSavedForm(loaded);
       setSlugEdited(true);
       setEditing(row);
-      setEditingFull(data);   // full row → audit strip
+      setEditingFull(data);
       setShowRevisions(false);
       setModalMenuOpen(false);
       setModalOpen(true);
@@ -1883,7 +1558,6 @@ export default function Products({ currentUser }) {
       const data = await getProductByIdLive(row.id);
       if (!data) throw new Error("Product not found");
 
-      // Generate new slug with "-copy" suffix
       const newSlug = `${data.slug}-copy`;
 
       const loaded = {
@@ -1900,15 +1574,15 @@ export default function Products({ currentUser }) {
         features:          data.features          || [],
         brand:             data.brand             || "SAWO",
         type:              data.type              || "",
-        status:            "draft",  // Set to draft for review
+        status:            "draft",
         visible:           true,
         featured:          false,
         sort_order:        0,
       };
       setForm(loaded);
-      setSavedForm(EMPTY_FORM); // Not saved yet
+      setSavedForm(EMPTY_FORM);
       setSlugEdited(false);
-      setEditing(null); // New product, not editing
+      setEditing(null);
       setEditingFull(null);
       setShowRevisions(false);
       setModalMenuOpen(false);
@@ -1917,7 +1591,6 @@ export default function Products({ currentUser }) {
     } catch (err) { add(err.message, "error"); }
   };
 
-  // ── Save ──────────────────────────────────────────────────────────────────
   const handleSave = async e => {
     e.preventDefault();
     if (!form.name) return add("Product name is required.", "error");
@@ -1936,35 +1609,8 @@ export default function Products({ currentUser }) {
       await upsertTaxonomy(mergedTags, "tags");
       fetchMeta();
 
-      const now = new Date().toISOString();
-
-      const payload = {
-        name:              form.name.trim(),
-        slug:              form.slug.trim(),
-        short_description: form.short_description.trim() || null,
-        description:       form.description.trim() || null,
-        thumbnail:         form.thumbnail || null,
-        images:            form.images,
-        spec_images:       form.spec_images,
-        files:             form.files,
-        categories:        form.categories,
-        tags:              mergedTags,
-        features:          form.features,
-        brand:             form.brand.trim()  || null,
-        type:              form.type.trim()   || null,
-        status:            form.status,
-        visible:           form.visible,
-        featured:          form.featured,
-        sort_order:        form.sort_order,
-        updated_at:              now,
-        updated_by_username:     currentUser?.username || null,
-        ...(currentUser && !editing ? { created_by_username: currentUser.username } : {}),
-      };
-
       if (editing) {
-        const { error } = await supabase.from("products").update(payload).eq("id", editing.id);
-        if (error) throw error;
-
+        await editProduct(editing.id, form, null, [], [], []);
         await logActivity({
           action:      "update",
           entity:      "product",
@@ -1973,54 +1619,32 @@ export default function Products({ currentUser }) {
           username:    currentUser?.username,
           user_id:     currentUser?.id,
         });
-
-        const orphans = findOrphanedUrls(savedForm, form);
-        if (orphans.length) {
-          try {
-            await deleteStorageUrls(orphans);
-            console.info(`[Products] Removed ${orphans.length} orphaned file(s).`);
-            add(`Cleaned up ${orphans.length} removed file(s) from storage.`, "success");
-          } catch (deleteErr) {
-            console.error("[Products] Failed to delete orphaned files:", deleteErr);
-            add(`⚠️ Failed to delete ${orphans.length} file(s) from storage. They may need manual cleanup.`, "warning");
-          }
-        }
       } else {
-        const { data: inserted, error } = await supabase
-          .from("products").insert([payload]).select("id").single();
-        if (error) throw error;
-
+        await createProduct(form, null, [], [], []);
         await logActivity({
           action:      "create",
           entity:      "product",
-          entity_id:   inserted?.id,
+          entity_id:   null,
           entity_name: form.name.trim(),
           username:    currentUser?.username,
           user_id:     currentUser?.id,
         });
       }
 
-      add(editing ? "Product saved." : "Product created.", "success");
+      add(editing ? "Product saved to GitHub." : "Product created on GitHub.", "success");
       actualClose();
       fetchProducts();
     } catch (err) { add(err.message, "error"); }
     finally { setSaving(false); }
   };
 
-  // ── Delete single ──────────────────────────────────────────────────────────
   const handleDelete = async () => {
     const target = confirmDel;
     setConfirmDel(null);
     try {
-      const fullProduct = await getProductByIdLive(target.id);
-      if (!fullProduct) throw new Error("Product not found");
-      const { error: delErr } = await supabase.from("products").delete().eq("id", target.id);
-      if (delErr) throw delErr;
-      await deleteProductStorageFiles(fullProduct);
-
+      await deleteProduct(target.id);
       const deletedBy = currentUser?.username || "unknown";
       const deletedById = currentUser?.id || null;
-
       await logActivity({
         action:      "delete",
         entity:      "product",
@@ -2028,26 +1652,18 @@ export default function Products({ currentUser }) {
         entity_name: target.name,
         username:    deletedBy,
         user_id:     deletedById,
-        meta:        {
-          deleted_files: (fullProduct?.files || []).length,
-          had_images: (fullProduct?.images || []).length > 0,
-        }
       });
-
-      add("Product and associated files deleted.", "success");
+      add("Product deleted from GitHub.", "success");
     } catch (err) { add(err.message, "error"); }
     finally { fetchProducts(); }
   };
 
-  // ── Bulk delete ────────────────────────────────────────────────────────────
   const handleBulkDelete = async () => {
     const ids = Array.from(selected);
     setBulkConfirm(false);
     try {
       const fullProducts = await Promise.all(ids.map(id => getProductByIdLive(id))).then(products => products.filter(p => p));
-      const { error: delErr } = await supabase.from("products").delete().in("id", ids);
-      if (delErr) throw delErr;
-      await Promise.allSettled((fullProducts || []).map(p => deleteProductStorageFiles(p)));
+      await Promise.all(ids.map(id => deleteProduct(id)));
 
       const deletedBy = currentUser?.username || "unknown";
       const deletedById = currentUser?.id || null;
@@ -2057,14 +1673,10 @@ export default function Products({ currentUser }) {
           action: "delete", entity: "product",
           entity_id: p.id, entity_name: p.name,
           username: deletedBy, user_id: deletedById,
-          meta: {
-            bulk: true,
-            deleted_files: (p.files || []).length,
-            had_images: (p.images || []).length > 0,
-          },
+          meta: { bulk: true },
         })
       ));
-      add(`${ids.length} product(s) and their files deleted.`, "success");
+      add(`${ids.length} product(s) deleted from GitHub.`, "success");
     } catch (err) { add(err.message, "error"); }
     finally { setSelected(new Set()); fetchProducts(); }
   };
@@ -2082,7 +1694,6 @@ export default function Products({ currentUser }) {
     else setSelected(new Set(filtered.map(p => p.id)));
   };
 
-  // ── Filter ─────────────────────────────────────────────────────────────────
   const filtered = products.filter(p => {
     if (!search) return true;
     const q = search.toLowerCase();
@@ -2107,13 +1718,11 @@ export default function Products({ currentUser }) {
     ? new Date(d).toLocaleDateString("en-PH", { month: "short", day: "numeric", year: "numeric" })
     : "-";
 
-  // ── Render ─────────────────────────────────────────────────────────────────
   return (
     <div className="products-page">
       <Toast toasts={toasts} remove={remove} />
       <UnsavedConfirm open={unsavedOpen} onStay={handleUnsavedStay} onDiscard={handleUnsavedDiscard} />
 
-      {/* Header */}
       <div className="page-header" style={{ marginBottom: 14 }}>
         <div>
           <h1 className="page-title">
@@ -2126,7 +1735,6 @@ export default function Products({ currentUser }) {
         </div>
       </div>
 
-      {/* Toolbar */}
       <div className="products-toolbar">
         <div className="search-wrap">
           <i className="fa-solid fa-magnifying-glass" />
@@ -2157,23 +1765,11 @@ export default function Products({ currentUser }) {
             <i className="fa-solid fa-trash" /> Delete {selected.size}
           </button>
         )}
-        {perms.can("products.storage_cleanup") && (
-          <button
-            type="button"
-            onClick={() => setCleanupOpen(true)}
-            title="Storage Cleanup — Remove orphaned files. Scans both image and PDF storage buckets to find and delete files that aren't attached to any product. Safe to run anytime."
-            className="icon-btn"
-            style={{ marginLeft: 4 }}
-          >
-            <i className="fa-solid fa-broom" style={{ fontSize: "0.85em" }} />
-          </button>
-        )}
         {perms.can("products.create") && (
           <Btn icon="fa-plus" label="New Product" onClick={openCreate} style={{ marginLeft: "auto" }} />
         )}
       </div>
 
-      {/* Grid View */}
       {!loading && viewMode === "grid" && (
         <div className="product-grid">
           {filtered.length === 0 && (
@@ -2185,7 +1781,6 @@ export default function Products({ currentUser }) {
         </div>
       )}
 
-      {/* List View */}
       {viewMode === "list" && (
         <div className="products-table-wrap">
           {loading ? (
@@ -2285,7 +1880,6 @@ export default function Products({ currentUser }) {
         </div>
       )}
 
-      {/* ── Product Form Modal ── */}
       <Modal
         open={modalOpen}
         onClose={handleModalClose}
@@ -2391,7 +1985,6 @@ export default function Products({ currentUser }) {
         )}
       >
 
-        {/* Show either revision history or form */}
         {showRevisions && editing ? (
           <div>
             <button
@@ -2467,23 +2060,13 @@ export default function Products({ currentUser }) {
 
             <form id="product-form" onSubmit={handleSave} style={{ display: "flex", flexDirection: "column", gap: 14 }}>
 
-          {/* Featured Image & Gallery */}
           <div className="responsive-grid-2">
-            {/* Featured Image — Left */}
             <div>
               <SectionLabel label="Featured Image" />
               {form.thumbnail ? (
                 <ThumbnailPreview
                   url={form.thumbnail}
-                  onRemove={() => {
-                    if (form.thumbnail) {
-                      deleteStorageUrls([form.thumbnail]).catch(err => {
-                        console.warn("[Products] Failed to delete thumbnail from storage:", err);
-                        add("⚠️ Failed to delete thumbnail from storage. It may need manual cleanup.", "warning");
-                      });
-                    }
-                    setForm(f => ({ ...f, thumbnail: "" }));
-                  }}
+                  onRemove={() => setForm(f => ({ ...f, thumbnail: "" }))}
                   onReplace={handleThumbUpload}
                   uploading={upThumb}
                 />
@@ -2492,7 +2075,6 @@ export default function Products({ currentUser }) {
               )}
             </div>
 
-            {/* Gallery Images — Right */}
             <div>
               <SectionLabel label="Gallery Images" />
               {form.images.length > 0 ? (
@@ -2507,7 +2089,6 @@ export default function Products({ currentUser }) {
             </div>
           </div>
 
-          {/* Basic Info */}
           <SectionLabel label="Basic Info" />
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
             <Field label="Product Name" value={form.name} onChange={handleNameChange} placeholder="e.g. Nordex 9kW" required />
@@ -2520,17 +2101,14 @@ export default function Products({ currentUser }) {
             <ModelSelect label="Type / Model" value={form.type} onChange={v => setForm(f => ({ ...f, type: v }))} placeholder="Premium Series" suggestions={allModels} />
           </div>
 
-          {/* Features ← above Short Description */}
           <SectionLabel label="Features" />
           <PillInput label="Features" value={form.features}
             onChange={v => setForm(f => ({ ...f, features: v }))} placeholder="e.g. Auto shutoff, Stainless steel" />
 
-          {/* Product Description */}
           <SectionLabel label="Product Description" />
           <RichField label="Product Description" value={form.short_description}
             onChange={e => setForm(f => ({ ...f, short_description: e.target.value }))} rows={4} onNotify={add} />
 
-          {/* Categories & Tags */}
           <SectionLabel label="Categories & Tags" />
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
             <PillInput label="Categories" value={form.categories}
@@ -2540,7 +2118,6 @@ export default function Products({ currentUser }) {
               placeholder="e.g. electric, 9kW" suggestions={allTags} />
           </div>
 
-          {/* Tag Suggestions from Name */}
           <TagSuggestions
             name={form.name}
             description={form.short_description}
@@ -2553,14 +2130,11 @@ export default function Products({ currentUser }) {
             }}
           />
 
-          {/* Specifications */}
           <RichField label="Specifications" value={form.description}
             onChange={e => setForm(f => ({ ...f, description: e.target.value }))} onNotify={add} />
           <AutoTagPreview description={form.description} currentTags={form.tags} />
 
-          {/* Spec Diagram Images & Resources (PDFs) */}
           <div className="responsive-grid-2">
-            {/* Spec / Diagram Images — Left */}
             <div>
               <SectionLabel label="Spec / Diagram Images" />
               {form.spec_images.length > 0 ? (
@@ -2574,7 +2148,6 @@ export default function Products({ currentUser }) {
               )}
             </div>
 
-            {/* Resources (PDFs) — Right */}
             <div>
               <SectionLabel label="Resources (PDFs)" />
               {form.files.length > 0 ? (
@@ -2589,7 +2162,6 @@ export default function Products({ currentUser }) {
             </div>
           </div>
 
-          {/* Status & Visibility */}
           <SectionLabel label="Status & Visibility" />
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 12, alignItems: "start" }}>
             <SelectField label="Status" value={form.status} onChange={e => setForm(f => ({ ...f, status: e.target.value }))}
@@ -2602,7 +2174,6 @@ export default function Products({ currentUser }) {
               onChange={e => setForm(f => ({ ...f, sort_order: parseInt(e.target.value) || 0 }))} helper="Lower = shown first" />
           </div>
 
-          {/* ── Record Info (audit trail) — only shown when editing ── */}
           {editing && editingFull && (
             <>
               <SectionLabel label="Record Info" />
@@ -2610,7 +2181,6 @@ export default function Products({ currentUser }) {
             </>
           )}
 
-          {/* New product author notice */}
           {!editing && currentUser && (
             <div className="created-by-notice">
               <i className="fa-solid fa-pen-to-square" style={{ marginRight: 6 }} />
@@ -2623,18 +2193,14 @@ export default function Products({ currentUser }) {
         )}
       </Modal>
 
-      {/* Storage Cleanup */}
-      <StorageCleanupModal open={cleanupOpen} onClose={() => setCleanupOpen(false)} addToast={add} />
-
-      {/* Bulk delete confirm */}
       <Confirm open={bulkConfirm} onClose={() => setBulkConfirm(false)} onConfirm={handleBulkDelete}
         title="Delete Selected?"
-        message={`Delete ${selected.size} selected product(s)? This cannot be undone. All associated images and files will also be removed.`}
+        message={`Delete ${selected.size} selected product(s)? This cannot be undone.`}
         confirmLabel="Delete All" />
 
       <Confirm open={!!confirmDel} onClose={() => setConfirmDel(null)} onConfirm={handleDelete}
         title="Delete Product?"
-        message={`Delete "${confirmDel?.name}"? This cannot be undone. All associated images and files will also be removed.`}
+        message={`Delete "${confirmDel?.name}"? This cannot be undone.`}
         confirmLabel="Delete" />
     </div>
   );

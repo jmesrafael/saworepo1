@@ -3,7 +3,7 @@
  * src/local-storage/cacheReader.js
  *
  * Frontend cache for products and categories.
- * Fetches from Supabase once and caches in localStorage for 1 hour.
+ * Fetches from GitHub products.json and caches in localStorage for 1 hour.
  * Zero egress for subsequent searches/views.
  *
  * ─── USAGE ────────────────────────────────────────────────────────────────────

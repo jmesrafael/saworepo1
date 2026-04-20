@@ -9,7 +9,7 @@
 
 import React, { useEffect, useState, useRef, useCallback } from "react";
 import { useParams, Link } from "react-router-dom";
-import { supabase } from "../Administrator/supabase";
+import { getProducts } from "../lib/getProducts";
 import { ImageWithLoader } from "../components/ImageWithLoader";
 
 /* ── Lightbox ─────────────────────────────────────────────────────── */
@@ -509,15 +509,14 @@ function RelatedProducts({ currentSlug, categories }) {
     let cancelled = false;
     (async () => {
       try {
-        const { data } = await supabase
-          .from("products")
-          .select("id,name,slug,thumbnail,categories")
-          .eq("status", "published")
-          .eq("visible", true)
-          .neq("slug", currentSlug)
-          .contains("categories", categories.slice(0, 1))
-          .limit(4);
-        if (!cancelled && data) setRelated(data);
+        const products = await getProducts();
+        const related = products.filter(p =>
+          p.slug !== currentSlug &&
+          p.status === 'published' &&
+          p.visible !== false &&
+          p.categories?.some(cat => categories.slice(0, 1).includes(cat))
+        ).slice(0, 4);
+        if (!cancelled) setRelated(related);
       } catch {}
     })();
     return () => { cancelled = true; };
@@ -669,18 +668,13 @@ export default function ProductPage() {
 
     (async () => {
       try {
-        const { data, error: err } = await supabase
-          .from("products")
-          .select("*")
-          .eq("slug", slug)
-          .eq("status", "published")
-          .eq("visible", true)
-          .single();
+        const products = await getProducts();
+        const product = products.find(p => p.slug === slug && p.status === 'published' && p.visible !== false);
 
-        if (err || !data) {
+        if (!product) {
           if (!cancelled) setError("Product not found.");
         } else {
-          if (!cancelled) setProduct(data);
+          if (!cancelled) setProduct(product);
         }
       } catch {
         if (!cancelled) setError("Connection error. Please try again.");

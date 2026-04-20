@@ -25,3 +25,9 @@ yarn-error.log*
 # local cache (auto-generated)
 /src/local-storage/data/
 /src/local-storage/files/
+
+# saworepo2 (nested Git repo)
+saworepo2/
+
+# environment variables
+.env
