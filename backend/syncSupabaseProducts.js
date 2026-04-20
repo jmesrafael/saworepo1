@@ -11,12 +11,10 @@ const PRODUCTS_FILE = path.join(__dirname, '..', 'products.json');
 const SUPABASE_URL = process.env.SUPABASE_URL;
 const SUPABASE_SERVICE_KEY = process.env.SUPABASE_SERVICE_KEY;
 
-if (!SUPABASE_URL || !SUPABASE_SERVICE_KEY) {
-  console.error('❌ Missing SUPABASE_URL or SUPABASE_SERVICE_KEY in .env');
-  process.exit(1);
+let supabase = null;
+if (SUPABASE_URL && SUPABASE_SERVICE_KEY) {
+  supabase = createClient(SUPABASE_URL, SUPABASE_SERVICE_KEY);
 }
-
-const supabase = createClient(SUPABASE_URL, SUPABASE_SERVICE_KEY);
 
 async function syncProducts() {
   const syncResult = {
@@ -31,6 +29,13 @@ async function syncProducts() {
   };
 
   try {
+    // Check if Supabase is configured
+    if (!supabase) {
+      console.error('❌ Supabase not configured. Missing SUPABASE_URL or SUPABASE_SERVICE_KEY in .env');
+      syncResult.error = 'Supabase credentials not configured. Add SUPABASE_URL and SUPABASE_SERVICE_KEY to .env';
+      return syncResult;
+    }
+
     console.log('📊 [SYNC] Starting product sync from Supabase...\n');
 
     // Step 1: Read current products.json
