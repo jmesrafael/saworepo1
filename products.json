@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-04-20T23:39:25.228Z",
+  "updatedAt": "2026-04-20T23:41:42.214Z",
   "products": [
     {
       "id": "50834970-4527-4954-9cd7-8ac89d7bd70f",
@@ -3948,36 +3948,6 @@
       "created_at": "2026-04-20T08:53:44.703Z",
       "updated_at": "2026-04-20T08:53:44.703Z",
       "is_deleted": false
-    },
-    {
-      "id": "853702cf-2a61-4294-9f40-6f41cbfe7583",
-      "name": "asdas",
-      "slug": "asdas",
-      "description": "",
-      "short_description": "",
-      "brand": "SAWO",
-      "type": null,
-      "spec_table": null,
-      "resources": null,
-      "status": "published",
-      "visible": true,
-      "featured": false,
-      "sort_order": 0,
-      "categories": [],
-      "tags": [],
-      "features": [],
-      "auto_tag_columns": null,
-      "thumbnail": "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776644962668_p9rdgmco1h.webp",
-      "images": [],
-      "spec_images": [],
-      "files": [],
-      "created_by": null,
-      "created_by_username": "Rafael",
-      "updated_by_username": "Rafael",
-      "created_at": "2026-04-20T00:28:58.72364+00:00",
-      "updated_at": "2026-04-20T00:29:28.836+00:00",
-      "is_deleted": false,
-      "source": "supabase"
     },
     {
       "id": "fbd6f67e-993e-477d-b784-32b7b3020d10",
