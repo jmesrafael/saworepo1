@@ -30,7 +30,8 @@
   "scripts": {
     "start": "react-scripts start",
     "dev": "cross-env PORT=3001 react-scripts start",
-    "build": "react-scripts build",
+    "prebuild": "node -e \"const fs=require('fs'); const src='../products.json'; const dst='public/products.json'; if(fs.existsSync(src)) { fs.copyFileSync(src, dst); console.log('✅ Synced products.json to public/'); }\"",
+    "build": "npm run prebuild && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

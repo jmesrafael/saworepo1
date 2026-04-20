@@ -5,7 +5,7 @@ const MAIN_REPO = process.env.REACT_APP_MAIN_REPO || 'saworepo1'
 const GITHUB_RAW_URL = `https://cdn.jsdelivr.net/gh/${GITHUB_OWNER}/${MAIN_REPO}@main/products.json`
 
 export async function getProducts() {
-  // Local backend (primary — zero egress)
+  // Priority 1: Local backend (primary — zero egress, for local dev)
   try {
     const res = await fetch(`${API_URL}/api/products`, {
       method: 'GET',
@@ -14,15 +14,33 @@ export async function getProducts() {
     if (res.ok) {
       const data = await res.json()
       if (Array.isArray(data) && data.length > 0) {
-        console.log('[getProducts] Loaded from local backend')
+        console.log('[getProducts] ✅ Loaded from local backend')
         return data
       }
     }
   } catch (err) {
-    console.warn('[getProducts] Local backend unavailable:', err.message)
+    console.warn('[getProducts] Local backend unavailable (this is OK)')
   }
 
-  // GitHub CDN fallback (when backend is offline)
+  // Priority 2: Local public/products.json (bundled with deployment)
+  try {
+    const res = await fetch('/products.json?t=' + Date.now(), {
+      method: 'GET',
+      headers: { 'Content-Type': 'application/json' }
+    })
+    if (res.ok) {
+      const json = await res.json()
+      const data = json.products || []
+      if (data.length > 0) {
+        console.log('[getProducts] ✅ Loaded from bundled products.json')
+        return data
+      }
+    }
+  } catch (err) {
+    console.warn('[getProducts] Bundled products.json unavailable:', err.message)
+  }
+
+  // Priority 3: GitHub CDN fallback (when both above fail)
   try {
     const res = await fetch(`${GITHUB_RAW_URL}?t=${Date.now()}`, {
       method: 'GET',
@@ -32,15 +50,15 @@ export async function getProducts() {
       const json = await res.json()
       const data = json.products || []
       if (data.length > 0) {
-        console.log('[getProducts] Loaded from GitHub CDN')
+        console.log('[getProducts] ✅ Loaded from GitHub CDN')
         return data
       }
     }
   } catch (err) {
-    console.warn('[getProducts] GitHub fallback unavailable:', err.message)
+    console.warn('[getProducts] GitHub CDN unavailable:', err.message)
   }
 
-  console.error('[getProducts] Failed to load from all sources')
+  console.error('❌ [getProducts] Failed to load from all sources')
   return []
 }
 
