@@ -1,15 +1,33 @@
-// Fetch products from local backend first, then GitHub
+// Fetch products from Supabase (primary), fallback to local backend
+import { createClient } from '@supabase/supabase-js'
 
-const OWNER = process.env.REACT_APP_GITHUB_OWNER || 'jmesrafael'
-const REPO1 = 'saworepo1'
-
+const SUPABASE_URL = process.env.REACT_APP_SUPABASE_URL
+const SUPABASE_KEY = process.env.REACT_APP_SUPABASE_ANON_KEY
 const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000'
-const GITHUB_URL = process.env.NODE_ENV === 'development'
-  ? `https://raw.githubusercontent.com/${OWNER}/${REPO1}/main/products.json`
-  : `https://cdn.jsdelivr.net/gh/${OWNER}/${REPO1}@main/products.json`
+
+const supabase = SUPABASE_URL && SUPABASE_KEY
+  ? createClient(SUPABASE_URL, SUPABASE_KEY)
+  : null
 
 export async function getProducts() {
-  // Try local backend first
+  // Try Supabase first
+  if (supabase) {
+    try {
+      const { data, error } = await supabase
+        .from('products')
+        .select('*')
+        .eq('is_deleted', false)
+
+      if (!error && data && Array.isArray(data) && data.length > 0) {
+        console.log('[getProducts] Loaded from Supabase')
+        return data
+      }
+    } catch (err) {
+      console.warn('[getProducts] Supabase unavailable:', err.message)
+    }
+  }
+
+  // Fall back to local backend
   try {
     const res = await fetch(`${API_URL}/api/products`, {
       method: 'GET',
@@ -23,20 +41,11 @@ export async function getProducts() {
       }
     }
   } catch (err) {
-    console.warn('[getProducts] Local backend unavailable, trying GitHub:', err.message)
+    console.warn('[getProducts] Local backend unavailable:', err.message)
   }
 
-  // Fall back to GitHub
-  try {
-    const res = await fetch(GITHUB_URL, { next: { revalidate: 60 } })
-    if (!res.ok) throw new Error(`Failed to load products: ${res.status}`)
-    const data = await res.json()
-    console.log('[getProducts] Loaded from GitHub')
-    return data.products ?? []
-  } catch (err) {
-    console.error('[getProducts] Failed to load from both sources:', err)
-    return []
-  }
+  console.error('[getProducts] Failed to load from all sources')
+  return []
 }
 
 export async function getProductBySlug(slug) {
