@@ -1376,6 +1376,7 @@ export default function Products({ currentUser }) {
   const [savedForm,   setSavedForm]   = useState(EMPTY_FORM);
   const [slugEdited,  setSlugEdited]  = useState(false);
   const [saving,      setSaving]      = useState(false);
+  const [savingStatus, setSavingStatus] = useState("");
 
   const [unsavedOpen, setUnsavedOpen] = useState(false);
   const pendingClose = useRef(null);
@@ -1608,7 +1609,9 @@ export default function Products({ currentUser }) {
     if (!form.name) return add("Product name is required.", "error");
     if (!form.slug) return add("Slug is required.", "error");
     setSaving(true);
+    setSavingStatus("Processing product data...");
     try {
+      setSavingStatus("Extracting tags from description...");
       const { kwTags, modelTags } = extractTagsFromDescription(form.description);
       const mergedTags = mergeAutoTags(form.tags, kwTags, modelTags);
       const newAutoTags = mergedTags.filter(t => !form.tags.includes(t));
@@ -1617,85 +1620,139 @@ export default function Products({ currentUser }) {
         setForm(f => ({ ...f, tags: mergedTags }));
       }
 
-      await upsertTaxonomy(form.categories, "categories");
-      await upsertTaxonomy(mergedTags, "tags");
+      setSavingStatus("Updating categories and tags...");
+      try {
+        await upsertTaxonomy(form.categories, "categories");
+      } catch (err) {
+        console.error("Error upserting categories:", err);
+        add(`Warning: Could not update categories: ${err.message}`, "warn");
+      }
+      try {
+        await upsertTaxonomy(mergedTags, "tags");
+      } catch (err) {
+        console.error("Error upserting tags:", err);
+        add(`Warning: Could not update tags: ${err.message}`, "warn");
+      }
       fetchMeta();
 
       if (editing) {
-        await editProduct(editing.id, form, null, [], [], []);
-        // Activity logged via GitHub commit history
-        // await logActivity({
-        //   action:      "update",
-        //   entity:      "product",
-        //   entity_id:   editing.id,
-        //   entity_name: form.name.trim(),
-        //   username:    currentUser?.username,
-        //   user_id:     currentUser?.id,
-        // });
+        setSavingStatus("Updating product in GitHub...");
+        console.log("🔄 [handleSave] Editing product:", editing.id);
+        try {
+          await editProduct(editing.id, form, null, [], [], []);
+          console.log("✅ [handleSave] Product edit completed");
+        } catch (err) {
+          console.error("❌ [handleSave] Error editing product:", err);
+          throw new Error(`Failed to update product: ${err.message}`);
+        }
       } else {
-        await createProduct(form, null, [], [], []);
-        // Activity logged via GitHub commit history
-        // await logActivity({
-        //   action:      "create",
-        //   entity:      "product",
-        //   entity_id:   null,
-        //   entity_name: form.name.trim(),
-        //   username:    currentUser?.username,
-        //   user_id:     currentUser?.id,
-        // });
+        setSavingStatus("Creating product in GitHub...");
+        console.log("📝 [handleSave] Creating new product with slug:", form.slug);
+        try {
+          await createProduct(form, null, [], [], []);
+          console.log("✅ [handleSave] Product creation completed");
+        } catch (err) {
+          console.error("❌ [handleSave] Error creating product:", err);
+          throw new Error(`Failed to create product: ${err.message}`);
+        }
+      }
+
+      setSavingStatus("Syncing changes (this may take a moment)...");
+      try {
+        bustProductCache();
+        await new Promise(resolve => setTimeout(resolve, 1500));
+        await fetchProducts();
+      } catch (err) {
+        console.error("Error syncing changes:", err);
+        add("Warning: Product saved but syncing encountered an issue. Please refresh.", "warn");
       }
 
       add(editing ? "Product saved to GitHub." : "Product created on GitHub.", "success");
       actualClose();
-      bustProductCache();
-      fetchProducts();
-    } catch (err) { add(err.message, "error"); }
-    finally { setSaving(false); }
+    } catch (err) {
+      console.error("Unexpected error during save:", err);
+      add(err.message, "error");
+    }
+    finally {
+      setSaving(false);
+      setSavingStatus("");
+    }
   };
 
   const handleDelete = async () => {
     const target = confirmDel;
     setConfirmDel(null);
+    setSaving(true);
+    setSavingStatus("Deleting product...");
     try {
       await deleteProduct(target.id);
-      // Activity logged via GitHub commit history
-      // const deletedBy = currentUser?.username || "unknown";
-      // const deletedById = currentUser?.id || null;
-      // await logActivity({
-      //   action:      "delete",
-      //   entity:      "product",
-      //   entity_id:   target.id,
-      //   entity_name: target.name,
-      //   username:    deletedBy,
-      //   user_id:     deletedById,
-      // });
+      setSavingStatus("Updating products.json in GitHub...");
+    } catch (err) {
+      console.error("Error deleting product:", err);
+      add(err.message, "error");
+      setSaving(false);
+      setSavingStatus("");
+      return;
+    }
+    try {
+      setSavingStatus("Syncing changes (this may take a moment)...");
+      bustProductCache();
+      await new Promise(resolve => setTimeout(resolve, 1500));
+      await fetchProducts();
       add("Product deleted from GitHub.", "success");
-    } catch (err) { add(err.message, "error"); }
-    finally { bustProductCache(); fetchProducts(); }
+    } catch (err) {
+      console.error("Error syncing after delete:", err);
+      add("Product deleted but syncing encountered an issue. Please refresh.", "warn");
+    } finally {
+      setSaving(false);
+      setSavingStatus("");
+    }
   };
 
   const handleBulkDelete = async () => {
     const ids = Array.from(selected);
     setBulkConfirm(false);
+    setSaving(true);
+    setSavingStatus("Fetching products...");
     try {
-      const fullProducts = await Promise.all(ids.map(id => getProductByIdLive(id))).then(products => products.filter(p => p));
-      await Promise.all(ids.map(id => deleteProduct(id)));
+      setSavingStatus(`Fetching ${ids.length} product(s)...`);
+      try {
+        await Promise.all(ids.map(id => getProductByIdLive(id))).then(products => products.filter(p => p));
+      } catch (err) {
+        console.error("Error fetching products for bulk delete:", err);
+        add("Warning: Could not fetch all product details, but continuing with deletion.", "warn");
+      }
 
-      // Activity logged via GitHub commit history
-      // const deletedBy = currentUser?.username || "unknown";
-      // const deletedById = currentUser?.id || null;
-      //
-      // await Promise.allSettled((fullProducts || []).map(p =>
-      //   logActivity({
-      //     action: "delete", entity: "product",
-      //     entity_id: p.id, entity_name: p.name,
-      //     username: deletedBy, user_id: deletedById,
-      //     meta: { bulk: true },
-      //   })
-      // ));
+      setSavingStatus(`Deleting ${ids.length} product(s)...`);
+      try {
+        await Promise.all(ids.map(id => deleteProduct(id)));
+      } catch (err) {
+        console.error("Error deleting products:", err);
+        throw new Error(`Failed to delete products: ${err.message}`);
+      }
+
+      setSavingStatus("Updating products.json in GitHub...");
+      await new Promise(resolve => setTimeout(resolve, 1000));
+
       add(`${ids.length} product(s) deleted from GitHub.`, "success");
-    } catch (err) { add(err.message, "error"); }
-    finally { setSelected(new Set()); bustProductCache(); fetchProducts(); }
+    } catch (err) {
+      console.error("Unexpected error during bulk delete:", err);
+      add(err.message, "error");
+    } finally {
+      setSaving(false);
+      setSavingStatus("");
+      try {
+        setSavingStatus("Syncing changes...");
+        setSelected(new Set());
+        bustProductCache();
+        await fetchProducts();
+      } catch (err) {
+        console.error("Error syncing after bulk delete:", err);
+        add("Products deleted but syncing encountered an issue. Please refresh.", "warn");
+      } finally {
+        setSavingStatus("");
+      }
+    }
   };
 
   const toggleSelect = id => {
@@ -1738,6 +1795,40 @@ export default function Products({ currentUser }) {
   return (
     <div className="products-page">
       <Toast toasts={toasts} remove={remove} />
+      {saving && (
+        <div style={{
+          position: "fixed", top: 0, left: 0, right: 0, bottom: 0,
+          backgroundColor: "rgba(0,0,0,0.5)", display: "flex", alignItems: "center", justifyContent: "center",
+          zIndex: 9999
+        }}>
+          <div style={{
+            backgroundColor: "white", padding: "2rem", borderRadius: "8px",
+            boxShadow: "0 4px 12px rgba(0,0,0,0.15)", maxWidth: "400px", width: "90%"
+          }}>
+            <div style={{ marginBottom: "1rem", fontSize: "0.9rem", fontWeight: "500", color: "#666" }}>
+              {savingStatus || "Processing..."}
+            </div>
+            <div style={{ width: "100%", height: "6px", backgroundColor: "#e0e0e0", borderRadius: "3px", overflow: "hidden" }}>
+              <div style={{
+                height: "100%", backgroundColor: "var(--brand, #007bff)",
+                animation: "progress-animation 2s infinite",
+                background: "linear-gradient(90deg, var(--brand, #007bff), #0056b3, var(--brand, #007bff))",
+                backgroundSize: "200% 100%",
+                animation: "shimmer 2s infinite"
+              }} />
+            </div>
+            <div style={{ marginTop: "0.5rem", fontSize: "0.8rem", color: "#999" }}>
+              Changes won't apply immediately. Please wait while we update the repository...
+            </div>
+          </div>
+          <style>{`
+            @keyframes shimmer {
+              0% { background-position: 200% 0; }
+              100% { background-position: -200% 0; }
+            }
+          `}</style>
+        </div>
+      )}
       <UnsavedConfirm open={unsavedOpen} onStay={handleUnsavedStay} onDiscard={handleUnsavedDiscard} />
 
       <div className="page-header" style={{ marginBottom: 14 }}>
