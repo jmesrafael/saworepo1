@@ -16,7 +16,7 @@
  *  const categories = await getAllCategoriesLive();
  */
 
-import { supabase } from "../Administrator/supabase";
+// import { supabase } from "../Administrator/supabase"; // Commented out - using GitHub storage only
 import { getProducts } from "../lib/getProducts";
 
 /**
@@ -33,17 +33,16 @@ export async function getAllProductsLive() {
 }
 
 /**
- * Fetch all categories live from Supabase
+ * Fetch all categories live from products
  */
 export async function getAllCategoriesLive() {
   try {
-    const { data, error } = await supabase
-      .from("categories")
-      .select("*")
-      .order("name", { ascending: true });
-
-    if (error) throw error;
-    return data || [];
+    const products = await getProducts();
+    const cats = new Set();
+    products.forEach(p => {
+      (p.categories || []).forEach(c => cats.add(c));
+    });
+    return [...cats].map(name => ({ name, slug: name.toLowerCase().replace(/\s+/g, '-') })).sort((a, b) => a.name.localeCompare(b.name));
   } catch (err) {
     console.error("[supabaseReader] Failed to fetch categories:", err);
     return [];
@@ -51,17 +50,16 @@ export async function getAllCategoriesLive() {
 }
 
 /**
- * Fetch all tags live from Supabase
+ * Fetch all tags live from products
  */
 export async function getAllTagsLive() {
   try {
-    const { data, error } = await supabase
-      .from("tags")
-      .select("*")
-      .order("name", { ascending: true });
-
-    if (error) throw error;
-    return data || [];
+    const products = await getProducts();
+    const tags = new Set();
+    products.forEach(p => {
+      (p.tags || []).forEach(t => tags.add(t));
+    });
+    return [...tags].map(name => ({ name, slug: name.toLowerCase().replace(/\s+/g, '-') })).sort((a, b) => a.name.localeCompare(b.name));
   } catch (err) {
     console.error("[supabaseReader] Failed to fetch tags:", err);
     return [];

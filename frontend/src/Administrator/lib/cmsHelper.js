@@ -6,11 +6,20 @@ import {
   fetchCurrentProducts,
   rewriteProductsJson,
 } from './githubStorage'
-import {
-  saveProductsLocally,
-  deleteProductLocally,
-} from './localStorage'
 import { v4 as uuidv4 } from 'uuid'
+
+// Optional local save (fire and forget, don't block on failures)
+async function saveLocallyAsync(product) {
+  try {
+    const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000'
+    const body = Array.isArray(product) ? product : [product]
+    fetch(`${API_URL}/api/products/save`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ updatedAt: new Date().toISOString(), products: body })
+    }).catch(() => {}) // Silently ignore failures
+  } catch (_) {}
+}
 
 async function fileToBase64(file) {
   const arrayBuffer = await file.arrayBuffer()
@@ -30,26 +39,20 @@ export async function createProduct(formData, thumbnailFile, imageFiles, specFil
   // Upload images to saworepo2
   const githubThumbUrl = thumbnailFile
     ? await uploadImage(`${slug}-thumb.webp`, await fileToBase64(thumbnailFile))
-    : null
+    : (formData.thumbnail || null)
 
-  const githubImageUrls = []
-  for (const [i, file] of imageFiles.entries()) {
-    const url = await uploadImage(`${slug}-img-${i}.webp`, await fileToBase64(file))
-    githubImageUrls.push(url)
-  }
+  const githubImageUrls = imageFiles.length > 0
+    ? await Promise.all(imageFiles.map(async (file, i) => uploadImage(`${slug}-img-${i}.webp`, await fileToBase64(file))))
+    : (formData.images || [])
 
-  const githubSpecUrls = []
-  for (const [i, file] of specFiles.entries()) {
-    const url = await uploadImage(`${slug}-spec-${i}.webp`, await fileToBase64(file))
-    githubSpecUrls.push(url)
-  }
+  const githubSpecUrls = specFiles.length > 0
+    ? await Promise.all(specFiles.map(async (file, i) => uploadImage(`${slug}-spec-${i}.webp`, await fileToBase64(file))))
+    : (formData.spec_images || [])
 
   // Upload PDFs to saworepo2
-  const githubFileObjects = []
-  for (const pdfFile of pdfFiles) {
-    const url = await uploadPdf(`${slug}-${pdfFile.name}`, await fileToBase64(pdfFile))
-    githubFileObjects.push({ name: pdfFile.name, url })
-  }
+  const githubFileObjects = pdfFiles.length > 0
+    ? await Promise.all(pdfFiles.map(async pdfFile => { const url = await uploadPdf(`${slug}-${pdfFile.name}`, await fileToBase64(pdfFile)); return { name: pdfFile.name, url }; }))
+    : (formData.files || [])
 
   // Build the product object with all schema fields
   const now = new Date().toISOString()
@@ -84,7 +87,7 @@ export async function createProduct(formData, thumbnailFile, imageFiles, specFil
   }
 
   // Save locally first (fast reflection)
-  await saveProductsLocally(newProduct).catch(() => {})
+  saveLocallyAsync(newProduct) // Fire and forget
 
   // Append to products.json in saworepo1
   const currentProducts = await fetchCurrentProducts()
@@ -97,26 +100,22 @@ export async function createProduct(formData, thumbnailFile, imageFiles, specFil
 export async function editProduct(productId, formData, newThumbnailFile, newImageFiles, newSpecFiles, newPdfFiles) {
   const slug = formData.slug
 
-  // Upload any new files to saworepo2
+  // Upload any new files to saworepo2, or use existing URLs from formData
   const githubThumbUrl = newThumbnailFile
     ? await uploadImage(`${slug}-thumb.webp`, await fileToBase64(newThumbnailFile))
-    : null
+    : (formData.thumbnail || null)
 
-  const newImageUrls = []
-  for (const [i, file] of newImageFiles.entries()) {
-    newImageUrls.push(await uploadImage(`${slug}-img-${i}.webp`, await fileToBase64(file)))
-  }
+  const newImageUrls = newImageFiles.length > 0
+    ? await Promise.all(newImageFiles.map(async (file, i) => uploadImage(`${slug}-img-${i}.webp`, await fileToBase64(file))))
+    : (formData.images || [])
 
-  const newSpecUrls = []
-  for (const [i, file] of newSpecFiles.entries()) {
-    newSpecUrls.push(await uploadImage(`${slug}-spec-${i}.webp`, await fileToBase64(file)))
-  }
+  const newSpecUrls = newSpecFiles.length > 0
+    ? await Promise.all(newSpecFiles.map(async (file, i) => uploadImage(`${slug}-spec-${i}.webp`, await fileToBase64(file))))
+    : (formData.spec_images || [])
 
-  const newFileObjects = []
-  for (const pdfFile of newPdfFiles) {
-    const url = await uploadPdf(`${slug}-${pdfFile.name}`, await fileToBase64(pdfFile))
-    newFileObjects.push({ name: pdfFile.name, url })
-  }
+  const newFileObjects = newPdfFiles.length > 0
+    ? await Promise.all(newPdfFiles.map(async pdfFile => { const url = await uploadPdf(`${slug}-${pdfFile.name}`, await fileToBase64(pdfFile)); return { name: pdfFile.name, url }; }))
+    : (formData.files || [])
 
   // Patch the matching product in products.json
   const currentProducts = await fetchCurrentProducts()
@@ -150,23 +149,25 @@ export async function editProduct(productId, formData, newThumbnailFile, newImag
     }
   })
 
-  // Save locally first (fast reflection)
-  const updated = synced.find(p => p.id === productId)
-  await saveProductsLocally(updated).catch(() => {})
-
-  // Then update GitHub
+  // Update GitHub
   await rewriteProductsJson(synced)
+
+  // Save locally (fire and forget)
+  const updated = synced.find(p => p.id === productId)
+  saveLocallyAsync(updated)
 }
 
 // Delete product from GitHub and local storage
 export async function deleteProduct(productId) {
-  // Delete locally first (fast reflection)
-  await deleteProductLocally(productId).catch(() => {})
-
-  // Then remove from GitHub
   const currentProducts = await fetchCurrentProducts()
   const remaining = currentProducts.filter(p => p.id !== productId)
   await rewriteProductsJson(remaining)
+
+  // Delete locally (fire and forget)
+  try {
+    const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000'
+    fetch(`${API_URL}/api/products/${productId}`, { method: 'DELETE' }).catch(() => {})
+  } catch (_) {}
 
   // Note: image/PDF files in saworepo2 are intentionally left in place.
   // saworepo2 is append-only – old files don't break anything and serve as history.

@@ -1647,6 +1647,7 @@ export default function Products({ currentUser }) {
 
       add(editing ? "Product saved to GitHub." : "Product created on GitHub.", "success");
       actualClose();
+      bustProductCache();
       fetchProducts();
     } catch (err) { add(err.message, "error"); }
     finally { setSaving(false); }
@@ -1670,7 +1671,7 @@ export default function Products({ currentUser }) {
       // });
       add("Product deleted from GitHub.", "success");
     } catch (err) { add(err.message, "error"); }
-    finally { fetchProducts(); }
+    finally { bustProductCache(); fetchProducts(); }
   };
 
   const handleBulkDelete = async () => {
@@ -1694,7 +1695,7 @@ export default function Products({ currentUser }) {
       // ));
       add(`${ids.length} product(s) deleted from GitHub.`, "success");
     } catch (err) { add(err.message, "error"); }
-    finally { setSelected(new Set()); fetchProducts(); }
+    finally { setSelected(new Set()); bustProductCache(); fetchProducts(); }
   };
 
   const toggleSelect = id => {

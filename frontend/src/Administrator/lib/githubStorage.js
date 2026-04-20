@@ -1,6 +1,15 @@
 import { Octokit } from '@octokit/rest'
 
-const octokit = new Octokit({ auth: process.env.GITHUB_PAT })
+const OWNER       = process.env.REACT_APP_GITHUB_OWNER
+const GITHUB_PAT  = process.env.REACT_APP_GITHUB_PAT
+const MAIN_REPO   = process.env.REACT_APP_MAIN_REPO   || 'saworepo1'
+const IMAGES_REPO = process.env.REACT_APP_IMAGES_REPO || 'saworepo2'
+
+if (!GITHUB_PAT || !OWNER) {
+  console.error('❌ GitHub credentials missing! Set REACT_APP_GITHUB_PAT and REACT_APP_GITHUB_OWNER in .env')
+}
+
+const octokit = new Octokit({ auth: GITHUB_PAT })
 
 // Browser-compatible base64 helpers
 function base64ToUtf8(base64) {
@@ -10,10 +19,6 @@ function base64ToUtf8(base64) {
 function utf8ToBase64(utf8) {
   return btoa(encodeURIComponent(utf8).replace(/%([0-9A-F]{2})/g, (_, p1) => String.fromCharCode(parseInt(p1, 16))))
 }
-
-const OWNER       = process.env.GITHUB_OWNER
-const MAIN_REPO   = process.env.MAIN_REPO   || 'saworepo1'
-const IMAGES_REPO = process.env.IMAGES_REPO || 'saworepo2'
 
 // internal: get current file SHA (required for updates)
 
@@ -29,11 +34,19 @@ async function getFileSha(repo, path) {
 // internal: commit any file to any repo
 
 async function commitFile(repo, path, base64Content, message) {
+  if (!OWNER) throw new Error('REACT_APP_GITHUB_OWNER not set in environment')
+  if (!GITHUB_PAT) throw new Error('REACT_APP_GITHUB_PAT not set in environment')
+
   const sha = await getFileSha(repo, path)
-  await octokit.repos.createOrUpdateFileContents({
-    owner: OWNER, repo, path, message, content: base64Content,
-    ...(sha ? { sha } : {})
-  })
+  try {
+    await octokit.repos.createOrUpdateFileContents({
+      owner: OWNER, repo, path, message, content: base64Content,
+      ...(sha ? { sha } : {})
+    })
+  } catch (err) {
+    console.error(`[GitHub] Failed to commit ${path}:`, err.message)
+    throw new Error(`GitHub upload failed: ${err.message}`)
+  }
 }
 
 // upload a product image to saworepo2/images/
