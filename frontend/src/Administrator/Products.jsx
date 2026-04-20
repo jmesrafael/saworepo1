@@ -1,6 +1,6 @@
 // src/Administrator/Products.jsx
 import React, { useEffect, useState, useCallback, useRef } from "react";
-import { supabase, logActivity } from "./supabase";
+// import { supabase, logActivity } from "./supabase"; // Commented out - using GitHub storage only
 import { getPerms } from "./permissions";
 import { processPastedTableHTML } from "../utils/cleanTableHTML";
 import { getAllProductsLive, getAllCategoriesLive, getAllTagsLive, getProductByIdLive, bustProductCache } from "../local-storage/supabaseReader";
@@ -135,6 +135,16 @@ function convertToWebP(file, maxDim = WEBP_MAX_DIM, quality = WEBP_QUALITY) {
 }
 
 // ─── GitHub Upload Functions ──────────────────────────────────────────────────
+async function fileToBase64(file) {
+  const arrayBuffer = await file.arrayBuffer();
+  const bytes = new Uint8Array(arrayBuffer);
+  let binary = '';
+  for (let i = 0; i < bytes.byteLength; i++) {
+    binary += String.fromCharCode(bytes[i]);
+  }
+  return btoa(binary);
+}
+
 async function uploadImageToGitHub(file, slug) {
   let blob, fileName;
   if (file.type.startsWith("image/")) {
@@ -150,14 +160,14 @@ async function uploadImageToGitHub(file, slug) {
     blob = file;
     fileName = `${slug}-${Date.now()}.${file.name.split(".").pop()}`;
   }
-  const buffer = Buffer.from(await blob.arrayBuffer());
-  return await uploadImage(fileName, buffer);
+  const base64 = await fileToBase64(blob);
+  return await uploadImage(fileName, base64);
 }
 
 async function uploadPdfToGitHub(file, slug) {
-  const buffer = Buffer.from(await file.arrayBuffer());
+  const base64 = await fileToBase64(file);
   const fileName = `${slug}-${Date.now()}-${file.name}`;
-  return await uploadPdf(fileName, buffer);
+  return await uploadPdf(fileName, base64);
 }
 
 // ─── Toast ────────────────────────────────────────────────────────────────────
@@ -1378,8 +1388,8 @@ export default function Products({ currentUser }) {
   const [upFile,  setUpFile]  = useState(false);
 
   const [modalMenuOpen, setModalMenuOpen] = useState(false);
-  const [showRevisions, setShowRevisions] = useState(false);
-  const [revisions, setRevisions] = useState([]);
+  // const [showRevisions, setShowRevisions] = useState(false); // Commented out - revisions tracked in GitHub only
+  // const [revisions, setRevisions] = useState([]); // Commented out - revisions tracked in GitHub only
 
   const isDirty = !formsEqual(form, savedForm);
 
@@ -1419,26 +1429,27 @@ export default function Products({ currentUser }) {
     if (!perms.can("products.edit")) setViewMode("grid");
   }, []);
 
-  const fetchRevisions = async (productId) => {
-    try {
-      const { data, error } = await supabase
-        .from("activity_logs")
-        .select("*")
-        .eq("entity_id", productId)
-        .eq("entity", "product")
-        .order("created_at", { ascending: false });
-      if (error) throw error;
-      setRevisions(data || []);
-    } catch (err) {
-      console.error("Failed to fetch revisions:", err);
-      setRevisions([]);
-    }
-  };
+  // const fetchRevisions = async (productId) => {
+  //   Commented out - using GitHub storage only (no activity_logs table)
+  //   try {
+  //     const { data, error } = await supabase
+  //       .from("activity_logs")
+  //       .select("*")
+  //       .eq("entity_id", productId)
+  //       .eq("entity", "product")
+  //       .order("created_at", { ascending: false });
+  //     if (error) throw error;
+  //     setRevisions(data || []);
+  //   } catch (err) {
+  //     console.error("Failed to fetch revisions:", err);
+  //     setRevisions([]);
+  //   }
+  // };
 
   const upsertTaxonomy = async (items, table) => {
     if (!items.length) return;
-    const rows = items.map(name => ({ name, slug: slugify(name) }));
-    await supabase.from(table).upsert(rows, { onConflict: "slug", ignoreDuplicates: true });
+    // Taxonomy is now stored in products.json via GitHub - no separate table needed
+    console.log(`[CMS] Updated ${table}:`, items);
   };
 
   const handleThumbUpload = async file => {
@@ -1506,7 +1517,8 @@ export default function Products({ currentUser }) {
 
   const actualClose = () => {
     setModalOpen(false); setEditing(null); setEditingFull(null);
-    setShowRevisions(false); setModalMenuOpen(false);
+    // setShowRevisions(false); // Commented out - revisions tracked in GitHub only
+    setModalMenuOpen(false);
     setUnsavedOpen(false); pendingClose.current = null;
   };
   const handleModalClose = () => { if (isDirty) { pendingClose.current = actualClose; setUnsavedOpen(true); } else actualClose(); };
@@ -1547,7 +1559,7 @@ export default function Products({ currentUser }) {
       setSlugEdited(true);
       setEditing(row);
       setEditingFull(data);
-      setShowRevisions(false);
+      // setShowRevisions(false); // Commented out - revisions tracked in GitHub only
       setModalMenuOpen(false);
       setModalOpen(true);
     } catch (err) { add(err.message, "error"); }
@@ -1584,7 +1596,7 @@ export default function Products({ currentUser }) {
       setSlugEdited(false);
       setEditing(null);
       setEditingFull(null);
-      setShowRevisions(false);
+      // setShowRevisions(false); // Commented out - revisions tracked in GitHub only
       setModalMenuOpen(false);
       setModalOpen(true);
       add("Duplicated! Remember to change the slug before saving.", "info");
@@ -1611,24 +1623,26 @@ export default function Products({ currentUser }) {
 
       if (editing) {
         await editProduct(editing.id, form, null, [], [], []);
-        await logActivity({
-          action:      "update",
-          entity:      "product",
-          entity_id:   editing.id,
-          entity_name: form.name.trim(),
-          username:    currentUser?.username,
-          user_id:     currentUser?.id,
-        });
+        // Activity logged via GitHub commit history
+        // await logActivity({
+        //   action:      "update",
+        //   entity:      "product",
+        //   entity_id:   editing.id,
+        //   entity_name: form.name.trim(),
+        //   username:    currentUser?.username,
+        //   user_id:     currentUser?.id,
+        // });
       } else {
         await createProduct(form, null, [], [], []);
-        await logActivity({
-          action:      "create",
-          entity:      "product",
-          entity_id:   null,
-          entity_name: form.name.trim(),
-          username:    currentUser?.username,
-          user_id:     currentUser?.id,
-        });
+        // Activity logged via GitHub commit history
+        // await logActivity({
+        //   action:      "create",
+        //   entity:      "product",
+        //   entity_id:   null,
+        //   entity_name: form.name.trim(),
+        //   username:    currentUser?.username,
+        //   user_id:     currentUser?.id,
+        // });
       }
 
       add(editing ? "Product saved to GitHub." : "Product created on GitHub.", "success");
@@ -1643,16 +1657,17 @@ export default function Products({ currentUser }) {
     setConfirmDel(null);
     try {
       await deleteProduct(target.id);
-      const deletedBy = currentUser?.username || "unknown";
-      const deletedById = currentUser?.id || null;
-      await logActivity({
-        action:      "delete",
-        entity:      "product",
-        entity_id:   target.id,
-        entity_name: target.name,
-        username:    deletedBy,
-        user_id:     deletedById,
-      });
+      // Activity logged via GitHub commit history
+      // const deletedBy = currentUser?.username || "unknown";
+      // const deletedById = currentUser?.id || null;
+      // await logActivity({
+      //   action:      "delete",
+      //   entity:      "product",
+      //   entity_id:   target.id,
+      //   entity_name: target.name,
+      //   username:    deletedBy,
+      //   user_id:     deletedById,
+      // });
       add("Product deleted from GitHub.", "success");
     } catch (err) { add(err.message, "error"); }
     finally { fetchProducts(); }
@@ -1665,17 +1680,18 @@ export default function Products({ currentUser }) {
       const fullProducts = await Promise.all(ids.map(id => getProductByIdLive(id))).then(products => products.filter(p => p));
       await Promise.all(ids.map(id => deleteProduct(id)));
 
-      const deletedBy = currentUser?.username || "unknown";
-      const deletedById = currentUser?.id || null;
-
-      await Promise.allSettled((fullProducts || []).map(p =>
-        logActivity({
-          action: "delete", entity: "product",
-          entity_id: p.id, entity_name: p.name,
-          username: deletedBy, user_id: deletedById,
-          meta: { bulk: true },
-        })
-      ));
+      // Activity logged via GitHub commit history
+      // const deletedBy = currentUser?.username || "unknown";
+      // const deletedById = currentUser?.id || null;
+      //
+      // await Promise.allSettled((fullProducts || []).map(p =>
+      //   logActivity({
+      //     action: "delete", entity: "product",
+      //     entity_id: p.id, entity_name: p.name,
+      //     username: deletedBy, user_id: deletedById,
+      //     meta: { bulk: true },
+      //   })
+      // ));
       add(`${ids.length} product(s) deleted from GitHub.`, "success");
     } catch (err) { add(err.message, "error"); }
     finally { setSelected(new Set()); fetchProducts(); }
@@ -1936,6 +1952,7 @@ export default function Products({ currentUser }) {
                     minWidth: 150, boxShadow: "0 4px 16px rgba(0,0,0,0.12)",
                     zIndex: 1100,
                   }}>
+                    {/* Revisions button commented out - tracked in GitHub only
                     <button
                       type="button"
                       onClick={() => {
@@ -1956,6 +1973,7 @@ export default function Products({ currentUser }) {
                       <i className="fa-solid fa-clock-rotate-left" style={{ color: "var(--brand)", fontSize: "0.75rem" }} />
                       Revisions
                     </button>
+                    */}
 
                     <button
                       type="button"
@@ -1985,7 +2003,8 @@ export default function Products({ currentUser }) {
         )}
       >
 
-        {showRevisions && editing ? (
+        {/* Revisions section commented out - tracked in GitHub only
+        false && (
           <div>
             <button
               type="button"
@@ -2049,7 +2068,8 @@ export default function Products({ currentUser }) {
               )}
             </div>
           </div>
-        ) : (
+        )
+        */}
           <>
             {isDirty && (
               <div className="dirty-banner">

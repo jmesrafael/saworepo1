@@ -6,10 +6,20 @@ import {
   fetchCurrentProducts,
   rewriteProductsJson,
 } from './githubStorage'
+import {
+  saveProductsLocally,
+  deleteProductLocally,
+} from './localStorage'
 import { v4 as uuidv4 } from 'uuid'
 
-async function toBuffer(file) {
-  return Buffer.from(await file.arrayBuffer())
+async function fileToBase64(file) {
+  const arrayBuffer = await file.arrayBuffer()
+  const bytes = new Uint8Array(arrayBuffer)
+  let binary = ''
+  for (let i = 0; i < bytes.byteLength; i++) {
+    binary += String.fromCharCode(bytes[i])
+  }
+  return btoa(binary)
 }
 
 // Create new product â GitHub only
@@ -19,25 +29,25 @@ export async function createProduct(formData, thumbnailFile, imageFiles, specFil
 
   // Upload images to saworepo2
   const githubThumbUrl = thumbnailFile
-    ? await uploadImage(`${slug}-thumb.webp`, await toBuffer(thumbnailFile))
+    ? await uploadImage(`${slug}-thumb.webp`, await fileToBase64(thumbnailFile))
     : null
 
   const githubImageUrls = []
   for (const [i, file] of imageFiles.entries()) {
-    const url = await uploadImage(`${slug}-img-${i}.webp`, await toBuffer(file))
+    const url = await uploadImage(`${slug}-img-${i}.webp`, await fileToBase64(file))
     githubImageUrls.push(url)
   }
 
   const githubSpecUrls = []
   for (const [i, file] of specFiles.entries()) {
-    const url = await uploadImage(`${slug}-spec-${i}.webp`, await toBuffer(file))
+    const url = await uploadImage(`${slug}-spec-${i}.webp`, await fileToBase64(file))
     githubSpecUrls.push(url)
   }
 
   // Upload PDFs to saworepo2
   const githubFileObjects = []
   for (const pdfFile of pdfFiles) {
-    const url = await uploadPdf(`${slug}-${pdfFile.name}`, await toBuffer(pdfFile))
+    const url = await uploadPdf(`${slug}-${pdfFile.name}`, await fileToBase64(pdfFile))
     githubFileObjects.push({ name: pdfFile.name, url })
   }
 
@@ -73,6 +83,9 @@ export async function createProduct(formData, thumbnailFile, imageFiles, specFil
     is_deleted:          false,
   }
 
+  // Save locally first (fast reflection)
+  await saveProductsLocally(newProduct).catch(() => {})
+
   // Append to products.json in saworepo1
   const currentProducts = await fetchCurrentProducts()
   await rewriteProductsJson([...currentProducts, newProduct])
@@ -86,22 +99,22 @@ export async function editProduct(productId, formData, newThumbnailFile, newImag
 
   // Upload any new files to saworepo2
   const githubThumbUrl = newThumbnailFile
-    ? await uploadImage(`${slug}-thumb.webp`, await toBuffer(newThumbnailFile))
+    ? await uploadImage(`${slug}-thumb.webp`, await fileToBase64(newThumbnailFile))
     : null
 
   const newImageUrls = []
   for (const [i, file] of newImageFiles.entries()) {
-    newImageUrls.push(await uploadImage(`${slug}-img-${i}.webp`, await toBuffer(file)))
+    newImageUrls.push(await uploadImage(`${slug}-img-${i}.webp`, await fileToBase64(file)))
   }
 
   const newSpecUrls = []
   for (const [i, file] of newSpecFiles.entries()) {
-    newSpecUrls.push(await uploadImage(`${slug}-spec-${i}.webp`, await toBuffer(file)))
+    newSpecUrls.push(await uploadImage(`${slug}-spec-${i}.webp`, await fileToBase64(file)))
   }
 
   const newFileObjects = []
   for (const pdfFile of newPdfFiles) {
-    const url = await uploadPdf(`${slug}-${pdfFile.name}`, await toBuffer(pdfFile))
+    const url = await uploadPdf(`${slug}-${pdfFile.name}`, await fileToBase64(pdfFile))
     newFileObjects.push({ name: pdfFile.name, url })
   }
 
@@ -136,11 +149,21 @@ export async function editProduct(productId, formData, newThumbnailFile, newImag
       updated_at:          now,
     }
   })
+
+  // Save locally first (fast reflection)
+  const updated = synced.find(p => p.id === productId)
+  await saveProductsLocally(updated).catch(() => {})
+
+  // Then update GitHub
   await rewriteProductsJson(synced)
 }
 
-// Delete product â GitHub only
+// Delete product from GitHub and local storage
 export async function deleteProduct(productId) {
+  // Delete locally first (fast reflection)
+  await deleteProductLocally(productId).catch(() => {})
+
+  // Then remove from GitHub
   const currentProducts = await fetchCurrentProducts()
   const remaining = currentProducts.filter(p => p.id !== productId)
   await rewriteProductsJson(remaining)
