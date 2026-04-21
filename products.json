@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-04-21T01:49:56.375Z",
+  "updatedAt": "2026-04-21T02:37:34.786Z",
   "products": [
     {
       "id": "50834970-4527-4954-9cd7-8ac89d7bd70f",
@@ -7735,7 +7735,7 @@
     },
     {
       "id": "c8c26a29-daf3-4fd9-9bd5-50f5b3c084b9",
-      "name": "Savonia Combi Fiber Coated NYAWA KA",
+      "name": "Savonia Combi Fiber Coated NS",
       "slug": "savonia-combi-fiber-coated-ns",
       "description": "<table>\n  <thead>\n<tr>\n  <th>Heater Model</th>\n  <th>kW\n<br>Heater</th>\n  <th>kW\n<br>Tank</th>\n  <th>Sauna Room<br>min. (m3) max.</th>\n  <th>Size of Heater (mm)<br>Length Width Height</th>\n  <th>Stones<br>(kg)</th>\n  <th>Control</th>\n  <th colspan=\"4\">Minimum Safety Distances<br>A | B | C | D</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n  <td>SAVC-90NS-Z-F</td>\n  <td>9.0</td>\n  <td>1 x 2.0</td>\n  <td>8 – 14</td>\n  <td>510 x 420 x 655</td>\n  <td>40 – 50</td>\n  <td>Separate</td>\n  <td>1200</td>\n  <td>110</td>\n  <td>50</td>\n  <td>1900</td>\n</tr>\n<tr>\n  <td>SAVC-105NS-Z-F</td>\n  <td>10.5</td>\n  <td>1 x 2.0</td>\n  <td>9 – 15</td>\n  <td>510 x 420 x 655</td>\n  <td>40 – 50</td>\n  <td>Separate</td>\n  <td>1200</td>\n  <td>120</td>\n  <td>60</td>\n  <td>1900</td>\n</tr>\n<tr>\n  <td>SAVC-120NS-Z-F</td>\n  <td>12.0</td>\n  <td>1 x 2.0</td>\n  <td>10 – 18</td>\n  <td>510 x 420 x 655</td>\n  <td>40 – 50</td>\n  <td>Separate</td>\n  <td>1400</td>\n  <td>130</td>\n  <td>70</td>\n  <td>2100</td>\n</tr>\n<tr>\n  <td>SAVC-150NS-Z-F</td>\n  <td>15.0</td>\n  <td>2 x 2.0</td>\n  <td>13 – 23</td>\n  <td>715 x 420 x 655</td>\n  <td>60 – 75</td>\n  <td>Separate</td>\n  <td>1400</td>\n  <td>160</td>\n  <td>100</td>\n  <td>2100</td>\n</tr>\n<tr>\n  <td>SAVC-180NS-Z-F</td>\n  <td>18.0</td>\n  <td>2 x 2.0</td>\n  <td>17 – 29</td>\n  <td>715 x 420 x 655</td>\n  <td>60 – 75</td>\n  <td>Separate</td>\n  <td>1400</td>\n  <td>160</td>\n  <td>100</td>\n  <td>2100</td>\n</tr></tbody></table>",
       "short_description": "<strong style=\"text-align: justify;\">Savonia Combi</strong><span style=\"text-align: justify;\"> offers the best of both worlds: the heat of a Savonia and a water tank for more steam and humidity. It is available with cool-to-touch fiber coating and an auto-refill function for the water tank.</span>",
@@ -7794,7 +7794,7 @@
       "created_by_username": "Edgar",
       "updated_by_username": "Edgar",
       "created_at": "2026-04-21T01:38:27.461366+00:00",
-      "updated_at": "2026-04-21T01:46:10.602+00:00",
+      "updated_at": "2026-04-21T02:37:32.876Z",
       "is_deleted": false,
       "source": "supabase"
     },
