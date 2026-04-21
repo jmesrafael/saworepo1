@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-04-21T01:25:03.670Z",
+  "updatedAt": "2026-04-21T01:26:43.886Z",
   "products": [
     {
       "id": "50834970-4527-4954-9cd7-8ac89d7bd70f",
@@ -6259,6 +6259,35 @@
       "updated_by_username": null,
       "created_at": "2026-04-21T01:22:03.100Z",
       "updated_at": "2026-04-21T01:24:39.731Z",
+      "is_deleted": false
+    },
+    {
+      "id": "b946f731-7933-43fa-bafc-1cc02dbd4194",
+      "name": "1",
+      "slug": "1",
+      "description": "",
+      "short_description": "",
+      "brand": "SAWO",
+      "type": "",
+      "spec_table": null,
+      "resources": null,
+      "status": "published",
+      "visible": true,
+      "featured": false,
+      "sort_order": 0,
+      "categories": [],
+      "tags": [],
+      "features": [],
+      "auto_tag_columns": [],
+      "thumbnail": null,
+      "images": [],
+      "spec_images": [],
+      "files": [],
+      "created_by": null,
+      "created_by_username": null,
+      "updated_by_username": null,
+      "created_at": "2026-04-21T01:26:42.266Z",
+      "updated_at": "2026-04-21T01:26:42.266Z",
       "is_deleted": false
     }
   ]
