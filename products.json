@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-04-21T01:37:40.703Z",
+  "updatedAt": "2026-04-21T01:37:49.591Z",
   "products": [
     {
       "id": "50834970-4527-4954-9cd7-8ac89d7bd70f",
@@ -20,7 +20,7 @@
         "15.0 kW",
         "Innova"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Smart control automatically shuts off the heating element at the desired temperature",
         "Add INP-S contactor for heaters over 15kW",
@@ -77,7 +77,7 @@
         "NRM-30Ni2-BL-Z-C",
         "NRM-36Ni2-BL-Z-C"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Power range: 2.3 – 3.6kW",
         "Available controls: Saunova (Ni2)",
@@ -124,7 +124,7 @@
         "2.3 – 15kW",
         "Innova"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "For all NS Heaters 2.3-15kW, for over 15kW add Innova 2.0 Contactor Unit",
         "Smart control automatically shuts off the heating element at the set temperature",
@@ -176,7 +176,7 @@
         "Innova",
         "Interface Holder"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [],
       "brand": "SAWO",
       "type": "Interface Holder",
@@ -223,7 +223,7 @@
         "SCA-80NS-Z-C",
         "SCA-90NS-Z-C"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Power range: 4.5 – 9.0kW",
         "Available controls: Saunova/Innova (NS)",
@@ -273,7 +273,7 @@
         "NS",
         "18.0 kW"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [],
       "brand": "SAWO",
       "type": "Coming Soon",
@@ -311,7 +311,7 @@
         "2.3 – 15kW",
         "Innova"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Smart control automatically shuts off heating at the desired temperature",
         "Add INP-S contactor unit for heaters over 15kW",
@@ -375,7 +375,7 @@
         "NRM-30NS-Z",
         "NRM-36NS-Z"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Power range: 2.3 – 3.6kW",
         "Available controls: Saunova/Innova (NS)",
@@ -424,7 +424,7 @@
         "Cables",
         "Spare Parts"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [],
       "brand": "SAWO",
       "type": "Spare Parts",
@@ -460,7 +460,7 @@
         "Temperature",
         "Combi"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [],
       "brand": "SAWO",
       "type": "Sensor",
@@ -499,7 +499,7 @@
         "Saunova",
         "(SAU-UI-V2)"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Easy and stylish user interface",
         "Direct control for Ni2 heaters, for NS heaters 2.3-9kW add Saunova 2.0",
@@ -548,7 +548,7 @@
         "Temperature",
         "Bench"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [],
       "brand": "SAWO",
       "type": "Sensor",
@@ -586,7 +586,7 @@
         "2.3 – 15kW",
         "Innova"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Smart control automatically shuts off the heating element at the desired temperature",
         "Connect to Innova User Interface for heaters up to 15kW, or add INP-S contactor for larger units",
@@ -654,7 +654,7 @@
         "NRM-30NS-BL-Z",
         "NRM-36NS-BL-Z"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Power range: 2.3 – 3.6kW",
         "Available controls: Saunova/Innova (NS)",
@@ -701,7 +701,7 @@
         "15kW - 30kW",
         "15.0 kW"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Package includes Innova Contactor Unit and 1m RJ12 cable",
         "New casing design for easier installation with extra space and wiring options"
@@ -747,7 +747,7 @@
         "Saunova",
         "9.0 kW"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Package includes Saunova Contactor Unit, 1m RJ12-cable",
         "New casing design for easier installation with additional space and wiring options"
@@ -784,7 +784,7 @@
       "tags": [
         "(SAU-B-V2)"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Combination of User Interface and Power Controller",
         "New casing design for easier installation with extra space and wiring options",
@@ -844,7 +844,7 @@
         "CML-80Ni2-P-C",
         "CML-90Ni2-P-C"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Power range: 4.5 – 9.0 kW",
         "Available controls: Saunova (Ni2)",
@@ -892,7 +892,7 @@
         "Saunova",
         "2.3 – 9kW"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Smart control automatically shuts off the heating element at the desired temperature",
         "NS heaters connect with Saunova 2.0 for heaters under 9kW; for over 9kW, add SAU-PS-2 contactor unit",
@@ -953,7 +953,7 @@
         "NRN-80Ni2-BL-Z-C",
         "NRN-90Ni2-BL-Z-C"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Power range: 4.5 – 9.0kW",
         "Available controls: Saunova (Ni2)",
@@ -1001,7 +1001,7 @@
         "Control Spare Sparts",
         "Spare Parts"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [],
       "brand": "SAWO",
       "type": "Spare Parts",
@@ -1048,7 +1048,7 @@
         "NRN-80NS-Z-C",
         "NRN-90NS-Z-C"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Power range: 4.5 – 9.0kW",
         "Available controls: Saunova/Innova (NS)",
@@ -1102,7 +1102,7 @@
         "NRN-80NB-Z-C",
         "NRN-90NB-Z-C"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Power range: 4.5 – 9.0kW",
         "Available controls: Built-in (NB)",
@@ -1148,7 +1148,7 @@
         "15.0 kW",
         "Innova"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Smart control automatically shuts off the heating element at the desired temperature",
         "Connect to INP-C power controller for NS heaters up to 15kW; add INP-S contactor for units over 15kW",
@@ -1206,7 +1206,7 @@
         "STN",
         "Interface Holder"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [],
       "brand": "SAWO",
       "type": "Interface Holder",
@@ -1245,7 +1245,7 @@
         "Ni2",
         "Nordex"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Power range: 4.5 – 9.0kW",
         "Available controls: Saunova (Ni2)",
@@ -1304,7 +1304,7 @@
         "NRN-80NS-BL-Z-C",
         "NRN-90NS-BL-Z-C"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Power range: 4.5 – 9.0kW",
         "Available controls: Saunova/Innova (NS)",
@@ -1351,7 +1351,7 @@
         "Sensor",
         "Temperature"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [],
       "brand": "SAWO",
       "type": "Sensor",
@@ -1397,7 +1397,7 @@
         "CML-80NS-P-C",
         "CML-90NS-P-C"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Power range: 4.5 – 9.0 kW",
         "Available controls: Saunova/Innova (NS)",
@@ -1452,7 +1452,7 @@
         "NRN-80NB-BL-Z-C",
         "NRN-90NB-BL-Z-C"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Power range: 4.5 – 9.0kW",
         "Available controls: Built-in (NB)",
@@ -1508,7 +1508,7 @@
         "NRM-30Ni2-Z-C",
         "NRM-36Ni2-Z-C"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [],
       "brand": "SAWO",
       "type": "Nordex Mini",
@@ -1559,7 +1559,7 @@
         "CML-80NB-P-C",
         "CML-90NB-P-C"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Power range: 4.5 – 9.0 kW",
         "Available controls: Built-in (NB)",
@@ -1617,7 +1617,7 @@
         "NIMC-150NS-P",
         "NIMC-180NS-P"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Power range: 9.0 – 18.0kW",
         "Available controls: Saunova/Innova (NS)",
@@ -1679,7 +1679,7 @@
         "NIM-210NS-V12-P",
         "NIM-240NS-V12-P"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Power range: 9.0 – 24.0kW",
         "Available controls: Saunova/Innova (NS)"
@@ -1725,7 +1725,7 @@
         "NS",
         "9.0 kW"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Remote control: Set schedule and control the heater from anywhere and any distance.",
         "Intuitive interface: Use the app and controls with ease, thanks to our streamlined UI/UX design.",
@@ -1768,7 +1768,7 @@
         "Saunova",
         "9.0 kW"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Dimension: (W)104 x (H)147 x (D) 137mm3",
         "More than 9kW needs a Contactor",
@@ -1816,7 +1816,7 @@
         "Innova",
         "Interface Holder"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [],
       "brand": "SAWO",
       "type": "Interface Holder",
@@ -1852,7 +1852,7 @@
         "NS",
         "(SAU-PS-V2)"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Package includes Saunova Contactor Unit, 1m RJ12-cable",
         "More than 9kW needs a Contactor",
@@ -1899,7 +1899,7 @@
         "(INC-S)",
         "Innova"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Smart Controlling -feature automatically shuts down heating element when desired temperature is reached",
         "Connect with INP-C power controller to use with any NS heater until 15kW. For heaters over 15kW, add INP-S contactor unit",
@@ -1957,7 +1957,7 @@
         "NS",
         "Saunova"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Power range: 2.3 – 3.6kW",
         "Available controls: Built-in (NB)",
@@ -2017,7 +2017,7 @@
         "NRM-30NB-BL-Z",
         "NRM-36NB-BL-Z"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Power range: 2.3 – 3.6kW",
         "Available controls: Built-in (NB)",
@@ -2071,7 +2071,7 @@
         "NRNC-80NS-Z-C",
         "NRNC-90NS-Z-C"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Power range: 6.0 – 9.0kW",
         "Available controls: Saunova/Innova (NS)",
@@ -2131,7 +2131,7 @@
         "NS",
         "Saunova"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Power range: 3.0 – 3.6kW",
         "Available controls: Saunova/Innova (NS)",
@@ -2191,7 +2191,7 @@
         "NRNC-80NS-BL-Z-C",
         "NRNC-90NS-BL-Z-C"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [],
       "brand": "SAWO",
       "type": "Nordex Combi",
@@ -2244,7 +2244,7 @@
         "NRMC-30NS-BL-Z",
         "NRMC-36NS-BL-Z"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Power range: 3,0 – 3,6kW",
         "Available controls: Saunova/Innova (NS)",
@@ -2302,7 +2302,7 @@
         "MN-30NB-Z",
         "MN-36NB-Z"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Power range: 2.3 – 3.6kW",
         "Available controls: Built-in (NB)",
@@ -2357,7 +2357,7 @@
         "MX-30NS-Z",
         "MX-36NS-Z"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Power range: 2.3 – 3.6kW",
         "Available controls: Saunova/Innova (NS)",
@@ -2413,7 +2413,7 @@
         "MX-30NB-Z",
         "MX-36NB-Z"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Power range: 2.3 – 3.6kW",
         "Available controls: Built-in (NB)",
@@ -2470,7 +2470,7 @@
         "MX-30NB-P-F",
         "MX-36NB-P-F"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Power range: 2.3 – 3.6kW",
         "Available controls: Built-in (NB)",
@@ -2525,7 +2525,7 @@
         "MN-36NB-P-F",
         "Fibercoated"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Power range: 2.3 – 3.6kW",
         "Available controls: Built-in (NB)",
@@ -2579,7 +2579,7 @@
         "MX-36NS-P-F",
         "Fibercoated"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Power range: 2.3 – 3.6kW",
         "Available controls: Saunova/Innova (NS)",
@@ -2633,7 +2633,7 @@
         "MNC-30NS-Z",
         "MNC-36NS-Z"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Power range: 3.0 – 3.6kW",
         "Available controls: Saunova/Innova (NS)",
@@ -2687,7 +2687,7 @@
         "MNC-30NS-P-F",
         "MNC-36NS-P-F"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Power range: 3.0 – 3.6kW",
         "Available controls: Saunova/Innova (NS)",
@@ -2744,7 +2744,7 @@
         "SCA-80NS-P-F-C",
         "SCA-90NS-P-F-C"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Power range: 4.5 – 9.0kW",
         "Available controls: Saunova/Innova (NS)",
@@ -2798,7 +2798,7 @@
         "SCA-80NB-Z-C",
         "SCA-90NB-Z-C"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Power range: 4.5 – 9.0kW",
         "Available controls: Built-in (NB)",
@@ -2854,7 +2854,7 @@
         "SCA-80NB-P-F-C",
         "SCA-90NB-P-F-C"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Power range: 4.5 – 9.0kW",
         "Available controls: Built-in (NB)",
@@ -2910,7 +2910,7 @@
         "SCAC-80NS-Z-C",
         "SCAC-90NS-Z-C"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Power range: 6.0 – 9.0kW",
         "Available controls: Saunova/Innova (NS)",
@@ -2967,7 +2967,7 @@
         "SCAC-80NS-P-F-C",
         "SCAC-90NS-P-F-C"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Power range: 6.0 – 9.0kW",
         "Available controls: Saunova/Innova (NS)",
@@ -3029,7 +3029,7 @@
         "KRI-80Ni2-P-C",
         "KRI-90Ni2-P-C"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Power range: 4.5 – 9.0kW",
         "Available controls: Saunova (Ni2)",
@@ -3090,7 +3090,7 @@
         "KRI-80NS-P-C",
         "KRI-90NS-P-C"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Power range: 4.5 – 9.0kW",
         "Available controls: Saunova/Innova (NS)",
@@ -3153,7 +3153,7 @@
         "SCA-80NS-DRF-P-C",
         "SCA-90NS-DRF-P-C"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Power range: 4.5 – 9.0kW",
         "Available controls: Saunova/Innova (NS)",
@@ -3219,7 +3219,7 @@
         "NS",
         "Saunova"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Power range: 4.5 – 9.0kW",
         "Available controls: Built-in (NB)",
@@ -3283,7 +3283,7 @@
         "SCA-80NB-DRF-P-C",
         "SCA-90NB-DRF-P-C"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Power range: 4.5 – 9.0kW",
         "Available controls: Built-in (NB)",
@@ -3348,7 +3348,7 @@
         "SCA-90NS-DRF-BL-P-C",
         "4.5 – 9.0kW"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Power range: 4.5 – 9.0kW",
         "Available controls: Saunova/Innova (NS)",
@@ -3411,7 +3411,7 @@
         "SCA-80NB-DRF-BL-P-C",
         "SCA-90NB-DRF-BL-P-C"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Power range: 4.5 – 9.0kW",
         "Available controls: Built-in (NB)",
@@ -3477,7 +3477,7 @@
         "TRD-180/210/240NS-G-P",
         "TRD-270/300/330/360NS-G-P"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Power range: 9.0 – 36.0 kW",
         "Available controls: Saunova/Innova (NS)",
@@ -3538,7 +3538,7 @@
         "SAV-210NS-V12-Z",
         "SAV-240NS-V12-Z"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Power range: 9.0 – 24.0kW",
         "Available controls: Saunova/Innova (NS)",
@@ -3599,7 +3599,7 @@
         "HES-75NS-G-P-C",
         "HES-90NS-G-P-C"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Power range: 4.5 – 9.0kW",
         "Available controls: Saunova/Innova (NS)",
@@ -3667,7 +3667,7 @@
         "KRFS-210NS-V12-P",
         "KRFS-240NS-V12-P"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Power range: 9.0 – 24.0kW",
         "Available controls: Saunova/Innova (NS)",
@@ -3732,7 +3732,7 @@
         "SAV-210NS-V12-Z-F",
         "SAV-240NS-V12-Z-F"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Power range: 9.0 – 24.0kW",
         "Available controls: Saunova/Innova (NS)",
@@ -3793,7 +3793,7 @@
         "SAVC-150NS-Z",
         "SAVC-180NS-Z"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Power range: 9.0 – 18.0kW",
         "Available controls: Saunova/Innova (NS)",
@@ -3855,7 +3855,7 @@
         "SW3-60Ni2-P-C",
         "SW6-90Ni2-P-C"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Power range: 4.5 – 9.0kW",
         "Available controls: Saunova (Ni2)",
@@ -3939,7 +3939,7 @@
         "Optional heater guard",
         "Optional integration collar"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "thumbnail": "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776669273973_zf349gzxpm.webp",
       "images": [
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776669278546_s5xdh27wq8.webp"
@@ -4003,7 +4003,7 @@
         "Optional heater guard",
         "Optional integration collar"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "thumbnail": "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776670673811_f9tjqfj8bsa.webp",
       "images": [
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776670677388_ftb48y9a3.webp"
@@ -4068,7 +4068,7 @@
         "Optional heater guard",
         "Optional integration collar"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "thumbnail": "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776671576482_49oybmo412u.webp",
       "images": [
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776671581493_s8ecvo19lil.webp",
@@ -4140,7 +4140,7 @@
         "Optional heater guard",
         "Optional integration collar"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "thumbnail": "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776672181437_vfbg4exrrkj.webp",
       "images": [
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776672192290_stn43mfi48.webp",
@@ -4201,7 +4201,7 @@
         "Optional heater guard",
         "Optional integration collar"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "thumbnail": "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776672603168_lzt7tmegfp.webp",
       "images": [
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776672609542_rwfvcfbb0em.webp",
@@ -4263,7 +4263,7 @@
         "Optional heater guard",
         "Optional integration collar"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "thumbnail": "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776672729804_28avg4k3i0n.webp",
       "images": [
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776672734325_1t1c14bwsw2.webp"
@@ -4325,7 +4325,7 @@
         "Optional heater guard",
         "Optional integration collar"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "thumbnail": "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776672976578_osyapca6r1d.webp",
       "images": [
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776672979508_04qqsoheqrf3.webp"
@@ -4388,7 +4388,7 @@
         "Optional heater guard",
         "Optional integration collar"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "thumbnail": "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776673173406_qoswxfqa01p.webp",
       "images": [
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776673176460_1qhmf6xxtuo.webp"
@@ -4450,7 +4450,7 @@
         "Optional heater guard",
         "Optional integration collar"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "thumbnail": "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776673762167_fb1k2ajqp7.webp",
       "images": [
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776673765111_btcp4lofpl.webp"
@@ -4511,7 +4511,7 @@
         "Optional heater guard",
         "Optional integration collar"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "thumbnail": "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776673631281_a6be94lv6pl.webp",
       "images": [
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776673634246_ufuynendcgj.webp"
@@ -4577,7 +4577,7 @@
         "Optional heater guard",
         "Optional integration collar"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "thumbnail": "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776673469428_soh3j60p6ig.webp",
       "images": [
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776673472200_5xlklnzw579.webp"
@@ -4642,7 +4642,7 @@
         "Optional heater guard",
         "Optional integration collar"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "thumbnail": "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776673306747_lgnznoebm69.webp",
       "images": [
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776673310842_9jb3rsbf738.webp"
@@ -4714,7 +4714,7 @@
         "Optional heater guard",
         "Optional integration collar"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "thumbnail": "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776673900583_whk27hdjiya.webp",
       "images": [
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776673904745_z6elh3ofyvr.webp"
@@ -4804,7 +4804,7 @@
         "Optional heater guard",
         "Optional integration collar"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "thumbnail": "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776674252832_vfzilftp7db.webp",
       "images": [
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776674256666_vfa4gdpy5ns.webp"
@@ -4872,7 +4872,7 @@
         "Optional heater guard",
         "Optional integration collar"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "thumbnail": "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776674532636_1sk0uwj6bd.webp",
       "images": [],
       "spec_images": [
@@ -4932,7 +4932,7 @@
         "Optional heater guard",
         "Optional integration collar"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "thumbnail": "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776671859014_egsah70jdbc.webp",
       "images": [
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776671870631_8lmbz3d11me.webp"
@@ -4994,7 +4994,7 @@
         "Optional heater guard",
         "Optional integration collar"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "thumbnail": "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776669017909_85pqpdy5zig.webp",
       "images": [
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776669021521_m3ktnx8knn.webp"
@@ -5069,7 +5069,7 @@
         "Optional heater guard",
         "Optional integration collar"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "thumbnail": "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776669461089_o489lwmktt8.webp",
       "images": [
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776669465048_x9evp91rewd.webp"
@@ -5134,7 +5134,7 @@
         "Optional heater guard",
         "Optional integration collar"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "thumbnail": "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776670908875_nfmd7x69dpb.webp",
       "images": [
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776670914381_cwlsyes4enp.webp"
@@ -5205,7 +5205,7 @@
         "Optional heater guard",
         "Optional integration collar"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "thumbnail": "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776672486944_y0ouj8h0cwj.webp",
       "images": [
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776672492083_d8woumubu26.webp"
@@ -5277,7 +5277,7 @@
         "Optional heater guard",
         "Optional integration collar"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "thumbnail": "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776674076347_xi1gzwkois.webp",
       "images": [
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776674082733_gxqfgkll2ir.webp"
@@ -5347,7 +5347,7 @@
         "Optional heater guard",
         "Optional integration collar"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "thumbnail": "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776674422570_35h21u4ulwv.webp",
       "images": [
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776674426451_692d5yvvr7q.webp"
@@ -5417,7 +5417,7 @@
         "Optional heater guard",
         "Optional integration collar"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "thumbnail": "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776674882958_q53wj4br9rh.webp",
       "images": [
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776674886676_m2lcivluwlc.webp"
@@ -5504,7 +5504,7 @@
         "Optional heater guard",
         "Optional integration collar"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "thumbnail": "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776675184361_gtp3930g4cd.webp",
       "images": [
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776675187490_jv0nyb6b6bj.webp"
@@ -5570,7 +5570,7 @@
         "Optional heater guard",
         "Optional integration collar"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "thumbnail": "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776675228725_sfxfqomzls.webp",
       "images": [
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776675233174_b8m3avkancl.webp"
@@ -5640,7 +5640,7 @@
         "Optional heater guard",
         "Optional integration collar"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "thumbnail": "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776675330744_6kk5ghj8six.webp",
       "images": [
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776675333863_t726jb4jnf.webp"
@@ -5699,7 +5699,7 @@
         "Optional heater guard",
         "Optional integration collar"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "thumbnail": "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776675655674_1pitugjb1op.webp",
       "images": [
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776675658583_c96jc3z7ny4.webp"
@@ -5772,7 +5772,7 @@
         "Optional heater guard",
         "Optional integration collar"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "thumbnail": "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776676257728_8aj9fvg9cd6.webp",
       "images": [
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776676262335_o6gend4vcu.webp"
@@ -5840,7 +5840,7 @@
         "Optional heater guard",
         "Optional integration collar"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "thumbnail": "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776676502076_8ib434nrp79.webp",
       "images": [
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776676511830_gkaoc6k88v.webp"
@@ -5905,7 +5905,7 @@
         "Optional heater guard",
         "Optional integration collar"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "thumbnail": "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776677059333_wqe82i7jcep.webp",
       "images": [
         "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776677063776_0fm7nerp5yr.webp"
@@ -5970,7 +5970,7 @@
         "Optional heater guard",
         "Optional integration collar"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "thumbnail": "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776677233909_2azgf3kj19.webp",
       "images": [
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776677237959_3ktj1aqnfn6.webp"
@@ -6044,7 +6044,7 @@
         "Optional heater guard",
         "Optional integration collar"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "thumbnail": "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776677954452_0izgldr6hcm9.webp",
       "images": [
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776677959836_f6ps4pnyz0p.webp"
@@ -6108,7 +6108,7 @@
         "Optional heater guard",
         "Optional integration collar"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "thumbnail": "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776678876338_iphfb52l59l.webp",
       "images": [
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776678879729_a7ordpv6gfn.webp"
@@ -6183,7 +6183,7 @@
         "Optional heater guard",
         "Optional integration collar"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "thumbnail": "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776678683325_hnqsj15pc35.webp",
       "images": [
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776678686455_zj9ps8gs07.webp"
@@ -6309,7 +6309,7 @@
       "categories": [],
       "tags": [],
       "features": [],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "thumbnail": "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776644962668_p9rdgmco1h.webp",
       "images": [],
       "spec_images": [],
@@ -6360,7 +6360,7 @@
         "Optional heater guard",
         "Optional integration collar"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "thumbnail": "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776731338459_sayh8ar5g5.webp",
       "images": [
         "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776731341815_2ztqr5gwwje.webp",
@@ -6424,7 +6424,7 @@
         "Optional heater guard",
         "Optional integration collar"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "thumbnail": "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776727176349_gx1lj6s1l8p.webp",
       "images": [
         "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776727179499_3dkmz20ci8h.webp"
@@ -6489,7 +6489,7 @@
         "Optional heater guard",
         "Optional integration collar"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "thumbnail": "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776726999346_jq6shswlky.webp",
       "images": [
         "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776727001759_4yz8zefir3.webp"
@@ -6552,7 +6552,7 @@
         "Optional heater guard",
         "Optional integration collar"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "thumbnail": "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776727486004_ovclnqrbdbn.webp",
       "images": [
         "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776727488305_x2ztlxx3mk.webp"
@@ -6616,7 +6616,7 @@
         "Optional heater guard",
         "Optional integration collar"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "thumbnail": "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776727663836_8ixzj7q0wmf.webp",
       "images": [
         "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776727669789_lw2xocaang.webp"
@@ -6680,7 +6680,7 @@
         "Optional heater guard",
         "Optional integration collar"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "thumbnail": "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776727788954_rwqwtehdawk.webp",
       "images": [
         "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776727795892_acg95fnyvw9.webp"
@@ -6741,7 +6741,7 @@
         "Optional heater guard",
         "Optional integration collar"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "thumbnail": "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776728099162_lutv6pbto4d.webp",
       "images": [
         "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776728104277_7k4i29of8vw.webp"
@@ -6803,7 +6803,7 @@
         "Optional heater guard",
         "Optional integration collar"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "thumbnail": "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776728394917_xithylqqbce.webp",
       "images": [
         "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776728401698_1jcrcmeq2u.webp"
@@ -6864,7 +6864,7 @@
         "Optional heater guard",
         "Optional integration collar"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "thumbnail": "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776728517217_ra5k4my3wpg.webp",
       "images": [
         "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776728520451_4ucgeecuaho.webp"
@@ -6926,7 +6926,7 @@
         "Optional heater guard",
         "Optional integration collar"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "thumbnail": "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776728659464_tsd1e69thdr.webp",
       "images": [
         "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776728663519_5vnwcga6hbx.webp"
@@ -6988,7 +6988,7 @@
         "Optional heater guard",
         "Optional integration collar"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "thumbnail": "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776728862153_wl8n3fzr7de.webp",
       "images": [
         "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776728864739_k98j5vtct1i.webp"
@@ -7051,7 +7051,7 @@
         "Optional heater guard",
         "Optional integration collar"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "thumbnail": "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776728962206_xsbs8bec4xj.webp",
       "images": [
         "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776728965074_empe3vd64x4.webp"
@@ -7111,7 +7111,7 @@
         "Optional heater guard",
         "Optional integration collar"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "thumbnail": "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776729152924_tu6u45aigl9.webp",
       "images": [
         "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776729155876_466pm20cs7k.webp"
@@ -7172,7 +7172,7 @@
         "Optional heater guard",
         "Optional integration collar"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "thumbnail": "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776730498608_n16s7zdyzb.webp",
       "images": [
         "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776730501676_5lq1tido698.webp"
@@ -7233,7 +7233,7 @@
         "Optional heater guard",
         "Optional integration collar"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "thumbnail": "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776730695059_80p0wgp6y85.webp",
       "images": [
         "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776730698192_lzr96dh4pda.webp",
@@ -7297,7 +7297,7 @@
         "Optional heater guard",
         "Optional integration collar"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "thumbnail": "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776730947377_klmu5r9u1vs.webp",
       "images": [
         "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776730950982_3bgyk62kuuk.webp",
@@ -7389,7 +7389,7 @@
         "Stone capacity: 60kg to 360kg",
         "Optional heater guard"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "thumbnail": "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776732556332_879b7h7mc0u.webp",
       "images": [
         "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776732559329_4qr63f5durn.webp"
@@ -7461,7 +7461,7 @@
         "Heat reflector included",
         "Optional heater guard"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "thumbnail": "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776731588373_sblfipxtpr.webp",
       "images": [],
       "spec_images": [
@@ -7544,7 +7544,7 @@
         "Heat reflector included",
         "Optional heater guard"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "thumbnail": "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776732340446_kpnc33zel6b.webp",
       "images": [
         "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776732345145_utpjvgovpf.webp"
@@ -7604,7 +7604,7 @@
         "Optional heater guard",
         "Optional integration collar"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "thumbnail": "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776733456705_rsjn6o1sywk.webp",
       "images": [
         "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776733461492_dkuykrvklnr.webp"
@@ -7675,7 +7675,7 @@
         "Optional heater guard",
         "Optional integration collar"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "thumbnail": "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776733848108_bkynm7gvf4.webp",
       "images": [
         "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776733851115_cno192ihqv.webp"
@@ -7740,7 +7740,7 @@
         "Coating shields the heater from moisture and high temperature",
         "Heating element spacer to prolong the life of heating elements"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "thumbnail": "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776735091304_698kv14xbq9.webp",
       "images": [
         "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776735094382_4hcug1ihi59.webp"
