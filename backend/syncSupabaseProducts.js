@@ -10,16 +10,25 @@ const path = require('path');
 const https = require('https');
 const http = require('http');
 const { createClient } = require('@supabase/supabase-js');
+const { Octokit } = require('@octokit/rest');
 const { execSync } = require('child_process');
 
 const PRODUCTS_FILE = path.join(__dirname, '..', 'products.json');
 const IMAGES_DIR = path.join(__dirname, '..', 'frontend', 'saworepo2', 'images');
 const SUPABASE_URL = process.env.SUPABASE_URL;
 const SUPABASE_SERVICE_KEY = process.env.SUPABASE_SERVICE_KEY;
+const GITHUB_OWNER = process.env.REACT_APP_GITHUB_OWNER;
+const GITHUB_PAT = process.env.REACT_APP_GITHUB_PAT;
+const IMAGES_REPO = process.env.REACT_APP_IMAGES_REPO || 'saworepo2';
 
 let supabase = null;
 if (SUPABASE_URL && SUPABASE_SERVICE_KEY) {
   supabase = createClient(SUPABASE_URL, SUPABASE_SERVICE_KEY);
+}
+
+let octokit = null;
+if (GITHUB_PAT && GITHUB_OWNER) {
+  octokit = new Octokit({ auth: GITHUB_PAT });
 }
 
 async function downloadImage(url, filename) {
@@ -116,50 +125,134 @@ async function downloadProductImages(products) {
   return downloadStats;
 }
 
-async function convertImagesToGithubUrls(products) {
+async function uploadImageToGitHub(localFilePath, filename) {
+  if (!octokit || !GITHUB_OWNER) {
+    return null;
+  }
+
+  try {
+    const imageBuffer = require('fs').readFileSync(localFilePath);
+    const base64Content = imageBuffer.toString('base64');
+    const gitPath = `images/${filename}`;
+
+    // Check if file exists
+    let sha;
+    try {
+      const { data } = await octokit.repos.getContent({
+        owner: GITHUB_OWNER,
+        repo: IMAGES_REPO,
+        path: gitPath
+      });
+      sha = data.sha;
+    } catch (err) {
+      // File doesn't exist
+    }
+
+    // Upload or update
+    await octokit.repos.createOrUpdateFileContents({
+      owner: GITHUB_OWNER,
+      repo: IMAGES_REPO,
+      path: gitPath,
+      message: `chore: sync image ${filename}`,
+      content: base64Content,
+      ...(sha ? { sha } : {})
+    });
+
+    return `https://cdn.jsdelivr.net/gh/${GITHUB_OWNER}/${IMAGES_REPO}@main/${gitPath}`;
+  } catch (err) {
+    console.warn(`⚠️ Failed to upload ${filename} to GitHub:`, err.message);
+    return null;
+  }
+}
+
+async function convertImagesToGithubUrls(products, uploadedFilenames = new Set()) {
   // Convert all Supabase image URLs to GitHub CDN URLs for free egress
-  const GITHUB_OWNER = process.env.REACT_APP_GITHUB_OWNER;
-  const IMAGES_REPO = process.env.REACT_APP_IMAGES_REPO || 'saworepo2';
+  // Upload images to GitHub first, then create URLs
 
   for (const product of products) {
     // Convert thumbnail
     if (product.thumbnail && product.thumbnail.startsWith('http')) {
       const filename = extractImageFilename(product.thumbnail);
-      // Use GitHub CDN URL instead of local path
-      if (GITHUB_OWNER) {
+      const localPath = path.join(IMAGES_DIR, filename);
+
+      // Try to upload to GitHub if file exists locally
+      if (octokit && GITHUB_OWNER && !uploadedFilenames.has(filename)) {
+        try {
+          if (require('fs').existsSync(localPath)) {
+            const url = await uploadImageToGitHub(localPath, filename);
+            if (url) {
+              product.thumbnail = url;
+              uploadedFilenames.add(filename);
+            } else {
+              product.thumbnail = `/product-images/${filename}`;
+            }
+          } else {
+            product.thumbnail = `/product-images/${filename}`;
+          }
+        } catch (err) {
+          product.thumbnail = `/product-images/${filename}`;
+        }
+      } else if (GITHUB_OWNER) {
         product.thumbnail = `https://cdn.jsdelivr.net/gh/${GITHUB_OWNER}/${IMAGES_REPO}@main/images/${filename}`;
       } else {
-        // Fallback to local path if GitHub not configured
         product.thumbnail = `/product-images/${filename}`;
       }
     }
 
     // Convert images array
     if (Array.isArray(product.images)) {
-      product.images = product.images.map(img => {
+      product.images = await Promise.all(product.images.map(async img => {
         if (typeof img === 'string' && img.startsWith('http')) {
           const filename = extractImageFilename(img);
+          const localPath = path.join(IMAGES_DIR, filename);
+
+          if (octokit && GITHUB_OWNER && !uploadedFilenames.has(filename)) {
+            try {
+              if (require('fs').existsSync(localPath)) {
+                const url = await uploadImageToGitHub(localPath, filename);
+                if (url) {
+                  uploadedFilenames.add(filename);
+                  return url;
+                }
+              }
+            } catch (err) {}
+          }
+
           if (GITHUB_OWNER) {
             return `https://cdn.jsdelivr.net/gh/${GITHUB_OWNER}/${IMAGES_REPO}@main/images/${filename}`;
           }
           return `/product-images/${filename}`;
         }
         return img;
-      });
+      }));
     }
 
     // Convert spec_images array
     if (Array.isArray(product.spec_images)) {
-      product.spec_images = product.spec_images.map(img => {
+      product.spec_images = await Promise.all(product.spec_images.map(async img => {
         if (typeof img === 'string' && img.startsWith('http')) {
           const filename = extractImageFilename(img);
+          const localPath = path.join(IMAGES_DIR, filename);
+
+          if (octokit && GITHUB_OWNER && !uploadedFilenames.has(filename)) {
+            try {
+              if (require('fs').existsSync(localPath)) {
+                const url = await uploadImageToGitHub(localPath, filename);
+                if (url) {
+                  uploadedFilenames.add(filename);
+                  return url;
+                }
+              }
+            } catch (err) {}
+          }
+
           if (GITHUB_OWNER) {
             return `https://cdn.jsdelivr.net/gh/${GITHUB_OWNER}/${IMAGES_REPO}@main/images/${filename}`;
           }
           return `/product-images/${filename}`;
         }
         return img;
-      });
+      }));
     }
   }
 }

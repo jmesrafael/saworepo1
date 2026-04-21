@@ -207,6 +207,75 @@ async function ensureProductsExist() {
   }
 }
 
+// Get backup history (list available backups)
+app.get('/api/products/backups', async (req, res) => {
+  try {
+    const { Octokit } = require('@octokit/rest');
+    require('dotenv').config();
+    const octokit = new Octokit({ auth: process.env.REACT_APP_GITHUB_PAT });
+    const OWNER = process.env.REACT_APP_GITHUB_OWNER;
+
+    const { data: commits } = await octokit.repos.listCommits({
+      owner: OWNER,
+      repo: 'saworepo1',
+      path: 'products.json',
+      per_page: 10
+    });
+
+    const backups = commits.map(c => ({
+      sha: c.sha.substring(0, 7),
+      fullSha: c.sha,
+      message: c.commit.message.split('\n')[0],
+      date: c.commit.author.date,
+      author: c.commit.author.name
+    }));
+
+    res.json({ backups });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// Restore from backup
+app.post('/api/products/restore/:sha', async (req, res) => {
+  try {
+    const { sha } = req.params;
+    const { Octokit } = require('@octokit/rest');
+    require('dotenv').config();
+    const octokit = new Octokit({ auth: process.env.REACT_APP_GITHUB_PAT });
+    const OWNER = process.env.REACT_APP_GITHUB_OWNER;
+
+    // Get the file at that commit
+    const { data: file } = await octokit.repos.getContent({
+      owner: OWNER,
+      repo: 'saworepo1',
+      path: 'products.json',
+      ref: sha
+    });
+
+    // Get current SHA
+    const { data: current } = await octokit.repos.getContent({
+      owner: OWNER,
+      repo: 'saworepo1',
+      path: 'products.json'
+    });
+
+    // Restore
+    await octokit.repos.createOrUpdateFileContents({
+      owner: OWNER,
+      repo: 'saworepo1',
+      path: 'products.json',
+      message: `fix: restore from backup ${sha}`,
+      content: file.content,
+      sha: current.sha
+    });
+
+    res.json({ success: true, message: `Restored from ${sha}` });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
 // Sync products from Supabase (manual trigger)
 app.post('/api/products/sync-supabase', async (req, res) => {
   try {
