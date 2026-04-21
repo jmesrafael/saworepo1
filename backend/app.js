@@ -312,6 +312,64 @@ app.post('/api/products/sync-supabase', async (req, res) => {
   }
 });
 
+// Full sync from Supabase (all 3 steps + auto-commit)
+app.post('/api/products/sync-full', async (req, res) => {
+  try {
+    const { execSync } = require('child_process');
+    const FRONTEND_DIR = path.join(__dirname, '..', 'frontend');
+    const SCRIPTS_DIR = path.join(FRONTEND_DIR, 'src', 'Administrator', 'scripts');
+
+    console.log('[API] Starting full Supabase sync...');
+
+    const scripts = [
+      { name: 'sync-supabase-to-github.mjs', desc: 'Syncing products' },
+      { name: 'enrich-products-files.mjs', desc: 'Enriching files' },
+      { name: 'enrich-products-metadata.mjs', desc: 'Enriching metadata' }
+    ];
+
+    let completed = 0;
+    for (const { name, desc } of scripts) {
+      try {
+        console.log(`[API] Step ${completed + 1}/3: ${desc}...`);
+        execSync(`node ${name}`, {
+          cwd: SCRIPTS_DIR,
+          stdio: 'inherit'
+        });
+        completed++;
+      } catch (err) {
+        console.warn(`[API] Warning in ${name}: ${err.message}`);
+      }
+    }
+
+    // Auto-commit changes to main repo
+    try {
+      console.log('[API] Auto-committing changes...');
+      const REPO_ROOT = path.join(__dirname, '..');
+      const msg = `chore: sync products from supabase at ${new Date().toISOString()}`;
+
+      execSync('git add -A', { cwd: REPO_ROOT, stdio: 'pipe' });
+      execSync(`git commit -m "${msg}" --allow-empty`, { cwd: REPO_ROOT, stdio: 'pipe' });
+      console.log('[API] Changes committed');
+    } catch (err) {
+      console.warn('[API] Auto-commit warning:', err.message);
+    }
+
+    console.log('[API] Full sync completed');
+    res.json({
+      success: true,
+      message: 'Full sync completed with auto-commit',
+      stepsCompleted: completed,
+      totalSteps: scripts.length
+    });
+  } catch (err) {
+    console.error('[API] Full sync error:', err.message);
+    res.status(500).json({
+      error: 'Full sync failed',
+      message: err.message
+    });
+  }
+});
+
 // Start server
 app.listen(PORT, async () => {
   console.log(`Server running on http://localhost:${PORT}`);

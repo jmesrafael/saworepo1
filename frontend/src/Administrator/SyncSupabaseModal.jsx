@@ -5,16 +5,19 @@ export default function SyncSupabaseModal({ open, onClose, onSync }) {
   const [result, setResult] = useState(null);
   const [error, setError] = useState(null);
 
-  const handleSync = async () => {
+  const [syncMode, setSyncMode] = React.useState(null);
+
+  const handleSync = async (isFull = false) => {
     setSyncing(true);
     setError(null);
     setResult(null);
 
     try {
       const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
-      console.log('🔄 Starting sync...');
+      const endpoint = isFull ? '/api/products/sync-full' : '/api/products/sync-supabase';
+      console.log(`🔄 Starting ${isFull ? 'full' : 'quick'} sync...`);
 
-      const res = await fetch(`${API_URL}/api/products/sync-supabase`, {
+      const res = await fetch(`${API_URL}${endpoint}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' }
       });
@@ -22,7 +25,7 @@ export default function SyncSupabaseModal({ open, onClose, onSync }) {
       if (!res.ok) throw new Error('Sync failed');
 
       const data = await res.json();
-      console.log('✅ Sync completed:', data);
+      console.log(`✅ Sync completed:`, data);
       setResult(data);
       setSyncing(false);
 
@@ -56,16 +59,30 @@ export default function SyncSupabaseModal({ open, onClose, onSync }) {
 
         {/* Content */}
         <div style={styles.content}>
-          {!syncing && !result && !error && (
+          {!syncing && !result && !error && !syncMode && (
             <div style={styles.initial}>
               <i className="fa-solid fa-database" style={styles.largeIcon} />
               <p style={styles.description}>
-                This will pull products from Supabase and merge them with your existing products.
+                Choose a sync mode to pull products from Supabase.
+              </p>
+              <ul style={styles.infoList}>
+                <li><strong>Quick Sync:</strong> Products only</li>
+                <li><strong>Full Sync:</strong> Products + files + metadata + auto-commit</li>
+              </ul>
+            </div>
+          )}
+
+          {!syncing && !result && !error && syncMode && (
+            <div style={styles.initial}>
+              <i className="fa-solid fa-database" style={styles.largeIcon} />
+              <p style={styles.description}>
+                {syncMode === 'full' ? 'Running full sync (3 steps)' : 'Syncing products from Supabase'}
               </p>
               <ul style={styles.infoList}>
                 <li>✅ New products will be added</li>
                 <li>🔄 Existing products will be updated</li>
                 <li>📌 GitHub CMS products will be protected</li>
+                {syncMode === 'full' && <li>💾 Auto-commit enabled</li>}
               </ul>
             </div>
           )}
@@ -84,7 +101,7 @@ export default function SyncSupabaseModal({ open, onClose, onSync }) {
             <div style={styles.results}>
               <div style={styles.successBanner}>
                 <i className="fa-solid fa-check-circle" />
-                <span>Sync completed successfully!</span>
+                <span>Sync completed successfully! {result.stepsCompleted && `(${result.stepsCompleted}/${result.totalSteps} steps)`}</span>
               </div>
 
               <div style={styles.statsGrid}>
@@ -178,13 +195,28 @@ export default function SyncSupabaseModal({ open, onClose, onSync }) {
 
         {/* Footer */}
         <div style={styles.footer}>
-          {!syncing && !result && (
+          {!syncing && !result && !syncMode && (
             <>
               <button onClick={onClose} style={styles.btnCancel}>
                 Cancel
               </button>
-              <button onClick={handleSync} style={styles.btnSync}>
-                <i className="fa-solid fa-sync" /> Start Sync
+              <div style={{ display: 'flex', gap: '8px' }}>
+                <button onClick={() => { setSyncMode('quick'); handleSync(false); }} style={{...styles.btnSync, backgroundColor: '#17a2b8'}}>
+                  <i className="fa-solid fa-bolt" /> Quick Sync
+                </button>
+                <button onClick={() => { setSyncMode('full'); handleSync(true); }} style={styles.btnSync}>
+                  <i className="fa-solid fa-sync" /> Full Sync
+                </button>
+              </div>
+            </>
+          )}
+          {!syncing && !result && syncMode && (
+            <>
+              <button onClick={onClose} style={styles.btnCancel} disabled>
+                Cancel
+              </button>
+              <button onClick={() => { setSyncMode(null); setSyncing(false); }} style={{...styles.btnCancel, opacity: 0.5}}>
+                Back
               </button>
             </>
           )}
@@ -194,6 +226,7 @@ export default function SyncSupabaseModal({ open, onClose, onSync }) {
               onClick={() => {
                 setResult(null);
                 setError(null);
+                setSyncMode(null);
                 onClose();
               }}
               style={styles.btnClose}
