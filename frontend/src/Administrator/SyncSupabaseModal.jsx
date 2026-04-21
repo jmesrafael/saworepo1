@@ -67,7 +67,6 @@ export default function SyncSupabaseModal({ open, onClose, onSync }) {
               </p>
               <ul style={styles.infoList}>
                 <li><strong>Quick Sync:</strong> Products only</li>
-                <li><strong>Full Sync:</strong> Products + files + metadata + auto-commit</li>
               </ul>
             </div>
           )}
@@ -76,13 +75,12 @@ export default function SyncSupabaseModal({ open, onClose, onSync }) {
             <div style={styles.initial}>
               <i className="fa-solid fa-database" style={styles.largeIcon} />
               <p style={styles.description}>
-                {syncMode === 'full' ? 'Running full sync (3 steps)' : 'Syncing products from Supabase'}
+                Syncing products from Supabase
               </p>
               <ul style={styles.infoList}>
                 <li>✅ New products will be added</li>
                 <li>🔄 Existing products will be updated</li>
                 <li>📌 GitHub CMS products will be protected</li>
-                {syncMode === 'full' && <li>💾 Auto-commit enabled</li>}
               </ul>
             </div>
           )}
@@ -200,14 +198,9 @@ export default function SyncSupabaseModal({ open, onClose, onSync }) {
               <button onClick={onClose} style={styles.btnCancel}>
                 Cancel
               </button>
-              <div style={{ display: 'flex', gap: '8px' }}>
-                <button onClick={() => { setSyncMode('quick'); handleSync(false); }} style={{...styles.btnSync, backgroundColor: '#17a2b8'}}>
-                  <i className="fa-solid fa-bolt" /> Quick Sync
-                </button>
-                <button onClick={() => { setSyncMode('full'); handleSync(true); }} style={styles.btnSync}>
-                  <i className="fa-solid fa-sync" /> Full Sync
-                </button>
-              </div>
+              <button onClick={() => { setSyncMode('quick'); handleSync(false); }} style={{...styles.btnSync, backgroundColor: '#17a2b8'}}>
+                <i className="fa-solid fa-bolt" /> Quick Sync
+              </button>
             </>
           )}
           {!syncing && !result && syncMode && (

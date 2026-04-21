@@ -1,5 +1,6 @@
 {
-  "updatedAt": "2026-04-21T01:49:56.375Z",
+  "updatedAt": "2026-04-21T02:50:47.520Z",
+  "source": "local-admin",
   "products": [
     {
       "id": "50834970-4527-4954-9cd7-8ac89d7bd70f",
@@ -6207,7 +6208,7 @@
     },
     {
       "id": "147bee1e-48f6-4319-8277-b249fab09b55",
-      "name": "Sunatonto",
+      "name": "SunatontoO",
       "slug": "sunatonto",
       "description": "",
       "short_description": "",
@@ -6231,12 +6232,12 @@
       "created_by_username": null,
       "updated_by_username": null,
       "created_at": "2026-04-21T01:16:45.756Z",
-      "updated_at": "2026-04-21T01:16:45.756Z",
+      "updated_at": "2026-04-21T02:44:44.730Z",
       "is_deleted": false
     },
     {
       "id": "98e3b18c-fd7d-4f23-befc-a28879160b79",
-      "name": "SolarEgg",
+      "name": "SolarEggY",
       "slug": "solaregg",
       "description": "",
       "short_description": "",
@@ -6252,7 +6253,7 @@
       "tags": [],
       "features": [],
       "auto_tag_columns": [],
-      "thumbnail": "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/sunatonto-copy-2-1776734513405.webp",
+      "thumbnail": "/product-images/sunatonto-copy-2-1776734513405.webp",
       "images": [],
       "spec_images": [],
       "files": [],
@@ -6260,7 +6261,7 @@
       "created_by_username": null,
       "updated_by_username": null,
       "created_at": "2026-04-21T01:22:03.100Z",
-      "updated_at": "2026-04-21T01:24:39.731Z",
+      "updated_at": "2026-04-21T02:42:39.176Z",
       "is_deleted": false
     },
     {
@@ -7735,7 +7736,7 @@
     },
     {
       "id": "c8c26a29-daf3-4fd9-9bd5-50f5b3c084b9",
-      "name": "Savonia Combi Fiber Coated NYAWA KA",
+      "name": "Savonia Combi Fiber Coated NSangko ko",
       "slug": "savonia-combi-fiber-coated-ns",
       "description": "<table>\n  <thead>\n<tr>\n  <th>Heater Model</th>\n  <th>kW\n<br>Heater</th>\n  <th>kW\n<br>Tank</th>\n  <th>Sauna Room<br>min. (m3) max.</th>\n  <th>Size of Heater (mm)<br>Length Width Height</th>\n  <th>Stones<br>(kg)</th>\n  <th>Control</th>\n  <th colspan=\"4\">Minimum Safety Distances<br>A | B | C | D</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n  <td>SAVC-90NS-Z-F</td>\n  <td>9.0</td>\n  <td>1 x 2.0</td>\n  <td>8 – 14</td>\n  <td>510 x 420 x 655</td>\n  <td>40 – 50</td>\n  <td>Separate</td>\n  <td>1200</td>\n  <td>110</td>\n  <td>50</td>\n  <td>1900</td>\n</tr>\n<tr>\n  <td>SAVC-105NS-Z-F</td>\n  <td>10.5</td>\n  <td>1 x 2.0</td>\n  <td>9 – 15</td>\n  <td>510 x 420 x 655</td>\n  <td>40 – 50</td>\n  <td>Separate</td>\n  <td>1200</td>\n  <td>120</td>\n  <td>60</td>\n  <td>1900</td>\n</tr>\n<tr>\n  <td>SAVC-120NS-Z-F</td>\n  <td>12.0</td>\n  <td>1 x 2.0</td>\n  <td>10 – 18</td>\n  <td>510 x 420 x 655</td>\n  <td>40 – 50</td>\n  <td>Separate</td>\n  <td>1400</td>\n  <td>130</td>\n  <td>70</td>\n  <td>2100</td>\n</tr>\n<tr>\n  <td>SAVC-150NS-Z-F</td>\n  <td>15.0</td>\n  <td>2 x 2.0</td>\n  <td>13 – 23</td>\n  <td>715 x 420 x 655</td>\n  <td>60 – 75</td>\n  <td>Separate</td>\n  <td>1400</td>\n  <td>160</td>\n  <td>100</td>\n  <td>2100</td>\n</tr>\n<tr>\n  <td>SAVC-180NS-Z-F</td>\n  <td>18.0</td>\n  <td>2 x 2.0</td>\n  <td>17 – 29</td>\n  <td>715 x 420 x 655</td>\n  <td>60 – 75</td>\n  <td>Separate</td>\n  <td>1400</td>\n  <td>160</td>\n  <td>100</td>\n  <td>2100</td>\n</tr></tbody></table>",
       "short_description": "<strong style=\"text-align: justify;\">Savonia Combi</strong><span style=\"text-align: justify;\"> offers the best of both worlds: the heat of a Savonia and a water tank for more steam and humidity. It is available with cool-to-touch fiber coating and an auto-refill function for the water tank.</span>",
@@ -7779,10 +7780,10 @@
         "Optional auto refill, for automatically filled water tank"
       ],
       "auto_tag_columns": [],
-      "thumbnail": "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776735425911_bki99rl16o.webp",
+      "thumbnail": "/product-images/1776735425911_bki99rl16o.webp",
       "images": [],
       "spec_images": [
-        "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776735529760_z82pm0ocjdd.webp"
+        "/product-images/1776735529760_z82pm0ocjdd.webp"
       ],
       "files": [
         {
@@ -7794,7 +7795,7 @@
       "created_by_username": "Edgar",
       "updated_by_username": "Edgar",
       "created_at": "2026-04-21T01:38:27.461366+00:00",
-      "updated_at": "2026-04-21T01:46:10.602+00:00",
+      "updated_at": "2026-04-21T02:40:35.834Z",
       "is_deleted": false,
       "source": "supabase"
     },
@@ -7911,6 +7912,64 @@
       "updated_at": "2026-04-21T01:45:43.124+00:00",
       "is_deleted": false,
       "source": "supabase"
+    },
+    {
+      "id": "7329b32a-fc8f-49b9-861d-9505dc46a774",
+      "name": "MANDANIAa",
+      "slug": "mandani",
+      "description": "",
+      "short_description": "",
+      "brand": "SAWO",
+      "type": "",
+      "spec_table": null,
+      "resources": null,
+      "status": "published",
+      "visible": true,
+      "featured": false,
+      "sort_order": 0,
+      "categories": [],
+      "tags": [],
+      "features": [],
+      "auto_tag_columns": [],
+      "thumbnail": "/product-images/-1776739410850.webp",
+      "images": [],
+      "spec_images": [],
+      "files": [],
+      "created_by": null,
+      "created_by_username": null,
+      "updated_by_username": null,
+      "created_at": "2026-04-21T02:43:36.337Z",
+      "updated_at": "2026-04-21T02:49:13.805Z",
+      "is_deleted": false
+    },
+    {
+      "id": "4740ea61-e7ec-4b11-8c95-a6c96abf341c",
+      "name": "a",
+      "slug": "a",
+      "description": "",
+      "short_description": "",
+      "brand": "SAWO",
+      "type": "",
+      "spec_table": null,
+      "resources": null,
+      "status": "published",
+      "visible": true,
+      "featured": false,
+      "sort_order": 0,
+      "categories": [],
+      "tags": [],
+      "features": [],
+      "auto_tag_columns": [],
+      "thumbnail": "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/a-1776739837191.webp",
+      "images": [],
+      "spec_images": [],
+      "files": [],
+      "created_by": null,
+      "created_by_username": null,
+      "updated_by_username": null,
+      "created_at": "2026-04-21T02:50:42.850Z",
+      "updated_at": "2026-04-21T02:50:42.850Z",
+      "is_deleted": false
     }
   ]
 }
