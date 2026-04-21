@@ -1,9 +1,9 @@
 {
-  "updatedAt": "2026-04-21T03:04:05.879Z",
+  "updatedAt": "2026-04-21T03:11:58.623Z",
   "products": [
     {
       "id": "297e819c-c2c2-4d4d-a1a6-c69183202cb3",
-      "name": "SaunaEngland",
+      "name": "SaunaEnglandd",
       "slug": "saunaengland",
       "description": "",
       "short_description": "",
@@ -19,7 +19,7 @@
       "tags": [],
       "features": [],
       "auto_tag_columns": [],
-      "thumbnail": "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/-1776740637784.webp",
+      "thumbnail": "/product-images/-1776740637784.webp",
       "images": [],
       "spec_images": [],
       "files": [],
@@ -27,7 +27,7 @@
       "created_by_username": null,
       "updated_by_username": null,
       "created_at": "2026-04-21T03:04:04.162Z",
-      "updated_at": "2026-04-21T03:04:04.162Z",
+      "updated_at": "2026-04-21T03:11:57.608Z",
       "is_deleted": false
     }
   ]
