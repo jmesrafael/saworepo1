@@ -463,52 +463,135 @@ async function syncProducts() {
   }
 }
 
+function toArray(value) {
+  if (!value) return [];
+  if (Array.isArray(value)) return value;
+  if (typeof value === 'string') {
+    try {
+      const parsed = JSON.parse(value);
+      return Array.isArray(parsed) ? parsed : [];
+    } catch {
+      return [];
+    }
+  }
+  return [];
+}
+
 function mergeProducts(currentProducts, supabaseProducts) {
   const merged = [...currentProducts];
   let addedCount = 0;
-  let updatedCount = 0;
   const addedList = [];
-  const updatedList = [];
+  const skippedList = [];
+
+  // Index existing products by ID
+  const existingIds = new Set(currentProducts.map(p => p.id));
 
   for (const supProduct of supabaseProducts) {
-    const existingIndex = merged.findIndex(p => p.id === supProduct.id);
+    if (existingIds.has(supProduct.id)) {
+      // Product exists in current → CHECK if it was from Supabase originally
+      const existing = currentProducts.find(p => p.id === supProduct.id);
 
-    if (existingIndex === -1) {
-      // Product doesn't exist in current → ADD IT
+      // Only update if product came from Supabase (has source: 'supabase' or is from enrich scripts)
+      // If created locally (no supabase source), skip it completely
+      if (existing.source === 'supabase') {
+        // Product was from Supabase before - check if data changed
+        if (!productsAreEqual(existing, supProduct)) {
+          const updated = enrichSupabaseProduct(existing, supProduct);
+          const idx = merged.findIndex(p => p.id === supProduct.id);
+          merged[idx] = updated;
+          console.log(`🔄 [UPDATE] ${updated.slug || updated.name}`);
+        } else {
+          console.log(`⏭️  [SKIP] ${supProduct.slug || supProduct.name}: no changes`);
+        }
+      } else {
+        // Product created locally - don't touch it
+        console.log(`📌 [SKIP] ${supProduct.slug || supProduct.name}: locally created product`);
+      }
+      skippedList.push({ id: supProduct.id, name: supProduct.name, slug: supProduct.slug });
+    } else {
+      // Product is NEW in Supabase → ADD IT
       const newProduct = normalizeSupabaseProduct(supProduct);
       merged.push(newProduct);
       console.log(`✨ [ADD] ${newProduct.slug || newProduct.name}`);
       addedCount++;
       addedList.push({ id: newProduct.id, name: newProduct.name, slug: newProduct.slug });
-    } else {
-      // Product exists → MERGE (Supabase data updates existing, but keeps CMS fields)
-      const existing = merged[existingIndex];
-      const updated_product = mergeProductData(existing, supProduct);
-      merged[existingIndex] = updated_product;
-      console.log(`🔄 [UPDATE] ${updated_product.slug || updated_product.name}`);
-      updatedCount++;
-      updatedList.push({ id: updated_product.id, name: updated_product.name, slug: updated_product.slug });
     }
   }
 
-  // Keep any products from currentProducts that aren't in Supabase
-  // (These are products created via CMS/GitHub that shouldn't be deleted)
+  // Keep any products from currentProducts that aren't in Supabase at all
   const keptProducts = currentProducts.filter(p => !supabaseProducts.find(sp => sp.id === p.id));
   const keptList = keptProducts.map(p => ({ id: p.id, name: p.name, slug: p.slug }));
   if (keptProducts.length > 0) {
-    console.log(`\n📌 Keeping ${keptProducts.length} products created via CMS (not in Supabase)`);
+    console.log(`\n📌 Keeping ${keptProducts.length} products not in Supabase`);
   }
 
   return {
     mergedProducts: merged,
     stats: {
       added: addedCount,
-      updated: updatedCount,
-      kept: keptProducts.length,
+      updated: 0,
+      kept: keptProducts.length + skippedList.length,
       addedList,
-      updatedList,
-      keptList
+      updatedList: [],
+      keptList: [...keptList, ...skippedList]
     }
+  };
+}
+
+function productsAreEqual(existing, supabase) {
+  // Compare key fields to detect if there's actual change
+  const fieldsToCompare = [
+    'name', 'slug', 'description', 'short_description', 'brand',
+    'type', 'spec_table', 'resources', 'status', 'visible', 'featured',
+    'sort_order', 'is_deleted'
+  ];
+
+  for (const field of fieldsToCompare) {
+    const existingVal = existing[field];
+    const supabaseVal = supabase[field];
+    if (existingVal !== supabaseVal) {
+      return false;
+    }
+  }
+
+  // Compare arrays
+  const arrayFields = ['categories', 'tags', 'features'];
+  for (const field of arrayFields) {
+    const existingArr = toArray(existing[field]);
+    const supabaseArr = toArray(supabase[field]);
+    if (existingArr.length !== supabaseArr.length ||
+        !existingArr.every((v, i) => v === supabaseArr[i])) {
+      return false;
+    }
+  }
+
+  return true;
+}
+
+function enrichSupabaseProduct(existing, supProduct) {
+  // Update product from Supabase while preserving local customizations
+  return {
+    ...existing,
+    name: supProduct.name || existing.name,
+    slug: supProduct.slug || existing.slug,
+    description: supProduct.description !== undefined ? supProduct.description : existing.description,
+    short_description: supProduct.short_description || existing.short_description,
+    brand: supProduct.brand || existing.brand,
+    type: supProduct.type || existing.type,
+    spec_table: supProduct.spec_table || existing.spec_table,
+    resources: supProduct.resources || existing.resources,
+    status: supProduct.status || existing.status,
+    visible: supProduct.visible !== undefined ? supProduct.visible : existing.visible,
+    featured: supProduct.featured !== undefined ? supProduct.featured : existing.featured,
+    sort_order: supProduct.sort_order ?? existing.sort_order,
+    categories: toArray(supProduct.categories) || existing.categories,
+    tags: toArray(supProduct.tags) || existing.tags,
+    features: toArray(supProduct.features) || existing.features,
+    auto_tag_columns: supProduct.auto_tag_columns || existing.auto_tag_columns,
+    updated_by_username: existing.updated_by_username,
+    updated_at: supProduct.updated_at || existing.updated_at,
+    is_deleted: supProduct.is_deleted || existing.is_deleted,
+    source: 'supabase'
   };
 }
 
@@ -546,21 +629,6 @@ function normalizeSupabaseProduct(supProduct) {
   };
 }
 
-function mergeProductData(existing, supProduct) {
-  // Keep existing CMS data, but update from Supabase
-  // Strategy: Supabase updates non-CMS fields, but CMS-specific fields are preserved
-  const normalized = normalizeSupabaseProduct(supProduct);
-
-  return {
-    ...existing, // Keep all existing CMS data as base
-    ...normalized, // Override with Supabase data
-    // But preserve these CMS-specific fields if they exist
-    ...(existing.updated_by_username && { updated_by_username: existing.updated_by_username }),
-    updated_at: new Date(normalized.updated_at) > new Date(existing.updated_at)
-      ? normalized.updated_at
-      : existing.updated_at,
-  };
-}
 
 function printSummary(before, supabase, after, stats, imageStats, unusedImages) {
   console.log('═══════════════════════════════════════');
