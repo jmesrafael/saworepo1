@@ -5,7 +5,7 @@ import { getPerms } from "./permissions";
 import { processPastedTableHTML } from "../utils/cleanTableHTML";
 import { getAllProductsLive, getAllCategoriesLive, getAllTagsLive, getProductByIdLive, bustProductCache } from "../local-storage/supabaseReader";
 import { createProduct, editProduct, deleteProduct } from "./lib/cmsHelper";
-import { uploadImage, uploadPdf, fetchCurrentProducts, rewriteProductsJson } from "./lib/githubStorage";
+import { uploadImage, uploadPdf } from "./lib/githubStorage";
 import SyncSupabaseModal from "./SyncSupabaseModal";
 
 const FRONT_URL = process.env.REACT_APP_FRONT_URL || "";
@@ -1285,12 +1285,6 @@ function ProductCard({ p, onEdit, onDelete, onDuplicate, perms }) {
 
   const productUrl = `${FRONT_URL || window.location.origin}/products/${p.slug}`;
 
-  const handleCardClick = (e) => {
-    if (menuRef.current && menuRef.current.contains(e.currentTarget)) {
-      return;
-    }
-    window.open(productUrl, "_blank");
-  };
 
   return (
     <a href={productUrl} target="_blank" rel="noopener noreferrer"
@@ -1430,7 +1424,7 @@ export default function Products({ currentUser }) {
 
   useEffect(() => {
     if (!perms.can("products.edit")) setViewMode("grid");
-  }, []);
+  }, [perms]);
 
   // const fetchRevisions = async (productId) => {
   //   Commented out - using GitHub storage only (no activity_logs table)
@@ -1825,8 +1819,7 @@ export default function Products({ currentUser }) {
             </div>
             <div style={{ width: "100%", height: "6px", backgroundColor: "#e0e0e0", borderRadius: "3px", overflow: "hidden" }}>
               <div style={{
-                height: "100%", backgroundColor: "var(--brand, #007bff)",
-                animation: "progress-animation 2s infinite",
+                height: "100%",
                 background: "linear-gradient(90deg, var(--brand, #007bff), #0056b3, var(--brand, #007bff))",
                 backgroundSize: "200% 100%",
                 animation: "shimmer 2s infinite"
@@ -2320,7 +2313,7 @@ export default function Products({ currentUser }) {
 
             </form>
           </>
-        )}
+        )
       </Modal>
 
       <Confirm open={bulkConfirm} onClose={() => setBulkConfirm(false)} onConfirm={handleBulkDelete}
