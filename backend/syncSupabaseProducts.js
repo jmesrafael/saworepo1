@@ -116,12 +116,22 @@ async function downloadProductImages(products) {
   return downloadStats;
 }
 
-async function convertImagesToLocalPaths(products) {
+async function convertImagesToGithubUrls(products) {
+  // Convert all Supabase image URLs to GitHub CDN URLs for free egress
+  const GITHUB_OWNER = process.env.REACT_APP_GITHUB_OWNER;
+  const IMAGES_REPO = process.env.REACT_APP_IMAGES_REPO || 'saworepo2';
+
   for (const product of products) {
     // Convert thumbnail
     if (product.thumbnail && product.thumbnail.startsWith('http')) {
       const filename = extractImageFilename(product.thumbnail);
-      product.thumbnail = `/product-images/${filename}`;
+      // Use GitHub CDN URL instead of local path
+      if (GITHUB_OWNER) {
+        product.thumbnail = `https://cdn.jsdelivr.net/gh/${GITHUB_OWNER}/${IMAGES_REPO}@main/images/${filename}`;
+      } else {
+        // Fallback to local path if GitHub not configured
+        product.thumbnail = `/product-images/${filename}`;
+      }
     }
 
     // Convert images array
@@ -129,6 +139,9 @@ async function convertImagesToLocalPaths(products) {
       product.images = product.images.map(img => {
         if (typeof img === 'string' && img.startsWith('http')) {
           const filename = extractImageFilename(img);
+          if (GITHUB_OWNER) {
+            return `https://cdn.jsdelivr.net/gh/${GITHUB_OWNER}/${IMAGES_REPO}@main/images/${filename}`;
+          }
           return `/product-images/${filename}`;
         }
         return img;
@@ -140,6 +153,9 @@ async function convertImagesToLocalPaths(products) {
       product.spec_images = product.spec_images.map(img => {
         if (typeof img === 'string' && img.startsWith('http')) {
           const filename = extractImageFilename(img);
+          if (GITHUB_OWNER) {
+            return `https://cdn.jsdelivr.net/gh/${GITHUB_OWNER}/${IMAGES_REPO}@main/images/${filename}`;
+          }
           return `/product-images/${filename}`;
         }
         return img;
@@ -309,10 +325,10 @@ async function syncProducts() {
     const imageDownloadStats = await downloadProductImages(mergedProducts);
     console.log(`Downloaded: ${imageDownloadStats.downloaded}, Skipped: ${imageDownloadStats.skipped}, Failed: ${imageDownloadStats.failed}\n`);
 
-    // Step 5: Convert image URLs to local paths
-    console.log('🔗 Converting image URLs to local paths...\n');
-    await convertImagesToLocalPaths(mergedProducts);
-    console.log('✅ URLs converted to local paths\n');
+    // Step 5: Convert image URLs to GitHub CDN (for free egress, no Supabase fees)
+    console.log('🔗 Converting image URLs to GitHub CDN...\n');
+    await convertImagesToGithubUrls(mergedProducts);
+    console.log('✅ URLs converted to GitHub CDN URLs\n');
 
     // Step 6: Detect and remove unused images
     console.log('🔍 Detecting unused images...\n');
