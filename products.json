@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-04-21T02:44:46.469Z",
+  "updatedAt": "2026-04-21T02:49:15.734Z",
   "products": [
     {
       "id": "50834970-4527-4954-9cd7-8ac89d7bd70f",
@@ -7914,7 +7914,7 @@
     },
     {
       "id": "7329b32a-fc8f-49b9-861d-9505dc46a774",
-      "name": "MANDANIA",
+      "name": "MANDANIAa",
       "slug": "mandani",
       "description": "",
       "short_description": "",
@@ -7930,7 +7930,7 @@
       "tags": [],
       "features": [],
       "auto_tag_columns": [],
-      "thumbnail": "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/-1776739410850.webp",
+      "thumbnail": "/product-images/-1776739410850.webp",
       "images": [],
       "spec_images": [],
       "files": [],
@@ -7938,7 +7938,7 @@
       "created_by_username": null,
       "updated_by_username": null,
       "created_at": "2026-04-21T02:43:36.337Z",
-      "updated_at": "2026-04-21T02:44:15.689Z",
+      "updated_at": "2026-04-21T02:49:13.805Z",
       "is_deleted": false
     }
   ]
