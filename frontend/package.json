@@ -33,7 +33,11 @@
     "prebuild": "node -e \"const fs=require('fs'); const src='../products.json'; const dst='public/products.json'; if(fs.existsSync(src)) { fs.copyFileSync(src, dst); console.log('✅ Synced products.json to public/'); }\"",
     "build": "npm run prebuild && react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "sync:products": "node src/Administrator/scripts/sync-supabase-to-github.mjs",
+    "sync:files": "node src/Administrator/scripts/enrich-products-files.mjs",
+    "sync:metadata": "node src/Administrator/scripts/enrich-products-metadata.mjs",
+    "sync:full": "node src/Administrator/scripts/full-sync-supabase.mjs"
   },
   "eslintConfig": {
     "extends": [
