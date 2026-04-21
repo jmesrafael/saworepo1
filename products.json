@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-04-21T01:49:47.293Z",
+  "updatedAt": "2026-04-21T01:49:56.375Z",
   "products": [
     {
       "id": "50834970-4527-4954-9cd7-8ac89d7bd70f",
@@ -176,7 +176,7 @@
         "Innova",
         "Interface Holder"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [],
       "brand": "SAWO",
       "type": "Interface Holder",
@@ -273,7 +273,7 @@
         "NS",
         "18.0 kW"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [],
       "brand": "SAWO",
       "type": "Coming Soon",
@@ -424,7 +424,7 @@
         "Cables",
         "Spare Parts"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [],
       "brand": "SAWO",
       "type": "Spare Parts",
@@ -747,7 +747,7 @@
         "Saunova",
         "9.0 kW"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Package includes Saunova Contactor Unit, 1m RJ12-cable",
         "New casing design for easier installation with additional space and wiring options"
@@ -1206,7 +1206,7 @@
         "STN",
         "Interface Holder"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [],
       "brand": "SAWO",
       "type": "Interface Holder",
@@ -1725,7 +1725,7 @@
         "NS",
         "9.0 kW"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Remote control: Set schedule and control the heater from anywhere and any distance.",
         "Intuitive interface: Use the app and controls with ease, thanks to our streamlined UI/UX design.",
@@ -1768,7 +1768,7 @@
         "Saunova",
         "9.0 kW"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Dimension: (W)104 x (H)147 x (D) 137mm3",
         "More than 9kW needs a Contactor",
@@ -1816,7 +1816,7 @@
         "Innova",
         "Interface Holder"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [],
       "brand": "SAWO",
       "type": "Interface Holder",
@@ -6280,7 +6280,7 @@
       "categories": [],
       "tags": [],
       "features": [],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "thumbnail": "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776644962668_p9rdgmco1h.webp",
       "images": [],
       "spec_images": [],
@@ -7778,7 +7778,7 @@
         "Adjustable legs",
         "Optional auto refill, for automatically filled water tank"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "thumbnail": "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776735425911_bki99rl16o.webp",
       "images": [],
       "spec_images": [
@@ -7833,7 +7833,7 @@
         "Available controls: Saunova/Innova (NS)",
         "Adjustable legs"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "thumbnail": "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776735583216_5khlywqwdn6.webp",
       "images": [
         "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776735590471_9pqsnebk8rb.webp",
@@ -7894,7 +7894,7 @@
         "Adjustable legs",
         "Separate water tank with 0.8kW steam generator"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "thumbnail": "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776735763374_a8cf4cdg8go.webp",
       "images": [
         "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776735753613_h7u9b9z0of9.webp",
