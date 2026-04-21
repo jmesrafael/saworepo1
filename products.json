@@ -1,6 +1,5 @@
 {
-  "updatedAt": "2026-04-21T01:44:17.990Z",
-  "source": "local-admin",
+  "updatedAt": "2026-04-21T01:49:56.375Z",
   "products": [
     {
       "id": "50834970-4527-4954-9cd7-8ac89d7bd70f",
@@ -177,7 +176,7 @@
         "Innova",
         "Interface Holder"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [],
       "brand": "SAWO",
       "type": "Interface Holder",
@@ -274,7 +273,7 @@
         "NS",
         "18.0 kW"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [],
       "brand": "SAWO",
       "type": "Coming Soon",
@@ -425,7 +424,7 @@
         "Cables",
         "Spare Parts"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [],
       "brand": "SAWO",
       "type": "Spare Parts",
@@ -748,7 +747,7 @@
         "Saunova",
         "9.0 kW"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Package includes Saunova Contactor Unit, 1m RJ12-cable",
         "New casing design for easier installation with additional space and wiring options"
@@ -1207,7 +1206,7 @@
         "STN",
         "Interface Holder"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [],
       "brand": "SAWO",
       "type": "Interface Holder",
@@ -1726,7 +1725,7 @@
         "NS",
         "9.0 kW"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Remote control: Set schedule and control the heater from anywhere and any distance.",
         "Intuitive interface: Use the app and controls with ease, thanks to our streamlined UI/UX design.",
@@ -1769,7 +1768,7 @@
         "Saunova",
         "9.0 kW"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Dimension: (W)104 x (H)147 x (D) 137mm3",
         "More than 9kW needs a Contactor",
@@ -1817,7 +1816,7 @@
         "Innova",
         "Interface Holder"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [],
       "brand": "SAWO",
       "type": "Interface Holder",
@@ -6281,7 +6280,7 @@
       "categories": [],
       "tags": [],
       "features": [],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "thumbnail": "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776644962668_p9rdgmco1h.webp",
       "images": [],
       "spec_images": [],
@@ -7736,7 +7735,7 @@
     },
     {
       "id": "c8c26a29-daf3-4fd9-9bd5-50f5b3c084b9",
-      "name": "Savonia Combi Fiber Coated NS",
+      "name": "Savonia Combi Fiber Coated NYAWA KA",
       "slug": "savonia-combi-fiber-coated-ns",
       "description": "<table>\n  <thead>\n<tr>\n  <th>Heater Model</th>\n  <th>kW\n<br>Heater</th>\n  <th>kW\n<br>Tank</th>\n  <th>Sauna Room<br>min. (m3) max.</th>\n  <th>Size of Heater (mm)<br>Length Width Height</th>\n  <th>Stones<br>(kg)</th>\n  <th>Control</th>\n  <th colspan=\"4\">Minimum Safety Distances<br>A | B | C | D</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n  <td>SAVC-90NS-Z-F</td>\n  <td>9.0</td>\n  <td>1 x 2.0</td>\n  <td>8 – 14</td>\n  <td>510 x 420 x 655</td>\n  <td>40 – 50</td>\n  <td>Separate</td>\n  <td>1200</td>\n  <td>110</td>\n  <td>50</td>\n  <td>1900</td>\n</tr>\n<tr>\n  <td>SAVC-105NS-Z-F</td>\n  <td>10.5</td>\n  <td>1 x 2.0</td>\n  <td>9 – 15</td>\n  <td>510 x 420 x 655</td>\n  <td>40 – 50</td>\n  <td>Separate</td>\n  <td>1200</td>\n  <td>120</td>\n  <td>60</td>\n  <td>1900</td>\n</tr>\n<tr>\n  <td>SAVC-120NS-Z-F</td>\n  <td>12.0</td>\n  <td>1 x 2.0</td>\n  <td>10 – 18</td>\n  <td>510 x 420 x 655</td>\n  <td>40 – 50</td>\n  <td>Separate</td>\n  <td>1400</td>\n  <td>130</td>\n  <td>70</td>\n  <td>2100</td>\n</tr>\n<tr>\n  <td>SAVC-150NS-Z-F</td>\n  <td>15.0</td>\n  <td>2 x 2.0</td>\n  <td>13 – 23</td>\n  <td>715 x 420 x 655</td>\n  <td>60 – 75</td>\n  <td>Separate</td>\n  <td>1400</td>\n  <td>160</td>\n  <td>100</td>\n  <td>2100</td>\n</tr>\n<tr>\n  <td>SAVC-180NS-Z-F</td>\n  <td>18.0</td>\n  <td>2 x 2.0</td>\n  <td>17 – 29</td>\n  <td>715 x 420 x 655</td>\n  <td>60 – 75</td>\n  <td>Separate</td>\n  <td>1400</td>\n  <td>160</td>\n  <td>100</td>\n  <td>2100</td>\n</tr></tbody></table>",
       "short_description": "<strong style=\"text-align: justify;\">Savonia Combi</strong><span style=\"text-align: justify;\"> offers the best of both worlds: the heat of a Savonia and a water tank for more steam and humidity. It is available with cool-to-touch fiber coating and an auto-refill function for the water tank.</span>",
@@ -7779,7 +7778,7 @@
         "Adjustable legs",
         "Optional auto refill, for automatically filled water tank"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "thumbnail": "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776735425911_bki99rl16o.webp",
       "images": [],
       "spec_images": [
@@ -7795,7 +7794,121 @@
       "created_by_username": "Edgar",
       "updated_by_username": "Edgar",
       "created_at": "2026-04-21T01:38:27.461366+00:00",
-      "updated_at": "2026-04-21T01:38:57.886+00:00",
+      "updated_at": "2026-04-21T01:46:10.602+00:00",
+      "is_deleted": false,
+      "source": "supabase"
+    },
+    {
+      "id": "b819ed43-288c-4a66-8279-15dc3ab9207c",
+      "name": "Nordex Pro NS",
+      "slug": "nordex-pro-ns",
+      "description": "<table>\n  <thead>\n<tr>\n  <th>Heater Model</th>\n  <th>kW</th>\n  <th>Sauna Room<br>min (m3) max</th>\n  <th>Size of heater (mm)<br>Length Width Height</th>\n  <th>Stones<br>(kg)</th>\n  <th>Control</th>\n  <th colspan=\"4\">Minimum Safety Distances<br>A | B | C | D</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n  <td>NRN-PRO-60NS-BL-Z-C</td>\n  <td>6.0</td>\n  <td>5 – 9</td>\n  <td>410 x 370 x 705</td>\n  <td>60</td>\n  <td>Separate</td>\n  <td>80</td>\n  <td>80</td>\n  <td>20</td>\n  <td>1900</td>\n</tr>\n<tr>\n  <td>NRN-PRO-80NS-BL-Z-C</td>\n  <td>8.0</td>\n  <td>7 – 13</td>\n  <td>410 x 370 x 705</td>\n  <td>60</td>\n  <td>Separate</td>\n  <td>80</td>\n  <td>80</td>\n  <td>20</td>\n  <td>1900</td>\n</tr>\n<tr>\n  <td>NRN-PRO-90NS-BL-Z-C</td>\n  <td>9.0</td>\n  <td>8 – 14</td>\n  <td>410 x 370 x 705</td>\n  <td>60</td>\n  <td>Separate</td>\n  <td>80</td>\n  <td>80</td>\n  <td>20</td>\n  <td>1900</td>\n</tr></tbody></table>",
+      "short_description": "<span style=\"text-align: justify;\">The </span><strong style=\"text-align: justify;\">Nordex Pro</strong><span style=\"text-align: justify;\"> is the newest heater in the trusted Nordex lineup. It is engineered for long-lasting performance, with a separate stone compartment to protect the heating elements and extend the unit’s lifespan. A pull-out cassette tray for the heating elements ensures easy access and maintenance. Although available in one physical size, the model can be paired with an additional unit for greater power in larger sauna rooms.</span>",
+      "brand": "SAWO",
+      "type": "Nordex Pro",
+      "spec_table": null,
+      "resources": null,
+      "status": "published",
+      "visible": true,
+      "featured": false,
+      "sort_order": 0,
+      "categories": [
+        "Floor"
+      ],
+      "tags": [
+        "6.0 – 9.0kW",
+        "Innova",
+        "Nordex",
+        "NS",
+        "Saunova",
+        "6.0 kW",
+        "8.0 kW",
+        "9.0 kW",
+        "NRN-PRO-60NS-BL-Z-C",
+        "NRN-PRO-80NS-BL-Z-C",
+        "NRN-PRO-90NS-BL-Z-C"
+      ],
+      "features": [
+        "Power range: 6.0 – 9.0kW",
+        "Available controls: Saunova/Innova (NS)",
+        "Adjustable legs"
+      ],
+      "auto_tag_columns": [],
+      "thumbnail": "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776735583216_5khlywqwdn6.webp",
+      "images": [
+        "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776735590471_9pqsnebk8rb.webp",
+        "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776735593887_ea9q22qpgzg.webp"
+      ],
+      "spec_images": [
+        "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776735686131_fi744278lrv.webp"
+      ],
+      "files": [
+        {
+          "url": "https://www.sawo.com/wp-content/uploads/2026/03/NRN-PRO-FiEn_3P-1P-0326.pdf",
+          "name": "NRN PRO FiEn 3P 1P 0326"
+        }
+      ],
+      "created_by": null,
+      "created_by_username": "Edgar",
+      "updated_by_username": "Edgar",
+      "created_at": "2026-04-21T01:41:26.512285+00:00",
+      "updated_at": "2026-04-21T01:41:57.037+00:00",
+      "is_deleted": false,
+      "source": "supabase"
+    },
+    {
+      "id": "524d4f69-8864-4b00-a174-2e0c2179f89f",
+      "name": "Nordex Pro Combi NS",
+      "slug": "nordex-pro-combi-ns",
+      "description": "<table>\n  <thead>\n<tr>\n  <th>Heater Model</th>\n  <th>kW\n<br>Heater</th>\n  <th>kW\n<br>Tank</th>\n  <th>Sauna Room<br>min (m³) max</th>\n  <th>Size of Heater (mm)<br>Length Width Height</th>\n  <th>Stones<br>(kg)</th>\n  <th>Control</th>\n  <th colspan=\"4\">Minimum Safety Distances<br>A | B | C | D</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n  <td>NRNC-PRO-60NS-BL-Z-C</td>\n  <td>6.0</td>\n  <td>1 x 0.8</td>\n  <td>5 – 9</td>\n  <td>500 x 370 x 705</td>\n  <td>60</td>\n  <td>Separate</td>\n  <td>80</td>\n  <td>80</td>\n  <td>20</td>\n  <td>1900</td>\n</tr>\n<tr>\n  <td>NRNC-PRO-80NS-BL-Z-C</td>\n  <td>8.0</td>\n  <td>1 x 2.0</td>\n  <td>7 – 13</td>\n  <td>500 x 370 x 705</td>\n  <td>60</td>\n  <td>Separate</td>\n  <td>80</td>\n  <td>80</td>\n  <td>20</td>\n  <td>1900</td>\n</tr>\n<tr>\n  <td>NRNC-PRO-90NS-BL-Z-C</td>\n  <td>9.0</td>\n  <td>1 x 2.0</td>\n  <td>8 – 14</td>\n  <td>500 x 370 x 705</td>\n  <td>60</td>\n  <td>Separate</td>\n  <td>80</td>\n  <td>80</td>\n  <td>20</td>\n  <td>1900</td>\n</tr></tbody></table>",
+      "short_description": "<p style=\"text-align: justify;\">Building on the Nordex tradition, the <strong>Nordex Pro Combi</strong> introduces an enhanced design that combines efficient heating with the added comfort of steam. An integrated water tank delivers gentle humidity, while the separation of stones and heating elements enhances durability.</p><p style=\"text-align: justify;\"><br></p><p style=\"text-align: justify;\">The Nordex Pro Combi’s pull-out cassette tray simplifies maintenance, and the unit can be connected with another for more power in spacious sauna rooms.</p>",
+      "brand": "SAWO",
+      "type": null,
+      "spec_table": null,
+      "resources": null,
+      "status": "published",
+      "visible": true,
+      "featured": false,
+      "sort_order": 0,
+      "categories": [
+        "Floor"
+      ],
+      "tags": [
+        "6.0 – 9.0kW",
+        "Combi",
+        "Innova",
+        "Nordex",
+        "NS",
+        "Saunova",
+        "6.0 kW",
+        "8.0 kW",
+        "9.0 kW",
+        "NRNC-PRO-60NS-BL-Z-C",
+        "NRNC-PRO-80NS-BL-Z-C",
+        "NRNC-PRO-90NS-BL-Z-C"
+      ],
+      "features": [
+        "Power range: 6.0 – 9.0kW",
+        "Available controls: Saunova/Innova (NS)",
+        "Built-in aroma cups",
+        "Adjustable legs",
+        "Separate water tank with 0.8kW steam generator"
+      ],
+      "auto_tag_columns": [],
+      "thumbnail": "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776735763374_a8cf4cdg8go.webp",
+      "images": [
+        "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776735753613_h7u9b9z0of9.webp",
+        "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776735757747_9ctphiyynj9.webp"
+      ],
+      "spec_images": [
+        "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776735924515_3d36dtkbsi1.webp"
+      ],
+      "files": [],
+      "created_by": null,
+      "created_by_username": "Edgar",
+      "updated_by_username": "Edgar",
+      "created_at": "2026-04-21T01:45:12.496217+00:00",
+      "updated_at": "2026-04-21T01:45:43.124+00:00",
       "is_deleted": false,
       "source": "supabase"
     }
