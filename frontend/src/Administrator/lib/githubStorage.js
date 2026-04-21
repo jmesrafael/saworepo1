@@ -240,13 +240,7 @@ export async function fetchCurrentProducts() {
     return products
   } catch (err) {
     console.error(`[GitHub] Failed to fetch products.json:`, err.message)
-    if (err.status === 404) {
-      console.warn('[GitHub] products.json not found, returning empty array')
-      return []
-    }
-    // Return empty array but log the error
-    console.error('[GitHub] Unexpected error fetching products, using fallback empty array')
-    return []
+    throw new Error(`Failed to fetch products from GitHub: ${err.message}`)
   }
 }
 
