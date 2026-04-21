@@ -1,6 +1,5 @@
 {
-  "updatedAt": "2026-04-21T01:28:54.135Z",
-  "source": "local-admin",
+  "updatedAt": "2026-04-21T01:40:25.939Z",
   "products": [
     {
       "id": "50834970-4527-4954-9cd7-8ac89d7bd70f",
@@ -21,7 +20,7 @@
         "15.0 kW",
         "Innova"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Smart control automatically shuts off the heating element at the desired temperature",
         "Add INP-S contactor for heaters over 15kW",
@@ -78,7 +77,7 @@
         "NRM-30Ni2-BL-Z-C",
         "NRM-36Ni2-BL-Z-C"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Power range: 2.3 – 3.6kW",
         "Available controls: Saunova (Ni2)",
@@ -125,7 +124,7 @@
         "2.3 – 15kW",
         "Innova"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "For all NS Heaters 2.3-15kW, for over 15kW add Innova 2.0 Contactor Unit",
         "Smart control automatically shuts off the heating element at the set temperature",
@@ -163,11 +162,11 @@
       "slug": "rectangular-interface-holder-for-innova-classic-control",
       "short_description": "Stylish wooden interface holder INN-IH20, designed for the Innova Classic control. Available in premium Cedar, Aspen, and Pinaceae finishes to complement various sauna aesthetics. Dimensions: 215mm (W) x 140mm (D) x 20mm (H). Perfect for securely housing your control unit while adding a touch of natural elegance.",
       "description": "",
-      "thumbnail": "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776157962269_nule0t7s5wb.webp",
+      "thumbnail": "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776157962269_nule0t7s5wb.webp",
       "images": [
-        "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776158013988_88g9gjebkq.webp",
-        "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776158019324_atvxelq0v0v.webp",
-        "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776158024681_mf1ydrmyoqp.webp"
+        "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776158013988_88g9gjebkq.webp",
+        "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776158019324_atvxelq0v0v.webp",
+        "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776158024681_mf1ydrmyoqp.webp"
       ],
       "spec_images": [],
       "categories": [
@@ -224,7 +223,7 @@
         "SCA-80NS-Z-C",
         "SCA-90NS-Z-C"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Power range: 4.5 – 9.0kW",
         "Available controls: Saunova/Innova (NS)",
@@ -258,11 +257,11 @@
       "slug": "sawo-sense",
       "short_description": "The SAWO Sense takes smart sauna control to the next level with its sleek touchscreen interface. It offers effortless management of temperature, lighting, and other sauna functions through both its intuitive display and the SAWO app via built-in Wi-Fi connectivity.  With real-time monitoring and remote access, users can customize and control their sauna sessions anytime, anywhere. Designed for Ni2 and NS heaters up to 9,0kW, the system can be extended to 18,0kW with a contactor unit, ensuring flexibility for saunas of all sizes.",
       "description": "",
-      "thumbnail": "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776148326994_td5nd79kpql.webp",
+      "thumbnail": "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776148326994_td5nd79kpql.webp",
       "images": [
-        "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776148413525_jixtkgccve.webp",
-        "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776148678891_izb9hvvcdjd.webp",
-        "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776148687416_fxnummtrc3w.webp"
+        "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776148413525_jixtkgccve.webp",
+        "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776148678891_izb9hvvcdjd.webp",
+        "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776148687416_fxnummtrc3w.webp"
       ],
       "spec_images": [],
       "categories": [
@@ -312,7 +311,7 @@
         "2.3 – 15kW",
         "Innova"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Smart control automatically shuts off heating at the desired temperature",
         "Add INP-S contactor unit for heaters over 15kW",
@@ -376,7 +375,7 @@
         "NRM-30NS-Z",
         "NRM-36NS-Z"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Power range: 2.3 – 3.6kW",
         "Available controls: Saunova/Innova (NS)",
@@ -411,7 +410,7 @@
       "slug": "innova-saunova-2-0-spare-rj12-cables",
       "short_description": "Durable, extendable low-voltage cable with snap RJ12 connectors, designed for seamless compatibility with Innova and Saunova 2.0 controls. Perfect for reliable signal transmission and easy installation.\n\n<span style=\"text-align: justify;\"><b>Extendable Low Voltage Cable with Snap RJ Connectors for Innova and Saunova 2.0 controls.</b></span>",
       "description": "",
-      "thumbnail": "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776157282534_gossrniqfv5.webp",
+      "thumbnail": "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776157282534_gossrniqfv5.webp",
       "images": [],
       "spec_images": [],
       "categories": [
@@ -461,7 +460,7 @@
         "Temperature",
         "Combi"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [],
       "brand": "SAWO",
       "type": "Sensor",
@@ -500,7 +499,7 @@
         "Saunova",
         "(SAU-UI-V2)"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Easy and stylish user interface",
         "Direct control for Ni2 heaters, for NS heaters 2.3-9kW add Saunova 2.0",
@@ -549,7 +548,7 @@
         "Temperature",
         "Bench"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [],
       "brand": "SAWO",
       "type": "Sensor",
@@ -587,7 +586,7 @@
         "2.3 – 15kW",
         "Innova"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Smart control automatically shuts off the heating element at the desired temperature",
         "Connect to Innova User Interface for heaters up to 15kW, or add INP-S contactor for larger units",
@@ -655,7 +654,7 @@
         "NRM-30NS-BL-Z",
         "NRM-36NS-BL-Z"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Power range: 2.3 – 3.6kW",
         "Available controls: Saunova/Innova (NS)",
@@ -702,7 +701,7 @@
         "15kW - 30kW",
         "15.0 kW"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Package includes Innova Contactor Unit and 1m RJ12 cable",
         "New casing design for easier installation with extra space and wiring options"
@@ -735,7 +734,7 @@
       "slug": "innova-light-extension-module",
       "short_description": "Connect the Saunova 2.0 Contactor Unit with Saunova 2.0 Power Controller to use with heaters over 9kW.\n\nNew modernized casing has more space for easier and faster installation. Flexible wiring options with strain relief provision on 4 sides, including the back part for wiring to be completely hidden.\n\n<span style=\"text-align: justify;\"><b>Use with NS Heaters over 9kW. Connect with Saunova Power Controller</b></span>",
       "description": "",
-      "thumbnail": "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776157306566_aw8mxepjmyw.webp",
+      "thumbnail": "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776157306566_aw8mxepjmyw.webp",
       "images": [],
       "spec_images": [],
       "categories": [
@@ -785,7 +784,7 @@
       "tags": [
         "(SAU-B-V2)"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Combination of User Interface and Power Controller",
         "New casing design for easier installation with extra space and wiring options",
@@ -845,7 +844,7 @@
         "CML-80Ni2-P-C",
         "CML-90Ni2-P-C"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Power range: 4.5 – 9.0 kW",
         "Available controls: Saunova (Ni2)",
@@ -893,7 +892,7 @@
         "Saunova",
         "2.3 – 9kW"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Smart control automatically shuts off the heating element at the desired temperature",
         "NS heaters connect with Saunova 2.0 for heaters under 9kW; for over 9kW, add SAU-PS-2 contactor unit",
@@ -954,7 +953,7 @@
         "NRN-80Ni2-BL-Z-C",
         "NRN-90Ni2-BL-Z-C"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Power range: 4.5 – 9.0kW",
         "Available controls: Saunova (Ni2)",
@@ -1002,7 +1001,7 @@
         "Control Spare Sparts",
         "Spare Parts"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [],
       "brand": "SAWO",
       "type": "Spare Parts",
@@ -1049,7 +1048,7 @@
         "NRN-80NS-Z-C",
         "NRN-90NS-Z-C"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Power range: 4.5 – 9.0kW",
         "Available controls: Saunova/Innova (NS)",
@@ -1103,7 +1102,7 @@
         "NRN-80NB-Z-C",
         "NRN-90NB-Z-C"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Power range: 4.5 – 9.0kW",
         "Available controls: Built-in (NB)",
@@ -1149,7 +1148,7 @@
         "15.0 kW",
         "Innova"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Smart control automatically shuts off the heating element at the desired temperature",
         "Connect to INP-C power controller for NS heaters up to 15kW; add INP-S contactor for units over 15kW",
@@ -1190,11 +1189,11 @@
       "slug": "rectangular-interface-holder-for-2-0-controls",
       "short_description": "Premium wooden interface holder INN-IH23, designed for a wide range of 2.0 controls, including Innova Classic 2.0, Innova Stainless Touch 2.0, Saunova 2.0, STE/STN Classic 2.0, and IR Control 2.0. Available in Cedar, Aspen, and Pine finishes to complement any sauna décor. Dimensions: 190mm (W) x 145mm (D) x 40mm (H). A durable and elegant solution to securely house your 2.0 controls.",
       "description": "",
-      "thumbnail": "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776157678723_z80ftcrc17.webp",
+      "thumbnail": "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776157678723_z80ftcrc17.webp",
       "images": [
-        "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776157762150_hwe4tayiq2f.webp",
-        "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776157767720_qpqpk68k2wb.webp",
-        "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776157775142_a6046y1g4.webp"
+        "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776157762150_hwe4tayiq2f.webp",
+        "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776157767720_qpqpk68k2wb.webp",
+        "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776157775142_a6046y1g4.webp"
       ],
       "spec_images": [],
       "categories": [
@@ -1246,7 +1245,7 @@
         "Ni2",
         "Nordex"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Power range: 4.5 – 9.0kW",
         "Available controls: Saunova (Ni2)",
@@ -1305,7 +1304,7 @@
         "NRN-80NS-BL-Z-C",
         "NRN-90NS-BL-Z-C"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Power range: 4.5 – 9.0kW",
         "Available controls: Saunova/Innova (NS)",
@@ -1352,7 +1351,7 @@
         "Sensor",
         "Temperature"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [],
       "brand": "SAWO",
       "type": "Sensor",
@@ -1398,7 +1397,7 @@
         "CML-80NS-P-C",
         "CML-90NS-P-C"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Power range: 4.5 – 9.0 kW",
         "Available controls: Saunova/Innova (NS)",
@@ -1453,7 +1452,7 @@
         "NRN-80NB-BL-Z-C",
         "NRN-90NB-BL-Z-C"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Power range: 4.5 – 9.0kW",
         "Available controls: Built-in (NB)",
@@ -1509,7 +1508,7 @@
         "NRM-30Ni2-Z-C",
         "NRM-36Ni2-Z-C"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [],
       "brand": "SAWO",
       "type": "Nordex Mini",
@@ -1560,7 +1559,7 @@
         "CML-80NB-P-C",
         "CML-90NB-P-C"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Power range: 4.5 – 9.0 kW",
         "Available controls: Built-in (NB)",
@@ -1618,7 +1617,7 @@
         "NIMC-150NS-P",
         "NIMC-180NS-P"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Power range: 9.0 – 18.0kW",
         "Available controls: Saunova/Innova (NS)",
@@ -1680,7 +1679,7 @@
         "NIM-210NS-V12-P",
         "NIM-240NS-V12-P"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Power range: 9.0 – 24.0kW",
         "Available controls: Saunova/Innova (NS)"
@@ -1713,7 +1712,7 @@
       "slug": "saunova-2-0-plus",
       "short_description": "Our new smart sauna control unit, the Saunova 2.0 PLUS, gives the user even more freedom of use. The control unit includes Wi-Fi connectivity, meaning that it can be controlled via the SAWO app. The app allows for a more customized sauna experience and remote control of multiple sauna functions, such as temperature and lighting. With real-time monitoring, the app user gets instant access to the current sauna temperature and session time.  The Saunova 2.0 PLUS comes with an intuitive user interface that can be placed inside or outside the sauna room. Engineered for Ni2 and NS heaters of up to 9,0kW, the Saunova 2.0 PLUS can also be extended to n18,0kW with a contactor unit.",
       "description": "",
-      "thumbnail": "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776062953014_kwfzo5hn0lc.webp",
+      "thumbnail": "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776062953014_kwfzo5hn0lc.webp",
       "images": [],
       "spec_images": [],
       "categories": [
@@ -1758,7 +1757,7 @@
       "slug": "saunova-simple",
       "short_description": "Experience hassle-free sauna operation with the Saunova Simple (SAU-UI-S). Designed for those who prefer simplicity, this compact controller lets you easily turn your sauna heater on and off, allowing you to focus on pure relaxation.\n\n<b>Suitable for all NS heaters until 9kW. Heaters over 9kW require separate Saunova Contactor Unit.</b>",
       "description": "",
-      "thumbnail": "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776152379967_wwye4l3puqq.webp",
+      "thumbnail": "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776152379967_wwye4l3puqq.webp",
       "images": [],
       "spec_images": [],
       "categories": [
@@ -1803,11 +1802,11 @@
       "slug": "oval-interface-holder-for-innova-classic-control",
       "short_description": "Beautifully crafted wooden interface holder INN-IH10, designed specifically for the Innova Classic control. Available in Cedar, Aspen, and Pinaceae finishes to match a variety of sauna styles. Dimensions: 215mm (W) x 140mm (D) x 20mm. Combines functionality and natural elegance, providing a secure and stylish housing for your control unit.",
       "description": "",
-      "thumbnail": "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776157865393_iwhnamdhcg9.webp",
+      "thumbnail": "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776157865393_iwhnamdhcg9.webp",
       "images": [
-        "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776157917695_k7sv6rmo4u.webp",
-        "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776157921814_uxpvwymrcsn.webp",
-        "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776157928928_kk284kwb90c.webp"
+        "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776157917695_k7sv6rmo4u.webp",
+        "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776157921814_uxpvwymrcsn.webp",
+        "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776157928928_kk284kwb90c.webp"
       ],
       "spec_images": [],
       "categories": [
@@ -1853,7 +1852,7 @@
         "NS",
         "(SAU-PS-V2)"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Package includes Saunova Contactor Unit, 1m RJ12-cable",
         "More than 9kW needs a Contactor",
@@ -1900,7 +1899,7 @@
         "(INC-S)",
         "Innova"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Smart Controlling -feature automatically shuts down heating element when desired temperature is reached",
         "Connect with INP-C power controller to use with any NS heater until 15kW. For heaters over 15kW, add INP-S contactor unit",
@@ -1958,7 +1957,7 @@
         "NS",
         "Saunova"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Power range: 2.3 – 3.6kW",
         "Available controls: Built-in (NB)",
@@ -2018,7 +2017,7 @@
         "NRM-30NB-BL-Z",
         "NRM-36NB-BL-Z"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Power range: 2.3 – 3.6kW",
         "Available controls: Built-in (NB)",
@@ -2072,7 +2071,7 @@
         "NRNC-80NS-Z-C",
         "NRNC-90NS-Z-C"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Power range: 6.0 – 9.0kW",
         "Available controls: Saunova/Innova (NS)",
@@ -2132,7 +2131,7 @@
         "NS",
         "Saunova"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Power range: 3.0 – 3.6kW",
         "Available controls: Saunova/Innova (NS)",
@@ -2192,7 +2191,7 @@
         "NRNC-80NS-BL-Z-C",
         "NRNC-90NS-BL-Z-C"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [],
       "brand": "SAWO",
       "type": "Nordex Combi",
@@ -2245,7 +2244,7 @@
         "NRMC-30NS-BL-Z",
         "NRMC-36NS-BL-Z"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Power range: 3,0 – 3,6kW",
         "Available controls: Saunova/Innova (NS)",
@@ -2303,7 +2302,7 @@
         "MN-30NB-Z",
         "MN-36NB-Z"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Power range: 2.3 – 3.6kW",
         "Available controls: Built-in (NB)",
@@ -2358,7 +2357,7 @@
         "MX-30NS-Z",
         "MX-36NS-Z"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Power range: 2.3 – 3.6kW",
         "Available controls: Saunova/Innova (NS)",
@@ -2414,7 +2413,7 @@
         "MX-30NB-Z",
         "MX-36NB-Z"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Power range: 2.3 – 3.6kW",
         "Available controls: Built-in (NB)",
@@ -2471,7 +2470,7 @@
         "MX-30NB-P-F",
         "MX-36NB-P-F"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Power range: 2.3 – 3.6kW",
         "Available controls: Built-in (NB)",
@@ -2526,7 +2525,7 @@
         "MN-36NB-P-F",
         "Fibercoated"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Power range: 2.3 – 3.6kW",
         "Available controls: Built-in (NB)",
@@ -2580,7 +2579,7 @@
         "MX-36NS-P-F",
         "Fibercoated"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Power range: 2.3 – 3.6kW",
         "Available controls: Saunova/Innova (NS)",
@@ -2634,7 +2633,7 @@
         "MNC-30NS-Z",
         "MNC-36NS-Z"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Power range: 3.0 – 3.6kW",
         "Available controls: Saunova/Innova (NS)",
@@ -2688,7 +2687,7 @@
         "MNC-30NS-P-F",
         "MNC-36NS-P-F"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Power range: 3.0 – 3.6kW",
         "Available controls: Saunova/Innova (NS)",
@@ -2745,7 +2744,7 @@
         "SCA-80NS-P-F-C",
         "SCA-90NS-P-F-C"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Power range: 4.5 – 9.0kW",
         "Available controls: Saunova/Innova (NS)",
@@ -2799,7 +2798,7 @@
         "SCA-80NB-Z-C",
         "SCA-90NB-Z-C"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Power range: 4.5 – 9.0kW",
         "Available controls: Built-in (NB)",
@@ -2855,7 +2854,7 @@
         "SCA-80NB-P-F-C",
         "SCA-90NB-P-F-C"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Power range: 4.5 – 9.0kW",
         "Available controls: Built-in (NB)",
@@ -2911,7 +2910,7 @@
         "SCAC-80NS-Z-C",
         "SCAC-90NS-Z-C"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Power range: 6.0 – 9.0kW",
         "Available controls: Saunova/Innova (NS)",
@@ -2968,7 +2967,7 @@
         "SCAC-80NS-P-F-C",
         "SCAC-90NS-P-F-C"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Power range: 6.0 – 9.0kW",
         "Available controls: Saunova/Innova (NS)",
@@ -3030,7 +3029,7 @@
         "KRI-80Ni2-P-C",
         "KRI-90Ni2-P-C"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Power range: 4.5 – 9.0kW",
         "Available controls: Saunova (Ni2)",
@@ -3091,7 +3090,7 @@
         "KRI-80NS-P-C",
         "KRI-90NS-P-C"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Power range: 4.5 – 9.0kW",
         "Available controls: Saunova/Innova (NS)",
@@ -3154,7 +3153,7 @@
         "SCA-80NS-DRF-P-C",
         "SCA-90NS-DRF-P-C"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Power range: 4.5 – 9.0kW",
         "Available controls: Saunova/Innova (NS)",
@@ -3220,7 +3219,7 @@
         "NS",
         "Saunova"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Power range: 4.5 – 9.0kW",
         "Available controls: Built-in (NB)",
@@ -3284,7 +3283,7 @@
         "SCA-80NB-DRF-P-C",
         "SCA-90NB-DRF-P-C"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Power range: 4.5 – 9.0kW",
         "Available controls: Built-in (NB)",
@@ -3349,7 +3348,7 @@
         "SCA-90NS-DRF-BL-P-C",
         "4.5 – 9.0kW"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Power range: 4.5 – 9.0kW",
         "Available controls: Saunova/Innova (NS)",
@@ -3412,7 +3411,7 @@
         "SCA-80NB-DRF-BL-P-C",
         "SCA-90NB-DRF-BL-P-C"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Power range: 4.5 – 9.0kW",
         "Available controls: Built-in (NB)",
@@ -3478,7 +3477,7 @@
         "TRD-180/210/240NS-G-P",
         "TRD-270/300/330/360NS-G-P"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Power range: 9.0 – 36.0 kW",
         "Available controls: Saunova/Innova (NS)",
@@ -3539,7 +3538,7 @@
         "SAV-210NS-V12-Z",
         "SAV-240NS-V12-Z"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Power range: 9.0 – 24.0kW",
         "Available controls: Saunova/Innova (NS)",
@@ -3600,7 +3599,7 @@
         "HES-75NS-G-P-C",
         "HES-90NS-G-P-C"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Power range: 4.5 – 9.0kW",
         "Available controls: Saunova/Innova (NS)",
@@ -3668,7 +3667,7 @@
         "KRFS-210NS-V12-P",
         "KRFS-240NS-V12-P"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Power range: 9.0 – 24.0kW",
         "Available controls: Saunova/Innova (NS)",
@@ -3733,7 +3732,7 @@
         "SAV-210NS-V12-Z-F",
         "SAV-240NS-V12-Z-F"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Power range: 9.0 – 24.0kW",
         "Available controls: Saunova/Innova (NS)",
@@ -3794,7 +3793,7 @@
         "SAVC-150NS-Z",
         "SAVC-180NS-Z"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Power range: 9.0 – 18.0kW",
         "Available controls: Saunova/Innova (NS)",
@@ -3856,7 +3855,7 @@
         "SW3-60Ni2-P-C",
         "SW6-90Ni2-P-C"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "features": [
         "Power range: 4.5 – 9.0kW",
         "Available controls: Saunova (Ni2)",
@@ -3940,7 +3939,7 @@
         "Optional heater guard",
         "Optional integration collar"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "thumbnail": "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776669273973_zf349gzxpm.webp",
       "images": [
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776669278546_s5xdh27wq8.webp"
@@ -4004,7 +4003,7 @@
         "Optional heater guard",
         "Optional integration collar"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "thumbnail": "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776670673811_f9tjqfj8bsa.webp",
       "images": [
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776670677388_ftb48y9a3.webp"
@@ -4069,7 +4068,7 @@
         "Optional heater guard",
         "Optional integration collar"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "thumbnail": "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776671576482_49oybmo412u.webp",
       "images": [
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776671581493_s8ecvo19lil.webp",
@@ -4141,7 +4140,7 @@
         "Optional heater guard",
         "Optional integration collar"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "thumbnail": "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776672181437_vfbg4exrrkj.webp",
       "images": [
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776672192290_stn43mfi48.webp",
@@ -4202,7 +4201,7 @@
         "Optional heater guard",
         "Optional integration collar"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "thumbnail": "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776672603168_lzt7tmegfp.webp",
       "images": [
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776672609542_rwfvcfbb0em.webp",
@@ -4264,7 +4263,7 @@
         "Optional heater guard",
         "Optional integration collar"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "thumbnail": "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776672729804_28avg4k3i0n.webp",
       "images": [
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776672734325_1t1c14bwsw2.webp"
@@ -4326,7 +4325,7 @@
         "Optional heater guard",
         "Optional integration collar"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "thumbnail": "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776672976578_osyapca6r1d.webp",
       "images": [
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776672979508_04qqsoheqrf3.webp"
@@ -4389,7 +4388,7 @@
         "Optional heater guard",
         "Optional integration collar"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "thumbnail": "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776673173406_qoswxfqa01p.webp",
       "images": [
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776673176460_1qhmf6xxtuo.webp"
@@ -4451,7 +4450,7 @@
         "Optional heater guard",
         "Optional integration collar"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "thumbnail": "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776673762167_fb1k2ajqp7.webp",
       "images": [
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776673765111_btcp4lofpl.webp"
@@ -4512,7 +4511,7 @@
         "Optional heater guard",
         "Optional integration collar"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "thumbnail": "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776673631281_a6be94lv6pl.webp",
       "images": [
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776673634246_ufuynendcgj.webp"
@@ -4578,7 +4577,7 @@
         "Optional heater guard",
         "Optional integration collar"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "thumbnail": "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776673469428_soh3j60p6ig.webp",
       "images": [
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776673472200_5xlklnzw579.webp"
@@ -4643,7 +4642,7 @@
         "Optional heater guard",
         "Optional integration collar"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "thumbnail": "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776673306747_lgnznoebm69.webp",
       "images": [
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776673310842_9jb3rsbf738.webp"
@@ -4715,7 +4714,7 @@
         "Optional heater guard",
         "Optional integration collar"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "thumbnail": "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776673900583_whk27hdjiya.webp",
       "images": [
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776673904745_z6elh3ofyvr.webp"
@@ -4805,7 +4804,7 @@
         "Optional heater guard",
         "Optional integration collar"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "thumbnail": "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776674252832_vfzilftp7db.webp",
       "images": [
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776674256666_vfa4gdpy5ns.webp"
@@ -4873,7 +4872,7 @@
         "Optional heater guard",
         "Optional integration collar"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "thumbnail": "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776674532636_1sk0uwj6bd.webp",
       "images": [],
       "spec_images": [
@@ -4933,7 +4932,7 @@
         "Optional heater guard",
         "Optional integration collar"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "thumbnail": "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776671859014_egsah70jdbc.webp",
       "images": [
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776671870631_8lmbz3d11me.webp"
@@ -4995,7 +4994,7 @@
         "Optional heater guard",
         "Optional integration collar"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "thumbnail": "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776669017909_85pqpdy5zig.webp",
       "images": [
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776669021521_m3ktnx8knn.webp"
@@ -5070,7 +5069,7 @@
         "Optional heater guard",
         "Optional integration collar"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "thumbnail": "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776669461089_o489lwmktt8.webp",
       "images": [
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776669465048_x9evp91rewd.webp"
@@ -5135,7 +5134,7 @@
         "Optional heater guard",
         "Optional integration collar"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "thumbnail": "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776670908875_nfmd7x69dpb.webp",
       "images": [
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776670914381_cwlsyes4enp.webp"
@@ -5206,7 +5205,7 @@
         "Optional heater guard",
         "Optional integration collar"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "thumbnail": "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776672486944_y0ouj8h0cwj.webp",
       "images": [
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776672492083_d8woumubu26.webp"
@@ -5278,7 +5277,7 @@
         "Optional heater guard",
         "Optional integration collar"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "thumbnail": "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776674076347_xi1gzwkois.webp",
       "images": [
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776674082733_gxqfgkll2ir.webp"
@@ -5348,7 +5347,7 @@
         "Optional heater guard",
         "Optional integration collar"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "thumbnail": "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776674422570_35h21u4ulwv.webp",
       "images": [
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776674426451_692d5yvvr7q.webp"
@@ -5418,7 +5417,7 @@
         "Optional heater guard",
         "Optional integration collar"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "thumbnail": "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776674882958_q53wj4br9rh.webp",
       "images": [
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776674886676_m2lcivluwlc.webp"
@@ -5505,7 +5504,7 @@
         "Optional heater guard",
         "Optional integration collar"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "thumbnail": "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776675184361_gtp3930g4cd.webp",
       "images": [
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776675187490_jv0nyb6b6bj.webp"
@@ -5571,7 +5570,7 @@
         "Optional heater guard",
         "Optional integration collar"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "thumbnail": "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776675228725_sfxfqomzls.webp",
       "images": [
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776675233174_b8m3avkancl.webp"
@@ -5641,7 +5640,7 @@
         "Optional heater guard",
         "Optional integration collar"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "thumbnail": "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776675330744_6kk5ghj8six.webp",
       "images": [
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776675333863_t726jb4jnf.webp"
@@ -5700,7 +5699,7 @@
         "Optional heater guard",
         "Optional integration collar"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "thumbnail": "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776675655674_1pitugjb1op.webp",
       "images": [
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776675658583_c96jc3z7ny4.webp"
@@ -5773,7 +5772,7 @@
         "Optional heater guard",
         "Optional integration collar"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "thumbnail": "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776676257728_8aj9fvg9cd6.webp",
       "images": [
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776676262335_o6gend4vcu.webp"
@@ -5841,7 +5840,7 @@
         "Optional heater guard",
         "Optional integration collar"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "thumbnail": "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776676502076_8ib434nrp79.webp",
       "images": [
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776676511830_gkaoc6k88v.webp"
@@ -5868,7 +5867,7 @@
       "name": "Aries Round Ni2",
       "slug": "aries-round-ni2",
       "description": "<table>\n  <thead>\n<tr>\n  <th>Heater\n<br>Model</th>\n  <th>kW</th>\n  <th>Sauna Room<br>min. (m³) max.</th>\n  <th>Size of Heater (mm)<br>Length Width Height</th>\n  <th>Stones<br>(kg)</th>\n  <th>Control</th>\n  <th colspan=\"2\">Minimum Safety Distances<br>A | B</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n  <td>ARI3-45Ni2-P-C</td>\n  <td>4.5</td>\n  <td>3 – 6</td>\n  <td>300 x 300 x 930</td>\n  <td>60</td>\n  <td>Saunova</td>\n  <td>100</td>\n  <td>1900</td>\n</tr>\n<tr>\n  <td>ARI3-60Ni2-P-C</td>\n  <td>6.0</td>\n  <td>5 – 9</td>\n  <td>300 x 300 x 930</td>\n  <td>60</td>\n  <td>Saunova</td>\n  <td>100</td>\n  <td>1900</td>\n</tr>\n<tr>\n  <td>ARI3-75Ni2-P-C</td>\n  <td>7.5</td>\n  <td>7 – 12</td>\n  <td>300 x 300 x 930</td>\n  <td>60</td>\n  <td>Saunova</td>\n  <td>100</td>\n  <td>1900</td>\n</tr>\n<tr>\n  <td>ARI3-90Ni2-P-C</td>\n  <td>9.0</td>\n  <td>8 – 13</td>\n  <td>300 x 300 x 930</td>\n  <td>60</td>\n  <td>Saunova</td>\n  <td>100</td>\n  <td>1900</td>\n</tr></tbody></table>",
-      "short_description": "<table>\n  <thead>\n<tr>\n  <th>Heater\n<br>Model</th>\n  <th>kW</th>\n  <th>Sauna Room<br>min. (m³) max.</th>\n  <th>Size of Heater (mm)<br>Length Width Height</th>\n  <th>Stones<br>(kg)</th>\n  <th>Control</th>\n  <th colspan=\"2\">Minimum Safety Distances<br>A | B</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n  <td>ARI3-45Ni2-P-C</td>\n  <td>4.5</td>\n  <td>3 – 6</td>\n  <td>300 x 300 x 930</td>\n  <td>60</td>\n  <td>Saunova</td>\n  <td>100</td>\n  <td>1900</td>\n</tr>\n<tr>\n  <td>ARI3-60Ni2-P-C</td>\n  <td>6.0</td>\n  <td>5 – 9</td>\n  <td>300 x 300 x 930</td>\n  <td>60</td>\n  <td>Saunova</td>\n  <td>100</td>\n  <td>1900</td>\n</tr>\n<tr>\n  <td>ARI3-75Ni2-P-C</td>\n  <td>7.5</td>\n  <td>7 – 12</td>\n  <td>300 x 300 x 930</td>\n  <td>60</td>\n  <td>Saunova</td>\n  <td>100</td>\n  <td>1900</td>\n</tr>\n<tr>\n  <td>ARI3-90Ni2-P-C</td>\n  <td>9.0</td>\n  <td>8 – 13</td>\n  <td>300 x 300 x 930</td>\n  <td>60</td>\n  <td>Saunova</td>\n  <td>100</td>\n  <td>1900</td>\n</tr></tbody></table>",
+      "short_description": "<span style=\"text-align: justify;\">The </span><strong style=\"text-align: justify;\">Aries Round</strong><span style=\"text-align: justify;\"> shares the minimalist elegance of all Tower heaters. Tall and space-saving, it distributes heat evenly and is ideal for installation in the center of the sauna or embedded into a bench. Its built-in stone spacer ensures faster, efficient heating of the sauna stones and a longer life span for the heating elements.</span>",
       "brand": "SAWO",
       "type": "Aries Round",
       "spec_table": null,
@@ -5893,7 +5892,9 @@
         "ARI3-45Ni2-P-C",
         "ARI3-60Ni2-P-C",
         "ARI3-75Ni2-P-C",
-        "ARI3-90Ni2-P-C"
+        "ARI3-90Ni2-P-C",
+        "Bench",
+        "Tower"
       ],
       "features": [
         "Power range: 4.5 – 9.0kW",
@@ -5904,13 +5905,13 @@
         "Optional heater guard",
         "Optional integration collar"
       ],
-      "auto_tag_columns": null,
-      "thumbnail": "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776677059333_wqe82i7jcep.webp",
+      "auto_tag_columns": [],
+      "thumbnail": "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776677059333_wqe82i7jcep.webp",
       "images": [
-        "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776677063776_0fm7nerp5yr.webp"
+        "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776677063776_0fm7nerp5yr.webp"
       ],
       "spec_images": [
-        "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776677169139_j8ovtab9kv.webp"
+        "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776677169139_j8ovtab9kv.webp"
       ],
       "files": [
         {
@@ -5922,7 +5923,7 @@
       "created_by_username": "Edgar",
       "updated_by_username": "Edgar",
       "created_at": "2026-04-20T09:26:11.221439+00:00",
-      "updated_at": "2026-04-20T09:26:41.734+00:00",
+      "updated_at": "2026-04-20T23:33:40.899+00:00",
       "is_deleted": false,
       "source": "supabase"
     },
@@ -5969,7 +5970,7 @@
         "Optional heater guard",
         "Optional integration collar"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "thumbnail": "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776677233909_2azgf3kj19.webp",
       "images": [
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776677237959_3ktj1aqnfn6.webp"
@@ -6043,7 +6044,7 @@
         "Optional heater guard",
         "Optional integration collar"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "thumbnail": "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776677954452_0izgldr6hcm9.webp",
       "images": [
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776677959836_f6ps4pnyz0p.webp"
@@ -6107,7 +6108,7 @@
         "Optional heater guard",
         "Optional integration collar"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "thumbnail": "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776678876338_iphfb52l59l.webp",
       "images": [
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776678879729_a7ordpv6gfn.webp"
@@ -6182,7 +6183,7 @@
         "Optional heater guard",
         "Optional integration collar"
       ],
-      "auto_tag_columns": null,
+      "auto_tag_columns": [],
       "thumbnail": "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776678683325_hnqsj15pc35.webp",
       "images": [
         "https://cdn.jsdelivr.net/gh/jmesrafael/saworepo2@main/images/1776678686455_zj9ps8gs07.webp"
@@ -6290,6 +6291,1541 @@
       "created_at": "2026-04-21T01:26:42.266Z",
       "updated_at": "2026-04-21T01:28:50.715Z",
       "is_deleted": false
+    },
+    {
+      "id": "853702cf-2a61-4294-9f40-6f41cbfe7583",
+      "name": "asdas",
+      "slug": "asdas",
+      "description": "",
+      "short_description": "",
+      "brand": "SAWO",
+      "type": null,
+      "spec_table": null,
+      "resources": null,
+      "status": "published",
+      "visible": true,
+      "featured": false,
+      "sort_order": 0,
+      "categories": [],
+      "tags": [],
+      "features": [],
+      "auto_tag_columns": null,
+      "thumbnail": "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776644962668_p9rdgmco1h.webp",
+      "images": [],
+      "spec_images": [],
+      "files": [],
+      "created_by": null,
+      "created_by_username": "Rafael",
+      "updated_by_username": "Rafael",
+      "created_at": "2026-04-20T00:28:58.72364+00:00",
+      "updated_at": "2026-04-20T00:29:28.836+00:00",
+      "is_deleted": false,
+      "source": "supabase"
+    },
+    {
+      "id": "7078d72f-2c37-445d-9fa1-12f331e2fec9",
+      "name": "Cubos NB",
+      "slug": "cubos-nb",
+      "description": "<table>\n  <thead>\n<tr>\n  <th>Heater Model</th>\n  <th>kW</th>\n  <th>Sauna Room<br>min. (m3) max.</th>\n  <th>Size of Heater (mm)<br>Length Width Height</th>\n  <th>Stones<br>(kg)</th>\n  <th>Control</th>\n  <th colspan=\"3\">Minimum Safety Distances<br>A | AA | B</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n  <td>CUB3-45NB-P-C</td>\n  <td>4.5</td>\n  <td>3 – 6</td>\n  <td>290 x 290 x 930</td>\n  <td>75</td>\n  <td>Built-in (8+4h)</td>\n  <td>100</td>\n  <td>100</td>\n  <td>1900</td>\n</tr>\n<tr>\n  <td>CUB3-60NB-P-C</td>\n  <td>6.0</td>\n  <td>5 – 9</td>\n  <td>290 x 290 x 930</td>\n  <td>75</td>\n  <td>Built-in (8+4h)</td>\n  <td>100</td>\n  <td>100</td>\n  <td>1900</td>\n</tr>\n<tr>\n  <td>CUB3-75NB-P-C</td>\n  <td>7.5</td>\n  <td>7 – 13</td>\n  <td>290 x 290 x 930</td>\n  <td>75</td>\n  <td>Built-in (8+4h)</td>\n  <td>100</td>\n  <td>135</td>\n  <td>1900</td>\n</tr>\n<tr>\n  <td>CUB3-90NB-P-C</td>\n  <td>9.0</td>\n  <td>8 – 14</td>\n  <td>290 x 290 x 930</td>\n  <td>75</td>\n  <td>Built-in (8+4h)</td>\n  <td>125</td>\n  <td>135</td>\n  <td>1900</td>\n</tr></tbody></table>",
+      "short_description": "<span style=\"text-align: justify;\">The </span><strong style=\"text-align: justify;\">Cubos</strong><span style=\"text-align: justify;\"> is ideal for limited spaces. It offers 3-in-1 flexibility: One sleek modern design, three placement options—middle, corner, or wall installation. It comes with a protective cover for additional support for wall and corner installations, as well as a reflector that directs heat even to the lowest parts of the sauna room. The Cubos also has a built-in stone spacer, ensuring faster heating time and longer-lasting heating elements.</span>",
+      "brand": "SAWO",
+      "type": "Cubos",
+      "spec_table": null,
+      "resources": null,
+      "status": "published",
+      "visible": true,
+      "featured": false,
+      "sort_order": 0,
+      "categories": [
+        "Tower"
+      ],
+      "tags": [
+        "4.5 – 9.0kW",
+        "NB",
+        "4.5 kW",
+        "6.0 kW",
+        "7.5 kW",
+        "9.0 kW",
+        "CUB3-45NB-P-C",
+        "CUB3-60NB-P-C",
+        "CUB3-75NB-P-C",
+        "CUB3-90NB-P-C"
+      ],
+      "features": [
+        "Power range: 4.5 – 9.0kW",
+        "Available control: Built-in (NB)",
+        "Built-in stone spacer",
+        "Adjustable legs",
+        "Stainless steel casing",
+        "Optional heater guard",
+        "Optional integration collar"
+      ],
+      "auto_tag_columns": [],
+      "thumbnail": "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776731338459_sayh8ar5g5.webp",
+      "images": [
+        "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776731341815_2ztqr5gwwje.webp",
+        "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776731346684_pwtcfbrb2q.webp",
+        "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776731350481_bka5gd8uvmv.webp"
+      ],
+      "spec_images": [
+        "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776731478187_cn8vsp65i1p.webp"
+      ],
+      "files": [
+        {
+          "url": "https://www.sawo.com/wp-content/uploads/2025/10/Cubos-NS-NB_FiEn-3P-1P.pdf",
+          "name": "Cubos NS NB FiEn 3P 1P"
+        }
+      ],
+      "created_by": null,
+      "created_by_username": "Edgar",
+      "updated_by_username": "Edgar",
+      "created_at": "2026-04-21T00:31:01.447757+00:00",
+      "updated_at": "2026-04-21T00:31:31.854+00:00",
+      "is_deleted": false,
+      "source": "supabase"
+    },
+    {
+      "id": "37e47747-7f5e-4fb6-9410-883771d00c5f",
+      "name": "Aries Wall Ni2",
+      "slug": "aries-wall-ni2",
+      "description": "<table>\n  <thead>\n<tr>\n  <th>Heater Model</th>\n  <th>kW</th>\n  <th>Sauna Room<br>min. (m3) max.</th>\n  <th>Size of Heater (mm)<br>Length Width Height</th>\n  <th>Stones<br>(kg)</th>\n  <th>Control</th>\n  <th colspan=\"2\">Minimum Safety Distances<br>A | B</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n  <td>ARI3-45Ni2-WL-P-C</td>\n  <td>4.5</td>\n  <td>3 – 6</td>\n  <td>250 x 415 x 1030</td>\n  <td>65</td>\n  <td>Saunova</td>\n  <td>100</td>\n  <td>1900</td>\n</tr>\n<tr>\n  <td>ARI3-60Ni2-WL-P-C</td>\n  <td>6.0</td>\n  <td>5 – 9</td>\n  <td>250 x 415 x 1030</td>\n  <td>65</td>\n  <td>Saunova</td>\n  <td>100</td>\n  <td>1900</td>\n</tr>\n<tr>\n  <td>ARI3-75Ni2-WL-P-C</td>\n  <td>7.5</td>\n  <td>7 – 13</td>\n  <td>250 x 415 x 1030</td>\n  <td>65</td>\n  <td>Saunova</td>\n  <td>100</td>\n  <td>1900</td>\n</tr>\n<tr>\n  <td>ARI3-90Ni2-WL-P-C</td>\n  <td>9.0</td>\n  <td>8 – 14</td>\n  <td>250 x 415 x 1030</td>\n  <td>65</td>\n  <td>Saunova</td>\n  <td>100</td>\n  <td>1900</td>\n</tr></tbody></table>",
+      "short_description": "<span style=\"text-align: justify;\">The </span><strong style=\"text-align: justify;\">Aries Wall</strong><span style=\"text-align: justify;\"> is a space-saving design with the same stylish yet minimalist aesthetic of all Tower heaters. Its size and shape ensure that it takes up less space in any sauna layout, leaving more room for bathers to bask in deeply reinvigorating sauna sessions. Its built-in stone spacer ensures shorter heating time for the sauna stones and a longer life span for the heating elements.</span>",
+      "brand": "SAWO",
+      "type": "Aries Wall",
+      "spec_table": null,
+      "resources": null,
+      "status": "published",
+      "visible": true,
+      "featured": false,
+      "sort_order": 0,
+      "categories": [
+        "Tower"
+      ],
+      "tags": [
+        "4.5 – 9.0kW",
+        "Ni2",
+        "Saunova",
+        "Tower",
+        "4.5 kW",
+        "6.0 kW",
+        "7.5 kW",
+        "9.0 kW",
+        "ARI3-45Ni2-WL-P-C",
+        "ARI3-60Ni2-WL-P-C",
+        "ARI3-75Ni2-WL-P-C",
+        "ARI3-90Ni2-WL-P-C"
+      ],
+      "features": [
+        "Power range: 4.5 – 9.0kW",
+        "Available control: Saunova (Ni2)",
+        "Built-in stone spacer",
+        "Adjustable legs",
+        "Stainless steel casing",
+        "Optional heater guard",
+        "Optional integration collar"
+      ],
+      "auto_tag_columns": [],
+      "thumbnail": "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776727176349_gx1lj6s1l8p.webp",
+      "images": [
+        "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776727179499_3dkmz20ci8h.webp"
+      ],
+      "spec_images": [
+        "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776727240980_9snm8tt1bda.webp"
+      ],
+      "files": [
+        {
+          "url": "https://www.sawo.com/wp-content/uploads/2025/06/Aries-Wall-Ni2_FiEn-3P-1P-1-Edited.pdf",
+          "name": "Aries Wall Ni2 FiEn 3P 1P 1 Edited"
+        }
+      ],
+      "created_by": null,
+      "created_by_username": "Edgar",
+      "updated_by_username": "Edgar",
+      "created_at": "2026-04-20T23:20:44.027278+00:00",
+      "updated_at": "2026-04-20T23:21:14.557+00:00",
+      "is_deleted": false,
+      "source": "supabase"
+    },
+    {
+      "id": "a0144bd6-29ce-43c1-89d8-cb6110b98ca9",
+      "name": "Aries Round Black NB",
+      "slug": "aries-round-black-nb",
+      "description": "<table>\n  <thead>\n<tr>\n  <th>Heater\n<br>Model</th>\n  <th>kW</th>\n  <th>Sauna Room<br>min. (m3) max.</th>\n  <th>Size of Heater (mm)<br>Length Width Height</th>\n  <th>Stones<br>(kg)</th>\n  <th>Control</th>\n  <th colspan=\"2\">Minimum Safety Distances<br>A | B</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n  <td>ARI3-45NB-BL-P-C</td>\n  <td>4.5</td>\n  <td>3 – 6</td>\n  <td>300 x 300 x 930</td>\n  <td>60</td>\n  <td>Built-in (8+4h)</td>\n  <td>100</td>\n  <td>1900</td>\n</tr>\n<tr>\n  <td>ARI3-60NB-BL-P-C</td>\n  <td>6.0</td>\n  <td>5 – 9</td>\n  <td>300 x 300 x 930</td>\n  <td>60</td>\n  <td>Built-in (8+4h)</td>\n  <td>100</td>\n  <td>1900</td>\n</tr>\n<tr>\n  <td>ARI3-75NB-BL-P-C</td>\n  <td>7.5</td>\n  <td>7 – 12</td>\n  <td>300 x 300 x 930</td>\n  <td>60</td>\n  <td>Built-in (8+4h)</td>\n  <td>100</td>\n  <td>1900</td>\n</tr>\n<tr>\n  <td>ARI3-90NB-BL-P-C</td>\n  <td>9.0</td>\n  <td>8 – 14</td>\n  <td>300 x 300 x 930</td>\n  <td>60</td>\n  <td>Built-in (8+4h)</td>\n  <td>100</td>\n  <td>1900</td>\n</tr>\n<tr>\n  <td>ARI6-90NB-BL-P-C</td>\n  <td>9.0</td>\n  <td>8 – 14</td>\n  <td>440 x 440 x 930</td>\n  <td>110</td>\n  <td>Built-in (8+4h)</td>\n  <td>100</td>\n  <td>1900</td>\n</tr></tbody></table>",
+      "short_description": "<span style=\"text-align: justify;\">The</span><b style=\"text-align: justify;\"> Aries Round</b><span style=\"text-align: justify;\"> shares the minimalist elegance of all Tower heaters. Tall and space-saving, it distributes heat evenly and is ideal for installation in the center of the sauna or embedded into a bench. Its built-in stone spacer ensures faster, efficient heating of the sauna stones and a longer life span for the heating elements.</span>",
+      "brand": "SAWO",
+      "type": "Aries Round",
+      "spec_table": null,
+      "resources": null,
+      "status": "published",
+      "visible": true,
+      "featured": false,
+      "sort_order": 0,
+      "categories": [
+        "Tower"
+      ],
+      "tags": [
+        "Black",
+        "NB",
+        "Round",
+        "4.5 – 9.0kW",
+        "Bench",
+        "Tower",
+        "4.5 kW",
+        "6.0 kW",
+        "7.5 kW",
+        "9.0 kW",
+        "ARI3-45NB-BL-P-C",
+        "ARI3-60NB-BL-P-C",
+        "ARI3-75NB-BL-P-C",
+        "ARI3-90NB-BL-P-C",
+        "ARI6-90NB-BL-P-C"
+      ],
+      "features": [
+        "Power range: 4.5 – 9.0kW",
+        "Available control: Built-in (NB)",
+        "Built-in stone spacer",
+        "Adjustable legs",
+        "Black metal casing",
+        "Optional heater guard",
+        "Optional integration collar"
+      ],
+      "auto_tag_columns": [],
+      "thumbnail": "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776726999346_jq6shswlky.webp",
+      "images": [
+        "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776727001759_4yz8zefir3.webp"
+      ],
+      "spec_images": [
+        "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776727013187_z7gmypg61m8.webp"
+      ],
+      "files": [
+        {
+          "url": "https://www.sawo.com/wp-content/uploads/2025/06/Aries-Round-NS-NB_FiEn-3P-1P-2.pdf",
+          "name": "Aries Round NS NB FiEn 3P 1P 2"
+        }
+      ],
+      "created_by": null,
+      "created_by_username": "Edgar",
+      "updated_by_username": "Edgar",
+      "created_at": "2026-04-20T23:18:42.867805+00:00",
+      "updated_at": "2026-04-20T23:24:18.428+00:00",
+      "is_deleted": false,
+      "source": "supabase"
+    },
+    {
+      "id": "ff6700d7-45c9-4fc0-a58e-114029d6b0cb",
+      "name": "Aries Wall Black Ni2",
+      "slug": "aries-wall-black-ni2",
+      "description": "<table>\n  <thead>\n<tr>\n  <th>Heater Model</th>\n  <th>kW</th>\n  <th>Sauna Room<br>min. (m3) max.</th>\n  <th>Size of Heater (mm)<br>Length Width Height</th>\n  <th>Stones<br>(kg)</th>\n  <th>Control</th>\n  <th colspan=\"2\">Minimum Safety Distances<br>A | B</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n  <td>ARI3-45Ni2-WL-BL-P-C</td>\n  <td>4.5</td>\n  <td>3 – 6</td>\n  <td>250 x 415 x 1030</td>\n  <td>65</td>\n  <td>Saunova</td>\n  <td>100</td>\n  <td>1900</td>\n</tr>\n<tr>\n  <td>ARI3-60Ni2-WL-BL-P-C</td>\n  <td>6.0</td>\n  <td>5 – 9</td>\n  <td>250 x 415 x 1030</td>\n  <td>65</td>\n  <td>Saunova</td>\n  <td>100</td>\n  <td>1900</td>\n</tr>\n<tr>\n  <td>ARI3-75Ni2-WL-BL-P-C</td>\n  <td>7.5</td>\n  <td>7 – 13</td>\n  <td>250 x 415 x 1030</td>\n  <td>65</td>\n  <td>Saunova</td>\n  <td>100</td>\n  <td>1900</td>\n</tr>\n<tr>\n  <td>ARI3-90Ni2-WL-BL-P-C</td>\n  <td>9.0</td>\n  <td>8 – 14</td>\n  <td>250 x 415 x 1030</td>\n  <td>65</td>\n  <td>Saunova</td>\n  <td>100</td>\n  <td>1900</td>\n</tr></tbody></table>",
+      "short_description": "<span style=\"text-align: justify;\">The </span><strong style=\"text-align: justify;\">Aries Wall</strong><span style=\"text-align: justify;\"> is a space-saving design with the same stylish yet minimalist aesthetic of all Tower heaters. Its size and shape ensure that it takes up less space in any sauna layout, leaving more room for bathers to bask in deeply reinvigorating sauna sessions. Its built-in stone spacer ensures shorter heating time for the sauna stones and a longer life span for the heating elements.</span>",
+      "brand": "SAWO",
+      "type": "Aries Wall",
+      "spec_table": null,
+      "resources": null,
+      "status": "published",
+      "visible": true,
+      "featured": false,
+      "sort_order": 0,
+      "categories": [
+        "Tower"
+      ],
+      "tags": [
+        "4.5 – 9.0kW",
+        "Black",
+        "Ni2",
+        "Saunova",
+        "Tower",
+        "4.5 kW",
+        "6.0 kW",
+        "7.5 kW",
+        "9.0 kW",
+        "ARI3-45Ni2-WL-BL-P-C",
+        "ARI3-60Ni2-WL-BL-P-C",
+        "ARI3-75Ni2-WL-BL-P-C",
+        "ARI3-90Ni2-WL-BL-P-C"
+      ],
+      "features": [
+        "Power range: 4.5 – 9.0kW",
+        "Available control: Saunova (Ni2)",
+        "Built-in stone spacer",
+        "Adjustable legs",
+        "Black metal casing",
+        "Optional heater guard",
+        "Optional integration collar"
+      ],
+      "auto_tag_columns": [],
+      "thumbnail": "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776727486004_ovclnqrbdbn.webp",
+      "images": [
+        "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776727488305_x2ztlxx3mk.webp"
+      ],
+      "spec_images": [
+        "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776727596632_kovlvl6taje.webp"
+      ],
+      "files": [
+        {
+          "url": "https://www.sawo.com/wp-content/uploads/2025/06/Aries-Wall-Ni2_FiEn-3P-1P-1-Edited.pdf",
+          "name": "Aries Wall Ni2 FiEn 3P 1P 1 Edited"
+        }
+      ],
+      "created_by": null,
+      "created_by_username": "Edgar",
+      "updated_by_username": "Edgar",
+      "created_at": "2026-04-20T23:26:34.469588+00:00",
+      "updated_at": "2026-04-20T23:27:05.012+00:00",
+      "is_deleted": false,
+      "source": "supabase"
+    },
+    {
+      "id": "b3bf4540-8e2f-4e88-b0d3-1e1c8118e243",
+      "name": "Aries Wall NS",
+      "slug": "aries-wall-ns",
+      "description": "<table>\n  <thead>\n<tr>\n  <th>Heater Model</th>\n  <th>kW</th>\n  <th>Sauna Room<br>min. (m3) max.</th>\n  <th>Size of Heater (mm)<br>Length Width Height</th>\n  <th>Stones<br>(kg)</th>\n  <th>Control</th>\n  <th colspan=\"2\">Minimum Safety Distances<br>A | B</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n  <td>ARI3-45NS-WL-P-C</td>\n  <td>4.5</td>\n  <td>3 – 6</td>\n  <td>250 x 415 x 1030</td>\n  <td>65</td>\n  <td>Separate</td>\n  <td>100</td>\n  <td>1900</td>\n</tr>\n<tr>\n  <td>ARI3-60NS-WL-P-C</td>\n  <td>6.0</td>\n  <td>5 – 9</td>\n  <td>250 x 415 x 1030</td>\n  <td>65</td>\n  <td>Separate</td>\n  <td>100</td>\n  <td>1900</td>\n</tr>\n<tr>\n  <td>ARI3-75NS-WL-P-C</td>\n  <td>7.5</td>\n  <td>7 – 13</td>\n  <td>250 x 415 x 1030</td>\n  <td>65</td>\n  <td>Separate</td>\n  <td>100</td>\n  <td>1900</td>\n</tr>\n<tr>\n  <td>ARI3-90NS-WL-P-C</td>\n  <td>9.0</td>\n  <td>8 – 14</td>\n  <td>250 x 415 x 1030</td>\n  <td>65</td>\n  <td>Separate</td>\n  <td>100</td>\n  <td>1900</td>\n</tr></tbody></table>",
+      "short_description": "<span style=\"text-align: justify;\">The </span><strong style=\"text-align: justify;\">Aries Wall</strong><span style=\"text-align: justify;\"> is a space-saving design with the same stylish yet minimalist aesthetic of all Tower heaters. Its size and shape ensure that it takes up less space in any sauna layout, leaving more room for bathers to bask in deeply reinvigorating sauna sessions. Its built-in stone spacer ensures shorter heating time for the sauna stones and a longer life span for the heating elements.</span>",
+      "brand": "SAWO",
+      "type": "Aries Wall",
+      "spec_table": null,
+      "resources": null,
+      "status": "published",
+      "visible": true,
+      "featured": false,
+      "sort_order": 0,
+      "categories": [
+        "Tower"
+      ],
+      "tags": [
+        "4.5 – 9.0kW",
+        "Innova",
+        "NS",
+        "Saunova",
+        "X",
+        "Tower",
+        "4.5 kW",
+        "6.0 kW",
+        "7.5 kW",
+        "9.0 kW",
+        "ARI3-45NS-WL-P-C",
+        "ARI3-60NS-WL-P-C",
+        "ARI3-75NS-WL-P-C",
+        "ARI3-90NS-WL-P-C"
+      ],
+      "features": [
+        "Power range: 4.5 – 9.0kW",
+        "Available control: Saunova/Innova (NS)",
+        "Built-in stone spacer",
+        "Adjustable legs",
+        "Stainless steel casing",
+        "Optional heater guard",
+        "Optional integration collar"
+      ],
+      "auto_tag_columns": [],
+      "thumbnail": "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776727663836_8ixzj7q0wmf.webp",
+      "images": [
+        "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776727669789_lw2xocaang.webp"
+      ],
+      "spec_images": [
+        "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776727751270_cyjmyilmerp.webp"
+      ],
+      "files": [
+        {
+          "url": "https://www.sawo.com/wp-content/uploads/2025/06/Aries-Wall-NS-NB_FiEn-3P-1P-1-1.pdf",
+          "name": "Aries Wall NS NB FiEn 3P 1P 1 1"
+        }
+      ],
+      "created_by": null,
+      "created_by_username": "Edgar",
+      "updated_by_username": "Edgar",
+      "created_at": "2026-04-20T23:28:51.931786+00:00",
+      "updated_at": "2026-04-20T23:29:22.492+00:00",
+      "is_deleted": false,
+      "source": "supabase"
+    },
+    {
+      "id": "0d3cd79f-d62b-4deb-88d2-fb7d9ee0ac3c",
+      "name": "Aries Wall Black NS",
+      "slug": "aries-wall-black-ns",
+      "description": "<table>\n  <thead>\n<tr>\n  <th>Heater Model</th>\n  <th>kW</th>\n  <th>Sauna Room<br>min. (m3) max.</th>\n  <th>Size of Heater (mm)<br>Length Width Height</th>\n  <th>Stones<br>(kg)</th>\n  <th>Control</th>\n  <th colspan=\"2\">Minimum Safety Distances<br>A | B</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n  <td>ARI3-45NS-WL-BL-P-C</td>\n  <td>4.5</td>\n  <td>3 – 6</td>\n  <td>250 x 415 x 1030</td>\n  <td>65</td>\n  <td>Separate</td>\n  <td>100</td>\n  <td>1900</td>\n</tr>\n<tr>\n  <td>ARI3-60NS-WL-BL-P-C</td>\n  <td>6.0</td>\n  <td>5 – 9</td>\n  <td>250 x 415 x 1030</td>\n  <td>65</td>\n  <td>Separate</td>\n  <td>100</td>\n  <td>1900</td>\n</tr>\n<tr>\n  <td>ARI3-75NS-WL-BL-P-C</td>\n  <td>7.5</td>\n  <td>7 – 13</td>\n  <td>250 x 415 x 1030</td>\n  <td>65</td>\n  <td>Separate</td>\n  <td>100</td>\n  <td>1900</td>\n</tr>\n<tr>\n  <td>ARI3-90NS-WL-BL-P-C</td>\n  <td>9.0</td>\n  <td>8 – 14</td>\n  <td>250 x 415 x 1030</td>\n  <td>65</td>\n  <td>Separate</td>\n  <td>100</td>\n  <td>1900</td>\n</tr></tbody></table>",
+      "short_description": "<span style=\"text-align: justify;\">The </span><strong style=\"text-align: justify;\">Aries Wall</strong><span style=\"text-align: justify;\"> is a space-saving design with the same stylish yet minimalist aesthetic of all Tower heaters. Its size and shape ensure that it takes up less space in any sauna layout, leaving more room for bathers to bask in deeply reinvigorating sauna sessions. Its built-in stone spacer ensures shorter heating time for the sauna stones and a longer life span for the heating elements.</span>",
+      "brand": "SAWO",
+      "type": "Aries Wall",
+      "spec_table": null,
+      "resources": null,
+      "status": "published",
+      "visible": true,
+      "featured": false,
+      "sort_order": 0,
+      "categories": [
+        "Tower"
+      ],
+      "tags": [
+        "Black",
+        "NS",
+        "Tower",
+        "4.5 – 9.0kW",
+        "Innova",
+        "Saunova",
+        "4.5 kW",
+        "6.0 kW",
+        "7.5 kW",
+        "9.0 kW",
+        "ARI3-45NS-WL-BL-P-C",
+        "ARI3-60NS-WL-BL-P-C",
+        "ARI3-75NS-WL-BL-P-C",
+        "ARI3-90NS-WL-BL-P-C"
+      ],
+      "features": [
+        "Power range: 4.5 – 9.0kW",
+        "Available control: Saunova/Innova (NS)",
+        "Built-in stone spacer",
+        "Adjustable legs",
+        "Black metal casing",
+        "Optional heater guard",
+        "Optional integration collar"
+      ],
+      "auto_tag_columns": [],
+      "thumbnail": "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776727788954_rwqwtehdawk.webp",
+      "images": [
+        "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776727795892_acg95fnyvw9.webp"
+      ],
+      "spec_images": [
+        "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776727874806_3pvpzoik2pe.webp"
+      ],
+      "files": [
+        {
+          "url": "https://www.sawo.com/wp-content/uploads/2025/06/Aries-Wall-NS-NB_FiEn-3P-1P-2.pdf",
+          "name": "Aries Wall NS NB FiEn 3P 1P 2"
+        }
+      ],
+      "created_by": null,
+      "created_by_username": "Edgar",
+      "updated_by_username": "Edgar",
+      "created_at": "2026-04-20T23:30:56.567753+00:00",
+      "updated_at": "2026-04-20T23:31:27.115+00:00",
+      "is_deleted": false,
+      "source": "supabase"
+    },
+    {
+      "id": "3d301d55-2051-4eec-aca0-12d80e38cf44",
+      "name": "Aries Wall NB",
+      "slug": "aries-wall-nb",
+      "description": "<table>\n  <thead>\n<tr>\n  <th>Heater Model</th>\n  <th>kW</th>\n  <th>Sauna Room<br>min. (m3) max.</th>\n  <th>Size of Heater (mm)<br>Length Width Height</th>\n  <th>Stones<br>(kg)</th>\n  <th>Control</th>\n  <th colspan=\"2\">Minimum Safety Distances<br>A | B</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n  <td>ARI3-45NB-WL-P-C</td>\n  <td>4.5</td>\n  <td>3 – 6</td>\n  <td>250 x 415 x 1030</td>\n  <td>65</td>\n  <td>Built-in (8+4h)</td>\n  <td>100</td>\n  <td>1900</td>\n</tr>\n<tr>\n  <td>ARI3-60NB-WL-P-C</td>\n  <td>6.0</td>\n  <td>5 – 9</td>\n  <td>250 x 415 x 1030</td>\n  <td>65</td>\n  <td>Built-in (8+4h)</td>\n  <td>100</td>\n  <td>1900</td>\n</tr>\n<tr>\n  <td>ARI3-75NB-WL-P-C</td>\n  <td>7.5</td>\n  <td>7 – 13</td>\n  <td>250 x 415 x 1030</td>\n  <td>65</td>\n  <td>Built-in (8+4h)</td>\n  <td>100</td>\n  <td>1900</td>\n</tr>\n<tr>\n  <td>ARI3-90NB-WL-P-C</td>\n  <td>9.0</td>\n  <td>8 – 14</td>\n  <td>250 x 415 x 1030</td>\n  <td>65</td>\n  <td>Built-in (8+4h)</td>\n  <td>100</td>\n  <td>1900</td>\n</tr></tbody></table>",
+      "short_description": "<span style=\"text-align: justify;\">The </span><b style=\"text-align: justify;\">Aries Wall</b><span style=\"text-align: justify;\"> is a space-saving design with the same stylish yet minimalist aesthetic of all Tower heaters. Its size and shape ensure that it takes up less space in any sauna layout, leaving more room for bathers to bask in deeply reinvigorating sauna sessions. Its built-in stone spacer ensures shorter heating time for the sauna stones and a longer life span for the heating elements.</span>",
+      "brand": "SAWO",
+      "type": "Aries Wall",
+      "spec_table": null,
+      "resources": null,
+      "status": "published",
+      "visible": true,
+      "featured": false,
+      "sort_order": 0,
+      "categories": [
+        "Tower"
+      ],
+      "tags": [
+        "4.5 – 9.0kW",
+        "NB",
+        "Tower",
+        "4.5 kW",
+        "6.0 kW",
+        "7.5 kW",
+        "9.0 kW",
+        "ARI3-45NB-WL-P-C",
+        "ARI3-60NB-WL-P-C",
+        "ARI3-75NB-WL-P-C",
+        "ARI3-90NB-WL-P-C"
+      ],
+      "features": [
+        "Power range: 4.5 – 9.0kW",
+        "Available control: Built-in (NB)",
+        "Built-in stone spacer",
+        "Adjustable legs",
+        "Stainless steel casing",
+        "Optional heater guard",
+        "Optional integration collar"
+      ],
+      "auto_tag_columns": [],
+      "thumbnail": "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776728099162_lutv6pbto4d.webp",
+      "images": [
+        "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776728104277_7k4i29of8vw.webp"
+      ],
+      "spec_images": [
+        "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776728188203_upwc2mq8xep.webp"
+      ],
+      "files": [
+        {
+          "url": "https://www.sawo.com/wp-content/uploads/2025/06/Aries-Wall-NS-NB_FiEn-3P-1P.pdf",
+          "name": "Aries Wall NS NB FiEn 3P 1P"
+        }
+      ],
+      "created_by": null,
+      "created_by_username": "Edgar",
+      "updated_by_username": "Edgar",
+      "created_at": "2026-04-20T23:36:09.889006+00:00",
+      "updated_at": "2026-04-20T23:36:40.436+00:00",
+      "is_deleted": false,
+      "source": "supabase"
+    },
+    {
+      "id": "ad273de0-e0db-4ad0-9c2f-0bf05bde124c",
+      "name": "Aries Wall Black NB",
+      "slug": "aries-wall-black-nb",
+      "description": "<table>\n  <thead>\n<tr>\n  <th>Heater Model</th>\n  <th>kW</th>\n  <th>Sauna Room<br>min. (m3) max.</th>\n  <th>Size of Heater (mm)<br>Length Width Height</th>\n  <th>Stones<br>(kg)</th>\n  <th>Control</th>\n  <th colspan=\"2\">Minimum Safety Distances<br>A | B</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n  <td>ARI3-45NB-WL-BL-P-C</td>\n  <td>4.5</td>\n  <td>3 – 6</td>\n  <td>250 x 415 x 1030</td>\n  <td>65</td>\n  <td>Built-in (8+4h)</td>\n  <td>100</td>\n  <td>1900</td>\n</tr>\n<tr>\n  <td>ARI3-60NB-WL-BL-P-C</td>\n  <td>6.0</td>\n  <td>5 – 9</td>\n  <td>250 x 415 x 1030</td>\n  <td>65</td>\n  <td>Built-in (8+4h)</td>\n  <td>100</td>\n  <td>1900</td>\n</tr>\n<tr>\n  <td>ARI3-75NB-WL-BL-P-C</td>\n  <td>7.5</td>\n  <td>7 – 13</td>\n  <td>250 x 415 x 1030</td>\n  <td>65</td>\n  <td>Built-in (8+4h)</td>\n  <td>100</td>\n  <td>1900</td>\n</tr>\n<tr>\n  <td>ARI3-90NB-WL-BL-P-C</td>\n  <td>9.0</td>\n  <td>8 – 14</td>\n  <td>250 x 415 x 1030</td>\n  <td>65</td>\n  <td>Built-in (8+4h)</td>\n  <td>100</td>\n  <td>1900</td>\n</tr></tbody></table>",
+      "short_description": "<span style=\"text-align: justify;\">The </span><strong style=\"text-align: justify;\">Aries Wall</strong><span style=\"text-align: justify;\"> is a space-saving design with the same stylish yet minimalist aesthetic of all Tower heaters. Its size and shape ensure that it takes up less space in any sauna layout, leaving more room for bathers to bask in deeply reinvigorating sauna sessions. Its built-in stone spacer ensures shorter heating time for the sauna stones and a longer life span for the heating elements.</span>",
+      "brand": "SAWO",
+      "type": "Aries Wall",
+      "spec_table": null,
+      "resources": null,
+      "status": "published",
+      "visible": true,
+      "featured": false,
+      "sort_order": 0,
+      "categories": [
+        "Tower"
+      ],
+      "tags": [
+        "4.5 – 9.0kW",
+        "Black",
+        "NB",
+        "Tower",
+        "4.5 kW",
+        "6.0 kW",
+        "7.5 kW",
+        "9.0 kW",
+        "ARI3-45NB-WL-BL-P-C",
+        "ARI3-60NB-WL-BL-P-C",
+        "ARI3-75NB-WL-BL-P-C",
+        "ARI3-90NB-WL-BL-P-C"
+      ],
+      "features": [
+        "Power range: 4.5 – 9.0kW",
+        "Available control: Built-in (NB)",
+        "Built-in stone spacer",
+        "Adjustable legs",
+        "Black metal casing",
+        "Optional heater guard",
+        "Optional integration collar"
+      ],
+      "auto_tag_columns": [],
+      "thumbnail": "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776728394917_xithylqqbce.webp",
+      "images": [
+        "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776728401698_1jcrcmeq2u.webp"
+      ],
+      "spec_images": [
+        "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776728477096_ct5l94r5o1m.webp"
+      ],
+      "files": [
+        {
+          "url": "https://www.sawo.com/wp-content/uploads/2025/06/Aries-Wall-NS-NB_FiEn-3P-1P.pdf",
+          "name": "Aries Wall NS NB FiEn 3P 1P"
+        }
+      ],
+      "created_by": null,
+      "created_by_username": "Edgar",
+      "updated_by_username": "Edgar",
+      "created_at": "2026-04-20T23:41:04.284602+00:00",
+      "updated_at": "2026-04-20T23:41:34.828+00:00",
+      "is_deleted": false,
+      "source": "supabase"
+    },
+    {
+      "id": "e131f1cf-5a02-4d41-abe9-8e990a97e814",
+      "name": "Aries Corner Ni2",
+      "slug": "aries-corner-ni2",
+      "description": "<table>\n  <thead>\n<tr>\n  <th>Heater Model</th>\n  <th>kW</th>\n  <th>Sauna Room<br>min. (m3) max.</th>\n  <th>Size of Heater (mm)<br>Width Depth Height</th>\n  <th>Stones<br>(kg)</th>\n  <th>Control</th>\n  <th colspan=\"2\">Minimum Safety Distances<br>A | B</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n  <td>ARI3-45Ni2-CNR-P-C</td>\n  <td>4.5</td>\n  <td>3 – 6</td>\n  <td>335 x 335 x 1000</td>\n  <td>65</td>\n  <td>Saunova</td>\n  <td>100</td>\n  <td>1900</td>\n</tr>\n<tr>\n  <td>ARI3-60Ni2-CNR-P-C</td>\n  <td>6.0</td>\n  <td>5 – 9</td>\n  <td>335 x 335 x 1000</td>\n  <td>65</td>\n  <td>Saunova</td>\n  <td>100</td>\n  <td>1900</td>\n</tr>\n<tr>\n  <td>ARI3-75Ni2-CNR-P-C</td>\n  <td>7.5</td>\n  <td>7 – 13</td>\n  <td>335 x 335 x 1000</td>\n  <td>65</td>\n  <td>Saunova</td>\n  <td>100</td>\n  <td>1900</td>\n</tr>\n<tr>\n  <td>ARI3-90Ni2-CNR-P-C</td>\n  <td>9.0</td>\n  <td>8 – 14</td>\n  <td>335 x 335 x 1000</td>\n  <td>65</td>\n  <td>Saunova</td>\n  <td>100</td>\n  <td>1900</td>\n</tr></tbody></table>",
+      "short_description": "<span style=\"text-align: justify;\">The </span><strong style=\"text-align: justify;\">Aries Corner</strong><span style=\"text-align: justify;\"> is a minimalist yet stylish space-saving heater. It’s designed for seamless corner installation to maximize the space of any sauna room and the boost the comfort of bathers for thoroughly rejuvenating sauna sessions. Its built-in stone spacer ensures shorter heating time for the sauna stones and a longer life span for the heating elements.</span>",
+      "brand": "SAWO",
+      "type": "Aries Corner",
+      "spec_table": null,
+      "resources": null,
+      "status": "published",
+      "visible": true,
+      "featured": false,
+      "sort_order": 0,
+      "categories": [
+        "Tower"
+      ],
+      "tags": [
+        "4.5 – 9.0kW",
+        "Ni2",
+        "Saunova",
+        "4.5 kW",
+        "6.0 kW",
+        "7.5 kW",
+        "9.0 kW",
+        "ARI3-45Ni2-CNR-P-C",
+        "ARI3-60Ni2-CNR-P-C",
+        "ARI3-75Ni2-CNR-P-C",
+        "ARI3-90Ni2-CNR-P-C"
+      ],
+      "features": [
+        "Power range: 4.5 – 9.0kW",
+        "Available control: Saunova (Ni2)",
+        "Built-in stone spacer",
+        "Adjustable legs",
+        "Stainless steel casing",
+        "Optional heater guard",
+        "Optional integration collar"
+      ],
+      "auto_tag_columns": [],
+      "thumbnail": "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776728517217_ra5k4my3wpg.webp",
+      "images": [
+        "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776728520451_4ucgeecuaho.webp"
+      ],
+      "spec_images": [
+        "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776728615368_escn5corzl.webp"
+      ],
+      "files": [
+        {
+          "url": "https://www.sawo.com/wp-content/uploads/2025/06/Aries-Corner-Ni2_FiEn-3P-1P-Edited.pdf",
+          "name": "Aries Corner Ni2 FiEn 3P 1P Edited"
+        }
+      ],
+      "created_by": null,
+      "created_by_username": "Edgar",
+      "updated_by_username": "Edgar",
+      "created_at": "2026-04-20T23:43:26.567671+00:00",
+      "updated_at": "2026-04-20T23:43:57.116+00:00",
+      "is_deleted": false,
+      "source": "supabase"
+    },
+    {
+      "id": "3f34ef40-0f99-40ff-ab1d-da83361431a5",
+      "name": "Aries Corner Black Ni2",
+      "slug": "aries-corner-black-ni2",
+      "description": "<table>\n  <thead>\n<tr>\n  <th>Heater Model</th>\n  <th>kW</th>\n  <th>Sauna Room<br>min. (m3) max.</th>\n  <th>Size of heater (mm)<br>Length Width Height</th>\n  <th>Stones<br>(kg)</th>\n  <th>Control</th>\n  <th colspan=\"2\">Minimum Safety Distances<br>A | B</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n  <td>ARI3-45Ni2-CNR-BL-P-C</td>\n  <td>4.5</td>\n  <td>3 – 6</td>\n  <td>335 x 335 x 1000</td>\n  <td>65</td>\n  <td>Saunova</td>\n  <td>100</td>\n  <td>1900</td>\n</tr>\n<tr>\n  <td>ARI3-60NI2-CNR-BL-P-C</td>\n  <td>6.0</td>\n  <td>5 – 9</td>\n  <td>335 x 335 x 1000</td>\n  <td>65</td>\n  <td>Saunova</td>\n  <td>100</td>\n  <td>1900</td>\n</tr>\n<tr>\n  <td>ARI3-75Ni2-CNR-BL-P-C</td>\n  <td>7.5</td>\n  <td>7 – 13</td>\n  <td>335 x 335 x 1000</td>\n  <td>65</td>\n  <td>Saunova</td>\n  <td>100</td>\n  <td>1900</td>\n</tr>\n<tr>\n  <td>ARI3-90Ni2-CNR-BL-P-C</td>\n  <td>9.0</td>\n  <td>8 – 14</td>\n  <td>335 x 335 x 1000</td>\n  <td>65</td>\n  <td>Saunova</td>\n  <td>100</td>\n  <td>1900</td>\n</tr></tbody></table>",
+      "short_description": "<span style=\"text-align: justify;\">The </span><b style=\"text-align: justify;\">Aries Corner</b><span style=\"text-align: justify;\"> is a minimalist yet stylish space-saving heater. It’s designed for seamless corner installation to maximize the space of any sauna room and the boost the comfort of bathers for thoroughly rejuvenating sauna sessions. Its built-in stone spacer ensures shorter heating time for the sauna stones and a longer life span for the heating elements.</span>",
+      "brand": "SAWO",
+      "type": "Aries Corner",
+      "spec_table": null,
+      "resources": null,
+      "status": "published",
+      "visible": true,
+      "featured": false,
+      "sort_order": 0,
+      "categories": [
+        "Tower"
+      ],
+      "tags": [
+        "4.5 – 9.0kW",
+        "Black",
+        "Ni2",
+        "Saunova",
+        "4.5 kW",
+        "6.0 kW",
+        "7.5 kW",
+        "9.0 kW",
+        "ARI3-45Ni2-CNR-BL-P-C",
+        "ARI3-60NI2-CNR-BL-P-C",
+        "ARI3-75Ni2-CNR-BL-P-C",
+        "ARI3-90Ni2-CNR-BL-P-C"
+      ],
+      "features": [
+        "Power range: 4.5 – 9.0kW",
+        "Available control: Saunova (Ni2)",
+        "Built-in stone spacer",
+        "Adjustable legs",
+        "Black metal casing",
+        "Optional heater guard",
+        "Optional integration collar"
+      ],
+      "auto_tag_columns": [],
+      "thumbnail": "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776728659464_tsd1e69thdr.webp",
+      "images": [
+        "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776728663519_5vnwcga6hbx.webp"
+      ],
+      "spec_images": [
+        "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776728761459_dpc84z47u9s.webp"
+      ],
+      "files": [
+        {
+          "url": "https://www.sawo.com/wp-content/uploads/2025/06/Aries-Corner-Ni2_FiEn-3P-1P-Edited.pdf",
+          "name": "Aries Corner Ni2 FiEn 3P 1P Edited"
+        }
+      ],
+      "created_by": null,
+      "created_by_username": "Edgar",
+      "updated_by_username": "Edgar",
+      "created_at": "2026-04-20T23:45:49.521069+00:00",
+      "updated_at": "2026-04-20T23:46:20.078+00:00",
+      "is_deleted": false,
+      "source": "supabase"
+    },
+    {
+      "id": "610ca97f-a7f1-49fb-bcbf-69bcfa2caff6",
+      "name": "Aries Corner NS",
+      "slug": "aries-corner-ns",
+      "description": "<table>\n  <thead>\n<tr>\n  <th>Heater Model</th>\n  <th>kW</th>\n  <th>Sauna Room<br>min. (m3) max.</th>\n  <th>Size of Heater (mm)<br>Length Width Height</th>\n  <th>Stones<br>(kg)</th>\n  <th>Control</th>\n  <th colspan=\"2\">Minimum Safety Distances<br>A | B</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n  <td>ARI3-45NS-CNR-P-C</td>\n  <td>4.5</td>\n  <td>3 – 6</td>\n  <td>335 x 335 x 1000</td>\n  <td>65</td>\n  <td>Separate</td>\n  <td>100</td>\n  <td>1900</td>\n</tr>\n<tr>\n  <td>ARI3-60NS-CNR-P-C</td>\n  <td>6.0</td>\n  <td>5 – 9</td>\n  <td>335 x 335 x 1000</td>\n  <td>65</td>\n  <td>Separate</td>\n  <td>100</td>\n  <td>1900</td>\n</tr>\n<tr>\n  <td>ARI3-75NS-CNR-P-C</td>\n  <td>7.5</td>\n  <td>7 – 13</td>\n  <td>335 x 335 x 1000</td>\n  <td>65</td>\n  <td>Separate</td>\n  <td>100</td>\n  <td>1900</td>\n</tr>\n<tr>\n  <td>ARI3-90NS-CNR-P-C</td>\n  <td>9.0</td>\n  <td>8 – 14</td>\n  <td>335 x 335 x 1000</td>\n  <td>65</td>\n  <td>Separate</td>\n  <td>100</td>\n  <td>1900</td>\n</tr></tbody></table>",
+      "short_description": "<span style=\"text-align: justify;\">The </span><strong style=\"text-align: justify;\">Aries Corner</strong><span style=\"text-align: justify;\"> is a minimalist yet stylish space-saving heater. It’s designed for seamless corner installation to maximize the space of any sauna room and the boost the comfort of bathers for thoroughly rejuvenating sauna sessions. Its built-in stone spacer ensures shorter heating time for the sauna stones and a longer life span for the heating elements.</span>",
+      "brand": "SAWO",
+      "type": "Aries Corner",
+      "spec_table": null,
+      "resources": null,
+      "status": "published",
+      "visible": true,
+      "featured": false,
+      "sort_order": 0,
+      "categories": [
+        "Tower"
+      ],
+      "tags": [
+        "4.5 – 9.0kW",
+        "Innova",
+        "NS",
+        "Saunova",
+        "4.5 kW",
+        "6.0 kW",
+        "7.5 kW",
+        "9.0 kW",
+        "ARI3-45NS-CNR-P-C",
+        "ARI3-60NS-CNR-P-C",
+        "ARI3-75NS-CNR-P-C",
+        "ARI3-90NS-CNR-P-C"
+      ],
+      "features": [
+        "Power range: 4.5 – 9.0kW",
+        "Available control: Saunova/Innova (NS)",
+        "Built-in stone spacer",
+        "Adjustable legs",
+        "Stainless steel casing",
+        "Optional heater guard",
+        "Optional integration collar"
+      ],
+      "auto_tag_columns": [],
+      "thumbnail": "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776728862153_wl8n3fzr7de.webp",
+      "images": [
+        "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776728864739_k98j5vtct1i.webp"
+      ],
+      "spec_images": [
+        "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776728916949_7f34q224a7.webp"
+      ],
+      "files": [
+        {
+          "url": "https://www.sawo.com/wp-content/uploads/2025/06/Aries-Corner-NS-NB_FiEn-3P-1P-1-1.pdf",
+          "name": "Aries Corner NS NB FiEn 3P 1P 1 1"
+        }
+      ],
+      "created_by": null,
+      "created_by_username": "Edgar",
+      "updated_by_username": "Edgar",
+      "created_at": "2026-04-20T23:48:16.596007+00:00",
+      "updated_at": "2026-04-20T23:48:47.144+00:00",
+      "is_deleted": false,
+      "source": "supabase"
+    },
+    {
+      "id": "2c58be55-d48a-4fb1-8a58-6b8fd732366b",
+      "name": "Aries Corner Black NS",
+      "slug": "aries-corner-black-ns",
+      "description": "<table>\n  <thead>\n<tr>\n  <th>Heater Model</th>\n  <th>kW</th>\n  <th>Sauna Room<br>min (m3) max</th>\n  <th>Size of heater (mm)<br>Length Width Height</th>\n  <th>Stones<br>(kg)</th>\n  <th>Control</th>\n  <th colspan=\"2\">Minimum Safety Distances<br>A | B</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n  <td>ARI3-45NS-CNR-BL-P-C</td>\n  <td>4.5</td>\n  <td>3 – 6</td>\n  <td>335 x 335 x 1000</td>\n  <td>65</td>\n  <td>Separate</td>\n  <td>100</td>\n  <td>1900</td>\n</tr>\n<tr>\n  <td>ARI3-60NS-CNR-BL-P-C</td>\n  <td>6.0</td>\n  <td>5 – 9</td>\n  <td>335 x 335 x 1000</td>\n  <td>65</td>\n  <td>Separate</td>\n  <td>100</td>\n  <td>1900</td>\n</tr>\n<tr>\n  <td>ARI3-75NS-CNR-BL-P-C</td>\n  <td>7.5</td>\n  <td>7 – 13</td>\n  <td>335 x 335 x 1000</td>\n  <td>65</td>\n  <td>Separate</td>\n  <td>100</td>\n  <td>1900</td>\n</tr>\n<tr>\n  <td>ARI3-90NS-CNR-BL-P-C</td>\n  <td>9.0</td>\n  <td>8 – 14</td>\n  <td>335 x 335 x 1000</td>\n  <td>65</td>\n  <td>Separate</td>\n  <td>100</td>\n  <td>1900</td>\n</tr></tbody></table>",
+      "short_description": "<span style=\"text-align: justify;\">The </span><strong style=\"text-align: justify;\">Aries Corner</strong><span style=\"text-align: justify;\"> is a minimalist yet stylish space-saving heater. It’s designed for seamless corner installation to maximize the space of any sauna room and the boost the comfort of bathers for thoroughly rejuvenating sauna sessions. Its built-in stone spacer ensures shorter heating time for the sauna stones and a longer life span for the heating elements.</span>",
+      "brand": "SAWO",
+      "type": "Aries Corner",
+      "spec_table": null,
+      "resources": null,
+      "status": "published",
+      "visible": true,
+      "featured": false,
+      "sort_order": 0,
+      "categories": [
+        "Tower"
+      ],
+      "tags": [
+        "4.5 – 9.0kW",
+        "Black",
+        "Innova",
+        "NS",
+        "Saunova",
+        "4.5 kW",
+        "6.0 kW",
+        "7.5 kW",
+        "9.0 kW",
+        "ARI3-45NS-CNR-BL-P-C",
+        "ARI3-60NS-CNR-BL-P-C",
+        "ARI3-75NS-CNR-BL-P-C",
+        "ARI3-90NS-CNR-BL-P-C"
+      ],
+      "features": [
+        "Power range: 4.5 – 9.0kW",
+        "Available control: Saunova/Innova (NS)",
+        "Built-in stone spacer",
+        "Adjustable legs",
+        "Black metal casing",
+        "Optional heater guard",
+        "Optional integration collar"
+      ],
+      "auto_tag_columns": [],
+      "thumbnail": "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776728962206_xsbs8bec4xj.webp",
+      "images": [
+        "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776728965074_empe3vd64x4.webp"
+      ],
+      "spec_images": [
+        "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776729025056_fmfsq6bvbr.webp"
+      ],
+      "files": [
+        {
+          "url": "https://www.sawo.com/wp-content/uploads/2025/06/Aries-Corner-NS-NB_FiEn-3P-1P-1.pdf",
+          "name": "Aries Corner NS NB FiEn 3P 1P 1"
+        }
+      ],
+      "created_by": null,
+      "created_by_username": "Edgar",
+      "updated_by_username": "Edgar",
+      "created_at": "2026-04-20T23:50:07.668513+00:00",
+      "updated_at": "2026-04-20T23:50:38.152+00:00",
+      "is_deleted": false,
+      "source": "supabase"
+    },
+    {
+      "id": "abe3f7fb-2725-4d68-bc6b-dff65be81afc",
+      "name": "Aries Corner NB",
+      "slug": "aries-corner-nb",
+      "description": "<table>\n  <thead>\n<tr>\n  <th>Heater Model</th>\n  <th>kW</th>\n  <th>Sauna Room<br>min. (m3) max.</th>\n  <th>Size of Heater (mm)<br>Length Width Height</th>\n  <th>Stones<br>(kg)</th>\n  <th>Control</th>\n  <th colspan=\"2\">Minimum Safety Distances<br>A | B</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n  <td>ARI3-45NB-CNR-P-C</td>\n  <td>4.5</td>\n  <td>3 – 6</td>\n  <td>335 x 335 x 1000</td>\n  <td>65</td>\n  <td>Built-in (8+4h)</td>\n  <td>100</td>\n  <td>1900</td>\n</tr>\n<tr>\n  <td>ARI3-60NB-CNR-P-C</td>\n  <td>6.0</td>\n  <td>5 – 9</td>\n  <td>335 x 335 x 1000</td>\n  <td>65</td>\n  <td>Built-in (8+4h)</td>\n  <td>100</td>\n  <td>1900</td>\n</tr>\n<tr>\n  <td>ARI3-75NB-CNR-P-C</td>\n  <td>7.5</td>\n  <td>7 – 13</td>\n  <td>335 x 335 x 1000</td>\n  <td>65</td>\n  <td>Built-in (8+4h)</td>\n  <td>100</td>\n  <td>1900</td>\n</tr>\n<tr>\n  <td>ARI3-90NB-CNR-P-C</td>\n  <td>9.0</td>\n  <td>8 – 14</td>\n  <td>335 x 335 x 1000</td>\n  <td>65</td>\n  <td>Built-in (8+4h)</td>\n  <td>100</td>\n  <td>1900</td>\n</tr></tbody></table>",
+      "short_description": "<span style=\"text-align: justify;\">The </span><strong style=\"text-align: justify;\"><b>Aries Corner</b></strong><span style=\"text-align: justify;\"> is a minimalist yet stylish space-saving heater. It’s designed for seamless corner installation to maximize the space of any sauna room and the boost the comfort of bathers for thoroughly rejuvenating sauna sessions. Its built-in stone spacer ensures shorter heating time for the sauna stones and a longer life span for the heating elements.</span>",
+      "brand": "SAWO",
+      "type": "Aries Corner",
+      "spec_table": null,
+      "resources": null,
+      "status": "published",
+      "visible": true,
+      "featured": false,
+      "sort_order": 0,
+      "categories": [
+        "Tower"
+      ],
+      "tags": [
+        "4.5 – 9.0kW",
+        "NB",
+        "4.5 kW",
+        "6.0 kW",
+        "7.5 kW",
+        "9.0 kW",
+        "ARI3-45NB-CNR-P-C",
+        "ARI3-60NB-CNR-P-C",
+        "ARI3-75NB-CNR-P-C",
+        "ARI3-90NB-CNR-P-C"
+      ],
+      "features": [
+        "Power range: 4.5 – 9.0kW",
+        "Available control: Built-in (NB)",
+        "Built-in stone spacer",
+        "Adjustable legs",
+        "Stainless steel casing",
+        "Optional heater guard",
+        "Optional integration collar"
+      ],
+      "auto_tag_columns": [],
+      "thumbnail": "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776729152924_tu6u45aigl9.webp",
+      "images": [
+        "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776729155876_466pm20cs7k.webp"
+      ],
+      "spec_images": [
+        "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776729203323_liqy1a3l0qc.webp"
+      ],
+      "files": [
+        {
+          "url": "https://www.sawo.com/wp-content/uploads/2025/06/Aries-Corner-NS-NB_FiEn-3P-1P-.pdf",
+          "name": "Aries Corner NS NB FiEn 3P 1P "
+        }
+      ],
+      "created_by": null,
+      "created_by_username": "Edgar",
+      "updated_by_username": "Edgar",
+      "created_at": "2026-04-20T23:53:46.385869+00:00",
+      "updated_at": "2026-04-20T23:54:16.948+00:00",
+      "is_deleted": false,
+      "source": "supabase"
+    },
+    {
+      "id": "242d9eb5-907f-4be2-a371-5db18c96d548",
+      "name": "Aries Corner Black NB",
+      "slug": "aries-corner-black-nb",
+      "description": "<table>\n  <thead>\n<tr>\n  <th>Heater Model</th>\n  <th>kW</th>\n  <th>Sauna Room<br>min. (m3) max.</th>\n  <th>Size of Heater (mm)<br>Length Width Height</th>\n  <th>Stones<br>(kg)</th>\n  <th>Control</th>\n  <th colspan=\"2\">Minimum Safety Distances<br>A | B</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n  <td>ARI3-45NB-CNR-BL-P-C</td>\n  <td>4.5</td>\n  <td>3 – 6</td>\n  <td>335 x 335 x 1000</td>\n  <td>65</td>\n  <td>Built-in (8+4h)</td>\n  <td>100</td>\n  <td>1900</td>\n</tr>\n<tr>\n  <td>ARI3-60NB-CNR-BL-P-C</td>\n  <td>6.0</td>\n  <td>5 – 9</td>\n  <td>335 x 335 x 1000</td>\n  <td>65</td>\n  <td>Built-in (8+4h)</td>\n  <td>100</td>\n  <td>1900</td>\n</tr>\n<tr>\n  <td>AR13-75NB-CNR-BL-P-C</td>\n  <td>7.5</td>\n  <td>7 – 13</td>\n  <td>335 x 335 x 1000</td>\n  <td>65</td>\n  <td>Built-in (8+4h)</td>\n  <td>100</td>\n  <td>1900</td>\n</tr>\n<tr>\n  <td>ARI3-90NB-CNR-BL-P-C</td>\n  <td>9.0</td>\n  <td>8 – 14</td>\n  <td>335 x 335 x 1000</td>\n  <td>65</td>\n  <td>Built-in (8+4h)</td>\n  <td>100</td>\n  <td>1900</td>\n</tr></tbody></table>",
+      "short_description": "<div><span style=\"text-align: justify;\">The </span><strong style=\"text-align: justify;\"><b>Aries Corner</b></strong><span style=\"text-align: justify;\"> is a minimalist yet stylish space-saving heater. It’s designed for seamless corner installation to maximize the space of any sauna room and the boost the comfort of bathers for thoroughly rejuvenating sauna sessions. Its built-in stone spacer ensures shorter heating time for the sauna stones and a longer life span for the heating elements.</span>\n</div>",
+      "brand": "SAWO",
+      "type": "Aries Corner",
+      "spec_table": null,
+      "resources": null,
+      "status": "published",
+      "visible": true,
+      "featured": false,
+      "sort_order": 0,
+      "categories": [
+        "Tower"
+      ],
+      "tags": [
+        "Black",
+        "NB",
+        "4.5 – 9.0kW",
+        "4.5 kW",
+        "6.0 kW",
+        "7.5 kW",
+        "9.0 kW",
+        "ARI3-45NB-CNR-BL-P-C",
+        "ARI3-60NB-CNR-BL-P-C",
+        "AR13-75NB-CNR-BL-P-C",
+        "ARI3-90NB-CNR-BL-P-C"
+      ],
+      "features": [
+        "Power range: 4.5 – 9.0kW",
+        "Available control: Built-in (NB)",
+        "Built-in stone spacer",
+        "Adjustable legs",
+        "Black metal casing",
+        "Optional heater guard",
+        "Optional integration collar"
+      ],
+      "auto_tag_columns": [],
+      "thumbnail": "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776730498608_n16s7zdyzb.webp",
+      "images": [
+        "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776730501676_5lq1tido698.webp"
+      ],
+      "spec_images": [
+        "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776730567143_u8hv65ns61f.webp"
+      ],
+      "files": [
+        {
+          "url": "https://www.sawo.com/wp-content/uploads/2025/06/Aries-Corner-NS-NB_FiEn-3P-1P.pdf",
+          "name": "Aries Corner NS NB FiEn 3P 1P"
+        }
+      ],
+      "created_by": null,
+      "created_by_username": "Edgar",
+      "updated_by_username": "Edgar",
+      "created_at": "2026-04-21T00:16:17.14491+00:00",
+      "updated_at": "2026-04-21T00:16:47.734+00:00",
+      "is_deleted": false,
+      "source": "supabase"
+    },
+    {
+      "id": "91852d8f-7bfe-4abc-a779-78ee65950793",
+      "name": "Cubos Ni2",
+      "slug": "cubos-ni2",
+      "description": "<table>\n  <thead>\n<tr>\n  <th>Heater Model</th>\n  <th>kW</th>\n  <th>Sauna Room<br>min. (m3) max.</th>\n  <th>Size of heater (mm)<br>Length Width Height</th>\n  <th>Stones<br>(kg)</th>\n  <th>Control</th>\n  <th colspan=\"3\">Minimum Safety Distances<br>A | AA | B</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n  <td>CUB3-45Ni2-P-C</td>\n  <td>4.5</td>\n  <td>3 – 6</td>\n  <td>290 x 290 x 930</td>\n  <td>75</td>\n  <td>Saunova</td>\n  <td>100</td>\n  <td>100</td>\n  <td>1900</td>\n</tr>\n<tr>\n  <td>CUB3-60Ni2-P-C</td>\n  <td>6.0</td>\n  <td>5 – 9</td>\n  <td>290 x 290 x 930</td>\n  <td>75</td>\n  <td>Saunova</td>\n  <td>100</td>\n  <td>100</td>\n  <td>1900</td>\n</tr>\n<tr>\n  <td>CUB3-75Ni2-P-C</td>\n  <td>7.5</td>\n  <td>7 – 13</td>\n  <td>290 x 290 x 930</td>\n  <td>75</td>\n  <td>Saunova</td>\n  <td>100</td>\n  <td>135</td>\n  <td>1900</td>\n</tr>\n<tr>\n  <td>CUB3-90Ni2-P-C</td>\n  <td>9.0</td>\n  <td>8 – 14</td>\n  <td>290 x 290 x 930</td>\n  <td>75</td>\n  <td>Saunova</td>\n  <td>125</td>\n  <td>135</td>\n  <td>1900</td>\n</tr></tbody></table>",
+      "short_description": "<span style=\"text-align: justify;\">The </span><strong style=\"text-align: justify;\">Cubos</strong><span style=\"text-align: justify;\"> is ideal for limited spaces. It offers 3-in-1 flexibility: One sleek modern design, three placement options—middle, corner, or wall installation. It comes with a protective cover for additional support for wall and corner installations, as well as a reflector that directs heat even to the lowest parts of the sauna room. The Cubos also has a built-in stone spacer, ensuring faster heating time and longer-lasting heating elements.</span>",
+      "brand": "SAWO",
+      "type": "Cubos",
+      "spec_table": null,
+      "resources": null,
+      "status": "published",
+      "visible": true,
+      "featured": false,
+      "sort_order": 0,
+      "categories": [
+        "Tower"
+      ],
+      "tags": [
+        "4.5 – 9.0kW",
+        "Ni2",
+        "Saunova",
+        "4.5 kW",
+        "6.0 kW",
+        "7.5 kW",
+        "9.0 kW",
+        "CUB3-45Ni2-P-C",
+        "CUB3-60Ni2-P-C",
+        "CUB3-75Ni2-P-C",
+        "CUB3-90Ni2-P-C"
+      ],
+      "features": [
+        "Power range: 4.5 – 9.0kW",
+        "Available controls: Saunova (Ni2)",
+        "Built-in stone spacer",
+        "Stainless steel casing",
+        "Adjustable legs",
+        "Optional heater guard",
+        "Optional integration collar"
+      ],
+      "auto_tag_columns": [],
+      "thumbnail": "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776730695059_80p0wgp6y85.webp",
+      "images": [
+        "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776730698192_lzr96dh4pda.webp",
+        "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776730703695_4nnyq6ga5pa.webp",
+        "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776730707312_1mru02e5mdu.webp"
+      ],
+      "spec_images": [
+        "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776730890489_3w9fczopg9e.webp"
+      ],
+      "files": [
+        {
+          "url": "https://www.sawo.com/wp-content/uploads/2025/10/Cubos-NS-NB_FiEn-3P-1P.pdf",
+          "name": "Cubos NS NB FiEn 3P 1P"
+        }
+      ],
+      "created_by": null,
+      "created_by_username": "Edgar",
+      "updated_by_username": "Edgar",
+      "created_at": "2026-04-21T00:21:39.480665+00:00",
+      "updated_at": "2026-04-21T00:22:09.808+00:00",
+      "is_deleted": false,
+      "source": "supabase"
+    },
+    {
+      "id": "180af7f6-1c1c-44db-94cd-cd88070811b6",
+      "name": "Cubos NS",
+      "slug": "cubos-ns",
+      "description": "<table>\n  <thead>\n<tr>\n  <th>Heater Model</th>\n  <th>kW</th>\n  <th>Sauna Room<br>min. (m3) max.</th>\n  <th>Size of Heater (mm)<br>Length Width Height</th>\n  <th>Stones<br>(kg)</th>\n  <th>Control</th>\n  <th colspan=\"3\">Minimum Safety Distances<br>A | AA | B</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n  <td>CUB3-45NS-P-C</td>\n  <td>4.5</td>\n  <td>3 – 6</td>\n  <td>290 x 290 x 930</td>\n  <td>75</td>\n  <td>Separate</td>\n  <td>100</td>\n  <td>100</td>\n  <td>1900</td>\n</tr>\n<tr>\n  <td>CUB3-60NS-P-C</td>\n  <td>6.0</td>\n  <td>5 – 9</td>\n  <td>290 x 290 x 930</td>\n  <td>75</td>\n  <td>Separate</td>\n  <td>100</td>\n  <td>100</td>\n  <td>1900</td>\n</tr>\n<tr>\n  <td>CUB3-75NS-P-C</td>\n  <td>7.5</td>\n  <td>7 – 13</td>\n  <td>290 x 290 x 930</td>\n  <td>75</td>\n  <td>Separate</td>\n  <td>100</td>\n  <td>135</td>\n  <td>1900</td>\n</tr>\n<tr>\n  <td>CUB3-90NS-P-C</td>\n  <td>9.0</td>\n  <td>8 – 14</td>\n  <td>290 x 290 x 930</td>\n  <td>75</td>\n  <td>Separate</td>\n  <td>125</td>\n  <td>135</td>\n  <td>1900</td>\n</tr></tbody></table>",
+      "short_description": "<span style=\"text-align: justify;\">The </span><strong style=\"text-align: justify;\">Cubos</strong><span style=\"text-align: justify;\"> is ideal for limited spaces. It offers 3-in-1 flexibility: One sleek modern design, three placement options—middle, corner, or wall installation. It comes with a protective cover for additional support for wall and corner installations, as well as a reflector that directs heat even to the lowest parts of the sauna room. The Cubos also has a built-in stone spacer, ensuring faster heating time and longer-lasting heating elements.</span>",
+      "brand": "SAWO",
+      "type": "Cubos",
+      "spec_table": null,
+      "resources": null,
+      "status": "published",
+      "visible": true,
+      "featured": false,
+      "sort_order": 0,
+      "categories": [
+        "Tower"
+      ],
+      "tags": [
+        "4.5 – 9.0kW",
+        "Innova",
+        "NS",
+        "Saunova",
+        "4.5 kW",
+        "6.0 kW",
+        "7.5 kW",
+        "9.0 kW",
+        "CUB3-45NS-P-C",
+        "CUB3-60NS-P-C",
+        "CUB3-75NS-P-C",
+        "CUB3-90NS-P-C"
+      ],
+      "features": [
+        "Power range: 4.5 – 9.0kW",
+        "Available control: Saunova/Innova (NS)",
+        "Built-in stone spacer",
+        "Adjustable legs",
+        "Stainless steel casing",
+        "Optional heater guard",
+        "Optional integration collar"
+      ],
+      "auto_tag_columns": [],
+      "thumbnail": "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776730947377_klmu5r9u1vs.webp",
+      "images": [
+        "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776730950982_3bgyk62kuuk.webp",
+        "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776730960508_7wzhpwtyfop.webp",
+        "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776730965167_32s84rrp85m.webp"
+      ],
+      "spec_images": [
+        "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776731120332_wspvm9273ds.webp"
+      ],
+      "files": [
+        {
+          "url": "https://www.sawo.com/wp-content/uploads/2025/10/Cubos-NS-NB_FiEn-3P-1P.pdf",
+          "name": "Cubos NS NB FiEn 3P 1P"
+        }
+      ],
+      "created_by": null,
+      "created_by_username": "Edgar",
+      "updated_by_username": "Edgar",
+      "created_at": "2026-04-21T00:25:02.316938+00:00",
+      "updated_at": "2026-04-21T00:25:32.838+00:00",
+      "is_deleted": false,
+      "source": "supabase"
+    },
+    {
+      "id": "f6609553-4d69-4edf-9395-c43afd0a0aa6",
+      "name": "Heaterking Round NS",
+      "slug": "heaterking-round-ns",
+      "description": "<table>\n  <thead>\n<tr>\n  <th>Heater Model</th>\n  <th>kW</th>\n  <th>Sauna Room<br>min. (m3) max.</th>\n  <th>Size of Heater (mm)<br>Length Width Height</th>\n  <th>Stones<br>(kg)\nw/o Stone Spacer</th>\n  <th>Stones<br>(kg)\nwith Stone Spacer</th>\n  <th>Control</th>\n  <th colspan=\"2\">Minimum Safety Distances<br>A | B</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n  <td>DRFT2-30NS-P</td>\n  <td>3.0</td>\n  <td>2 – 4</td>\n  <td>250 x 250 x 1325</td>\n  <td>70</td>\n  <td>60</td>\n  <td>Separate</td>\n  <td>150</td>\n  <td>1900</td>\n</tr>\n<tr>\n  <td>DRFT3-35NS-P-C</td>\n  <td>3.5</td>\n  <td>3 – 6</td>\n  <td>250 x 250 x 1325</td>\n  <td>70</td>\n  <td>60</td>\n  <td>Separate</td>\n  <td>100</td>\n  <td>1900</td>\n</tr>\n<tr>\n  <td>DRFT3-45NS-P-C</td>\n  <td>4.5</td>\n  <td>3 – 6</td>\n  <td>250 x 250 x 1325</td>\n  <td>70</td>\n  <td>60</td>\n  <td>Separate</td>\n  <td>100</td>\n  <td>1900</td>\n</tr>\n<tr>\n  <td>DRFT3-60NS-P-C</td>\n  <td>6.0</td>\n  <td>5 – 8</td>\n  <td>250 x 250 x 1325</td>\n  <td>70</td>\n  <td>60</td>\n  <td>Separate</td>\n  <td>150</td>\n  <td>1900</td>\n</tr>\n<tr>\n  <td>DRFT4-60NS-P-C</td>\n  <td>6.0</td>\n  <td>5 – 9</td>\n  <td>295 x 295 x 1325</td>\n  <td>105</td>\n  <td>90</td>\n  <td>Separate</td>\n  <td>100</td>\n  <td>1900</td>\n</tr>\n<tr>\n  <td>DRFT5-80NS-P-C</td>\n  <td>8.0</td>\n  <td>7 – 13</td>\n  <td>295 x 295 x 1325</td>\n  <td>105</td>\n  <td>90</td>\n  <td>Separate</td>\n  <td>200</td>\n  <td>1900</td>\n</tr>\n<tr>\n  <td>DRFT5-90NS-P-C</td>\n  <td>9.0</td>\n  <td>8 – 14</td>\n  <td>295 x 295 x 1325</td>\n  <td>105</td>\n  <td>90</td>\n  <td>Separate</td>\n  <td>200</td>\n  <td>1900</td>\n</tr>\n<tr>\n  <td>DRFT6-80NS-P-C</td>\n  <td>8.0</td>\n  <td>7 – 14</td>\n  <td>355 x 355 x 1325</td>\n  <td>160</td>\n  <td>100</td>\n  <td>Separate</td>\n  <td>100</td>\n  <td>1900</td>\n</tr>\n<tr>\n  <td>DRFT6-90NS-P-C</td>\n  <td>9.0</td>\n  <td>8 – 15</td>\n  <td>355 x 355 x 1325</td>\n  <td>160</td>\n  <td>100</td>\n  <td>Separate</td>\n  <td>100</td>\n  <td>1900</td>\n</tr>\n<tr>\n  <td>DRFT6-105NS-P</td>\n  <td>10.5</td>\n  <td>9 – 16</td>\n  <td>355 x 355 x 1325</td>\n  <td>160</td>\n  <td>100</td>\n  <td>Separate</td>\n  <td>150</td>\n  <td>1900</td>\n</tr>\n<tr>\n  <td>DRFT6-120NS-P</td>\n  <td>12.0</td>\n  <td>11 – 18</td>\n  <td>355 x 355 x 1325</td>\n  <td>160</td>\n  <td>100</td>\n  <td>Separate</td>\n  <td>200</td>\n  <td>2100</td>\n</tr>\n<tr>\n  <td>DRFT9-105NS-P</td>\n  <td>10.5</td>\n  <td>10 – 16</td>\n  <td>425 x 425 x 1325</td>\n  <td>230</td>\n  <td>165</td>\n  <td>Separate</td>\n  <td>150</td>\n  <td>2100</td>\n</tr>\n<tr>\n  <td>DRFT9-120NS-P</td>\n  <td>12.0</td>\n  <td>11 – 20</td>\n  <td>425 x 425 x 1325</td>\n  <td>230</td>\n  <td>165</td>\n  <td>Separate</td>\n  <td>150</td>\n  <td>2100</td>\n</tr>\n<tr>\n  <td>DRFT9-150NS-P</td>\n  <td>15.0</td>\n  <td>14 – 25</td>\n  <td>425 x 425 x 1325</td>\n  <td>230</td>\n  <td>165</td>\n  <td>Separate</td>\n  <td>200</td>\n  <td>2100</td>\n</tr>\n<tr>\n  <td>DRFT9-180NS-P</td>\n  <td>18.0</td>\n  <td>18 – 28</td>\n  <td>425 x 425 x 1325</td>\n  <td>230</td>\n  <td>165</td>\n  <td>Separate</td>\n  <td>200</td>\n  <td>2100</td>\n</tr>\n<tr>\n  <td>DRFT12-150NS-P</td>\n  <td>15.0</td>\n  <td>15 – 26</td>\n  <td>525 x 525 x 1325</td>\n  <td>360</td>\n  <td>220</td>\n  <td>Separate</td>\n  <td>200</td>\n  <td>2300</td>\n</tr>\n<tr>\n  <td>DRFT12-180NS-P</td>\n  <td>18.0</td>\n  <td>18 – 30</td>\n  <td>525 x 525 x 1325</td>\n  <td>360</td>\n  <td>220</td>\n  <td>Separate</td>\n  <td>200</td>\n  <td>2300</td>\n</tr>\n<tr>\n  <td>DRFT12-210NS-P</td>\n  <td>21.0</td>\n  <td>22 – 35</td>\n  <td>525 x 525 x 1325</td>\n  <td>360</td>\n  <td>220</td>\n  <td>Separate</td>\n  <td>200</td>\n  <td>2300</td>\n</tr>\n<tr>\n  <td>DRFT12-240NS-P</td>\n  <td>24.0</td>\n  <td>24 – 40</td>\n  <td>525 x 525 x 1325</td>\n  <td>360</td>\n  <td>220</td>\n  <td>Separate</td>\n  <td>200</td>\n  <td>2300</td>\n</tr></tbody></table>",
+      "short_description": "<span style=\"text-align: justify;\">The </span><b style=\"text-align: justify;\">Heaterking Round</b><span style=\"text-align: justify;\"> by Stefan Lindfors delivers king-size heat and style. Its impressive height enables it to hold a large amount of stones, generating consistent, evenly circulated rejuvenating heat. Bathers can enjoy smooth or sharp and dry heat by throwing water onto either the bottom or the top of the pillar. Like all Heaterkings, the Round model’s unique Junglefire-pattern stainless steel casing imbues any sauna room with bold elegance.</span>",
+      "brand": "SAWO",
+      "type": "Heaterking Round",
+      "spec_table": null,
+      "resources": null,
+      "status": "published",
+      "visible": true,
+      "featured": false,
+      "sort_order": 0,
+      "categories": [
+        "Tower"
+      ],
+      "tags": [
+        "24.0kW",
+        "Innova",
+        "Junglefire",
+        "NS",
+        "Round",
+        "Stefan Lindfors",
+        "Heaterking",
+        "3.0 – 24.0kW",
+        "Ni",
+        "(INC-B-V2)",
+        "3.0 kW",
+        "3.5 kW",
+        "4.5 kW",
+        "6.0 kW",
+        "8.0 kW",
+        "9.0 kW",
+        "10.5 kW",
+        "12.0 kW",
+        "15.0 kW",
+        "18.0 kW",
+        "21.0 kW",
+        "24.0 kW",
+        "DRFT2-30NS-P",
+        "DRFT3-35NS-P-C",
+        "DRFT3-45NS-P-C",
+        "DRFT3-60NS-P-C",
+        "DRFT4-60NS-P-C",
+        "DRFT5-80NS-P-C",
+        "DRFT5-90NS-P-C",
+        "DRFT6-80NS-P-C",
+        "DRFT6-90NS-P-C",
+        "DRFT6-105NS-P",
+        "DRFT6-120NS-P",
+        "DRFT9-105NS-P",
+        "DRFT9-120NS-P",
+        "DRFT9-150NS-P",
+        "DRFT9-180NS-P",
+        "DRFT12-150NS-P",
+        "DRFT12-180NS-P",
+        "DRFT12-210NS-P",
+        "DRFT12-240NS-P"
+      ],
+      "features": [
+        "Power range: 3.0 – 24.0kW",
+        "Available controls: Innova (Ni)",
+        "Stainless steel with intricate Junglefire pattern",
+        "Stone spacer to prolong the life span of the heating elements",
+        "Stone capacity: 60kg to 360kg",
+        "Optional heater guard"
+      ],
+      "auto_tag_columns": [],
+      "thumbnail": "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776732556332_879b7h7mc0u.webp",
+      "images": [
+        "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776732559329_4qr63f5durn.webp"
+      ],
+      "spec_images": [
+        "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776732602374_gek8bwalbv.webp"
+      ],
+      "files": [
+        {
+          "url": "https://www.sawo.com/wp-content/uploads/2025/10/Heaterking-Round-NS-NB_FiEn-3P-1P.pdf",
+          "name": "Heaterking Round NS NB FiEn 3P 1P"
+        }
+      ],
+      "created_by": null,
+      "created_by_username": "Edgar",
+      "updated_by_username": "Edgar",
+      "created_at": "2026-04-21T00:51:51.497142+00:00",
+      "updated_at": "2026-04-21T00:52:21.915+00:00",
+      "is_deleted": false,
+      "source": "supabase"
+    },
+    {
+      "id": "26c9e85d-8efe-4d8d-97b7-606bb9e3a771",
+      "name": "Heaterking Corner NS",
+      "slug": "heaterking-corner-ns",
+      "description": "<table>\n  <thead>\n<tr>\n  <th>Heater Model</th>\n  <th>kW</th>\n  <th>Sauna Room<br>min. (m3) max.</th>\n  <th>Size of Heater (mm)<br>Length Width Height</th>\n  <th>Stones<br>(kg) w/o Stone Spacer</th>\n  <th>Stones<br>(kg) with Stone Spacer</th>\n  <th>Control</th>\n  <th colspan=\"2\">Minimum Safety Distances<br>A | B</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n  <td>DRFT3-35NS-CNR-P-C</td>\n  <td>3.5</td>\n  <td>3 – 6</td>\n  <td>300 x 300 x 1410</td>\n  <td>70</td>\n  <td>45</td>\n  <td>Separate</td>\n  <td>100</td>\n  <td>1900</td>\n</tr>\n<tr>\n  <td>DRFT3-45NS-CNR-P-C</td>\n  <td>4.5</td>\n  <td>3 – 6</td>\n  <td>300 x 300 x 1410</td>\n  <td>70</td>\n  <td>45</td>\n  <td>Separate</td>\n  <td>100</td>\n  <td>1900</td>\n</tr>\n<tr>\n  <td>DRFT3-60NS-CNR-P-C</td>\n  <td>6.0</td>\n  <td>5 – 8</td>\n  <td>300 x 300 x 1410</td>\n  <td>70</td>\n  <td>45</td>\n  <td>Separate</td>\n  <td>100</td>\n  <td>1900</td>\n</tr>\n<tr>\n  <td>DRFT6-80NS-CNR-P-C</td>\n  <td>8.0</td>\n  <td>7 – 14</td>\n  <td>410 x 410 x 1430</td>\n  <td>160</td>\n  <td>100</td>\n  <td>Separate</td>\n  <td>100</td>\n  <td>1900</td>\n</tr>\n<tr>\n  <td>DRFT6-90NS-CNR-P-C</td>\n  <td>9.0</td>\n  <td>8 – 15</td>\n  <td>410 x 410 x 1430</td>\n  <td>160</td>\n  <td>100</td>\n  <td>Separate</td>\n  <td>100</td>\n  <td>1900</td>\n</tr>\n<tr>\n  <td>DRFT6-105NS-CNR-P</td>\n  <td>10.5</td>\n  <td>9 – 16</td>\n  <td>410 x 410 x 1430</td>\n  <td>160</td>\n  <td>100</td>\n  <td>Separate</td>\n  <td>100</td>\n  <td>1900</td>\n</tr>\n<tr>\n  <td>DRFT6-120NS-CNR-P</td>\n  <td>12.0</td>\n  <td>11 – 18</td>\n  <td>410 x 410 x 1430</td>\n  <td>160</td>\n  <td>100</td>\n  <td>Separate</td>\n  <td>100</td>\n  <td>2100</td>\n</tr></tbody></table>",
+      "short_description": "<span style=\"text-align: justify;\">The </span><strong style=\"text-align: justify;\">Heaterking Corner</strong><span style=\"text-align: justify;\"> heater by Stefan Lindfors delivers king-size heat while saving sauna space. Its impressive height enables it to hold a large amount of stones, generating consistent, enveloping warmth. Bathers can enjoy either smooth or sharp and dry heat by throwing water either onto the bottom or the top of the pillar. Like all Heaterking models, the corner heater’s unique Junglefire-pattern stainless steel casing imbues any sauna room with bold elegance.</span>",
+      "brand": "SAWO",
+      "type": "Heaterking Corner",
+      "spec_table": null,
+      "resources": null,
+      "status": "published",
+      "visible": true,
+      "featured": false,
+      "sort_order": 0,
+      "categories": [
+        "Tower"
+      ],
+      "tags": [
+        "12.0kW",
+        "Innova",
+        "Junglefire",
+        "NS",
+        "Saunova",
+        "Stefan Lindfors",
+        "3.5 kW",
+        "4.5 kW",
+        "6.0 kW",
+        "8.0 kW",
+        "9.0 kW",
+        "10.5 kW",
+        "12.0 kW",
+        "DRFT3-35NS-CNR-P-C",
+        "DRFT3-45NS-CNR-P-C",
+        "DRFT3-60NS-CNR-P-C",
+        "DRFT6-80NS-CNR-P-C",
+        "DRFT6-90NS-CNR-P-C",
+        "DRFT6-105NS-CNR-P",
+        "DRFT6-120NS-CNR-P",
+        "Heaterking"
+      ],
+      "features": [
+        "Power range: 3.5 – 12.0kW",
+        "Available controls: Saunova/Innova (NS)",
+        "Stainless steel with intricate Junglefire pattern",
+        "Stone spacer to prolong the life span of heating elements",
+        "Stone capacity: 45kg to 160kg",
+        "Corner-type stainless steel casing",
+        "Heat reflector included",
+        "Optional heater guard"
+      ],
+      "auto_tag_columns": [],
+      "thumbnail": "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776731588373_sblfipxtpr.webp",
+      "images": [],
+      "spec_images": [
+        "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776731776525_lo5k1d5nyml.webp"
+      ],
+      "files": [
+        {
+          "url": "https://www.sawo.com/wp-content/uploads/2025/08/Heaterking-Corner-NS_FiEn-3P-1P.pdf",
+          "name": "Heaterking Corner NS FiEn 3P 1P"
+        }
+      ],
+      "created_by": null,
+      "created_by_username": "Edgar",
+      "updated_by_username": "Edgar",
+      "created_at": "2026-04-21T00:44:34.031257+00:00",
+      "updated_at": "2026-04-21T00:53:59.2+00:00",
+      "is_deleted": false,
+      "source": "supabase"
+    },
+    {
+      "id": "358faebf-1aba-47d6-9cfd-1fc7a725ab08",
+      "name": "Heaterking Wall NS",
+      "slug": "heaterking-wall-ns",
+      "description": "<table>\n  <thead>\n<tr>\n  <th>Heater Model</th>\n  <th>kW</th>\n  <th>Sauna Room<br>min. (m3) max.</th>\n  <th>Size of Heater (mm)<br>Length Width Height</th>\n  <th>Stones<br>(kg) w/o Stone Spacer</th>\n  <th>Stones<br>(kg) with Stone Spacer</th>\n  <th>Control</th>\n  <th colspan=\"2\">Minimum Safety Distances<br>A | B</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n  <td>DRFT3-35NS-WL-P-C</td>\n  <td>3.5</td>\n  <td>3 – 6</td>\n  <td>220 x 395 x 1440</td>\n  <td>80</td>\n  <td>60</td>\n  <td>Separate</td>\n  <td>100</td>\n  <td>1900</td>\n</tr>\n<tr>\n  <td>DRFT3-45NS-WL-P-C</td>\n  <td>4.5</td>\n  <td>3 – 6</td>\n  <td>220 x 395 x 1440</td>\n  <td>80</td>\n  <td>60</td>\n  <td>Separate</td>\n  <td>100</td>\n  <td>1900</td>\n</tr>\n<tr>\n  <td>DRFT3-60NS-WL-P-C</td>\n  <td>6.0</td>\n  <td>5 – 8</td>\n  <td>220 x 395 x 1440</td>\n  <td>80</td>\n  <td>60</td>\n  <td>Separate</td>\n  <td>100</td>\n  <td>1900</td>\n</tr>\n<tr>\n  <td>DRFT6-80NS-WL-P-C</td>\n  <td>8.0</td>\n  <td>4 – 14</td>\n  <td>300 x 550 x 1475</td>\n  <td>160</td>\n  <td>105</td>\n  <td>Separate</td>\n  <td>100</td>\n  <td>1900</td>\n</tr>\n<tr>\n  <td>DRFT6-90NS-WL-P-C</td>\n  <td>9.0</td>\n  <td>8 – 15</td>\n  <td>300 x 550 x 1475</td>\n  <td>160</td>\n  <td>105</td>\n  <td>Separate</td>\n  <td>100</td>\n  <td>1900</td>\n</tr>\n<tr>\n  <td>DRFT6-105NS-WL-P</td>\n  <td>10.5</td>\n  <td>9 – 16</td>\n  <td>300 x 550 x 1475</td>\n  <td>160</td>\n  <td>105</td>\n  <td>Separate</td>\n  <td>100</td>\n  <td>1900</td>\n</tr>\n<tr>\n  <td>DRFT6-120NS-WL-P</td>\n  <td>12.0</td>\n  <td>11 – 18</td>\n  <td>300 x 550 x 1475</td>\n  <td>160</td>\n  <td>105</td>\n  <td>Separate</td>\n  <td>100</td>\n  <td>2100</td>\n</tr>\n<tr>\n  <td>DRFT9-105NS-WL-P</td>\n  <td>10.5</td>\n  <td>10 – 16</td>\n  <td>350 x 650 x 1510</td>\n  <td>180</td>\n  <td>115</td>\n  <td>Separate</td>\n  <td>100</td>\n  <td>2100</td>\n</tr>\n<tr>\n  <td>DRFT9-120NS-WL-P</td>\n  <td>12.0</td>\n  <td>11 – 20</td>\n  <td>350 x 650 x 1510</td>\n  <td>180</td>\n  <td>115</td>\n  <td>Separate</td>\n  <td>100</td>\n  <td>2100</td>\n</tr>\n<tr>\n  <td>DRFT9-150NS-WL-P</td>\n  <td>15.0</td>\n  <td>14 – 25</td>\n  <td>350 x 650 x 1510</td>\n  <td>180</td>\n  <td>115</td>\n  <td>Separate</td>\n  <td>100</td>\n  <td>2100</td>\n</tr>\n<tr>\n  <td>DRFT9-180NS-WL-P</td>\n  <td>18.0</td>\n  <td>18 – 28</td>\n  <td>350 x 650 x 1510</td>\n  <td>180</td>\n  <td>115</td>\n  <td>Separate</td>\n  <td>100</td>\n  <td>2100</td>\n</tr>\n<tr>\n  <td>DRFT12-150NS-WL-P</td>\n  <td>15.0</td>\n  <td>15 – 26</td>\n  <td>420 x 790 x 1545</td>\n  <td>250</td>\n  <td>165</td>\n  <td>Separate</td>\n  <td>100</td>\n  <td>2300</td>\n</tr>\n<tr>\n  <td>DRFT12-180NS-WL-P</td>\n  <td>18.0</td>\n  <td>18 – 30</td>\n  <td>420 x 790 x 1545</td>\n  <td>250</td>\n  <td>165</td>\n  <td>Separate</td>\n  <td>100</td>\n  <td>2300</td>\n</tr>\n<tr>\n  <td>DRFT12-210NS-WL-P</td>\n  <td>21.0</td>\n  <td>22 – 35</td>\n  <td>420 x 790 x 1545</td>\n  <td>250</td>\n  <td>165</td>\n  <td>Separate</td>\n  <td>100</td>\n  <td>2300</td>\n</tr>\n<tr>\n  <td>DRFT12-240NS-WL-P</td>\n  <td>24.0</td>\n  <td>24 – 40</td>\n  <td>420 x 790 x 1545</td>\n  <td>250</td>\n  <td>165</td>\n  <td>Separate</td>\n  <td>100</td>\n  <td>2300</td>\n</tr></tbody></table>",
+      "short_description": "<span style=\"text-align: justify;\">The </span><strong style=\"text-align: justify;\">Heaterking Wall</strong><span style=\"text-align: justify;\"> heater by Stefan Lindfors gives king-size heat while saving sauna space. Its impressive height ensures it can hold a massive amount of stones and generate consistent, evenly distributed heat. Bathers can enjoy either smooth or sharp and dry heat by throwing water either onto the bottom or the top of the pillar. Like all Heaterkings, the Wall model’s unique Junglefire-pattern stainless steel casing imbues any sauna room with bold elegance.</span>",
+      "brand": "SAWO",
+      "type": "Heaterking Wall",
+      "spec_table": null,
+      "resources": null,
+      "status": "published",
+      "visible": true,
+      "featured": false,
+      "sort_order": 0,
+      "categories": [
+        "Tower"
+      ],
+      "tags": [
+        "12.0kW",
+        "Innova",
+        "Junglefire",
+        "NS",
+        "Saunova",
+        "Stefan Lindfors",
+        "3.5 kW",
+        "4.5 kW",
+        "6.0 kW",
+        "8.0 kW",
+        "9.0 kW",
+        "10.5 kW",
+        "12.0 kW",
+        "15.0 kW",
+        "18.0 kW",
+        "21.0 kW",
+        "24.0 kW",
+        "DRFT3-35NS-WL-P-C",
+        "DRFT3-45NS-WL-P-C",
+        "DRFT3-60NS-WL-P-C",
+        "DRFT6-80NS-WL-P-C",
+        "DRFT6-90NS-WL-P-C",
+        "DRFT6-105NS-WL-P",
+        "DRFT6-120NS-WL-P",
+        "DRFT9-105NS-WL-P",
+        "DRFT9-120NS-WL-P",
+        "DRFT9-150NS-WL-P",
+        "DRFT9-180NS-WL-P",
+        "DRFT12-150NS-WL-P",
+        "DRFT12-180NS-WL-P",
+        "DRFT12-210NS-WL-P",
+        "DRFT12-240NS-WL-P",
+        "Wall",
+        "Heaterking"
+      ],
+      "features": [
+        "Power range: 3.5 – 12.0kW",
+        "Available controls: Saunova/Innova (NS)",
+        "Stainless steel with intricate Junglefire pattern",
+        "Stone spacer to prolong the life span of heating elements",
+        "Stone capacity: 45kg to 160kg",
+        "Corner-type stainless steel casing",
+        "Heat reflector included",
+        "Optional heater guard"
+      ],
+      "auto_tag_columns": [],
+      "thumbnail": "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776732340446_kpnc33zel6b.webp",
+      "images": [
+        "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776732345145_utpjvgovpf.webp"
+      ],
+      "spec_images": [
+        "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776732456744_88ia0kz0mzq.webp"
+      ],
+      "files": [
+        {
+          "url": "https://www.sawo.com/wp-content/uploads/2025/10/Heaterking-Wall-NS-NB_FiEn-3P-1P.pdf",
+          "name": "Heaterking Wall NS NB FiEn 3P 1P"
+        }
+      ],
+      "created_by": null,
+      "created_by_username": "Edgar",
+      "updated_by_username": "Edgar",
+      "created_at": "2026-04-21T00:47:47.021687+00:00",
+      "updated_at": "2026-04-21T00:53:32.248+00:00",
+      "is_deleted": false,
+      "source": "supabase"
+    },
+    {
+      "id": "b675e512-24e0-4a11-b734-1ef04a84c42d",
+      "name": "Phoenix Ni2",
+      "slug": "phoenix-ni2",
+      "description": "<table>\n  <thead>\n<tr>\n  <th>Heater Model</th>\n  <th>kW</th>\n  <th>Sauna Room<br>min. (m³) max.</th>\n  <th>Size of Heater (mm)<br>Length Width Height</th>\n  <th>Stones<br>(kg)</th>\n  <th>Control</th>\n  <th colspan=\"2\">Minimum Safety Distances<br>A | B</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n  <td>PNX3-45Ni2-P-C</td>\n  <td>4.5</td>\n  <td>3 – 6</td>\n  <td>340 x 375 x 1100</td>\n  <td>85</td>\n  <td>Saunova</td>\n  <td>100</td>\n  <td>1900</td>\n</tr>\n<tr>\n  <td>PNX3-60Ni2-P-C</td>\n  <td>6.0</td>\n  <td>5 – 9</td>\n  <td>340 x 375 x 1100</td>\n  <td>85</td>\n  <td>Saunova</td>\n  <td>125</td>\n  <td>1900</td>\n</tr>\n<tr>\n  <td>PNX3-75Ni2-P-C</td>\n  <td>7.5</td>\n  <td>7 – 13</td>\n  <td>340 x 375 x 1100</td>\n  <td>85</td>\n  <td>Saunova</td>\n  <td>125</td>\n  <td>1900</td>\n</tr>\n<tr>\n  <td>PNX3-90Ni2-P-C</td>\n  <td>9.0</td>\n  <td>8 – 14</td>\n  <td>340 x 375 x 1100</td>\n  <td>85</td>\n  <td>Saunova</td>\n  <td>150</td>\n  <td>1900</td>\n</tr>\n<tr>\n  <td>PNX6-90Ni2-P-C</td>\n  <td>9.0</td>\n  <td>8 – 15</td>\n  <td>475 x 525 x 1175</td>\n  <td>130</td>\n  <td>Saunova</td>\n  <td>150</td>\n  <td>1900</td>\n</tr></tbody></table>",
+      "short_description": "<span style=\"text-align: justify;\">The </span><strong style=\"text-align: justify;\">Phoenix</strong><span style=\"text-align: justify;\"> incorporates the shape of the Olympic torch into its elegant, minimalist design to signal vitality and renewal. Its broad top accommodates more stones, which enables it to generate a greater amount of pampering steam. It definitely calls to mind the metaphor of rising from the ashes, in this case after a long day (or night). The Phoenix also comes with a stone spacer, which prolongs the life span of its heating elements.</span>",
+      "brand": "SAWO",
+      "type": "Phoenix",
+      "spec_table": null,
+      "resources": null,
+      "status": "published",
+      "visible": true,
+      "featured": false,
+      "sort_order": 0,
+      "categories": [],
+      "tags": [
+        "4.5 – 9.0kW",
+        "Ni2",
+        "Saunova",
+        "4.5 kW",
+        "6.0 kW",
+        "7.5 kW",
+        "9.0 kW",
+        "PNX3-45Ni2-P-C",
+        "PNX3-60Ni2-P-C",
+        "PNX3-75Ni2-P-C",
+        "PNX3-90Ni2-P-C",
+        "PNX6-90Ni2-P-C"
+      ],
+      "features": [
+        "Power range: 4.5 – 9.0kW",
+        "Available controls: Saunova (Ni2)",
+        "Built-in stone spacer",
+        "Adjustable legs",
+        "Stainless steel casing",
+        "Optional heater guard",
+        "Optional integration collar"
+      ],
+      "auto_tag_columns": [],
+      "thumbnail": "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776733456705_rsjn6o1sywk.webp",
+      "images": [
+        "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776733461492_dkuykrvklnr.webp"
+      ],
+      "spec_images": [
+        "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776733733716_x57fzcl8ahc.webp"
+      ],
+      "files": [
+        {
+          "url": "https://www.sawo.com/wp-content/uploads/2025/07/Phoenix-Ni2_FiEn-3P-1P-Edited.pdf",
+          "name": "Phoenix Ni2 FiEn 3P 1P Edited"
+        }
+      ],
+      "created_by": null,
+      "created_by_username": "Edgar",
+      "updated_by_username": "Edgar",
+      "created_at": "2026-04-21T01:09:45.161674+00:00",
+      "updated_at": "2026-04-21T01:10:15.763+00:00",
+      "is_deleted": false,
+      "source": "supabase"
+    },
+    {
+      "id": "74bd6255-103e-44b5-908d-bd36c90724dc",
+      "name": "Phoenix NS",
+      "slug": "phoenix-ns",
+      "description": "<table>\n  <thead>\n<tr>\n  <th>Heater Model</th>\n  <th>kW</th>\n  <th>Sauna Room<br>min. (m³) max.</th>\n  <th>Size of Heater (mm)<br>Length Width Height</th>\n  <th>Stones<br>(kg)</th>\n  <th>Control</th>\n  <th colspan=\"2\">Minimum Safety Distances<br>A | B</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n  <td>PNX3-45NS-P-C</td>\n  <td>4.5</td>\n  <td>3 – 6</td>\n  <td>340 x 375 x 1100</td>\n  <td>85</td>\n  <td>Separate</td>\n  <td>100</td>\n  <td>1900</td>\n</tr>\n<tr>\n  <td>PNX3-60NS-P-C</td>\n  <td>6.0</td>\n  <td>5 – 9</td>\n  <td>340 x 375 x 1100</td>\n  <td>85</td>\n  <td>Separate</td>\n  <td>125</td>\n  <td>1900</td>\n</tr>\n<tr>\n  <td>PNX3-75NS-P-C</td>\n  <td>7.5</td>\n  <td>7 – 12</td>\n  <td>340 x 375 x 1100</td>\n  <td>85</td>\n  <td>Separate</td>\n  <td>125</td>\n  <td>1900</td>\n</tr>\n<tr>\n  <td>PNX3-90NS-P-C</td>\n  <td>9.0</td>\n  <td>8 – 14</td>\n  <td>340 x 375 x 1100</td>\n  <td>85</td>\n  <td>Separate</td>\n  <td>150</td>\n  <td>1900</td>\n</tr>\n<tr>\n  <td>PNX6-90NS-P-C</td>\n  <td>9.0</td>\n  <td>8 – 15</td>\n  <td>475 x 525 x 1175</td>\n  <td>130</td>\n  <td>Separate</td>\n  <td>150</td>\n  <td>1900</td>\n</tr>\n<tr>\n  <td>PNX6-105NS-P</td>\n  <td>10.5</td>\n  <td>9 – 16</td>\n  <td>475 x 525 x 1175</td>\n  <td>130</td>\n  <td>Separate</td>\n  <td>150</td>\n  <td>1900</td>\n</tr>\n<tr>\n  <td>PNX6-120NS-P</td>\n  <td>12.0</td>\n  <td>11 – 18</td>\n  <td>475 x 525 x 1175</td>\n  <td>130</td>\n  <td>Separate</td>\n  <td>150</td>\n  <td>2100</td>\n</tr>\n<tr>\n  <td>PNX6-150NS-P</td>\n  <td>15.0</td>\n  <td>14 – 25</td>\n  <td>475 x 525 x 1175</td>\n  <td>130</td>\n  <td>Separate</td>\n  <td>150</td>\n  <td>2100</td>\n</tr>\n<tr>\n  <td>PNX6-180NS-P</td>\n  <td>18.0</td>\n  <td>18 – 28</td>\n  <td>475 x 525 x 1175</td>\n  <td>130</td>\n  <td>Separate</td>\n  <td>175</td>\n  <td>2100</td>\n</tr></tbody></table>",
+      "short_description": "<span style=\"text-align: justify;\">The </span><strong style=\"text-align: justify;\">Phoenix</strong><span style=\"text-align: justify;\"> incorporates the shape of the Olympic torch into its elegant, minimalist design to signal vitality and renewal. Its broad top accommodates more stones, which enables it to generate a greater amount of pampering steam. It definitely calls to mind the metaphor of rising from the ashes, in this case after a long day (or night). The Phoenix also comes with a stone spacer, which prolongs the life span of its heating elements.</span>",
+      "brand": "SAWO",
+      "type": null,
+      "spec_table": null,
+      "resources": null,
+      "status": "published",
+      "visible": true,
+      "featured": false,
+      "sort_order": 0,
+      "categories": [
+        "Tower"
+      ],
+      "tags": [
+        "4.5 – 9.0kW",
+        "Innova",
+        "NS",
+        "Saunova",
+        "4.5 kW",
+        "6.0 kW",
+        "7.5 kW",
+        "9.0 kW",
+        "10.5 kW",
+        "12.0 kW",
+        "15.0 kW",
+        "18.0 kW",
+        "PNX3-45NS-P-C",
+        "PNX3-60NS-P-C",
+        "PNX3-75NS-P-C",
+        "PNX3-90NS-P-C",
+        "PNX6-90NS-P-C",
+        "PNX6-105NS-P",
+        "PNX6-120NS-P",
+        "PNX6-150NS-P",
+        "PNX6-180NS-P"
+      ],
+      "features": [
+        "Power range: 4.5 – 9.0kW",
+        "Available controls: Saunova/Innova (NS)",
+        "Built-in stone spacer",
+        "Adjustable legs",
+        "Stainless steel casing",
+        "Optional heater guard",
+        "Optional integration collar"
+      ],
+      "auto_tag_columns": [],
+      "thumbnail": "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776733848108_bkynm7gvf4.webp",
+      "images": [
+        "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776733851115_cno192ihqv.webp"
+      ],
+      "spec_images": [
+        "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776733964865_ngl82znl9ne.webp"
+      ],
+      "files": [
+        {
+          "url": "https://www.sawo.com/wp-content/uploads/2025/10/Phoenix-NS-NB_FiEn-3P-1P.pdf",
+          "name": "Phoenix NS NB FiEn 3P 1P"
+        }
+      ],
+      "created_by": null,
+      "created_by_username": "Edgar",
+      "updated_by_username": "Edgar",
+      "created_at": "2026-04-21T01:30:33.210096+00:00",
+      "updated_at": "2026-04-21T01:31:03.573+00:00",
+      "is_deleted": false,
+      "source": "supabase"
+    },
+    {
+      "id": "fe13bcbb-0dc8-4140-b069-ee4d6c9c0c45",
+      "name": "Fiberjungle NS",
+      "slug": "fiberjungle-ns",
+      "description": "<table>\n  <thead>\n<tr>\n  <th>Heater Model</th>\n  <th>kW</th>\n  <th>Sauna Room<br>min. (m3) max.</th>\n  <th>Size of Heater (mm)<br>Length Width Height</th>\n  <th>Stones<br>(kg)</th>\n  <th>Control</th>\n  <th colspan=\"2\">Minimum Safety Distances<br>A | B</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n  <td>DRF3-45NS-P-C</td>\n  <td>4.5</td>\n  <td>3 – 6</td>\n  <td>300 x 300 x 930</td>\n  <td>60</td>\n  <td>Separate</td>\n  <td>100</td>\n  <td>1900</td>\n</tr>\n<tr>\n  <td>DRF3-60NS-P-C</td>\n  <td>6.0</td>\n  <td>5 – 9</td>\n  <td>300 x 300 x 930</td>\n  <td>60</td>\n  <td>Separate</td>\n  <td>100</td>\n  <td>1900</td>\n</tr>\n<tr>\n  <td>DRF3-75NS-P-C</td>\n  <td>7.5</td>\n  <td>7 – 12</td>\n  <td>300 x 300 x 930</td>\n  <td>60</td>\n  <td>Separate</td>\n  <td>100</td>\n  <td>1900</td>\n</tr>\n<tr>\n  <td>DRF3-90NS-P-C</td>\n  <td>9.0</td>\n  <td>8 – 13</td>\n  <td>300 x 300 x 930</td>\n  <td>60</td>\n  <td>Separate</td>\n  <td>100</td>\n  <td>1900</td>\n</tr></tbody></table>",
+      "short_description": "<span style=\"text-align: justify;\">The </span><strong style=\"text-align: justify;\"><b>Fiberjungle</b></strong><span style=\"text-align: justify;\">, designed by renowned Finnish designer Stefan Lindfors, is impressive in appearance and performance. With its height, it can hold a great amount of stones and generate consistent reinvigorating warmth. With its Junglefire-pattern casing with black cool-to-touch fibercoating, the Fiberjungle is a bold yet elegant sauna centerpiece.</span>",
+      "brand": "SAWO",
+      "type": "Fiberjungle",
+      "spec_table": null,
+      "resources": null,
+      "status": "published",
+      "visible": true,
+      "featured": false,
+      "sort_order": 0,
+      "categories": [
+        "Tower"
+      ],
+      "tags": [
+        "4.5 – 9.0kW",
+        "Innova",
+        "Junglefire",
+        "NS",
+        "Saunova",
+        "Temperature",
+        "Black",
+        "Stefan Lindfors",
+        "4.5 kW",
+        "6.0 kW",
+        "7.5 kW",
+        "9.0 kW",
+        "DRF3-45NS-P-C",
+        "DRF3-60NS-P-C",
+        "DRF3-75NS-P-C",
+        "DRF3-90NS-P-C"
+      ],
+      "features": [
+        "Power range: 4.5 – 9.0kW",
+        "Available controls: Saunova/Innova (NS)",
+        "Adjustable legs",
+        "Fiber coated with Junglefire pattern",
+        "Coating shields the heater from moisture and high temperature",
+        "Heating element spacer to prolong the life of heating elements"
+      ],
+      "auto_tag_columns": [],
+      "thumbnail": "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776735091304_698kv14xbq9.webp",
+      "images": [
+        "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776735094382_4hcug1ihi59.webp"
+      ],
+      "spec_images": [
+        "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776735153341_6cdtag4aesr.webp"
+      ],
+      "files": [
+        {
+          "url": "https://www.sawo.com/wp-content/uploads/2025/10/Fiberjungle-NS-NB_FiEn-3P-1P.pdf",
+          "name": "Fiberjungle NS NB FiEn 3P 1P"
+        }
+      ],
+      "created_by": null,
+      "created_by_username": "Edgar",
+      "updated_by_username": "Edgar",
+      "created_at": "2026-04-21T01:33:45.305065+00:00",
+      "updated_at": "2026-04-21T01:34:15.922+00:00",
+      "is_deleted": false,
+      "source": "supabase"
+    },
+    {
+      "id": "c8c26a29-daf3-4fd9-9bd5-50f5b3c084b9",
+      "name": "Savonia Combi Fiber Coated NS",
+      "slug": "savonia-combi-fiber-coated-ns",
+      "description": "<table>\n  <thead>\n<tr>\n  <th>Heater Model</th>\n  <th>kW\n<br>Heater</th>\n  <th>kW\n<br>Tank</th>\n  <th>Sauna Room<br>min. (m3) max.</th>\n  <th>Size of Heater (mm)<br>Length Width Height</th>\n  <th>Stones<br>(kg)</th>\n  <th>Control</th>\n  <th colspan=\"4\">Minimum Safety Distances<br>A | B | C | D</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n  <td>SAVC-90NS-Z-F</td>\n  <td>9.0</td>\n  <td>1 x 2.0</td>\n  <td>8 – 14</td>\n  <td>510 x 420 x 655</td>\n  <td>40 – 50</td>\n  <td>Separate</td>\n  <td>1200</td>\n  <td>110</td>\n  <td>50</td>\n  <td>1900</td>\n</tr>\n<tr>\n  <td>SAVC-105NS-Z-F</td>\n  <td>10.5</td>\n  <td>1 x 2.0</td>\n  <td>9 – 15</td>\n  <td>510 x 420 x 655</td>\n  <td>40 – 50</td>\n  <td>Separate</td>\n  <td>1200</td>\n  <td>120</td>\n  <td>60</td>\n  <td>1900</td>\n</tr>\n<tr>\n  <td>SAVC-120NS-Z-F</td>\n  <td>12.0</td>\n  <td>1 x 2.0</td>\n  <td>10 – 18</td>\n  <td>510 x 420 x 655</td>\n  <td>40 – 50</td>\n  <td>Separate</td>\n  <td>1400</td>\n  <td>130</td>\n  <td>70</td>\n  <td>2100</td>\n</tr>\n<tr>\n  <td>SAVC-150NS-Z-F</td>\n  <td>15.0</td>\n  <td>2 x 2.0</td>\n  <td>13 – 23</td>\n  <td>715 x 420 x 655</td>\n  <td>60 – 75</td>\n  <td>Separate</td>\n  <td>1400</td>\n  <td>160</td>\n  <td>100</td>\n  <td>2100</td>\n</tr>\n<tr>\n  <td>SAVC-180NS-Z-F</td>\n  <td>18.0</td>\n  <td>2 x 2.0</td>\n  <td>17 – 29</td>\n  <td>715 x 420 x 655</td>\n  <td>60 – 75</td>\n  <td>Separate</td>\n  <td>1400</td>\n  <td>160</td>\n  <td>100</td>\n  <td>2100</td>\n</tr></tbody></table>",
+      "short_description": "<strong style=\"text-align: justify;\">Savonia Combi</strong><span style=\"text-align: justify;\"> offers the best of both worlds: the heat of a Savonia and a water tank for more steam and humidity. It is available with cool-to-touch fiber coating and an auto-refill function for the water tank.</span>",
+      "brand": "SAWO",
+      "type": "Savonia",
+      "spec_table": null,
+      "resources": null,
+      "status": "published",
+      "visible": true,
+      "featured": false,
+      "sort_order": 0,
+      "categories": [
+        "Floor"
+      ],
+      "tags": [
+        "18.0kW",
+        "9.0 – 18.0kW",
+        "Combi",
+        "Innova",
+        "NS",
+        "Saunova",
+        "Savonia",
+        "9.0 kW",
+        "10.5 kW",
+        "12.0 kW",
+        "15.0 kW",
+        "18.0 kW",
+        "SAVC-90NS-Z-F",
+        "SAVC-105NS-Z-F",
+        "SAVC-120NS-Z-F",
+        "SAVC-150NS-Z-F",
+        "SAVC-180NS-Z-F"
+      ],
+      "features": [
+        "Power range: 9.0 – 18.0kW",
+        "Available controls: Saunova/Innova (NS)",
+        "Cool-to-touch fiber coating",
+        "Built-in aroma cups",
+        "Separate water tank with 1,0kW or 2,0kW steam generator",
+        "Adjustable legs",
+        "Optional auto refill, for automatically filled water tank"
+      ],
+      "auto_tag_columns": null,
+      "thumbnail": "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776735425911_bki99rl16o.webp",
+      "images": [],
+      "spec_images": [
+        "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776735529760_z82pm0ocjdd.webp"
+      ],
+      "files": [
+        {
+          "url": "https://www.sawo.com/wp-content/uploads/2025/10/Savonia-Combi-NS-NB_FiEn-3P-1P.pdf",
+          "name": "Savonia Combi NS NB FiEn 3P 1P"
+        }
+      ],
+      "created_by": null,
+      "created_by_username": "Edgar",
+      "updated_by_username": "Edgar",
+      "created_at": "2026-04-21T01:38:27.461366+00:00",
+      "updated_at": "2026-04-21T01:38:57.886+00:00",
+      "is_deleted": false,
+      "source": "supabase"
     }
   ]
 }
