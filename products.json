@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-04-21T02:43:38.082Z",
+  "updatedAt": "2026-04-21T02:44:17.693Z",
   "products": [
     {
       "id": "50834970-4527-4954-9cd7-8ac89d7bd70f",
@@ -7914,7 +7914,7 @@
     },
     {
       "id": "7329b32a-fc8f-49b9-861d-9505dc46a774",
-      "name": "MANDANI",
+      "name": "MANDANIA",
       "slug": "mandani",
       "description": "",
       "short_description": "",
@@ -7938,7 +7938,7 @@
       "created_by_username": null,
       "updated_by_username": null,
       "created_at": "2026-04-21T02:43:36.337Z",
-      "updated_at": "2026-04-21T02:43:36.337Z",
+      "updated_at": "2026-04-21T02:44:15.689Z",
       "is_deleted": false
     }
   ]
