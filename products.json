@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-04-21T01:37:49.591Z",
+  "updatedAt": "2026-04-21T01:40:25.939Z",
   "products": [
     {
       "id": "50834970-4527-4954-9cd7-8ac89d7bd70f",
@@ -176,7 +176,7 @@
         "Innova",
         "Interface Holder"
       ],
-      "auto_tag_columns": [],
+      "auto_tag_columns": null,
       "features": [],
       "brand": "SAWO",
       "type": "Interface Holder",
@@ -273,7 +273,7 @@
         "NS",
         "18.0 kW"
       ],
-      "auto_tag_columns": [],
+      "auto_tag_columns": null,
       "features": [],
       "brand": "SAWO",
       "type": "Coming Soon",
@@ -424,7 +424,7 @@
         "Cables",
         "Spare Parts"
       ],
-      "auto_tag_columns": [],
+      "auto_tag_columns": null,
       "features": [],
       "brand": "SAWO",
       "type": "Spare Parts",
@@ -747,7 +747,7 @@
         "Saunova",
         "9.0 kW"
       ],
-      "auto_tag_columns": [],
+      "auto_tag_columns": null,
       "features": [
         "Package includes Saunova Contactor Unit, 1m RJ12-cable",
         "New casing design for easier installation with additional space and wiring options"
@@ -1206,7 +1206,7 @@
         "STN",
         "Interface Holder"
       ],
-      "auto_tag_columns": [],
+      "auto_tag_columns": null,
       "features": [],
       "brand": "SAWO",
       "type": "Interface Holder",
@@ -1725,7 +1725,7 @@
         "NS",
         "9.0 kW"
       ],
-      "auto_tag_columns": [],
+      "auto_tag_columns": null,
       "features": [
         "Remote control: Set schedule and control the heater from anywhere and any distance.",
         "Intuitive interface: Use the app and controls with ease, thanks to our streamlined UI/UX design.",
@@ -1768,7 +1768,7 @@
         "Saunova",
         "9.0 kW"
       ],
-      "auto_tag_columns": [],
+      "auto_tag_columns": null,
       "features": [
         "Dimension: (W)104 x (H)147 x (D) 137mm3",
         "More than 9kW needs a Contactor",
@@ -1816,7 +1816,7 @@
         "Innova",
         "Interface Holder"
       ],
-      "auto_tag_columns": [],
+      "auto_tag_columns": null,
       "features": [],
       "brand": "SAWO",
       "type": "Interface Holder",
@@ -6309,7 +6309,7 @@
       "categories": [],
       "tags": [],
       "features": [],
-      "auto_tag_columns": [],
+      "auto_tag_columns": null,
       "thumbnail": "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776644962668_p9rdgmco1h.webp",
       "images": [],
       "spec_images": [],
@@ -7759,6 +7759,71 @@
       "updated_by_username": "Edgar",
       "created_at": "2026-04-21T01:33:45.305065+00:00",
       "updated_at": "2026-04-21T01:34:15.922+00:00",
+      "is_deleted": false,
+      "source": "supabase"
+    },
+    {
+      "id": "c8c26a29-daf3-4fd9-9bd5-50f5b3c084b9",
+      "name": "Savonia Combi Fiber Coated NS",
+      "slug": "savonia-combi-fiber-coated-ns",
+      "description": "<table>\n  <thead>\n<tr>\n  <th>Heater Model</th>\n  <th>kW\n<br>Heater</th>\n  <th>kW\n<br>Tank</th>\n  <th>Sauna Room<br>min. (m3) max.</th>\n  <th>Size of Heater (mm)<br>Length Width Height</th>\n  <th>Stones<br>(kg)</th>\n  <th>Control</th>\n  <th colspan=\"4\">Minimum Safety Distances<br>A | B | C | D</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n  <td>SAVC-90NS-Z-F</td>\n  <td>9.0</td>\n  <td>1 x 2.0</td>\n  <td>8 – 14</td>\n  <td>510 x 420 x 655</td>\n  <td>40 – 50</td>\n  <td>Separate</td>\n  <td>1200</td>\n  <td>110</td>\n  <td>50</td>\n  <td>1900</td>\n</tr>\n<tr>\n  <td>SAVC-105NS-Z-F</td>\n  <td>10.5</td>\n  <td>1 x 2.0</td>\n  <td>9 – 15</td>\n  <td>510 x 420 x 655</td>\n  <td>40 – 50</td>\n  <td>Separate</td>\n  <td>1200</td>\n  <td>120</td>\n  <td>60</td>\n  <td>1900</td>\n</tr>\n<tr>\n  <td>SAVC-120NS-Z-F</td>\n  <td>12.0</td>\n  <td>1 x 2.0</td>\n  <td>10 – 18</td>\n  <td>510 x 420 x 655</td>\n  <td>40 – 50</td>\n  <td>Separate</td>\n  <td>1400</td>\n  <td>130</td>\n  <td>70</td>\n  <td>2100</td>\n</tr>\n<tr>\n  <td>SAVC-150NS-Z-F</td>\n  <td>15.0</td>\n  <td>2 x 2.0</td>\n  <td>13 – 23</td>\n  <td>715 x 420 x 655</td>\n  <td>60 – 75</td>\n  <td>Separate</td>\n  <td>1400</td>\n  <td>160</td>\n  <td>100</td>\n  <td>2100</td>\n</tr>\n<tr>\n  <td>SAVC-180NS-Z-F</td>\n  <td>18.0</td>\n  <td>2 x 2.0</td>\n  <td>17 – 29</td>\n  <td>715 x 420 x 655</td>\n  <td>60 – 75</td>\n  <td>Separate</td>\n  <td>1400</td>\n  <td>160</td>\n  <td>100</td>\n  <td>2100</td>\n</tr></tbody></table>",
+      "short_description": "<strong style=\"text-align: justify;\">Savonia Combi</strong><span style=\"text-align: justify;\"> offers the best of both worlds: the heat of a Savonia and a water tank for more steam and humidity. It is available with cool-to-touch fiber coating and an auto-refill function for the water tank.</span>",
+      "brand": "SAWO",
+      "type": "Savonia",
+      "spec_table": null,
+      "resources": null,
+      "status": "published",
+      "visible": true,
+      "featured": false,
+      "sort_order": 0,
+      "categories": [
+        "Floor"
+      ],
+      "tags": [
+        "18.0kW",
+        "9.0 – 18.0kW",
+        "Combi",
+        "Innova",
+        "NS",
+        "Saunova",
+        "Savonia",
+        "9.0 kW",
+        "10.5 kW",
+        "12.0 kW",
+        "15.0 kW",
+        "18.0 kW",
+        "SAVC-90NS-Z-F",
+        "SAVC-105NS-Z-F",
+        "SAVC-120NS-Z-F",
+        "SAVC-150NS-Z-F",
+        "SAVC-180NS-Z-F"
+      ],
+      "features": [
+        "Power range: 9.0 – 18.0kW",
+        "Available controls: Saunova/Innova (NS)",
+        "Cool-to-touch fiber coating",
+        "Built-in aroma cups",
+        "Separate water tank with 1,0kW or 2,0kW steam generator",
+        "Adjustable legs",
+        "Optional auto refill, for automatically filled water tank"
+      ],
+      "auto_tag_columns": null,
+      "thumbnail": "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776735425911_bki99rl16o.webp",
+      "images": [],
+      "spec_images": [
+        "https://qsdfdfuooeythaioucpx.supabase.co/storage/v1/object/public/product-images/1776735529760_z82pm0ocjdd.webp"
+      ],
+      "files": [
+        {
+          "url": "https://www.sawo.com/wp-content/uploads/2025/10/Savonia-Combi-NS-NB_FiEn-3P-1P.pdf",
+          "name": "Savonia Combi NS NB FiEn 3P 1P"
+        }
+      ],
+      "created_by": null,
+      "created_by_username": "Edgar",
+      "updated_by_username": "Edgar",
+      "created_at": "2026-04-21T01:38:27.461366+00:00",
+      "updated_at": "2026-04-21T01:38:57.886+00:00",
       "is_deleted": false,
       "source": "supabase"
     }
