@@ -2014,10 +2014,12 @@
   max-width: 1400px;
   margin: 0 auto 40px;
   padding: 60px 20px 0;
+  display: flex;
+  justify-content: center;
 }
 
 .sauna-room-tabs {
-  display: flex;
+  display: inline-flex;
   gap: 12px;
   margin-bottom: 0;
   flex-wrap: wrap;
