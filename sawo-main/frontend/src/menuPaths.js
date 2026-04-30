@@ -27,7 +27,7 @@ const menuPaths = {
     accessories: "/steam/accessories",
   },
 
-  infrared: "/infrared",
+  infrared: "/sauna/rooms#infrared-sauna-room",
 
   support: {
     parent: "/support",
