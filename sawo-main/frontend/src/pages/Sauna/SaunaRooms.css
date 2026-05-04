@@ -712,18 +712,44 @@
   background: none;
   border: 1px solid #d4d4d4;
   color: #af8564;
-  font-size: 16px;
   cursor: pointer;
-  padding: 2px 8px;
+  padding: 4px;
   border-radius: 4px;
-  transition: all 0.2s ease;
-  margin-left: auto;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  margin-left: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
 }
 
-.room-wrapper .reset-btn:hover {
+.room-wrapper .reset-btn svg {
+  width: 14px;
+  height: 14px;
+  transition: transform 0.5s ease;
+}
+
+.room-wrapper .reset-btn:hover:not(:disabled) {
   background: #af8564;
   color: white;
   border-color: #af8564;
+  animation: reset-btn-shake 0.5s ease;
+}
+
+.room-wrapper .reset-btn:hover:not(:disabled) svg {
+  transform: rotate(-360deg);
+}
+
+@keyframes reset-btn-shake {
+  0%   { transform: translate(0, 0) rotate(0deg); }
+  15%  { transform: translate(-1.5px, 0.5px) rotate(-2deg); }
+  30%  { transform: translate(1.5px, -0.5px) rotate(2deg); }
+  45%  { transform: translate(-1.5px, -0.5px) rotate(-1.5deg); }
+  60%  { transform: translate(1.5px, 0.5px) rotate(1.5deg); }
+  75%  { transform: translate(-1px, 0) rotate(-1deg); }
+  90%  { transform: translate(1px, 0) rotate(1deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
 }
 
 .room-wrapper .filter-group select {
@@ -1987,11 +2013,13 @@
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, sans-serif;
   max-width: 1400px;
   margin: 0 auto 40px;
-  padding: 0 20px;
+  padding: 60px 20px 0;
+  display: flex;
+  justify-content: center;
 }
 
 .sauna-room-tabs {
-  display: flex;
+  display: inline-flex;
   gap: 12px;
   margin-bottom: 0;
   flex-wrap: wrap;
@@ -2258,6 +2286,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
+  animation: sawoCfgFadeUp 0.45s ease both;
 }
 
 .sawo-configurator .sawo-prod-card {
@@ -2266,9 +2295,12 @@
   overflow: hidden;
   cursor: pointer;
   border: 3px solid transparent;
+  padding: 0;
   transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s ease, border-color 0.3s ease;
   position: relative;
   text-decoration: none;
+  text-align: left;
+  font: inherit;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
 }
 
@@ -2382,12 +2414,17 @@
 
 .sawo-configurator .sawo-sidebar-item {
   display: flex;
+  width: 100%;
   align-items: center;
   gap: 14px;
   padding: 14px 0;
+  border: 0;
   border-bottom: 1px solid #f0ebe5;
   cursor: pointer;
   border-radius: 8px;
+  background: transparent;
+  text-align: left;
+  font: inherit;
   transition: background 0.2s ease;
 }
 
@@ -2477,6 +2514,7 @@
 .sawo-configurator .sawo-cfg-cta.disabled {
   opacity: 0.3;
   pointer-events: none;
+  transform: none;
 }
 
 .sawo-configurator .sawo-cfg-cta-hint {
