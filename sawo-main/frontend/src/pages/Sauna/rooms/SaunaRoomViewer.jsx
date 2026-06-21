@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useMemo, useCallback, useRef } from "react";
+import { useLocation } from "react-router-dom";
 import { ROOM_CONFIGS, HASH_MAP } from "./SaunaRoomData";
 
 // ── HELPERS ───────────────────────────────────────────────────────────────────
@@ -17,10 +18,10 @@ function getGalleryLabel(activeRoom, cfg, modelSize) {
     if (modelSize.endsWith("L"))   return modelSize.replace(/L$/, "")   + "-L";
     return modelSize;
   }
-  let clean = modelSize.replace(/L$|MS$|MD$/, "");
-  if (modelSize.endsWith("L") && !modelSize.endsWith("MS") && !modelSize.endsWith("MD")) clean += "-L";
-  else if (modelSize.endsWith("MD")) clean += "-D";
-  return clean;
+  const base = modelSize.replace(/L$|MS$|MD$/, "");
+  if (modelSize.endsWith("MD")) return base + "-D";
+  if (modelSize.endsWith("L"))  return base + "-L";
+  return base;
 }
 
 function getCategoryForModel(cfg, modelSize) {
@@ -87,8 +88,9 @@ const TABS = [
 ];
 
 const SaunaRoomViewer = () => {
+  const location = useLocation();
   const [activeRoom, setActiveRoom] = useState(() => {
-    const hash = window.location.hash.replace("#", "");
+    const hash = location.hash.replace("#", "");
     return HASH_MAP[hash] || "standard";
   });
   const [activeSizeCategory, setActiveSizeCategory] = useState(null);
@@ -109,7 +111,7 @@ const SaunaRoomViewer = () => {
 
   useEffect(() => {
     setCurrentIndex(0);
-  }, [currentImages]);
+  }, [activeRoom, selectedSize, selectedSide, activeSizeCategory]);
 
   const navigate = useCallback((idx) => {
     if (currentImages.length === 0) return;
@@ -122,15 +124,18 @@ const SaunaRoomViewer = () => {
     }, 150);
   }, [currentImages.length]);
 
-  const handleKeyDown = useCallback((e) => {
-    if (e.key === "ArrowLeft" && currentIndex > 0) navigate(currentIndex - 1);
-    if (e.key === "ArrowRight" && currentIndex < currentImages.length - 1) navigate(currentIndex + 1);
-  }, [currentIndex, currentImages.length, navigate]);
+  const navState = useRef({ currentIndex: 0, total: 0, navigate });
+  navState.current = { currentIndex, total: currentImages.length, navigate };
 
   useEffect(() => {
-    document.addEventListener("keydown", handleKeyDown);
-    return () => document.removeEventListener("keydown", handleKeyDown);
-  }, [handleKeyDown]);
+    const onKey = (e) => {
+      const { currentIndex: i, total, navigate: nav } = navState.current;
+      if (e.key === "ArrowLeft" && i > 0) nav(i - 1);
+      if (e.key === "ArrowRight" && i < total - 1) nav(i + 1);
+    };
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, []);
 
   useEffect(() => {
     return () => clearTimeout(fadeTimer.current);
@@ -147,6 +152,7 @@ const SaunaRoomViewer = () => {
     video.addEventListener("waiting",  onWaiting);
     video.addEventListener("playing",  onPlaying);
     video.addEventListener("stalled",  onStalled);
+    if (video.readyState >= 3) setVideoLoading(false);
     return () => {
       video.removeEventListener("canplay",  onCanPlay);
       video.removeEventListener("waiting",  onWaiting);
@@ -163,6 +169,12 @@ const SaunaRoomViewer = () => {
     setSelectedSide("all");
     setFadeOut(false);
   }, []);
+
+  useEffect(() => {
+    const hash = location.hash.replace("#", "");
+    const roomKey = HASH_MAP[hash];
+    if (roomKey) switchRoom(roomKey);
+  }, [location.hash]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const handleSizeChange = (value) => {
     setSelectedSize(value);
@@ -205,23 +217,23 @@ const SaunaRoomViewer = () => {
   const current = currentImages[currentIndex] || null;
   const currentBench = current ? cfg.benchTypes[current.bench] : null;
   const currentSizeData = current ? cfg.sizeData[current.size] : null;
+  const cleanedModel = current ? (cfg.isFlat ? current.size : cleanModelNumber(current.size, cfg)) : "—";
 
   const imageTag = current
     ? cfg.isFlat
       ? current.size
-      : `${cleanModelNumber(current.size, cfg)} - ${current.side}`
+      : `${cleanedModel} - ${current.side}`
     : "";
 
   const isBestSeller = current && cfg.bestSellers && cfg.bestSellers.has(current.size);
 
   const inquiryHref = useMemo(() => {
     if (!current) return "https://www.sawo.com/contact/";
-    const model = cfg.isFlat ? current.size : cleanModelNumber(current.size, cfg);
     const benchType = cfg.benchTypes[current.bench]?.name || "Standard Bench";
     const sideStr = cfg.isFlat ? "" : current.side;
-    const subject = `Customize My Sauna — Room: ${cfg.label} - ${model}${sideStr} - ${benchType}`;
+    const subject = `Customize My Sauna — Room: ${cfg.label} - ${cleanedModel}${sideStr} - ${benchType}`;
     return `https://www.sawo.com/contact/?subject=${encodeURIComponent(subject)}`;
-  }, [current, cfg]);
+  }, [current, cfg, cleanedModel]);
 
   const galleryModels = useMemo(() => {
     const side = cfg.hasDoorFilter ? selectedSide : "all";
@@ -257,6 +269,7 @@ const SaunaRoomViewer = () => {
           {TABS.map((tab) => (
             <button
               key={tab.key}
+              type="button"
               className={`sauna-tab-btn${activeRoom === tab.key ? " active" : ""}`}
               onClick={() => switchRoom(tab.key)}
             >
@@ -291,14 +304,18 @@ const SaunaRoomViewer = () => {
             )}
 
             <button
+              type="button"
               className="carousel-nav carousel-prev"
+              aria-label="Previous image"
               disabled={currentIndex === 0}
               onClick={() => navigate(currentIndex - 1)}
             >
               ‹
             </button>
             <button
+              type="button"
               className="carousel-nav carousel-next"
+              aria-label="Next image"
               disabled={currentIndex === total - 1}
               onClick={() => navigate(currentIndex + 1)}
             >
@@ -308,6 +325,8 @@ const SaunaRoomViewer = () => {
             {total > 1 && (
               <div className="carousel-pagination">
                 <button
+                  type="button"
+                  aria-label="Go to image 1"
                   className={`page-number${currentIndex === 0 ? " active" : ""}`}
                   onClick={() => navigate(0)}
                 >
@@ -315,17 +334,21 @@ const SaunaRoomViewer = () => {
                 </button>
                 {total > 2 && (
                   <>
-                    <span className="page-separator">•</span>
+                    <span className="page-separator" aria-hidden="true">•</span>
                     <button
+                      type="button"
+                      aria-label={`Go to image ${midIdx + 1}`}
                       className={`page-number${currentIndex === midIdx ? " active" : ""}`}
                       onClick={() => navigate(midIdx)}
                     >
                       {midIdx + 1}
                     </button>
-                    <span className="page-separator">•</span>
+                    <span className="page-separator" aria-hidden="true">•</span>
                   </>
                 )}
                 <button
+                  type="button"
+                  aria-label={`Go to image ${total}`}
                   className={`page-number${currentIndex === total - 1 ? " active" : ""}`}
                   onClick={() => navigate(total - 1)}
                 >
@@ -393,13 +416,7 @@ const SaunaRoomViewer = () => {
           <div className="product-specs">
             <div className="spec-item">
               <div className="spec-label">Model Number</div>
-              <div className="spec-value">
-                {current
-                  ? cfg.isFlat
-                    ? current.size
-                    : cleanModelNumber(current.size, cfg)
-                  : "—"}
-              </div>
+              <div className="spec-value">{cleanedModel}</div>
             </div>
             <div className="spec-item">
               <div className="spec-label">Capacity</div>
@@ -431,6 +448,7 @@ const SaunaRoomViewer = () => {
                 {["small", "medium", "large"].map((cat) => (
                   <button
                     key={cat}
+                    type="button"
                     className={`size-tag${activeSizeCategory === cat ? " active" : ""}`}
                     data-category={cat}
                     onClick={() => handleSizeTag(cat)}
@@ -444,11 +462,28 @@ const SaunaRoomViewer = () => {
             )}
 
             <div className="filter-group">
-              <label>
+              <label htmlFor="sauna-room-model">
                 Sauna Room Model
-                <button className="reset-btn" onClick={handleResetSize} title="Reset">↻</button>
+                <button
+                  type="button"
+                  className="reset-btn"
+                  onClick={handleResetSize}
+                  title="Reset"
+                  aria-label="Reset sauna room model"
+                  onMouseDown={(e) => e.preventDefault()}
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M3 12a9 9 0 1 0 3-6.7" />
+                    <polyline points="3 4 3 10 9 10" />
+                  </svg>
+                </button>
               </label>
-              <select value={selectedSize} onChange={(e) => handleSizeChange(e.target.value)}>
+              <select
+                id="sauna-room-model"
+                value={selectedSize}
+                onChange={(e) => handleSizeChange(e.target.value)}
+              >
                 <option value="all">Show All</option>
                 {cfg.sizeOptions.map((opt) => {
                   const hidden = allowedSizeValues && !allowedSizeValues.has(opt.value);
@@ -467,19 +502,27 @@ const SaunaRoomViewer = () => {
             </div>
 
             <div className="filter-group">
-              <label>
+              <label htmlFor="door-location">
                 Door Location
                 <button
+                  type="button"
                   className="reset-btn"
                   onClick={handleResetSide}
                   title="Reset"
+                  aria-label="Reset door location"
                   disabled={!cfg.hasDoorFilter}
+                  onMouseDown={(e) => e.preventDefault()}
                   style={!cfg.hasDoorFilter ? { opacity: 0.3, cursor: "not-allowed" } : {}}
                 >
-                  ↻
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M3 12a9 9 0 1 0 3-6.7" />
+                    <polyline points="3 4 3 10 9 10" />
+                  </svg>
                 </button>
               </label>
               <select
+                id="door-location"
                 value={selectedSide}
                 onChange={(e) => handleSideChange(e.target.value)}
                 disabled={!cfg.hasDoorFilter}
@@ -493,8 +536,8 @@ const SaunaRoomViewer = () => {
             </div>
 
             <div className="filter-group full-width">
-              <label>Wood Type</label>
-              <select disabled style={{ cursor: "not-allowed" }}>
+              <label htmlFor="wood-type">Wood Type</label>
+              <select id="wood-type" disabled style={{ cursor: "not-allowed" }}>
                 {cfg.woodOptions.map((w, i) => (
                   <option key={w} disabled={!cfg.woodEnabled[i]}>{w}</option>
                 ))}
